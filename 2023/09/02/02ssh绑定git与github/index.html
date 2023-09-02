@@ -14,25 +14,33 @@
   
 
   
-  <title>about | cfE_blog</title>
+  <title>02ssh绑定git与github | cfE_blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/MaterialSymbolsRounded.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
-  <meta name="description" content="我们都有美好的明天">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http://example.com/about/index.html">
+  <meta name="description" content="利用 SSH 完成 Git 与 GitHub 的绑定无论是 GitHub，还是 Git，我们都是单独或者说是独立操作的，并没有将两者绑定啊！也就是说，我们现在只能通过 GitHub 下载代码，并不能通过 Git 向 GitHub 提交代码。 因此需要完成 Git 和 GitHub 的绑定，体验通过 Git 向 GitHub 提交代码的能力。不过在这之前，我们需要先了解 SSh（安全外壳协议），因为">
+<meta property="og:type" content="article">
+<meta property="og:title" content="02ssh绑定git与github">
+<meta property="og:url" content="http://example.com/2023/09/02/02ssh%E7%BB%91%E5%AE%9Agit%E4%B8%8Egithub/index.html">
 <meta property="og:site_name" content="cfE_blog">
-<meta property="og:description" content="我们都有美好的明天">
+<meta property="og:description" content="利用 SSH 完成 Git 与 GitHub 的绑定无论是 GitHub，还是 Git，我们都是单独或者说是独立操作的，并没有将两者绑定啊！也就是说，我们现在只能通过 GitHub 下载代码，并不能通过 Git 向 GitHub 提交代码。 因此需要完成 Git 和 GitHub 的绑定，体验通过 Git 向 GitHub 提交代码的能力。不过在这之前，我们需要先了解 SSh（安全外壳协议），因为">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-09-01T12:05:42.000Z">
-<meta property="article:modified_time" content="2023-09-01T12:24:10.008Z">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-23abbd2b8bfbc1ae2d2291d3aa6b274f_720w.jpg">
+<meta property="og:image" content="c:\Users\30557\AppData\Roaming\Typora\typora-user-images\image-20220828153834503.png">
+<meta property="og:image" content="https://pic2.zhimg.com/80/v2-d8157e3f5ba22ce64a4bdab14f2c7739_720w.jpg">
+<meta property="og:image" content="https://pic3.zhimg.com/80/v2-ea4f291447727e84434b87254a497c12_720w.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-4ef2ed875603194788cf0b99fa975220_720w.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-aa1938b4970cd5ccddd82406f58aee83_720w.png">
+<meta property="article:published_time" content="2023-09-02T05:26:05.909Z">
+<meta property="article:modified_time" content="2023-09-02T07:33:30.102Z">
 <meta property="article:author" content="changfeng_E">
-<meta property="article:tag" content="前端,blog">
+<meta property="article:tag" content="markdown">
+<meta property="article:tag" content="typora">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic4.zhimg.com/80/v2-23abbd2b8bfbc1ae2d2291d3aa6b274f_720w.jpg">
   
     <link rel="alternate" href="/atom.xml" title="cfE_blog" type="application/atom+xml">
   
@@ -257,7 +265,9 @@
     <div id="content-body">
        
 
-<article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+<article id="post-02ssh绑定git与github" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
    
   <div class="article-inner">
     <div class="article-main">
@@ -268,7 +278,7 @@
   
     
       <h1 class="p-name article-title" itemprop="headline name">
-        about
+        02ssh绑定git与github
       </h1>
     
   
@@ -276,25 +286,54 @@
 
         <div class='meta-info-bar'>
           <div class="meta-info">
-  <time class="dt-published" datetime="2023-09-01T12:05:42.000Z" itemprop="datePublished">2023-09-01</time>
+  <time class="dt-published" datetime="2023-09-02T05:26:05.909Z" itemprop="datePublished">2023-09-02</time>
 </div>
           <div class="need-seperator meta-info">
             <div class="meta-cate-flex">
   
-    未分类 
+  <a class="meta-cate-link" href="/categories/markdown%E4%BD%BF%E7%94%A8/">markdown使用</a>
    
 </div>
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            9 词 
+            716 词 
           </div>
         </div>
         
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/typora/" rel="tag">typora</a></li></ul>
+
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <p>我们都有美好的明天</p>
+          <h2 id="利用-SSH-完成-Git-与-GitHub-的绑定"><a href="#利用-SSH-完成-Git-与-GitHub-的绑定" class="headerlink" title="利用 SSH 完成 Git 与 GitHub 的绑定"></a>利用 SSH 完成 Git 与 GitHub 的绑定</h2><p>无论是 GitHub，还是 Git，我们都是单独或者说是独立操作的，并没有将两者绑定啊！也就是说，我们现在只能通过 GitHub 下载代码，并不能通过 Git 向 GitHub 提交代码。</p>
+<p>因此需要完成 Git 和 GitHub 的绑定，体验通过 Git 向 GitHub 提交代码的能力。不过在这之前，我们需要先了解 SSh（安全外壳协议），因为在 GitHub 上，一般都是通过 SSH 来授权的，而且大多数 Git 服务器也会选择使用 SSH 公钥来进行授权，所以想要向 GitHub 提交代码，首先就得在 GitHub 上添加 SSH key 配置。</p>
+<ul>
+<li><h3 id="第-1-步：生成-SSH-key"><a href="#第-1-步：生成-SSH-key" class="headerlink" title="第 1 步：生成 SSH key"></a><strong>第 1 步：生成 SSH key</strong></h3></li>
+</ul>
+<p>我们要想生成 SSH key，首先就得先安装 SSH，对于 Linux 和 Mac 系统，其默认是安装 SSH 的，而对于 Windows 系统，其默认是不安装 SSH 的，不过由于我们安装了 Git Bash，其也应该自带了 SSH. 可以通过在 Git Bash 中输入<strong>ssh</strong>命令，查看本机是否安装 SSH：</p>
+<p><img src="https://pic4.zhimg.com/80/v2-23abbd2b8bfbc1ae2d2291d3aa6b274f_720w.jpg" alt="img"></p>
+<p>如上图所示，此结果表示我们已经安装 SSH 啦！接下来，输入<strong>ssh-keygen -t rsa</strong>命令，表示我们指定 RSA 算法生成密钥，然后敲三次回车键，期间不需要输入密码，之后就就会生成两个文件，分别为 id_rsa 和 id_rsa.pub，即密钥 id_rsa 和公钥 id_rsa.pub. 对于这两个文件，其都为隐藏文件，默认生成在以下目录：</p>
+<p>Linux 系统：~&#x2F;.ssh</p>
+<p>Mac 系统：~&#x2F;.ssh</p>
+<p>Windows 系统：C:\Documents and Settings\username\.ssh</p>
+<p>Windows 10 ThinkPad：C:\Users\think.ssh</p>
+<p>密钥和公钥生成之后，我们要做的事情就是把公钥 id_rsa.pub 的内容添加到 GitHub，这样我们本地的密钥 id_rsa 和 GitHub 上的公钥 id_rsa.pub 才可以进行匹配，授权成功后，就可以向 GitHub 提交代码啦！</p>
+<img src="C:\Users\30557\AppData\Roaming\Typora\typora-user-images\image-20220828153834503.png" alt="image-20220828153834503" style="zoom:70%;" />
+
+<ul>
+<li><h3 id="第-2-步：添加-SSH-key"><a href="#第-2-步：添加-SSH-key" class="headerlink" title="第 2 步：添加 SSH key"></a><strong>第 2 步：添加 SSH key</strong></h3></li>
+</ul>
+<p><img src="https://pic2.zhimg.com/80/v2-d8157e3f5ba22ce64a4bdab14f2c7739_720w.jpg" alt="img"></p>
+<p>如上图所示，进入我们的 GitHub 主页，先点击右上角所示的倒三角 ▽ 图标，然后再点击 Settings，进行设置页面；点击我们的头像亦可直接进入设置页面：</p>
+<p><img src="https://pic3.zhimg.com/80/v2-ea4f291447727e84434b87254a497c12_720w.jpg" alt="img"></p>
+<p>如上图所示，进入 Settings 页面后，再点击 SSH and GPG Keys 进入此子界面，然后点击 New SSH key 按钮：</p>
+<p><img src="https://pic1.zhimg.com/80/v2-4ef2ed875603194788cf0b99fa975220_720w.jpg" alt="img"></p>
+<p>如上图所示，我们只需要将公钥 id_rsa.pub 的内容粘贴到 Key 处的位置（Titles 的内容不填写也没事），然后点击 Add SSH key 即可。</p>
+<p><strong>第 3 步：验证绑定是否成功</strong></p>
+<p>在我们添加完 SSH key 之后，也没有明确的通知告诉我们绑定成功啊！不过我们可以通过在 Git Bash 中输入<strong>ssh -T <a href="mailto:&#103;&#105;&#x74;&#64;&#x67;&#x69;&#x74;&#104;&#117;&#98;&#x2e;&#x63;&#111;&#109;">&#103;&#105;&#x74;&#64;&#x67;&#x69;&#x74;&#104;&#117;&#98;&#x2e;&#x63;&#111;&#109;</a></strong>进行测试：</p>
+<p><img src="https://pic4.zhimg.com/80/v2-aa1938b4970cd5ccddd82406f58aee83_720w.png" alt="img"></p>
+<p>如上图所示，此结果即为 Git 与 GitHub 绑定成功的标志。</p>
 
         
       </div>
@@ -306,6 +345,34 @@
   </div>
   
     
+<nav id="article-nav">
+  <a class="article-nav-btn left "
+    
+      href="/2023/09/02/03git%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81%E5%88%B0github/"
+      title="03git提交代码到github"
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+      
+        03git提交代码到github
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2023/09/02/what-is-it%20copy%206/"
+      title="What is it?"
+     >
+
+    <p class="title-text">
+      
+        What is it?
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
 
   
 </article>

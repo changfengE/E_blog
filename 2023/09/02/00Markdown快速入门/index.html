@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+
+
+<html theme="dark" showBanner="true" hasBanner="true" > 
+<link href="/fontawesome/css/fontawesome.css" rel="stylesheet">
+<link href="/fontawesome/css/brands.css" rel="stylesheet">
+<link href="/fontawesome/css/solid.css" rel="stylesheet">
+<script src="/js/color.global.min.js" ></script>
+<script src="/js/load-settings.js" ></script>
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+
+  
+  <title>00Markdown 快速入门（typora） | cfE_blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/MaterialSymbolsRounded.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+  <meta name="description" content="Markdown 快速入门（typora）&#x3D;&#x3D;ctrl+&#x2F;查看当前 markdown 文档所有语法&#x3D;&#x3D; [toc] 生成目录vscode:查看-命令面板(ctrl+shift+P)-Create Table of Contents typora:段落-内容目录 1、代码块：1234&#x2F;&#x2F; 1、代码块语法~~~html;~~~shell &#x2F;&#x2F; 2、行内">
+<meta property="og:type" content="article">
+<meta property="og:title" content="00Markdown 快速入门（typora）">
+<meta property="og:url" content="http://example.com/2023/09/02/00Markdown%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/index.html">
+<meta property="og:site_name" content="cfE_blog">
+<meta property="og:description" content="Markdown 快速入门（typora）&#x3D;&#x3D;ctrl+&#x2F;查看当前 markdown 文档所有语法&#x3D;&#x3D; [toc] 生成目录vscode:查看-命令面板(ctrl+shift+P)-Create Table of Contents typora:段落-内容目录 1、代码块：1234&#x2F;&#x2F; 1、代码块语法~~~html;~~~shell &#x2F;&#x2F; 2、行内">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cn-assets.gitee.com/assets/giteego-6c61c00c7ee85e118ecfd749bb3b3c13.svg">
+<meta property="article:published_time" content="2023-09-02T05:26:05.941Z">
+<meta property="article:modified_time" content="2023-09-02T08:26:05.446Z">
+<meta property="article:author" content="changfeng_E">
+<meta property="article:tag" content="markdown">
+<meta property="article:tag" content="typora">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cn-assets.gitee.com/assets/giteego-6c61c00c7ee85e118ecfd749bb3b3c13.svg">
+  
+    <link rel="alternate" href="/atom.xml" title="cfE_blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/xiaohei.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  
+  
+    
+<div id="banner" class="">
+  <img src="/assets/bg01.jpg" itemprop="image">
+  <div id="banner-dim"></div>
+</div>
+ 
+   
+  <div id="main-grid" class="shadow   ">
+    <div id="nav" class=""  >
+      <navbar id="navbar">
+  <nav id="title-nav">
+    <a href="/">
+      <div id="vivia-logo">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div>cfE_blog </div>
+    </a>
+  </nav>
+  <nav id="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+      <a class="main-nav-link" href="/comm">comment</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    <a id="theme-btn" class="nav-icon">
+      <span class="material-symbols-rounded light-mode-icon">wb_sunny</span>
+      <span class="material-symbols-rounded dark-mode-icon">dark_mode</span>
+    </a>
+    
+      <a id="nav-rss-link" class="nav-icon mobile-hide" href="/atom.xml" title="RSS 订阅">
+        <span class="material-symbols-rounded rss">rss_feed</span>
+      </a>
+    
+    <a id="nav-search-btn" class="nav-icon" title="搜索" style="display: none;">
+      <span class="material-symbols-rounded">search</span>
+    </a>
+    <div id="nav-menu-btn" class="nav-icon">
+      <span class="material-symbols-rounded">menu</span>
+    </div>
+  </nav>
+</navbar>
+<div id="nav-dropdown" class="hidden">
+  <div id="dropdown-link-list">
+    
+      <a class="nav-dropdown-link" href="/">Home</a>
+    
+      <a class="nav-dropdown-link" href="/archives">Archives</a>
+    
+      <a class="nav-dropdown-link" href="/about">About</a>
+    
+      <a class="nav-dropdown-link" href="/comm">comment</a>
+    
+    
+      <a class="nav-dropdown-link" href="/atom.xml" title="RSS 订阅">RSS</a>
+     
+    </div>
+</div>
+<script>
+  let dropdownBtn = document.getElementById("nav-menu-btn");
+  let dropdownEle = document.getElementById("nav-dropdown");
+  dropdownBtn.onclick = function() {
+    dropdownEle.classList.toggle("hidden");
+  }
+</script>
+    </div>
+    <div id="sidebar-wrapper">
+      <sidebar id="sidebar">
+  
+    <div class="widget-wrap">
+  <div class="info-card">
+    <div class="avatar">
+      
+        <image src=/assets/%E7%BD%97%E5%B0%8F%E9%BB%9102.png></image>
+      
+      <div class="img-dim"></div>
+    </div>
+    <div class="info">
+      <div class="username">changfeng_E </div>
+      <div class="dot"></div>
+      <div class="subtitle">find me </div>
+      <div class="link-list">
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com/changfengE" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://gitee.com/changfengE" title="Gitee"><i class="fa-brands fa-square-git"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/285349009?spm_id_from=333.1007.0.0" title="bilibili"><i class="fa-brands fa-bilibili"></i></a>
+         
+      </div>  
+    </div>
+  </div>
+</div>
+
+  
+  <div class="sticky">
+    
+      
+
+
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">分类</h3>
+      <div class="category-box">
+            <a class="category-link" href="/categories/markdown/">
+                markdown
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/markdown%E4%BD%BF%E7%94%A8/">
+                markdown使用
+                <div class="category-count">4</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E4%BD%BF%E7%94%A8/">
+                使用
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/hexo%E5%88%9D%E4%BD%93%E9%AA%8C/">
+                hexo初体验
+                <div class="category-count">1</div>
+            </a>
+        </div>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">标签</h3>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/hexo-use/" rel="tag">hexo_use</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/typora/" rel="tag">typora</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">归档</h3>
+      
+      
+        <a class="archive-link" href="/archives/2023/09 ">
+          九月 2023 
+          <div class="archive-count">17 </div>
+        </a>
+      
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">最新文章</h3>
+      <ul>
+        
+          <a class="recent-link" href="/2023/09/02/01git%E5%91%BD%E4%BB%A4/" title="01git命令" >
+            <div class="recent-link-text">
+              01git命令
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/02/00Markdown%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" title="00Markdown 快速入门（typora）" >
+            <div class="recent-link-text">
+              00Markdown 快速入门（typora）
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/02/04git%E5%88%A0%E9%99%A4%E5%88%86%E6%94%AFbranch/" title="04git删除分支branch" >
+            <div class="recent-link-text">
+              04git删除分支branch
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/02/03git%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81%E5%88%B0github/" title="03git提交代码到github" >
+            <div class="recent-link-text">
+              03git提交代码到github
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/02/02ssh%E7%BB%91%E5%AE%9Agit%E4%B8%8Egithub/" title="02ssh绑定git与github" >
+            <div class="recent-link-text">
+              02ssh绑定git与github
+            </div>
+          </a>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+  </div>
+</sidebar>
+    </div>
+    <div id="content-body">
+       
+
+<article id="post-00Markdown快速入门" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        00Markdown 快速入门（typora）
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-09-02T05:26:05.941Z" itemprop="datePublished">2023-09-02</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/markdown/">markdown</a>><a class="meta-cate-link" href="/categories/%E4%BD%BF%E7%94%A8/">使用</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            1k 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/typora/" rel="tag">typora</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <h1 id="Markdown-快速入门（typora）"><a href="#Markdown-快速入门（typora）" class="headerlink" title="Markdown 快速入门（typora）"></a>Markdown 快速入门（typora）</h1><p>&#x3D;&#x3D;ctrl+&#x2F;查看当前 markdown 文档所有语法&#x3D;&#x3D;</p>
+<p>[toc]</p>
+<h2 id="生成目录"><a href="#生成目录" class="headerlink" title="生成目录"></a>生成目录</h2><p><strong>vscode</strong>:<code>查看</code>-<code>命令面板</code>(<code>ctrl</code>+<code>shift</code>+<code>P</code>)-<code>Create Table of Contents</code></p>
+<p><strong>typora</strong>:<code>段落</code>-<code>内容目录</code></p>
+<h2 id="1、代码块："><a href="#1、代码块：" class="headerlink" title="1、代码块："></a>1、代码块：</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1、代码块语法</span></span><br><span class="line">~~~html;</span><br><span class="line">~~~shell <span class="comment">// 2、行内代码</span></span><br><span class="line"><span class="string">`代码`</span>;</span><br></pre></td></tr></table></figure>
+
+<p>1、代码块</p>
+<pre><code>**JavaScript代码**
+</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">animate</span>(<span class="params">obj, target, callback</span>) &#123;</span><br><span class="line">    <span class="comment">// console.log(callback); //callback=function()&#123;&#125;调用时callback()</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 当不断的点击按钮，这个元素的速度会越来越快，因为开启了太多的定时器</span></span><br><span class="line">    <span class="comment">// 解决方案是，让元素只有一个定时器执行</span></span><br><span class="line">    <span class="comment">// 先清除以前的定时器，只保留当前的定时器</span></span><br><span class="line">    <span class="built_in">clearInterval</span>(obj.<span class="property">timer</span>);</span><br><span class="line">    obj.<span class="property">timer</span> = <span class="built_in">setInterval</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">        <span class="comment">// Math.ceil向上取整，避免小数</span></span><br><span class="line">        <span class="comment">// var step = Math.ceil((target - obj.offsetLeft) / 10);</span></span><br><span class="line">        <span class="keyword">var</span> step = (target - obj.<span class="property">offsetLeft</span>) / <span class="number">10</span>;</span><br><span class="line">        step = step &gt; <span class="number">0</span> ? <span class="title class_">Math</span>.<span class="title function_">ceil</span>(step) : <span class="title class_">Math</span>.<span class="title function_">floor</span>(step);</span><br><span class="line">        <span class="keyword">if</span> (obj.<span class="property">offsetLeft</span> == target) &#123;</span><br><span class="line">            <span class="comment">// 停止动画</span></span><br><span class="line">            <span class="built_in">clearInterval</span>(obj.<span class="property">timer</span>);</span><br><span class="line">            <span class="comment">// 回调函数写到定时器结束里面</span></span><br><span class="line">            <span class="comment">// 判断是否有callback参数传入</span></span><br><span class="line">            <span class="keyword">if</span> (callback) &#123;</span><br><span class="line">                <span class="title function_">callback</span>();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        obj.<span class="property">style</span>.<span class="property">left</span> = obj.<span class="property">offsetLeft</span> + step + <span class="string">&#x27;px&#x27;</span>;</span><br><span class="line">    &#125;, <span class="number">15</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<pre><code>**css代码**
+</code></pre>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">    <span class="attribute">word-wrap</span>: break-word;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(<span class="number">128</span>, <span class="number">128</span>, <span class="number">128</span>, <span class="number">0.03</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">    <span class="attribute">text-decoration</span>: none;</span><br><span class="line">    <span class="attribute">color</span>: green;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">1.1em</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="comment">/* padding: 20px; */</span></span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="comment">/* background-color: pink; */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2、行内代码</p>
+<pre><code>在处理元素垂直居中问题上，我们常用的有`flex布局`、`grid布局`、`绝对定位+transform`等方法。
+</code></pre>
+<h2 id="2、标题"><a href="#2、标题" class="headerlink" title="2、标题"></a>2、标题</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">...</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><p>……</p>
+<h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><h2 id="3、字体"><a href="#3、字体" class="headerlink" title="3、字体"></a>3、字体</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 加粗</span></span><br><span class="line">**加粗文本**</span><br><span class="line"><span class="comment">// 代码高亮显示</span></span><br><span class="line">==高亮文本==</span><br><span class="line"><span class="comment">// 删除线</span></span><br><span class="line">~~删除文本~~</span><br><span class="line"><span class="comment">// 斜体</span></span><br><span class="line">*斜体文本*</span><br></pre></td></tr></table></figure>
+
+<p><strong>加粗文本</strong><br>&#x3D;&#x3D;高亮文本&#x3D;&#x3D;<br><del>删除文本</del><br><em>斜体文本</em></p>
+<h2 id="4、引用"><a href="#4、引用" class="headerlink" title="4、引用"></a>4、引用</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引用语法</span></span><br><span class="line">&gt;引用内容</span><br><span class="line">&gt;&gt;引用内容</span><br><span class="line">&gt;&gt;&gt;引用内容</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>书名：《abc》</p>
+<blockquote>
+<p>作者：bcd</p>
+<blockquote>
+<p>简介：cde</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="5、分割线"><a href="#5、分割线" class="headerlink" title="5、分割线"></a>5、分割线</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 分割线1</span></span><br><span class="line">---</span><br><span class="line"><span class="comment">// 分割线2</span></span><br><span class="line">***</span><br></pre></td></tr></table></figure>
+
+<p>分割线—</p>
+<hr>
+<p>分割线***</p>
+<hr>
+<h2 id="6、图片插入"><a href="#6、图片插入" class="headerlink" title="6、图片插入"></a>6、图片插入</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在线图片/本地图片</span></span><br><span class="line">![图片名](图片地址，路径 <span class="string">&quot;提示文本&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>在线图片</p>
+<p><img src="https://cn-assets.gitee.com/assets/giteego-6c61c00c7ee85e118ecfd749bb3b3c13.svg" alt="慢走不送" title="gitee"></p>
+<h2 id="7、超链接"><a href="#7、超链接" class="headerlink" title="7、超链接"></a>7、超链接</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1、超链接语法</span></span><br><span class="line">[链接名](地址 <span class="string">&quot;链接提示&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2、引用链接语法</span></span><br><span class="line"><span class="comment">// 若页面内多次使用同一链接，则可以使用引用链接，修改时只需修改一处</span></span><br><span class="line">[链接名][id]</span><br><span class="line"><span class="comment">// 在文末后面解释</span></span><br><span class="line">[id]:链接名 <span class="string">&quot;链接提示&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 3、链接到标题</span></span><br><span class="line">文本[链接名](#链接到的标题名)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4、普通链接URL</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>1、超链接
+
+[慢走不送~](https://baidu.com &quot;baidu&quot;)
+
+2、引用链接
+
+[慢走不送~][baidu]
+
+3、链接到标题
+
+这是[二级标题](#二级标题)
+
+4、普通链接URL
+
+https://baidu.com
+</code></pre>
+<h2 id="8、列表"><a href="#8、列表" class="headerlink" title="8、列表"></a>8、列表</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 无序列表</span></span><br><span class="line">- 列表名<span class="number">1</span></span><br><span class="line">- 列表名<span class="number">2</span></span><br><span class="line">* 列表名<span class="number">3</span></span><br><span class="line"><span class="comment">// 有序列表</span></span><br><span class="line">阿拉伯数字+.+空格+名词</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>无序列表</li>
+<li>xxxxxx</li>
+<li>xxxxxx</li>
+</ul>
+<ol>
+<li>有序列表</li>
+<li>点后面有空格</li>
+</ol>
+<h2 id="9、表格"><a href="#9、表格" class="headerlink" title="9、表格"></a>9、表格</h2><table>
+<thead>
+<tr>
+<th>语法较复杂</th>
+<th>ctrl+&#x2F;查看当前 markdown 文档所有语法</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>建议直接右键生成</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="10、选框"><a href="#10、选框" class="headerlink" title="10、选框"></a>10、选框</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 选框语法</span></span><br><span class="line">- [ ] 选项</span><br><span class="line">- [x] 选项（默认勾选）</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><input disabled="" type="checkbox"> 选项 1</li>
+<li><input disabled="" type="checkbox"> 选项 2</li>
+<li><input checked="" disabled="" type="checkbox"> 选项 3</li>
+</ul>
+<h2 id="11、数学公式"><a href="#11、数学公式" class="headerlink" title="11、数学公式"></a>11、数学公式</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1、公式块</span></span><br><span class="line">$$;</span><br><span class="line">公式;</span><br><span class="line">$$;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2、行内数学公式</span></span><br><span class="line">$公式$;</span><br></pre></td></tr></table></figure>
+
+<p>1、公式块</p>
+<p>偏导数公式：</p>
+<p>$$<br>\frac{\partial f}{\partial x}&#x3D;2\sqrt{a}x<br>$$</p>
+<p>2、行内公式</p>
+<p>$\theta&#x3D;x^2$</p>
+<h2 id="12、脚注"><a href="#12、脚注" class="headerlink" title="12、脚注"></a>12、脚注</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 语法</span></span><br><span class="line">脚注名[^脚注链接]</span><br><span class="line">一键三连[^三连]</span><br><span class="line"><span class="comment">// 文末添加解释</span></span><br><span class="line">[^三连]:点赞、投币、收藏</span><br></pre></td></tr></table></figure>
+
+<p>一键三连[^三连]</p>
+<h2 id="13、表情符号"><a href="#13、表情符号" class="headerlink" title="13、表情符号"></a>13、表情符号</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 语法</span></span><br><span class="line">:+表情名称</span><br></pre></td></tr></table></figure>
+
+<p>😄</p>
+<p>💳</p>
+<h2 id="14、上下标"><a href="#14、上下标" class="headerlink" title="14、上下标"></a>14、上下标</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 上标</span></span><br><span class="line">X^<span class="number">2</span>^</span><br><span class="line"></span><br><span class="line"><span class="comment">// 下标</span></span><br><span class="line">H~<span class="number">2</span>~O</span><br></pre></td></tr></table></figure>
+
+<p>X^2^<br>H<del>2</del>O</p>
+<h2 id="15、视频-📹"><a href="#15、视频-📹" class="headerlink" title="15、视频 📹"></a>15、视频 📹</h2><iframe src="https://player.bilibili.com/player.html?aid=327623069&bvid=BV1JA411h7Gw&cid=171385214&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" mute=0> </iframe>
+
+<iframe src="https://player.bilibili.com/player.html?aid=428474462&bvid=BV1hG411p7fX&cid=775215880&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+<h2 id="16、Typora-常用快捷键"><a href="#16、Typora-常用快捷键" class="headerlink" title="16、Typora 常用快捷键"></a>16、Typora 常用快捷键</h2><table>
+<thead>
+<tr>
+<th><strong>按键</strong></th>
+<th><strong>效果</strong></th>
+<th><strong>按键</strong></th>
+<th><strong>效果</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>ctrl</code> + <code>D</code></td>
+<td><strong>选中当前词</strong></td>
+<td><code>ctrl</code> + <code>L</code></td>
+<td><strong>选中当前句&#x2F;行</strong></td>
+</tr>
+<tr>
+<td><code>ctrl</code> + <code>E</code></td>
+<td><strong>选中当前区块</strong></td>
+<td><code>ctrl</code> + <code>F</code></td>
+<td>搜索当前选中</td>
+</tr>
+<tr>
+<td><code>ctrl</code> + <code>B</code></td>
+<td><strong>加粗当前选中</strong></td>
+<td><code>ctrl</code> + <code>H</code></td>
+<td>替换当前选中</td>
+</tr>
+<tr>
+<td><code>ctrl</code> + <code>I</code></td>
+<td>倾斜当前选中</td>
+<td><code>ctrl</code> + <code>U</code></td>
+<td>下划当前选中</td>
+</tr>
+<tr>
+<td><code>ctrl</code> + <code>K</code></td>
+<td><strong>将当前选中生成链接</strong></td>
+<td><code>ctrl</code> + <code>J</code></td>
+<td><strong>滚动屏幕将选中滚至顶部</strong></td>
+</tr>
+<tr>
+<td><code>ctrl</code> + <code>W</code></td>
+<td>关闭当前窗口</td>
+<td><code>ctrl</code> + <code>N</code></td>
+<td>打开新窗口</td>
+</tr>
+<tr>
+<td><code>ctrl</code> + <code>O</code></td>
+<td>打开文件</td>
+<td><code>ctrl</code> + <code>P</code></td>
+<td>搜索文件并打开</td>
+</tr>
+<tr>
+<td><code>ctrl</code> + <code>回车</code></td>
+<td><strong>表格下方插入行</strong></td>
+<td><code>ctrl</code> + <code>,</code></td>
+<td><strong>打开偏好设置</strong></td>
+</tr>
+<tr>
+<td><code>ctrl</code> + <code>.</code></td>
+<td>切换全角&#x2F;半角标点</td>
+<td><code>ctrl</code> + <code>/</code></td>
+<td>切换正常&#x2F;源代码视图</td>
+</tr>
+<tr>
+<td><code>ctrl</code> + <code>shift</code> + <code>-</code></td>
+<td>缩小视图缩放</td>
+<td><code>ctrl</code> + <code>shift</code> + <code>+</code></td>
+<td>增大视图缩放</td>
+</tr>
+</tbody></table>
+
+        
+      </div>
+
+         
+    </div>
+    
+     
+  </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left "
+    
+      href="/2023/09/02/01git%E5%91%BD%E4%BB%A4/"
+      title="01git命令"
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+      
+        01git命令
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2023/09/02/04git%E5%88%A0%E9%99%A4%E5%88%86%E6%94%AFbranch/"
+      title="04git删除分支branch"
+     >
+
+    <p class="title-text">
+      
+        04git删除分支branch
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+
+  
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <div id="comment-card" class="comment-card">
+    <div class="main-title-bar">
+      <div class="main-title-dot"></div>
+      <div class="main-title">留言 </div>
+    </div>
+    <div id="vcomments"></div>
+  </div>
+  <script>
+      new Valine({"enable":true,"appId":null,"appKey":null,"placeholder":"Just go go","pageSize":10,"highlight":true,"path":"/pathname","serverURLs":null,"el":"#vcomments"});
+  </script>
+ 
+    </div>
+    <div id="footer-wrapper">
+      <footer id="footer">
+  
+  <div id="footer-info" class="inner">
+    
+    &copy; 2023 changfeng_E<br>
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
+  </div>
+</footer>
+
+    </div>
+    <div class="back-to-top-wrapper">
+    <button id="back-to-top-btn" class="back-to-top-btn hide" onclick="topFunction()">
+        <span class="material-symbols-rounded">keyboard_arrow_up</span>
+    </button>
+</div>
+
+<script>
+    function topFunction() {
+        window.scroll({ top: 0, behavior: 'smooth' });
+    }
+    let btn = document.getElementById('back-to-top-btn');
+    function scrollFunction() {
+        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+            btn.classList.remove('hide')
+        } else {
+            btn.classList.add('hide')
+        }
+    }
+    window.onscroll = function() {
+        scrollFunction();
+    }
+</script>
+
+  </div>
+  <script src="/js/light-dark-switch.js"></script>
+</body>
+</html>

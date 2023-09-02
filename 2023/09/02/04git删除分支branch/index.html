@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+
+
+<html theme="dark" showBanner="true" hasBanner="true" > 
+<link href="/fontawesome/css/fontawesome.css" rel="stylesheet">
+<link href="/fontawesome/css/brands.css" rel="stylesheet">
+<link href="/fontawesome/css/solid.css" rel="stylesheet">
+<script src="/js/color.global.min.js" ></script>
+<script src="/js/load-settings.js" ></script>
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+
+  
+  <title>04git删除分支branch | cfE_blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/MaterialSymbolsRounded.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+  <meta name="description" content="删除本地分支如果上面的某个分支不想要了，想删掉本地的分支，在删除分支的时候, 我们会使用 git branch –delete 分支名称 来执行.–delete 缩写就是-d，可以使用 git branch -d 分支名称来代替  -d 是–delete 的缩写,在使用–delete 删除分支时,该分支必须完全和它的上游分支 merge 完成,如果没有上游分支,必须要和 HEAD 完全 merge">
+<meta property="og:type" content="article">
+<meta property="og:title" content="04git删除分支branch">
+<meta property="og:url" content="http://example.com/2023/09/02/04git%E5%88%A0%E9%99%A4%E5%88%86%E6%94%AFbranch/index.html">
+<meta property="og:site_name" content="cfE_blog">
+<meta property="og:description" content="删除本地分支如果上面的某个分支不想要了，想删掉本地的分支，在删除分支的时候, 我们会使用 git branch –delete 分支名称 来执行.–delete 缩写就是-d，可以使用 git branch -d 分支名称来代替  -d 是–delete 的缩写,在使用–delete 删除分支时,该分支必须完全和它的上游分支 merge 完成,如果没有上游分支,必须要和 HEAD 完全 merge">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-09-02T05:26:05.925Z">
+<meta property="article:modified_time" content="2023-09-02T07:33:46.825Z">
+<meta property="article:author" content="changfeng_E">
+<meta property="article:tag" content="markdown">
+<meta property="article:tag" content="typora">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="cfE_blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/xiaohei.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  
+  
+    
+<div id="banner" class="">
+  <img src="/assets/bg01.jpg" itemprop="image">
+  <div id="banner-dim"></div>
+</div>
+ 
+   
+  <div id="main-grid" class="shadow   ">
+    <div id="nav" class=""  >
+      <navbar id="navbar">
+  <nav id="title-nav">
+    <a href="/">
+      <div id="vivia-logo">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div>cfE_blog </div>
+    </a>
+  </nav>
+  <nav id="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+      <a class="main-nav-link" href="/comm">comment</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    <a id="theme-btn" class="nav-icon">
+      <span class="material-symbols-rounded light-mode-icon">wb_sunny</span>
+      <span class="material-symbols-rounded dark-mode-icon">dark_mode</span>
+    </a>
+    
+      <a id="nav-rss-link" class="nav-icon mobile-hide" href="/atom.xml" title="RSS 订阅">
+        <span class="material-symbols-rounded rss">rss_feed</span>
+      </a>
+    
+    <a id="nav-search-btn" class="nav-icon" title="搜索" style="display: none;">
+      <span class="material-symbols-rounded">search</span>
+    </a>
+    <div id="nav-menu-btn" class="nav-icon">
+      <span class="material-symbols-rounded">menu</span>
+    </div>
+  </nav>
+</navbar>
+<div id="nav-dropdown" class="hidden">
+  <div id="dropdown-link-list">
+    
+      <a class="nav-dropdown-link" href="/">Home</a>
+    
+      <a class="nav-dropdown-link" href="/archives">Archives</a>
+    
+      <a class="nav-dropdown-link" href="/about">About</a>
+    
+      <a class="nav-dropdown-link" href="/comm">comment</a>
+    
+    
+      <a class="nav-dropdown-link" href="/atom.xml" title="RSS 订阅">RSS</a>
+     
+    </div>
+</div>
+<script>
+  let dropdownBtn = document.getElementById("nav-menu-btn");
+  let dropdownEle = document.getElementById("nav-dropdown");
+  dropdownBtn.onclick = function() {
+    dropdownEle.classList.toggle("hidden");
+  }
+</script>
+    </div>
+    <div id="sidebar-wrapper">
+      <sidebar id="sidebar">
+  
+    <div class="widget-wrap">
+  <div class="info-card">
+    <div class="avatar">
+      
+        <image src=/assets/%E7%BD%97%E5%B0%8F%E9%BB%9102.png></image>
+      
+      <div class="img-dim"></div>
+    </div>
+    <div class="info">
+      <div class="username">changfeng_E </div>
+      <div class="dot"></div>
+      <div class="subtitle">find me </div>
+      <div class="link-list">
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com/changfengE" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://gitee.com/changfengE" title="Gitee"><i class="fa-brands fa-square-git"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/285349009?spm_id_from=333.1007.0.0" title="bilibili"><i class="fa-brands fa-bilibili"></i></a>
+         
+      </div>  
+    </div>
+  </div>
+</div>
+
+  
+  <div class="sticky">
+    
+      
+
+
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">分类</h3>
+      <div class="category-box">
+            <a class="category-link" href="/categories/markdown/">
+                markdown
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/markdown%E4%BD%BF%E7%94%A8/">
+                markdown使用
+                <div class="category-count">4</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E4%BD%BF%E7%94%A8/">
+                使用
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/hexo%E5%88%9D%E4%BD%93%E9%AA%8C/">
+                hexo初体验
+                <div class="category-count">1</div>
+            </a>
+        </div>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">标签</h3>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/hexo-use/" rel="tag">hexo_use</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/typora/" rel="tag">typora</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">归档</h3>
+      
+      
+        <a class="archive-link" href="/archives/2023/09 ">
+          九月 2023 
+          <div class="archive-count">17 </div>
+        </a>
+      
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">最新文章</h3>
+      <ul>
+        
+          <a class="recent-link" href="/2023/09/02/01git%E5%91%BD%E4%BB%A4/" title="01git命令" >
+            <div class="recent-link-text">
+              01git命令
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/02/00Markdown%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" title="00Markdown 快速入门（typora）" >
+            <div class="recent-link-text">
+              00Markdown 快速入门（typora）
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/02/04git%E5%88%A0%E9%99%A4%E5%88%86%E6%94%AFbranch/" title="04git删除分支branch" >
+            <div class="recent-link-text">
+              04git删除分支branch
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/02/03git%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81%E5%88%B0github/" title="03git提交代码到github" >
+            <div class="recent-link-text">
+              03git提交代码到github
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/02/02ssh%E7%BB%91%E5%AE%9Agit%E4%B8%8Egithub/" title="02ssh绑定git与github" >
+            <div class="recent-link-text">
+              02ssh绑定git与github
+            </div>
+          </a>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+  </div>
+</sidebar>
+    </div>
+    <div id="content-body">
+       
+
+<article id="post-04git删除分支branch" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        04git删除分支branch
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-09-02T05:26:05.925Z" itemprop="datePublished">2023-09-02</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/markdown%E4%BD%BF%E7%94%A8/">markdown使用</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            842 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/typora/" rel="tag">typora</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <h1 id="删除本地分支"><a href="#删除本地分支" class="headerlink" title="删除本地分支"></a>删除本地分支</h1><p>如果上面的某个分支不想要了，想删掉本地的分支，在删除分支的时候, 我们会使用 git branch –delete 分支名称 来执行.<br>–delete 缩写就是-d，可以使用 git branch -d 分支名称来代替</p>
+<ul>
+<li>-d 是–delete 的缩写,在使用–delete 删除分支时,该分支必须完全和它的上游分支 merge 完成,如果没有上游分支,必须要和 HEAD 完全 merge</li>
+<li>-D 是–delete –force 的缩写,这样写可以在不检查 merge 状态的情况下删除分支</li>
+<li>–force 简写-f,作用是将当前 branch 重置到初始点(startpoint),如果不使用–force 的话,git 分支无法修改一个已经存在的分支.</li>
+</ul>
+<p>在不检查 merge 状态的情况下删除分支，可以使用 <code>git branch -D 分支名称</code> ，它是 <code>git branch --delete --force 分支名称</code>的缩写</p>
+<p>如果当前状态是在 yoyo2 分支上，直接删除 yoyo2 分支是不可以的</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;git branch</span><br><span class="line">  master</span><br><span class="line">  yoyo</span><br><span class="line">* yoyo2</span><br><span class="line"></span><br><span class="line">&gt;git branch -D yoyo2</span><br><span class="line">error: Cannot delete branch &#x27;yoyo2&#x27; checked out at &#x27;D:/soft/git/web_git&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>必须先切换到其它分支上才能删除</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt;git checkout master</span><br><span class="line">A       .idea/vcs.xml</span><br><span class="line">Switched to branch &#x27;master&#x27;</span><br><span class="line">Your branch is up-to-date with &#x27;origin/master&#x27;.</span><br><span class="line"></span><br><span class="line">&gt;git branch -D yoyo2</span><br><span class="line">Deleted branch yoyo2 (was c613c75).</span><br><span class="line"></span><br><span class="line">&gt;git branch</span><br><span class="line">* master</span><br><span class="line">  yoyo</span><br></pre></td></tr></table></figure>
+
+<h1 id="删除远程分支"><a href="#删除远程分支" class="headerlink" title="删除远程分支"></a>删除远程分支</h1><p>如果我们想通过本地的命令行删除远程分支，需先建立本地分支和远程分支的关系。<br>场景 1： 本地新建一个分支，推送到远程分支，后面不想要这个本地分支和远程分支了</p>
+<p>先按前面的步骤创建本地分支并 checkout 到你要推送的分支上</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt;git branch</span><br><span class="line">* master</span><br><span class="line">  yoyo</span><br><span class="line"></span><br><span class="line">&gt;git checkout yoyo</span><br><span class="line">A       .idea/vcs.xml</span><br><span class="line">Switched to branch &#x27;yoyo&#x27;</span><br><span class="line"></span><br><span class="line">&gt;git status</span><br><span class="line">On branch yoyo</span><br></pre></td></tr></table></figure>
+
+<p>接着推送到远程分支上：<code>git push origin 本地分支名称:远程分支名称</code>，这样本地分支和远程分支就建立了关系</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;git push origin yoyo:yoyo</span><br></pre></td></tr></table></figure>
+
+<p>接下来先删除本地分支，再删除远程分支</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt;git checkout master</span><br><span class="line">A       .idea/vcs.xml</span><br><span class="line">Switched to branch &#x27;master&#x27;</span><br><span class="line">Your branch is up-to-date with &#x27;origin/master&#x27;.</span><br><span class="line"></span><br><span class="line">&gt;git branch -D yoyo</span><br><span class="line">Deleted branch yoyo (was c613c75).</span><br><span class="line"></span><br><span class="line">&gt;git push origin --delete yoyo</span><br><span class="line"></span><br><span class="line"> - [deleted]         yoyo</span><br></pre></td></tr></table></figure>
+
+<p>这样我们的本地分支和远程分支都删掉掉了</p>
+<p>场景 2： 本地没这个分支，远程上有这个分支，想删掉远程的分支</p>
+<p>如果我本地有这个项目，我远程上有个 yoyoketang 的分支（本地没分支），可以先拉到我们的本地，建立关系</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;git checkout -b yoyoketang origin/yoyoketang</span><br><span class="line">fatal: Cannot update paths and switch to branch &#x27;yoyoketang&#x27; at the same time.</span><br><span class="line">Did you intend to checkout &#x27;origin/yoyoketang&#x27; which can not be resolved as commit?</span><br></pre></td></tr></table></figure>
+
+<p>上面有个报错，可以执行 <code>git fetch</code>更新下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt;git fetch</span><br><span class="line">remote: Enumerating objects: 15, done.</span><br><span class="line">remote: Counting objects: 100% (15/15), done.</span><br><span class="line">remote: Compressing objects: 100% (9/9), done.</span><br><span class="line">remote: Total 13 (delta 7), reused 10 (delta 4), pack-reused 0</span><br><span class="line">Unpacking objects: 100% (13/13), done.</span><br><span class="line"></span><br><span class="line">   c613c75..f380d71  master     -&gt; origin/master</span><br><span class="line"> * [new branch]      yoyoketang -&gt; origin/yoyoketang</span><br></pre></td></tr></table></figure>
+
+<p>再执行 <code>git checkout -b 本地分支 origin/远程分支</code> 就可以了</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;git checkout -b yoyoketang origin/yoyoketang</span><br><span class="line">A       .idea/vcs.xml</span><br><span class="line">Branch yoyoketang set up to track remote branch yoyoketang from origin.</span><br><span class="line">Switched to a new branch &#x27;yoyoketang&#x27;</span><br><span class="line">&gt;git branch</span><br><span class="line">  master</span><br><span class="line">* yoyoketang</span><br></pre></td></tr></table></figure>
+
+<p>同步到本地分支后，跟上面操作一样，先删除本地分支，再删除远程分支</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&gt;git checkout master</span><br><span class="line">A       .idea/vcs.xml</span><br><span class="line">Switched to branch &#x27;master&#x27;</span><br><span class="line">Your branch is behind &#x27;origin/master&#x27; by 3 commits, and can be fast-forwarded.</span><br><span class="line">  (use &quot;git pull&quot; to update your local branch)</span><br><span class="line"></span><br><span class="line">&gt;git branch -D yoyoketang</span><br><span class="line">Deleted branch yoyoketang (was eaa102f).</span><br><span class="line"></span><br><span class="line">&gt;git push origin --delete yoyoketang</span><br><span class="line"></span><br><span class="line"> - [deleted]         yoyoketang</span><br></pre></td></tr></table></figure>
+
+        
+      </div>
+
+         
+    </div>
+    
+     
+  </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left "
+    
+      href="/2023/09/02/00Markdown%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/"
+      title="00Markdown 快速入门（typora）"
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+      
+        00Markdown 快速入门（typora）
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2023/09/02/03git%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81%E5%88%B0github/"
+      title="03git提交代码到github"
+     >
+
+    <p class="title-text">
+      
+        03git提交代码到github
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+
+  
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <div id="comment-card" class="comment-card">
+    <div class="main-title-bar">
+      <div class="main-title-dot"></div>
+      <div class="main-title">留言 </div>
+    </div>
+    <div id="vcomments"></div>
+  </div>
+  <script>
+      new Valine({"enable":true,"appId":null,"appKey":null,"placeholder":"Just go go","pageSize":10,"highlight":true,"path":"/pathname","serverURLs":null,"el":"#vcomments"});
+  </script>
+ 
+    </div>
+    <div id="footer-wrapper">
+      <footer id="footer">
+  
+  <div id="footer-info" class="inner">
+    
+    &copy; 2023 changfeng_E<br>
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
+  </div>
+</footer>
+
+    </div>
+    <div class="back-to-top-wrapper">
+    <button id="back-to-top-btn" class="back-to-top-btn hide" onclick="topFunction()">
+        <span class="material-symbols-rounded">keyboard_arrow_up</span>
+    </button>
+</div>
+
+<script>
+    function topFunction() {
+        window.scroll({ top: 0, behavior: 'smooth' });
+    }
+    let btn = document.getElementById('back-to-top-btn');
+    function scrollFunction() {
+        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+            btn.classList.remove('hide')
+        } else {
+            btn.classList.add('hide')
+        }
+    }
+    window.onscroll = function() {
+        scrollFunction();
+    }
+</script>
+
+  </div>
+  <script src="/js/light-dark-switch.js"></script>
+</body>
+</html>
