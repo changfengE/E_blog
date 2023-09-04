@@ -21,15 +21,15 @@
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/MaterialSymbolsRounded.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
-  <meta name="description" content="删除本地分支如果上面的某个分支不想要了，想删掉本地的分支，在删除分支的时候, 我们会使用 git branch –delete 分支名称 来执行.–delete 缩写就是-d，可以使用 git branch -d 分支名称来代替  -d 是–delete 的缩写,在使用–delete 删除分支时,该分支必须完全和它的上游分支 merge 完成,如果没有上游分支,必须要和 HEAD 完全 merge">
+  <meta name="description" content="删除本地分支 删除远程分支      删除本地分支#如果上面的某个分支不想要了，想删掉本地的分支，在删除分支的时候, 我们会使用 git branch –delete 分支名称 来执行.–delete 缩写就是-d，可以使用 git branch -d 分支名称来代替  -d 是–delete 的缩写,在使用–delete 删除分支时,该分支必须完全和它的上游分支 merge 完成,如果">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git删除分支branch">
 <meta property="og:url" content="http://example.com/2022/09/02/04git%E5%88%A0%E9%99%A4%E5%88%86%E6%94%AFbranch/index.html">
 <meta property="og:site_name" content="cfE_blog">
-<meta property="og:description" content="删除本地分支如果上面的某个分支不想要了，想删掉本地的分支，在删除分支的时候, 我们会使用 git branch –delete 分支名称 来执行.–delete 缩写就是-d，可以使用 git branch -d 分支名称来代替  -d 是–delete 的缩写,在使用–delete 删除分支时,该分支必须完全和它的上游分支 merge 完成,如果没有上游分支,必须要和 HEAD 完全 merge">
+<meta property="og:description" content="删除本地分支 删除远程分支      删除本地分支#如果上面的某个分支不想要了，想删掉本地的分支，在删除分支的时候, 我们会使用 git branch –delete 分支名称 来执行.–delete 缩写就是-d，可以使用 git branch -d 分支名称来代替  -d 是–delete 的缩写,在使用–delete 删除分支时,该分支必须完全和它的上游分支 merge 完成,如果">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-09-01T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-09-04T03:07:29.393Z">
+<meta property="article:modified_time" content="2023-09-04T15:07:26.504Z">
 <meta property="article:author" content="changfeng_E">
 <meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
@@ -49,7 +49,7 @@
   
     
 <div id="banner" class="">
-  <img src="/assets/bg01.jpg" itemprop="image">
+  <img src="/assets/%E8%8A%B1%E8%8A%B1bg02.jpg" itemprop="image">
   <div id="banner-dim"></div>
 </div>
  
@@ -154,9 +154,15 @@
       <h3 class="widget-title">最新文章</h3>
       <ul>
         
-          <a class="recent-link" href="/2023/09/03/001%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%9F%BA%E7%A1%80/" title="" >
+          <a class="recent-link" href="/2023/09/04/tess/" title="tess" >
             <div class="recent-link-text">
-              (no title)
+              tess
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/03/001%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%9F%BA%E7%A1%80/" title="移动端基础" >
+            <div class="recent-link-text">
+              移动端基础
             </div>
           </a>
         
@@ -178,12 +184,6 @@
             </div>
           </a>
         
-          <a class="recent-link" href="/2022/08/28/03git%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81%E5%88%B0github/" title="git提交代码到github" >
-            <div class="recent-link-text">
-              git提交代码到github
-            </div>
-          </a>
-        
       </ul>
     </div>
   </div>
@@ -193,7 +193,7 @@
   <div class="widget-wrap">
     <div class="widget">
       <h3 class="widget-title">标签</h3>
-      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/hexo-use/" rel="tag">hexo_use</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/typora/" rel="tag">typora</a></li></ul>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/hexo-use/" rel="tag">hexo_use</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/typora/" rel="tag">typora</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" rel="tag">移动端</a></li></ul>
     </div>
   </div>
 
@@ -206,6 +206,11 @@
     <div class="widget">
       <h3 class="widget-title">分类</h3>
       <div class="category-box">
+            <a class="category-link" href="/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/">
+                移动端
+                <div class="category-count">1</div>
+            </a>
+        
             <a class="category-link" href="/categories/markdown/">
                 markdown
                 <div class="category-count">1</div>
@@ -221,8 +226,8 @@
                 <div class="category-count">4</div>
             </a>
         <div class="children"><div class="category-box">
-            <a class="category-link" href="/categories/git/ssh%E7%BB%91%E5%AE%9A/">
-                ssh绑定
+            <a class="category-link" href="/categories/git/%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81/">
+                提交代码
                 <div class="category-count">1</div>
             </a>
         
@@ -231,8 +236,8 @@
                 <div class="category-count">1</div>
             </a>
         
-            <a class="category-link" href="/categories/git/%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81/">
-                提交代码
+            <a class="category-link" href="/categories/git/ssh%E7%BB%91%E5%AE%9A/">
+                ssh绑定
                 <div class="category-count">1</div>
             </a>
         
@@ -259,7 +264,7 @@
       
         <a class="archive-link" href="/archives/2023/09 ">
           九月 2023 
-          <div class="archive-count">2 </div>
+          <div class="archive-count">3 </div>
         </a>
       
         <a class="archive-link" href="/archives/2022/12 ">
@@ -320,7 +325,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            849 词 
+            850 词 
           </div>
         </div>
         
@@ -329,7 +334,19 @@
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <h1 id="删除本地分支"><a href="#删除本地分支" class="headerlink" title="删除本地分支"></a>删除本地分支</h1><p>如果上面的某个分支不想要了，想删掉本地的分支，在删除分支的时候, 我们会使用 git branch –delete 分支名称 来执行.<br>–delete 缩写就是-d，可以使用 git branch -d 分支名称来代替</p>
+          <div class="toc">
+
+<!-- toc -->
+
+<ul>
+<li><a href="#shan-chu-ben-di-fen-zhi">删除本地分支</a></li>
+<li><a href="#shan-chu-yuan-cheng-fen-zhi">删除远程分支</a></li>
+</ul>
+<!-- tocstop -->
+
+</div>
+
+<h1><span id="shan-chu-ben-di-fen-zhi">删除本地分支</span><a href="#shan-chu-ben-di-fen-zhi" class="header-anchor">#</a></h1><p>如果上面的某个分支不想要了，想删掉本地的分支，在删除分支的时候, 我们会使用 git branch –delete 分支名称 来执行.<br>–delete 缩写就是-d，可以使用 git branch -d 分支名称来代替</p>
 <ul>
 <li>-d 是–delete 的缩写,在使用–delete 删除分支时,该分支必须完全和它的上游分支 merge 完成,如果没有上游分支,必须要和 HEAD 完全 merge</li>
 <li>-D 是–delete –force 的缩写,这样写可以在不检查 merge 状态的情况下删除分支</li>
@@ -342,7 +359,7 @@
 <p>必须先切换到其它分支上才能删除</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">git checkout master</span></span><br><span class="line">A       .idea/vcs.xml</span><br><span class="line">Switched to branch &#x27;master&#x27;</span><br><span class="line">Your branch is up-to-date with &#x27;origin/master&#x27;.</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">git branch -D yoyo2</span></span><br><span class="line">Deleted branch yoyo2 (was c613c75).</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">git branch</span></span><br><span class="line">* master</span><br><span class="line">  yoyo</span><br></pre></td></tr></table></figure>
 
-<h1 id="删除远程分支"><a href="#删除远程分支" class="headerlink" title="删除远程分支"></a>删除远程分支</h1><p>如果我们想通过本地的命令行删除远程分支，需先建立本地分支和远程分支的关系。<br>场景 1： 本地新建一个分支，推送到远程分支，后面不想要这个本地分支和远程分支了</p>
+<h1><span id="shan-chu-yuan-cheng-fen-zhi">删除远程分支</span><a href="#shan-chu-yuan-cheng-fen-zhi" class="header-anchor">#</a></h1><p>如果我们想通过本地的命令行删除远程分支，需先建立本地分支和远程分支的关系。<br>场景 1： 本地新建一个分支，推送到远程分支，后面不想要这个本地分支和远程分支了</p>
 <p>先按前面的步骤创建本地分支并 checkout 到你要推送的分支上</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">git branch</span></span><br><span class="line">* master</span><br><span class="line">  yoyo</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">git checkout yoyo</span></span><br><span class="line">A       .idea/vcs.xml</span><br><span class="line">Switched to branch &#x27;yoyo&#x27;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">git status</span></span><br><span class="line">On branch yoyo</span><br></pre></td></tr></table></figure>
 
@@ -355,13 +372,13 @@
 <p>这样我们的本地分支和远程分支都删掉掉了</p>
 <p>场景 2： 本地没这个分支，远程上有这个分支，想删掉远程的分支</p>
 <p>如果我本地有这个项目，我远程上有个 yoyoketang 的分支（本地没分支），可以先拉到我们的本地，建立关系</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;git checkout -b yoyoketang origin/yoyoketang</span><br><span class="line">fatal: Cannot update paths and switch to branch &#x27;yoyoketang&#x27; at the same time.</span><br><span class="line">Did you intend to checkout &#x27;origin/yoyoketang&#x27; which can not be resolved as commit?</span><br></pre></td></tr></table></figure>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;git checkout -b yoyoketang origin/yoyoketang</span><br><span class="line">fatal: Cannot update paths <span class="keyword">and</span> <span class="keyword">switch</span> <span class="built_in">to</span> branch <span class="string">&#x27;yoyoketang&#x27;</span> <span class="keyword">at</span> <span class="keyword">the</span> same <span class="built_in">time</span>.</span><br><span class="line">Did you intend <span class="built_in">to</span> checkout <span class="string">&#x27;origin/yoyoketang&#x27;</span> which can <span class="keyword">not</span> be resolved <span class="keyword">as</span> commit?</span><br></pre></td></tr></table></figure>
 
 <p>上面有个报错，可以执行 <code>git fetch</code>更新下</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">git fetch</span></span><br><span class="line">remote: Enumerating objects: 15, done.</span><br><span class="line">remote: Counting objects: 100% (15/15), done.</span><br><span class="line">remote: Compressing objects: 100% (9/9), done.</span><br><span class="line">remote: Total 13 (delta 7), reused 10 (delta 4), pack-reused 0</span><br><span class="line">Unpacking objects: 100% (13/13), done.</span><br><span class="line"></span><br><span class="line">   c613c75..f380d71  master     -&gt; origin/master</span><br><span class="line"> * [new branch]      yoyoketang -&gt; origin/yoyoketang</span><br></pre></td></tr></table></figure>
 
 <p>再执行 <code>git checkout -b 本地分支 origin/远程分支</code> 就可以了</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;git checkout -b yoyoketang origin/yoyoketang</span><br><span class="line">A       .idea/vcs.xml</span><br><span class="line">Branch yoyoketang set up to track remote branch yoyoketang from origin.</span><br><span class="line">Switched to a new branch &#x27;yoyoketang&#x27;</span><br><span class="line">&gt;git branch</span><br><span class="line">  master</span><br><span class="line">* yoyoketang</span><br></pre></td></tr></table></figure>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;git checkout -b yoyoketang origin/yoyoketang</span><br><span class="line">A       .idea/vcs.xml</span><br><span class="line">Branch yoyoketang <span class="built_in">set</span> up <span class="built_in">to</span> track remote branch yoyoketang <span class="built_in">from</span> origin.</span><br><span class="line">Switched <span class="built_in">to</span> <span class="keyword">a</span> <span class="built_in">new</span> branch <span class="string">&#x27;yoyoketang&#x27;</span></span><br><span class="line">&gt;git branch</span><br><span class="line">  master</span><br><span class="line">* yoyoketang</span><br></pre></td></tr></table></figure>
 
 <p>同步到本地分支后，跟上面操作一样，先删除本地分支，再删除远程分支</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">git checkout master</span></span><br><span class="line">A       .idea/vcs.xml</span><br><span class="line">Switched to branch &#x27;master&#x27;</span><br><span class="line">Your branch is behind &#x27;origin/master&#x27; by 3 commits, and can be fast-forwarded.</span><br><span class="line">  (use &quot;git pull&quot; to update your local branch)</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">git branch -D yoyoketang</span></span><br><span class="line">Deleted branch yoyoketang (was eaa102f).</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">&gt;</span><span class="language-bash">git push origin --delete yoyoketang</span></span><br><span class="line"></span><br><span class="line"> - [deleted]         yoyoketang</span><br></pre></td></tr></table></figure>
@@ -408,19 +425,6 @@
   
 </article>
 
-
-  
-  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-  <div id="comment-card" class="comment-card">
-    <div class="main-title-bar">
-      <div class="main-title-dot"></div>
-      <div class="main-title">留言 </div>
-    </div>
-    <div id="vcomments"></div>
-  </div>
-  <script>
-      new Valine({"enable":true,"appId":"tXLOROkBRtFLzEOBMYLDnI5t-gzGzoHsz","appKey":"PP2E5U00JlVh33kGIGGZVhHF","placeholder":"富强民主文明和谐自由平等公正法治爱国敬业诚信友善","pageSize":10,"highlight":true,"serverURLs":null,"el":"#vcomments"});
-  </script>
  
     </div>
     <div id="footer-wrapper">

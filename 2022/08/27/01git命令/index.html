@@ -21,12 +21,12 @@
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/MaterialSymbolsRounded.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
-  <meta name="description" content="git作为一个分布式的版本控制系统，在 Git 中并不存在主库这样的概念，每一份复制出的库都可以独立使用，任何两个库之间的不一致之处都可以进行合并。 GitHub 可以托管各种 Git 库，并提供一个 web 界面，但与其它像 SourceForge 或 Google Code 这样的服务不同，GitHub 的独特卖点在于从另外一个项目进行分支的简易性。为一个项目贡献代码非常简单：首先点击项目站点">
+  <meta name="description" content="git 创建 GitHub 仓库的步骤及方法 GitHub 术语解释 Git 的安装流程及步骤 Git 初体验及其常用命令介绍 第 1 个命令：git status 第 2 个命令：git init 第 3 个命令：git add 第 4 个命令：git commit 第 5 个命令：git log 第 6 个命令：git branch 第 7 个命令：git checkout 第 8">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git命令">
 <meta property="og:url" content="http://example.com/2022/08/27/01git%E5%91%BD%E4%BB%A4/index.html">
 <meta property="og:site_name" content="cfE_blog">
-<meta property="og:description" content="git作为一个分布式的版本控制系统，在 Git 中并不存在主库这样的概念，每一份复制出的库都可以独立使用，任何两个库之间的不一致之处都可以进行合并。 GitHub 可以托管各种 Git 库，并提供一个 web 界面，但与其它像 SourceForge 或 Google Code 这样的服务不同，GitHub 的独特卖点在于从另外一个项目进行分支的简易性。为一个项目贡献代码非常简单：首先点击项目站点">
+<meta property="og:description" content="git 创建 GitHub 仓库的步骤及方法 GitHub 术语解释 Git 的安装流程及步骤 Git 初体验及其常用命令介绍 第 1 个命令：git status 第 2 个命令：git init 第 3 个命令：git add 第 4 个命令：git commit 第 5 个命令：git log 第 6 个命令：git branch 第 7 个命令：git checkout 第 8">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://pic1.zhimg.com/80/v2-b31ffe846f833772c977bae322c9d368_720w.jpg">
 <meta property="og:image" content="https://pic2.zhimg.com/80/v2-0aa03814382bfe8ed9610e69442cefad_720w.jpg">
@@ -69,7 +69,7 @@
 <meta property="og:image" content="https://pic4.zhimg.com/80/v2-7f4bbacebd1903677fb9e3235edbf36f_720w.jpg">
 <meta property="og:image" content="https://pic1.zhimg.com/80/v2-36840bbe7c7f25a4afd62580348a1550_720w.jpg">
 <meta property="article:published_time" content="2022-08-26T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-09-04T02:50:19.906Z">
+<meta property="article:modified_time" content="2023-09-04T14:58:54.444Z">
 <meta property="article:author" content="changfeng_E">
 <meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
@@ -90,7 +90,7 @@
   
     
 <div id="banner" class="">
-  <img src="/assets/bg01.jpg" itemprop="image">
+  <img src="/assets/%E8%8A%B1%E8%8A%B1bg02.jpg" itemprop="image">
   <div id="banner-dim"></div>
 </div>
  
@@ -195,9 +195,15 @@
       <h3 class="widget-title">最新文章</h3>
       <ul>
         
-          <a class="recent-link" href="/2023/09/03/001%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%9F%BA%E7%A1%80/" title="" >
+          <a class="recent-link" href="/2023/09/04/tess/" title="tess" >
             <div class="recent-link-text">
-              (no title)
+              tess
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/03/001%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%9F%BA%E7%A1%80/" title="移动端基础" >
+            <div class="recent-link-text">
+              移动端基础
             </div>
           </a>
         
@@ -219,12 +225,6 @@
             </div>
           </a>
         
-          <a class="recent-link" href="/2022/08/28/03git%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81%E5%88%B0github/" title="git提交代码到github" >
-            <div class="recent-link-text">
-              git提交代码到github
-            </div>
-          </a>
-        
       </ul>
     </div>
   </div>
@@ -234,7 +234,7 @@
   <div class="widget-wrap">
     <div class="widget">
       <h3 class="widget-title">标签</h3>
-      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/hexo-use/" rel="tag">hexo_use</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/typora/" rel="tag">typora</a></li></ul>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/hexo-use/" rel="tag">hexo_use</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/typora/" rel="tag">typora</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" rel="tag">移动端</a></li></ul>
     </div>
   </div>
 
@@ -247,6 +247,11 @@
     <div class="widget">
       <h3 class="widget-title">分类</h3>
       <div class="category-box">
+            <a class="category-link" href="/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/">
+                移动端
+                <div class="category-count">1</div>
+            </a>
+        
             <a class="category-link" href="/categories/markdown/">
                 markdown
                 <div class="category-count">1</div>
@@ -262,8 +267,8 @@
                 <div class="category-count">4</div>
             </a>
         <div class="children"><div class="category-box">
-            <a class="category-link" href="/categories/git/ssh%E7%BB%91%E5%AE%9A/">
-                ssh绑定
+            <a class="category-link" href="/categories/git/%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81/">
+                提交代码
                 <div class="category-count">1</div>
             </a>
         
@@ -272,8 +277,8 @@
                 <div class="category-count">1</div>
             </a>
         
-            <a class="category-link" href="/categories/git/%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81/">
-                提交代码
+            <a class="category-link" href="/categories/git/ssh%E7%BB%91%E5%AE%9A/">
+                ssh绑定
                 <div class="category-count">1</div>
             </a>
         
@@ -300,7 +305,7 @@
       
         <a class="archive-link" href="/archives/2023/09 ">
           九月 2023 
-          <div class="archive-count">2 </div>
+          <div class="archive-count">3 </div>
         </a>
       
         <a class="archive-link" href="/archives/2022/12 ">
@@ -370,9 +375,36 @@
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <h2 id="git"><a href="#git" class="headerlink" title="git"></a>git</h2><p>作为一个<strong>分布式的版本控制系统</strong>，在 Git 中并不存在主库这样的概念，每一份复制出的库都可以独立使用，任何两个库之间的不一致之处都可以进行合并。</p>
+          <div class="toc">
+
+<!-- toc -->
+
+<ul>
+<li><a href="#git">git</a></li>
+<li><a href="#chuang-jian-github-cang-ku-de-bu-zou-ji-fang-fa">创建 GitHub 仓库的步骤及方法</a></li>
+<li><a href="#github-zhu-yu-jie-shi">GitHub 术语解释</a></li>
+<li><a href="#git-de-an-zhuang-liu-cheng-ji-bu-zou">Git 的安装流程及步骤</a></li>
+<li><a href="#git-chu-ti-yan-ji-qi-chang-yong-ming-ling-jie-shao">Git 初体验及其常用命令介绍</a><ul>
+<li><a href="#di-1-ge-ming-ling-git-status"><strong>第 1 个命令：git status</strong></a></li>
+<li><a href="#di-2-ge-ming-ling-git-init"><strong>第 2 个命令：git init</strong></a></li>
+<li><a href="#di-3-ge-ming-ling-git-add"><strong>第 3 个命令：git add</strong></a></li>
+<li><a href="#di-4-ge-ming-ling-git-commit"><strong>第 4 个命令：git commit</strong></a></li>
+<li><a href="#di-5-ge-ming-ling-git-log"><strong>第 5 个命令：git log</strong></a></li>
+<li><a href="#di-6-ge-ming-ling-git-branch"><strong>第 6 个命令：git branch</strong></a></li>
+<li><a href="#di-7-ge-ming-ling-git-checkout"><strong>第 7 个命令：git checkout</strong></a></li>
+<li><a href="#di-8-ge-ming-ling-git-merge"><strong>第 8 个命令：git merge</strong></a></li>
+<li><a href="#di-9-ge-ming-ling-git-branch-d-git-branch-d"><strong>第 9 个命令：git branch -d &amp; git branch -D</strong></a></li>
+<li><a href="#di-10-ge-ming-ling-git-tag"><strong>第 10 个命令：git tag</strong></a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+
+</div>
+
+<h2><span id="git">git</span><a href="#git" class="header-anchor">#</a></h2><p>作为一个<strong>分布式的版本控制系统</strong>，在 Git 中并不存在主库这样的概念，每一份复制出的库都可以独立使用，任何两个库之间的不一致之处都可以进行合并。</p>
 <p>GitHub 可以托管各种 Git 库，并提供一个 web 界面，但与其它像 SourceForge 或 Google Code 这样的服务不同，GitHub 的独特卖点在于从另外一个项目进行分支的简易性。为一个项目贡献代码非常简单：首先点击项目站点的 Fork 的按钮，然后将代码检出并将修改加入到刚才分出的代码库中，最后通过内建的 pull request 机制向项目负责人申请代码合并。</p>
-<h2 id="创建-GitHub-仓库的步骤及方法"><a href="#创建-GitHub-仓库的步骤及方法" class="headerlink" title="创建 GitHub 仓库的步骤及方法"></a>创建 GitHub 仓库的步骤及方法</h2><img src="https://pic1.zhimg.com/80/v2-b31ffe846f833772c977bae322c9d368_720w.jpg" alt="img" />
+<h2><span id="chuang-jian-github-cang-ku-de-bu-zou-ji-fang-fa">创建 GitHub 仓库的步骤及方法</span><a href="#chuang-jian-github-cang-ku-de-bu-zou-ji-fang-fa" class="header-anchor">#</a></h2><img src="https://pic1.zhimg.com/80/v2-b31ffe846f833772c977bae322c9d368_720w.jpg" alt="img">
 
 <p>点击 <code>Repositories</code>，进入如下界面：</p>
 <p>点击上图标注所示的绿色 <code>New</code>按钮，进入下一步：</p>
@@ -383,7 +415,7 @@
 <li>Public，默认的仓库类型；</li>
 <li>Initialize this repository with a README，初始化仓库的信息文件，建议勾选。</li>
 </ol>
-<h2 id="GitHub-术语解释"><a href="#GitHub-术语解释" class="headerlink" title="GitHub 术语解释"></a>GitHub 术语解释</h2><p>GitHub 的常用术语，也可以说是基本概念：</p>
+<h2><span id="github-zhu-yu-jie-shi">GitHub 术语解释</span><a href="#github-zhu-yu-jie-shi" class="header-anchor">#</a></h2><p>GitHub 的常用术语，也可以说是基本概念：</p>
 <ul>
 <li><strong>Repository</strong>：简称 Repo，可以理解为“仓库”，我们的项目就存放在仓库之中。也就是说，如果我们想要建立项目，就得先建立仓库；有多个项目，就建立多个仓库。</li>
 <li><strong>Issues</strong>：可以理解为“问题”，举一个简单的例子，如果我们开源一个项目，如果别人看了我们的项目，并且发现了 bug，或者感觉那个地方有待改进，他就可以给我们提出 Issue，等我们把 Issues 解决之后，就可以把这些 Issues 关闭；反之，我们也可以给他人提出 Issue。</li>
@@ -394,7 +426,7 @@
 <li><strong>Watch：</strong>可以理解为“观察”，如果我们 Watch 了一个项目，之后，如果这个项目有了任何更新，我们都会在第一时候收到该项目的更新通知。</li>
 <li><strong>Gist：</strong>如果我们没有项目可以开源或者只是单纯的想分享一些代码片段的话，我们就可以选择 Gist。不过说心里话，如果不翻墙的话，Gist 并不好用。</li>
 </ul>
-<h2 id="Git-的安装流程及步骤"><a href="#Git-的安装流程及步骤" class="headerlink" title="Git 的安装流程及步骤"></a>Git 的安装流程及步骤</h2><p>GitHub 是基于版本控制系统 Git 之上的</p>
+<h2><span id="git-de-an-zhuang-liu-cheng-ji-bu-zou">Git 的安装流程及步骤</span><a href="#git-de-an-zhuang-liu-cheng-ji-bu-zou" class="header-anchor">#</a></h2><p>GitHub 是基于版本控制系统 Git 之上的</p>
 <p>如果我们想要进行代码托管，想要进行团队协作，这都少不了一个工具，那就是：<strong>Git</strong>。</p>
 <p>Git 的安装流程及步骤。</p>
 <p>首先，进入 Git 的官网：git - -fast-version-control</p>
@@ -435,25 +467,25 @@
 <p>如上图所示，我们打开了 Git Bash，输入 git 命令，将显示如下结果：</p>
 <p><img src="https://pic2.zhimg.com/80/v2-aa7c81c70554d4aba11e56baddb80fa9_720w.jpg" alt="img"></p>
 <p>如上图所示，Git 已经准备就绪</p>
-<h2 id="Git-初体验及其常用命令介绍"><a href="#Git-初体验及其常用命令介绍" class="headerlink" title="Git 初体验及其常用命令介绍"></a>Git 初体验及其常用命令介绍</h2><p>接下来介绍 Git 的命令操作，包含 init、add 等，在 Git 中，所有的命令都是以 <code>git</code>开头，例如，<code>git init</code>其作用就是初始一个 Git 仓库。</p>
+<h2><span id="git-chu-ti-yan-ji-qi-chang-yong-ming-ling-jie-shao">Git 初体验及其常用命令介绍</span><a href="#git-chu-ti-yan-ji-qi-chang-yong-ming-ling-jie-shao" class="header-anchor">#</a></h2><p>接下来介绍 Git 的命令操作，包含 init、add 等，在 Git 中，所有的命令都是以 <code>git</code>开头，例如，<code>git init</code>其作用就是初始一个 Git 仓库。</p>
 <p>为了方便演示，我们先在 <code>D</code>盘的 <code>CoderLife</code>目录下创建一个名为 <code>demo</code>的子目录，并在其中新建一个名为 <code>hit.txt</code>的文件，接下来我们的 Git 操作都是基于此目录和文件的。</p>
 <p><img src="https://pic2.zhimg.com/80/v2-30263746fb2b0bc3f37b560c2d3df05d_720w.jpg" alt="img"></p>
 <p>此外，在这里还要强调一点，那就是：在我们进行任何的 git 操作之前，我们都得先切换到 Git 的仓库目录。</p>
 <p>换言之，我们得到先进入到（我们定义的）Git 仓库的最顶层文件目录下，然后从此目录中进入 Git Bash，这样之后的操作才能顺利进行。</p>
 <p>如果是 Linux 操作系统，则可以直接 cd 到仓库目录。</p>
 <p>选择 demo 目录作为 Git 仓库，然后进入 demo 目录之中，点击鼠标右键，再选择 Git Bash Here，即可打开 Git Bash 的命令行窗口。</p>
-<img src="C:\Users\30557\AppData\Roaming\Typora\typora-user-images\image-20220827162403447.png" alt="image-20220827162403447" style="zoom:70%;" />
+<img src="C:\Users\30557\AppData\Roaming\Typora\typora-user-images\image-20220827162403447.png" alt="image-20220827162403447" style="zoom:70%;">
 
 <p><img src="https://pic1.zhimg.com/80/v2-ff4b6b4436077764af5ce83ee41f76dc_720w.jpg" alt="img"></p>
 <p>如上图所示，Git 会自动定位到进入的位置，如我们选择的 demo 目录，这也是为什么我们需要先进入到 Git 仓库的最顶层目录下，然后再打开 Git Bash 的原因。下面，我们结合 Git 的常用命令演示一下 Git 的相关操作。</p>
 <ul>
-<li><h3 id="第-1-个命令：git-status"><a href="#第-1-个命令：git-status" class="headerlink" title="第 1 个命令：git status"></a><strong>第 1 个命令：git status</strong></h3></li>
+<li><h3><span id="di-1-ge-ming-ling-git-status"><strong>第 1 个命令：git status</strong></span><a href="#di-1-ge-ming-ling-git-status" class="header-anchor">#</a></h3></li>
 </ul>
 <p>在命令行窗口的光标处，输入<strong>git status</strong>命令，查看仓库的状态：</p>
 <p><img src="https://pic1.zhimg.com/80/v2-41af87497f490ee0e93147921a3dfa4c_720w.jpg" alt="img"></p>
 <p>如上图所示，结果显示 demo 不是一个 Git 仓库，这是很正常的反应，因为我们还没有在计算机中声明 demo 为 Git 仓库，之前说 demo 是 Git 仓库只是我们口头上的说的，计算机当然不会认可。</p>
 <ul>
-<li><h3 id="第-2-个命令：git-init"><a href="#第-2-个命令：git-init" class="headerlink" title="第 2 个命令：git init"></a><strong>第 2 个命令：git init</strong></h3></li>
+<li><h3><span id="di-2-ge-ming-ling-git-init"><strong>第 2 个命令：git init</strong></span><a href="#di-2-ge-ming-ling-git-init" class="header-anchor">#</a></h3></li>
 </ul>
 <p>在命令行窗口的光标处，输入<strong>git init</strong>命令，初始化 Git 仓库：</p>
 <p><img src="https://pic3.zhimg.com/80/v2-2d758c4a4090bce9fb8d4d0447f88546_720w.jpg" alt="img"></p>
@@ -461,7 +493,7 @@
 <p><img src="https://pic1.zhimg.com/80/v2-0215d2df12ba1ceb300c4fe7f512b890_720w.jpg" alt="img"></p>
 <p>如上图所示，在我们初始化仓库之后，demo 目录已经成为一个 Git 仓库了，并且默认进入 Git 仓库的 master 分支，即主分支。在这里，我们需要注意的是 Untracked fies 提示，它表示 demo 仓库中有文件没有被追踪，并提示了具体没有被追踪的文件为 hit.txt，还提示了我们可以使用 git add 命令操作这个文件，简直不要太好。</p>
 <ul>
-<li><h3 id="第-3-个命令：git-add"><a href="#第-3-个命令：git-add" class="headerlink" title="第 3 个命令：git add"></a><strong>第 3 个命令：git add</strong></h3></li>
+<li><h3><span id="di-3-ge-ming-ling-git-add"><strong>第 3 个命令：git add</strong></span><a href="#di-3-ge-ming-ling-git-add" class="header-anchor">#</a></h3></li>
 </ul>
 <p>在命令行窗口的光标处，输入<strong>git add hit.txt</strong>命令，将 hit.txt 文件添加到 Git 仓库：</p>
 <p><img src="https://pic3.zhimg.com/80/v2-6932af42aa149c735cd429ae5d8b350a_720w.jpg" alt="img"></p>
@@ -469,7 +501,7 @@
 <p><img src="https://pic2.zhimg.com/80/v2-7658f1c05af7c4dfd277d85889026275_720w.jpg" alt="img"></p>
 <p>如上图所示，已经显示 Initial commit 初始化提交了，同时已经没有 Untracked files 提示了，这说明文件 hit.txt 已经被添加到 Git 仓库了，而在我们没有进行 git add 操作之前，文件 hit.txt 并不被 Git 仓库认可，因此才会出现提示初始化仓库为空的现象。在这里，需要声明一点，那就是：git add 命令并没有把文件提交到 Git 仓库，而是把文件添加到了「临时缓冲区」，这个命令有效防止了我们错误提交的可能性。</p>
 <ul>
-<li><h3 id="第-4-个命令：git-commit"><a href="#第-4-个命令：git-commit" class="headerlink" title="第 4 个命令：git commit"></a><strong>第 4 个命令：git commit</strong></h3></li>
+<li><h3><span id="di-4-ge-ming-ling-git-commit"><strong>第 4 个命令：git commit</strong></span><a href="#di-4-ge-ming-ling-git-commit" class="header-anchor">#</a></h3></li>
 </ul>
 <p>在命令行窗口的光标处，输入**git commit -m “text commit”**命令，将 hit.txt 文件提交到 Git 仓库：</p>
 <p><img src="https://pic2.zhimg.com/80/v2-7bae7e33584a12b55dbaf6268769afe1_720w.jpg" alt="img"></p>
@@ -477,7 +509,7 @@
 <p><img src="https://pic3.zhimg.com/80/v2-341e2394a657effef0c38f445bbe9bb6_720w.jpg" alt="img"></p>
 <p>如上图所示，结果显示 nothing to commit, working tree clean，这表示已经没有内容可以提交了，即全部内容已经提交完毕。</p>
 <ul>
-<li><h3 id="第-5-个命令：git-log"><a href="#第-5-个命令：git-log" class="headerlink" title="第 5 个命令：git log"></a><strong>第 5 个命令：git log</strong></h3></li>
+<li><h3><span id="di-5-ge-ming-ling-git-log"><strong>第 5 个命令：git log</strong></span><a href="#di-5-ge-ming-ling-git-log" class="header-anchor">#</a></h3></li>
 </ul>
 <p>在命令行窗口的光标处，输入<strong>git log</strong>命令，打印 Git 仓库提交日志：</p>
 <p><img src="https://pic3.zhimg.com/80/v2-365628061daef5e1b857f4337990981e_720w.jpg" alt="img"></p>
@@ -485,7 +517,7 @@
 <p>通过以上的操作，我们会发现一个现象，那就是：在每个 git 操作之后，我们基本都会输入 git status 命令，查看仓库状态。</p>
 <p>这也从侧面说明了 git status 命令使用的频率之高，也建议大家在操作 Git 仓库的时候多使用 git status 命令，这能帮助我们实时了解仓库的状态，显然非常有用。</p>
 <ul>
-<li><h3 id="第-6-个命令：git-branch"><a href="#第-6-个命令：git-branch" class="headerlink" title="第 6 个命令：git branch"></a><strong>第 6 个命令：git branch</strong></h3></li>
+<li><h3><span id="di-6-ge-ming-ling-git-branch"><strong>第 6 个命令：git branch</strong></span><a href="#di-6-ge-ming-ling-git-branch" class="header-anchor">#</a></h3></li>
 </ul>
 <p>在命令行窗口的光标处，输入<strong>git branch</strong>命令，查看 Git 仓库的分支情况：</p>
 <p><img src="https://pic4.zhimg.com/80/v2-229c8f677bea969708a39a4c853ba98f_720w.jpg" alt="img"></p>
@@ -493,7 +525,7 @@
 <p><img src="https://pic2.zhimg.com/80/v2-ce8506d523068e526e5b9164846f18f5_720w.jpg" alt="img"></p>
 <p>如上图所示，我们创建了一个名为 a 的分支，并且当前的位置仍然为主</p>
 <ul>
-<li><h3 id="第-7-个命令：git-checkout"><a href="#第-7-个命令：git-checkout" class="headerlink" title="第 7 个命令：git checkout"></a><strong>第 7 个命令：git checkout</strong></h3></li>
+<li><h3><span id="di-7-ge-ming-ling-git-checkout"><strong>第 7 个命令：git checkout</strong></span><a href="#di-7-ge-ming-ling-git-checkout" class="header-anchor">#</a></h3></li>
 </ul>
 <p>在命令行窗口的光标处，输入<strong>git checkout a</strong>命令，切换到 a 分支：</p>
 <p><img src="https://pic2.zhimg.com/80/v2-ce8506d523068e526e5b9164846f18f5_720w.jpg" alt="img"></p>
@@ -503,19 +535,19 @@
 <p><img src="https://pic2.zhimg.com/80/v2-bd7b115a3f411746658bf44eb78b00f9_720w.jpg" alt="img"></p>
 <p>如上图所示，我们在 a 分支下创建 b 分支（b 为 a 的分支），并直接切换到 b 分支。</p>
 <ul>
-<li><h3 id="第-8-个命令：git-merge"><a href="#第-8-个命令：git-merge" class="headerlink" title="第 8 个命令：git merge"></a><strong>第 8 个命令：git merge</strong></h3></li>
+<li><h3><span id="di-8-ge-ming-ling-git-merge"><strong>第 8 个命令：git merge</strong></span><a href="#di-8-ge-ming-ling-git-merge" class="header-anchor">#</a></h3></li>
 </ul>
 <p><strong>切换到 master 分支</strong>，然后输入<strong>git merge a</strong>命令，将 a 分支合并到 master 分支：</p>
 <p><img src="https://pic2.zhimg.com/80/v2-807514785bdbb725053f4e30458bf5f5_720w.jpg" alt="img"></p>
 <p>如上图所示，我们已经将 a 分支合并到主分支啦！此外，在这里需要注意一点，那就是：在合并分支的时候，要考虑到两个分支是否有冲突，如果有冲突，则不能直接合并，需要先解决冲突；反之，则可以直接合并。</p>
 <ul>
-<li><h3 id="第-9-个命令：git-branch-d-git-branch-D"><a href="#第-9-个命令：git-branch-d-git-branch-D" class="headerlink" title="第 9 个命令：git branch -d &amp; git branch -D"></a><strong>第 9 个命令：git branch -d &amp; git branch -D</strong></h3></li>
+<li><h3><span id="di-9-ge-ming-ling-git-branch-d-amp-git-branch-d"><strong>第 9 个命令：git branch -d &amp; git branch -D</strong></span><a href="#di-9-ge-ming-ling-git-branch-d-amp-git-branch-d" class="header-anchor">#</a></h3></li>
 </ul>
 <p>在命令行窗口的光标处，输入<strong>git branch -d a</strong>命令，<strong>删除</strong>a 分支：</p>
 <p><img src="https://pic4.zhimg.com/80/v2-e22b97be855bf2c358db3c158d9cdc3f_720w.jpg" alt="img"></p>
 <p>如上图所示，我们已经将分支 a 删除啦！不过有的时候，通过 git branch -d 命令可以出现删除不了现象，例如分支 a 的代码没有合并到主分支等，这时如果我们一定要删除该分支，那么我们可以通过命令<strong>git branch -D 进行强制删除</strong>。</p>
 <ul>
-<li><h3 id="第-10-个命令：git-tag"><a href="#第-10-个命令：git-tag" class="headerlink" title="第 10 个命令：git tag"></a><strong>第 10 个命令：git tag</strong></h3></li>
+<li><h3><span id="di-10-ge-ming-ling-git-tag"><strong>第 10 个命令：git tag</strong></span><a href="#di-10-ge-ming-ling-git-tag" class="header-anchor">#</a></h3></li>
 </ul>
 <p>在命令行窗口的光标处，输入<strong>git tag v1.0</strong>命令，为当前分支添加标签：</p>
 <p><img src="https://pic1.zhimg.com/80/v2-341de31e1046fe7dbd0f7d5d823a198c_720w.jpg" alt="img"></p>
@@ -566,19 +598,6 @@
   
 </article>
 
-
-  
-  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-  <div id="comment-card" class="comment-card">
-    <div class="main-title-bar">
-      <div class="main-title-dot"></div>
-      <div class="main-title">留言 </div>
-    </div>
-    <div id="vcomments"></div>
-  </div>
-  <script>
-      new Valine({"enable":true,"appId":"tXLOROkBRtFLzEOBMYLDnI5t-gzGzoHsz","appKey":"PP2E5U00JlVh33kGIGGZVhHF","placeholder":"富强民主文明和谐自由平等公正法治爱国敬业诚信友善","pageSize":10,"highlight":true,"serverURLs":null,"el":"#vcomments"});
-  </script>
  
     </div>
     <div id="footer-wrapper">
