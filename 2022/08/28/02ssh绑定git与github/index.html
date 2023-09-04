@@ -14,7 +14,7 @@
   
 
   
-  <title>02ssh绑定git与github | cfE_blog</title>
+  <title>ssh绑定git与github | cfE_blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
@@ -23,8 +23,8 @@
 
   <meta name="description" content="利用 SSH 完成 Git 与 GitHub 的绑定无论是 GitHub，还是 Git，我们都是单独或者说是独立操作的，并没有将两者绑定啊！也就是说，我们现在只能通过 GitHub 下载代码，并不能通过 Git 向 GitHub 提交代码。 因此需要完成 Git 和 GitHub 的绑定，体验通过 Git 向 GitHub 提交代码的能力。不过在这之前，我们需要先了解 SSh（安全外壳协议），因为">
 <meta property="og:type" content="article">
-<meta property="og:title" content="02ssh绑定git与github">
-<meta property="og:url" content="http://example.com/2023/09/02/02ssh%E7%BB%91%E5%AE%9Agit%E4%B8%8Egithub/index.html">
+<meta property="og:title" content="ssh绑定git与github">
+<meta property="og:url" content="http://example.com/2022/08/28/02ssh%E7%BB%91%E5%AE%9Agit%E4%B8%8Egithub/index.html">
 <meta property="og:site_name" content="cfE_blog">
 <meta property="og:description" content="利用 SSH 完成 Git 与 GitHub 的绑定无论是 GitHub，还是 Git，我们都是单独或者说是独立操作的，并没有将两者绑定啊！也就是说，我们现在只能通过 GitHub 下载代码，并不能通过 Git 向 GitHub 提交代码。 因此需要完成 Git 和 GitHub 的绑定，体验通过 Git 向 GitHub 提交代码的能力。不过在这之前，我们需要先了解 SSh（安全外壳协议），因为">
 <meta property="og:locale" content="zh_CN">
@@ -34,11 +34,11 @@
 <meta property="og:image" content="https://pic3.zhimg.com/80/v2-ea4f291447727e84434b87254a497c12_720w.jpg">
 <meta property="og:image" content="https://pic1.zhimg.com/80/v2-4ef2ed875603194788cf0b99fa975220_720w.jpg">
 <meta property="og:image" content="https://pic4.zhimg.com/80/v2-aa1938b4970cd5ccddd82406f58aee83_720w.png">
-<meta property="article:published_time" content="2023-09-02T12:58:08.866Z">
-<meta property="article:modified_time" content="2023-09-02T12:58:08.867Z">
+<meta property="article:published_time" content="2022-08-28T07:30:14.000Z">
+<meta property="article:modified_time" content="2023-09-04T03:10:35.632Z">
 <meta property="article:author" content="changfeng_E">
-<meta property="article:tag" content="markdown">
-<meta property="article:tag" content="typora">
+<meta property="article:tag" content="git">
+<meta property="article:tag" content="github">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://pic4.zhimg.com/80/v2-23abbd2b8bfbc1ae2d2291d3aa6b274f_720w.jpg">
   
@@ -157,6 +157,57 @@
   <div class="sticky">
     
       
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">最新文章</h3>
+      <ul>
+        
+          <a class="recent-link" href="/2023/09/03/001%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%9F%BA%E7%A1%80/" title="" >
+            <div class="recent-link-text">
+              (no title)
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/01/hello-world/" title="Hello World" >
+            <div class="recent-link-text">
+              Hello World
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2022/12/04/00Markdown%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" title="Markdown 快速入门（typora）" >
+            <div class="recent-link-text">
+              Markdown 快速入门（typora）
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2022/09/02/04git%E5%88%A0%E9%99%A4%E5%88%86%E6%94%AFbranch/" title="git删除分支branch" >
+            <div class="recent-link-text">
+              git删除分支branch
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2022/08/28/03git%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81%E5%88%B0github/" title="git提交代码到github" >
+            <div class="recent-link-text">
+              git提交代码到github
+            </div>
+          </a>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">标签</h3>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/hexo-use/" rel="tag">hexo_use</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/typora/" rel="tag">typora</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
 
 
   <div class="widget-wrap">
@@ -173,11 +224,31 @@
                 <div class="category-count">1</div>
             </a>
         </div></div>
-            <a class="category-link" href="/categories/markdown%E4%BD%BF%E7%94%A8/">
-                markdown使用
+            <a class="category-link" href="/categories/git/">
+                git
                 <div class="category-count">4</div>
             </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/git/ssh%E7%BB%91%E5%AE%9A/">
+                ssh绑定
+                <div class="category-count">1</div>
+            </a>
         
+            <a class="category-link" href="/categories/git/git%E5%AE%89%E8%A3%85%E5%8F%8A%E9%83%A8%E5%88%86%E5%91%BD%E4%BB%A4/">
+                git安装及部分命令
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81/">
+                提交代码
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/branch/">
+                branch
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
             <a class="category-link" href="/categories/hexo%E5%88%9D%E4%BD%93%E9%AA%8C/">
                 hexo初体验
                 <div class="category-count">1</div>
@@ -191,68 +262,32 @@
       
   <div class="widget-wrap">
     <div class="widget">
-      <h3 class="widget-title">标签</h3>
-      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/hexo-use/" rel="tag">hexo_use</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/typora/" rel="tag">typora</a></li></ul>
-    </div>
-  </div>
-
-
-    
-      
-  <div class="widget-wrap">
-    <div class="widget">
       <h3 class="widget-title">归档</h3>
       
       
         <a class="archive-link" href="/archives/2023/09 ">
           九月 2023 
-          <div class="archive-count">7 </div>
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/12 ">
+          十二月 2022 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/09 ">
+          九月 2022 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/08 ">
+          八月 2022 
+          <div class="archive-count">3 </div>
         </a>
       
     </div>
   </div>
 
-
-    
-      
-  <div class="widget-wrap">
-    <div class="widget">
-      <h3 class="widget-title">最新文章</h3>
-      <ul>
-        
-          <a class="recent-link" href="/2023/09/02/%E5%A5%BD%E9%9A%BE%E7%94%A8/" title="Using" >
-            <div class="recent-link-text">
-              Using
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2023/09/02/04git%E5%88%A0%E9%99%A4%E5%88%86%E6%94%AFbranch/" title="04git删除分支branch" >
-            <div class="recent-link-text">
-              04git删除分支branch
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2023/09/02/03git%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81%E5%88%B0github/" title="03git提交代码到github" >
-            <div class="recent-link-text">
-              03git提交代码到github
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2023/09/02/02ssh%E7%BB%91%E5%AE%9Agit%E4%B8%8Egithub/" title="02ssh绑定git与github" >
-            <div class="recent-link-text">
-              02ssh绑定git与github
-            </div>
-          </a>
-        
-          <a class="recent-link" href="/2023/09/02/01git%E5%91%BD%E4%BB%A4/" title="01git命令" >
-            <div class="recent-link-text">
-              01git命令
-            </div>
-          </a>
-        
-      </ul>
-    </div>
-  </div>
 
     
   </div>
@@ -274,7 +309,7 @@
   
     
       <h1 class="p-name article-title" itemprop="headline name">
-        02ssh绑定git与github
+        ssh绑定git与github
       </h1>
     
   
@@ -282,12 +317,12 @@
 
         <div class='meta-info-bar'>
           <div class="meta-info">
-  <time class="dt-published" datetime="2023-09-02T12:58:08.866Z" itemprop="datePublished">2023-09-02</time>
+  <time class="dt-published" datetime="2022-08-28T07:30:14.000Z" itemprop="datePublished">2022-08-28</time>
 </div>
           <div class="need-seperator meta-info">
             <div class="meta-cate-flex">
   
-  <a class="meta-cate-link" href="/categories/markdown%E4%BD%BF%E7%94%A8/">markdown使用</a>
+  <a class="meta-cate-link" href="/categories/git/">git</a>><a class="meta-cate-link" href="/categories/git/ssh%E7%BB%91%E5%AE%9A/">ssh绑定</a>
    
 </div>
   
@@ -297,7 +332,7 @@
           </div>
         </div>
         
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/typora/" rel="tag">typora</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/" rel="tag">github</a></li></ul>
 
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
@@ -327,7 +362,7 @@
 <p><img src="https://pic1.zhimg.com/80/v2-4ef2ed875603194788cf0b99fa975220_720w.jpg" alt="img"></p>
 <p>如上图所示，我们只需要将公钥 id_rsa.pub 的内容粘贴到 Key 处的位置（Titles 的内容不填写也没事），然后点击 Add SSH key 即可。</p>
 <p><strong>第 3 步：验证绑定是否成功</strong></p>
-<p>在我们添加完 SSH key 之后，也没有明确的通知告诉我们绑定成功啊！不过我们可以通过在 Git Bash 中输入<strong>ssh -T <a href="mailto:&#103;&#105;&#116;&#64;&#103;&#x69;&#116;&#x68;&#x75;&#98;&#46;&#x63;&#x6f;&#x6d;">&#103;&#105;&#116;&#64;&#103;&#x69;&#116;&#x68;&#x75;&#98;&#46;&#x63;&#x6f;&#x6d;</a></strong>进行测试：</p>
+<p>在我们添加完 SSH key 之后，也没有明确的通知告诉我们绑定成功啊！不过我们可以通过在 Git Bash 中输入<strong>ssh -T <a href="mailto:&#x67;&#x69;&#116;&#x40;&#103;&#x69;&#116;&#x68;&#x75;&#98;&#46;&#x63;&#111;&#x6d;">&#x67;&#x69;&#116;&#x40;&#103;&#x69;&#116;&#x68;&#x75;&#98;&#46;&#x63;&#111;&#x6d;</a></strong>进行测试：</p>
 <p><img src="https://pic4.zhimg.com/80/v2-aa1938b4970cd5ccddd82406f58aee83_720w.png" alt="img"></p>
 <p>如上图所示，此结果即为 Git 与 GitHub 绑定成功的标志。</p>
 
@@ -344,25 +379,25 @@
 <nav id="article-nav">
   <a class="article-nav-btn left "
     
-      href="/2023/09/02/03git%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81%E5%88%B0github/"
-      title="03git提交代码到github"
+      href="/2022/08/28/03git%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81%E5%88%B0github/"
+      title="git提交代码到github"
      >
     <i class="fa-solid fa-angle-left"></i>
     <p class="title-text">
       
-        03git提交代码到github
+        git提交代码到github
         
     </p>
   </a>
   <a class="article-nav-btn right "
     
-      href="/2023/09/02/01git%E5%91%BD%E4%BB%A4/"
-      title="01git命令"
+      href="/2022/08/27/01git%E5%91%BD%E4%BB%A4/"
+      title="git命令"
      >
 
     <p class="title-text">
       
-        01git命令
+        git命令
         
     </p>
     <i class="fa-solid fa-angle-right"></i>
