@@ -1,0 +1,924 @@
+/*
+ * @Author: 3517134128@qq.com 
+ * @Email: 3517134128@qq.com
+ * @Date: 2023-03-09 22:27:20 
+ * @Last Modified by: 3517134128@qq.com
+ * @Last Modified time: 2023-08-06 21:41:14
+ * @Description: my normalize less版
+   版本号：1.2.0
+   较上一版本（原始版）：修改部分常用样式如body背景色，边框块背景色，iconfont字体图标
+ */
+:root {
+    /* 自定义属性，大小写敏感 */
+    --dark: #424242;
+    --fontgrey: #555666;
+    --bggrey: rgba(85, 85, 85, 0.8);
+    --lightgrey: #fafafa;
+    --pink: rgba(255, 122, 122, 0.8);
+    --red: #ff3555;
+    --yellow: #ffd630;
+    --purple: #9d31cc;
+    --lightgreen: #84ab92;
+    --green: #128f12;
+    --shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.3);
+    /* less写法：@dark:#424242; */
+}
+
+@dark: #424242;
+@fontgrey: #555;
+@bggrey: rgba(85, 85, 85, 0.8);
+@lightgrey: #fafafa;
+@pink: rgba(255, 122, 122, 0.8);
+@red: #ff3555;
+@orange: #ff502c;
+@yellow: #ffd630;
+@purple: #9d31cc;
+@lightgreen: #84ab92;
+@green: #128f12;
+@brightgreen: #2ed573;
+@shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.3);
+
+* {
+    font-family: 'opposans-l';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+
+body {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1000px;
+    min-width: 500px;
+    color: unset;
+    background-color: #eaeaea;
+}
+
+/* 自定义颜色 */
+.my-color.flex-row {
+    justify-content: start;
+
+    li {
+        display: block;
+        padding: 0 20px;
+        margin: 0;
+        height: 50px;
+        line-height: 50px;
+        list-style: none;
+        font-size: 12px;
+        color: #fff;
+        border: 1px solid #f0f0f0;
+        border-top: none;
+        border-left: none;
+    }
+}
+
+/* 
+icomoon字体图标引入 
+注意路径
+*/
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?rgzkco');
+    src: url('../fonts/icomoon.eot?rgzkco#iefix') format('embedded-opentype'), url('../fonts/icomoon.ttf?rgzkco') format('truetype'), url('../fonts/icomoon.woff?rgzkco') format('woff'), url('../fonts/icomoon.svg?rgzkco#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+/* 
+iconfont
+*/
+@font-face {
+    font-family: 'iconfont';
+    src: url('../iconfont/iconfont.woff2?t=1678453781276') format('woff2'),
+        url('../iconfont/iconfont.woff?t=1678453781276') format('woff'),
+        url('../iconfont/iconfont.ttf?t=1678453781276') format('truetype');
+}
+
+/* oppo sans 
+2023年4月3日
+*/
+@font-face {
+    font-family: 'opposans-b';
+    src: url('../font/font-opposans/OPlusSans3-Bold.ttf')format('truetype');
+}
+
+@font-face {
+    font-family: 'opposans-el';
+    src: url('../font/font-opposans/OPlusSans3-ExtraLight.ttf')format('truetype');
+}
+
+@font-face {
+    font-family: 'opposans-l';
+    src: url('../font/font-opposans/OPlusSans3-Light.ttf')format('truetype');
+}
+
+@font-face {
+    font-family: 'opposans-m';
+    src: url('../font/font-opposans/OPlusSans3-Medium.ttf')format('truetype');
+}
+
+@font-face {
+    font-family: 'opposans-r';
+    src: url('../font/font-opposans/OPlusSans3-Regular.ttf')format('truetype');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 10px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    position: relative;
+
+    &:hover::before {
+        content: '#';
+        position: absolute;
+        left: -10px;
+        color: @red;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: green;
+    font-size: .9em;
+    font-weight: bold;
+}
+
+.otherpage,
+.nextpage {
+    display: block;
+    position: relative;
+    margin-top: 10px;
+    text-align: right;
+    padding-right: 10px;
+    width: 100px;
+    height: 50px;
+    line-height: 40px;
+    color: @fontgrey;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+    transition: all .3s;
+
+    &::before {
+        content: '\e60a';
+        font-family: 'iconfont';
+        margin-right: 10px;
+        opacity: 0;
+        font-size: 12px;
+        transition: all .3s;
+    }
+
+    &:hover {
+        color: @green;
+        border: 1px solid @green;
+    }
+
+    &:hover::before {
+        opacity: 1;
+    }
+
+    &::after {
+        content: 'other page';
+        position: absolute;
+        font-size: 12px;
+        color: #ccc;
+        bottom: 10px;
+        right: 10px;
+        line-height: 0;
+        font-weight: lighter;
+    }
+}
+
+&.nextpage::after {
+    content: 'next page';
+}
+
+
+p {
+    padding: 5px 10px;
+    line-height: 1.5em;
+}
+
+strong {
+    color: @red;
+}
+
+/* 代码块样式开始 2022-12-10 */
+
+/* 原自定义样式 */
+
+/* 新样式 */
+
+.code_block {
+    position: relative;
+    background: #2d2d2d;
+    color: rgb(201, 209, 217);
+    font-family: Consolas;
+    /* 为了解决span盒子间隙问题，将span的父级字体设置为0，span盒子字体再重新指定 */
+    font-size: 0;
+    padding: 15px;
+    /* padding-left: 0.8em; */
+    padding-left: 70px;
+    margin: 10px;
+    border-radius: 5px;
+    /* 创建计数器 */
+    counter-reset: line;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 0;
+
+    /* 2023年3月10日
+     * 新增：代码块语言角标
+    */
+    [class^="lan"] {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0 10px;
+        height: 20px;
+        font-size: 12px;
+        line-height: 20px;
+        text-align: center;
+        color: #fff;
+        background-color: rgba(255, 255, 255, 0.6);
+
+        &::before {
+            font-family: 'iconfont';
+            position: absolute;
+            right: 100%;
+            padding-left: 10px;
+            font-size: 16px;
+            border-radius: 0 0 0 5px;
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+    }
+
+    .lan-html {
+        color: var(--green);
+
+        &::before {
+            content: '\e61c';
+        }
+    }
+
+    .lan-css {
+        color: var(--purple);
+
+        &::before {
+            content: '\e700';
+        }
+    }
+
+    .lan-js {
+        color: var(--yellow);
+
+        &::before {
+            content: '\e676';
+        }
+    }
+
+    span {
+        /* 在 .code_block 的 css 内，第十行 counter-reset: line;已经定义了行数标记名称为 line */
+        /* 设置为块级元素，实现自动换行效果 */
+        display: block;
+        line-height: 25px;
+        /* 使存放代码的 span 具有预格式文本效果 */
+        white-space: pre-wrap;
+        /* 调整字母间距 */
+        letter-spacing: 1px;
+        font-size: 14px;
+
+        &::before {
+            /* 实现行号的自增长和输出,递增计数器 */
+            counter-increment: line;
+            content: counter(line) "";
+            /* 将 before 和 span 同行 */
+            display: inline-block;
+            /* 将before绝对定位 */
+            position: absolute;
+            left: 0;
+            width: 40px;
+            text-align: right;
+            border-right: 2px solid #999;
+            padding-right: 10px;
+            color: #999;
+        }
+    }
+}
+
+/* 代码块样式结束 */
+
+/* prismjs代码高亮 
+2023年7月25日22点50分
+*/
+/* 行号高度调整 */
+.line-numbers-rows>span {
+    display: block;
+    counter-increment: linenumber;
+    line-height: 1.6rem;
+    /* add this */
+}
+
+.language-html {
+    .line-numbers-rows>span {
+        line-height: 1.5rem;
+    }
+}
+
+pre[class*='language-'] {
+    margin: 10px !important;
+    border-radius: 5px;
+}
+
+/* toolbar语言块样式 */
+div.code-toolbar {
+    &>.toolbar {
+        right: .8em !important;
+
+        &>.toolbar-item>span {
+            display: inline-block;
+            height: 30px;
+            line-height: 30px;
+            background-color: #fff;
+
+        }
+    }
+
+    &>.toolbar>.toolbar-item:hover {
+        color: #fff !important;
+    }
+}
+
+/* prismjs代码高亮 */
+
+img {
+    /* border: 0;是为了照顾低版本浏览器，若图片外面包含了链接会有边框的问题 */
+    border: 0;
+    /* 取消图片底侧有空白缝隙的问题 */
+    vertical-align: middle;
+
+    &[src*="cut"] {
+        display: block;
+        width: 60%;
+        margin: 10px;
+    }
+}
+
+li {
+    margin-left: 20px;
+    padding: 10px;
+    /* 2023年3月24日 
+    修改li编号位置，以便与li内容背景色相同
+    */
+    list-style-position: inside;
+    font-size: 16px;
+}
+
+ul {
+    padding-left: 10px;
+
+    li {
+        list-style: disc inside;
+    }
+}
+
+ol {
+    padding-left: 10px;
+}
+
+/* table表格样式 */
+
+table {
+    margin-left: 10px;
+    border: 1px solid #000;
+    border-collapse: collapse;
+    caption-side: top !important;
+
+    caption {
+        margin: 10px 0;
+        padding: 10px 0;
+        color: var(--dark);
+        text-align: left;
+        font-size: 1em;
+        font-weight: bold;
+        border-bottom: 2px solid var(--dark);
+
+        &::before {
+            font-family: "icomoon";
+            content: "\e921";
+            margin-right: 10px;
+            color: var(--dark);
+            font-size: 20px;
+        }
+    }
+
+    th {
+        color: #f0f0f0;
+        background-color: var(--dark);
+    }
+
+    th,
+    td {
+        border: 1px solid #000;
+        padding: 5px;
+        transition: all .1s;
+    }
+
+    td:hover {
+        color: #fff;
+        background-color: var(--dark);
+    }
+
+    tbody {
+        tr {
+            &:nth-child(even) {
+                background-color: #ccc;
+            }
+        }
+    }
+}
+
+iframe {
+    width: 95%;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgba(0, 128, 0, 0.1);
+    border-radius: 10px;
+}
+
+input {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 5px 10px;
+    height: 30px;
+    line-height: 30px;
+    outline: none;
+    border-radius: 5px;
+    vertical-align: middle;
+}
+
+input[type='button'],
+button {
+    /* 按钮样式 
+    2023年4月3日
+    */
+    position: relative;
+    margin: 5px;
+    padding: 0 10px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    color: @dark;
+    border: none;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    background-color: @lightgrey;
+    transition: all .1s;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        color: lighten(@fontgrey, 10%);
+        background-color: darken(@lightgrey, 10%);
+    }
+
+    &:active {
+        box-shadow: none;
+        transform: translateY(1px);
+    }
+    &:disabled{
+        box-shadow: none;
+        border: 1px solid #ccc;
+        color: #ccc;
+        &:active{
+            transform: translateY(0);
+        }
+        &.soft{
+            background: #fff;
+        }
+    }
+}
+
+/* soft ui 拟态风 */
+.soft {
+    box-shadow: -1px -1px 3px #fff, 1px 1px 3px @bggrey;
+    background: linear-gradient(135deg, #e5e5e5, #ffffff);
+}
+
+/* after伪类清除浮动第一种方法 */
+
+.clearfix::after {
+    content: "";
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+}
+
+
+/* 为了照顾ie6浏览器 */
+
+.clearfix {
+    zoom: 1;
+}
+
+.boxShadow {
+    box-shadow: var(--shadow);
+}
+
+.div1,
+.div2,
+.div3,
+.div4 {
+    padding: 20px;
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.div1 {
+    box-shadow: var(--shadow);
+}
+
+.div2 {
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.div3 {
+    background-color: var(--lightgrey);
+}
+
+.div4 {
+    box-shadow: var(--shadow);
+}
+
+@media screen and (min-width:640px) {
+    .div4 {
+        display: inline-block;
+        width: calc((100% - 50px)/2);
+        vertical-align: top;
+    }
+
+    .div4.bigcard {
+        display: block;
+        width: unset;
+    }
+}
+
+
+/* 要点 */
+
+.tips {
+    display: inline-block;
+    font-size: 1.1em;
+    color: green;
+}
+
+
+/* flex布局row方向 */
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+/* flex布局column方向 */
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* blockquote引用块样式 */
+
+blockquote {
+    position: relative;
+    background: rgba(235, 255, 244, 0.675);
+    padding: 10px 40px;
+    margin: 1em;
+    border-style: solid;
+    border-width: 0 0 0 7px;
+    border-color: #009b74;
+    border-radius: 4px;
+    line-height: 200%;
+    /* 若--fontgrey 没有被设置，将使用回退值blue。 */
+    color: var(--fontgrey, blue);
+    transition: all .5s;
+
+    &:hover {
+        box-shadow: var(--shadow);
+    }
+
+    &::before {
+        content: "\e91e";
+        font-family: "icomoon";
+        position: absolute;
+        left: 10px;
+        font-size: 1.5em;
+    }
+
+    ul,
+    ol {
+        margin-bottom: 5px;
+        padding: 10px;
+        border: 1px solid #afafaf;
+        border-radius: 5px;
+
+        li {
+            padding: 5px;
+            line-height: 150%;
+            font-size: .9em;
+        }
+    }
+
+    &.steps {
+        /* 步骤、长文段块 */
+        background: #e5e5e5ac;
+        border-color: #afafaf;
+        border-radius: 0;
+
+        &::before {
+            content: '\e919';
+        }
+    }
+}
+
+del {
+    margin: 0 10px;
+    color: #aaa;
+}
+
+code {
+    padding: 0.3em 0.4em;
+    font-size: .9em;
+    font-weight: bold;
+    background-color: #ffe7e7;
+    color: #ff502c;
+    border-radius: 5px;
+}
+
+.sidebar {
+    /*  侧边导航栏 
+    *   2023年2月25日
+    */
+    position: fixed;
+    left: -300px;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    z-index: 9999;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: var(--shadow);
+
+    .catalog {
+        /* 目录按钮 */
+        position: absolute;
+        z-index: -1;
+        top: 10px;
+        right: -80px;
+        cursor: pointer;
+        width: 80px;
+        height: 30px;
+        background-color: rgba(255, 255, 255, 0.8);
+        box-shadow: var(--shadow);
+        border-radius: 0 5px 5px 0;
+
+        &::before {
+            font-family: "icomoon";
+            content: '\e91c';
+            margin: 0 5px 0 10px;
+            vertical-align: middle;
+            line-height: 30px;
+        }
+
+        &::after {
+            content: '目录';
+        }
+    }
+
+    .close::before {
+        /* 关闭按钮 */
+        font-family: "icomoon";
+        content: '\e925';
+        cursor: pointer;
+        font-size: 18px;
+        font-style: normal;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+    h2 {
+        padding: 30px 20px;
+        background-color: #fff;
+        border-bottom: 1px solid #ccc;
+    }
+
+    ul {
+        overflow: scroll;
+        padding: 10px;
+        margin: 10px 0 0 30px;
+        height: calc(100% - 103px);
+        border-radius: 10px 0 0 10px;
+        background-color: rgba(255, 255, 255, 0.3);
+        box-shadow: var(--shadow);
+
+        li {
+            padding: 5px;
+            margin: 0;
+            background-color: transparent;
+            list-style: none;
+
+            &:nth-of-type(4n)::after {
+                display: block;
+                content: '';
+                padding-top: 10px;
+                width: 100%;
+                height: 1px;
+                border-bottom: 1px solid var(--dark);
+            }
+
+            &:hover {
+                a {
+                    margin-left: 5px;
+                    box-shadow: var(--shadow);
+                }
+            }
+
+            a {
+                display: block;
+                padding: 10px;
+                margin: 0 0 0 10px;
+                font-size: 13px;
+                text-decoration: none;
+                color: #fff;
+                background-color: var(--bggrey);
+                border-radius: 5px;
+                transition: all .1s;
+
+                &.active {
+                    margin-left: 5px;
+                    background-color: var(--red);
+                }
+            }
+        }
+    }
+}
+
+.mask {
+    /* 侧边导航遮罩层 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    /* mask遮罩层比侧边导航低一层 */
+    z-index: 9998;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+@media screen and(max-width:767px) {
+
+    /* 控制sidebar宽度 */
+    .sidebar {
+        left: -200px;
+        width: 200px;
+
+        ul li a {
+            font-size: 12px;
+        }
+    }
+}
+
+.note {
+    /*  注意事项 
+    *   2023年2月27日
+    */
+    margin: 10px;
+    padding: 15px 10px;
+    border-radius: 5px;
+    color: var(--dark);
+    background-color: var(--pink);
+    box-shadow: var(--shadow);
+
+    &::before {
+        font-family: "icomoon";
+        content: '\e936';
+        margin: 10px;
+        font-size: 20px;
+        color: var(--fontgrey);
+        vertical-align: middle;
+    }
+}
+
+/* backtop返回顶部模块
+    2023年3月14日
+*/
+.backtop,
+.godown {
+    position: fixed;
+    z-index: 999;
+    right: 20px;
+    padding: 5px;
+    line-height: 25px;
+    background-color: #fff;
+    box-shadow: var(--shadow);
+    border: 1px solid transparent;
+    border-radius: 5px;
+    transition: all .3s;
+
+    &::after {
+        content: '\e6c6';
+        font-family: 'iconfont';
+        font-size: 30px;
+        color: var(--fontgrey);
+    }
+
+    &:hover {
+        border: 1px solid #ccc;
+    }
+
+    .backcon,
+    .downcon {
+        position: absolute;
+        opacity: 0;
+        bottom: 0;
+        width: calc(100% - 10px);
+        font-size: 10px;
+        text-align: center;
+        color: var(--fontgrey);
+        transition: all .3s;
+    }
+
+    .backcon::before {
+        content: '顶部';
+    }
+}
+
+.backtop {
+    bottom: 150px;
+}
+
+/* 返回顶部模块结束 */
+/* 直达底部模块 */
+.godown {
+    position: fixed;
+    top: calc(100% - 140px);
+
+    &::after {
+        content: '\e620';
+    }
+
+    .downcon::before {
+        content: '底部';
+    }
+}
+
+/* 直达底部模块结束 */
+
+/* 测试盒子 */
+.testbox {
+    /* display: inline-block;使用行内盒会发现在盒子之间会有一定的外边距。这是因为行内块级元素对于空格、回车等字符也会解析成可见的空白字符，因此在排版时会产生一定的间隔。 */
+    float: left;
+    margin-right: 10px;
+    padding: 5px;
+    width: 100px;
+    height: 100px;
+    font-size: 0.8em;
+    background-color: var(--pink);
+}
+
+/* 测试盒子结束 */

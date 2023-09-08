@@ -1,0 +1,46 @@
+.bg {
+    position: absolute;
+    /* background-color: #ccc; */
+    width: 1600px;
+    height: 700px;
+    background: url(../img/crowds.png)repeat;
+    background-size: 100% 100%;
+    animation: bgmove 15s linear infinite forwards;
+}
+
+.walk {
+    position: absolute;
+    bottom: 50px;
+    width: 64px;
+    height: 64px;
+    background: url(../img/walking.png)no-repeat -16px -2px;
+    /* 元素可以添加多个动画，用逗号分隔 */
+    animation: walk 1s steps(8) infinite, move 4s linear forwards;
+}
+
+@keyframes walk {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -512px 0;
+    }
+}
+
+@keyframes move {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: 50%;
+        /* margin-left: -32px; */
+        transform: translate(-50%);
+    }
+}
+
+@keyframes bgmove {
+    0% {}
+    100% {
+        background-position: -1600px 0;
+    }
+}

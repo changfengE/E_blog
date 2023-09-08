@@ -1,0 +1,111 @@
+.container {
+  padding: 20px;
+  margin: 0 auto 0;
+  position: relative;
+}
+.container .stu-title {
+  font-weight: 900;
+  font-size: 36px;
+}
+.container .bg {
+  display: block;
+  width: 100%;
+}
+.item-wrap {
+  padding: 20px;
+  margin-top: 10px;
+  border-radius: 10px;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.3);
+}
+.item-wrap .hot-area {
+  display: flex;
+  margin-bottom: 20px;
+}
+.item-wrap .hot-area .hot {
+  color: #c32f32;
+  font-weight: 600;
+  margin-right: 20px;
+}
+.item-wrap .nav {
+  display: flex;
+}
+.item-wrap .nav li {
+  list-style: none;
+  margin: 0;
+  padding: 0 10px;
+}
+.item-wrap .nav li a {
+  text-decoration: none;
+  color: black;
+}
+.item-wrap .title {
+  font-weight: 600;
+  white-space: nowrap;
+  margin-right: 20px;
+}
+.item-wrap select {
+  width: 25%;
+  height: 40px;
+  font-size: 14px;
+  color: black;
+  letter-spacing: 0;
+  font-weight: 400;
+  background: #FFFFFF;
+  border: 1px solid #e8e8e9;
+  border-radius: 4px;
+  padding: 10px;
+  outline: none;
+  margin-right: 10px;
+}
+.item-wrap select option {
+  font-weight: normal;
+  display: block;
+  white-space: nowrap;
+  min-height: 1.2em;
+  padding: 0px 2px 1px;
+  font-size: 16px;
+}
+.item-wrap input {
+  margin: 0;
+  font-weight: normal;
+  display: block;
+  white-space: nowrap;
+  min-height: 1.2em;
+  height: 40px;
+  font-size: 16px;
+  border: 1px solid rgba(232, 232, 233, 0.682);
+  color: black;
+}
+.item-wrap .feedback {
+  padding: 10px;
+  width: 60%;
+  height: 150px;
+  border: 1px solid rgba(232, 232, 233, 0.682);
+}
+.item-wrap .feedback::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #BFBFBF;
+}
+.item-wrap .feedback:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #BFBFBF;
+}
+.item-wrap .feedback::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #BFBFBF;
+}
+.item-wrap .feedback:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: #BFBFBF;
+}
+.item-wrap .area-box {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+.item-wrap button.submit {
+  padding: 10px 20px;
+  margin: 0;
+  background-color: #67676790;
+  color: #fff;
+}

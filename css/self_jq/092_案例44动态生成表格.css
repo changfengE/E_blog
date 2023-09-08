@@ -1,0 +1,22 @@
+* {
+    background-color: rgba(0, 128, 0, 0.066);
+}
+
+table {
+    width: 500px;
+    margin: 100px auto;
+    /* border-collapse: collapse; */
+    /* 将表格线双线叠成单线 */
+    text-align: center;
+}
+
+td,
+th {
+    border: 1px solid #333;
+    padding: 5px;
+}
+
+thead tr {
+    height: 40px;
+    background-color: #ccc;
+}

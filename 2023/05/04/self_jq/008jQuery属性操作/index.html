@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+
+
+<html theme="dark" showBanner="true" hasBanner="true" > 
+<link href="/fontawesome/css/fontawesome.css" rel="stylesheet">
+<link href="/fontawesome/css/brands.css" rel="stylesheet">
+<link href="/fontawesome/css/solid.css" rel="stylesheet">
+<script src="/js/color.global.min.js" ></script>
+<script src="/js/load-settings.js" ></script>
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+
+  
+  <title>jQuery属性操作 | cfE_blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/MaterialSymbolsRounded.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+  <meta name="description" content="jQuery属性操作                                                 .testbox ol {                 padding: 0;             }              .testbox ol li {">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery属性操作">
+<meta property="og:url" content="http://example.com/2023/05/04/self_jq/008jQuery%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C/index.html">
+<meta property="og:site_name" content="cfE_blog">
+<meta property="og:description" content="jQuery属性操作                                                 .testbox ol {                 padding: 0;             }              .testbox ol li {">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-05-04T01:38:59.000Z">
+<meta property="article:modified_time" content="2023-09-08T14:29:13.752Z">
+<meta property="article:author" content="changfeng_E">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="jQuery">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="shortcut icon" href="/xiaohei.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  
+  
+    
+<div id="banner" class="">
+  <img src="/assets/%E8%8A%B1%E8%8A%B1bg02.jpg" itemprop="image">
+  <div id="banner-dim"></div>
+</div>
+ 
+   
+  <div id="main-grid" class="shadow   ">
+    <div id="nav" class=""  >
+      <navbar id="navbar">
+  <nav id="title-nav">
+    <a href="/">
+      <div id="vivia-logo">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div>cfE_blog </div>
+    </a>
+  </nav>
+  <nav id="main-nav">
+    
+      <a class="main-nav-link" href="/">主页</a>
+    
+      <a class="main-nav-link" href="/archives">轨迹</a>
+    
+      <a class="main-nav-link" href="/about">更多</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    <a id="theme-btn" class="nav-icon">
+      <span class="material-symbols-rounded light-mode-icon">wb_sunny</span>
+      <span class="material-symbols-rounded dark-mode-icon">dark_mode</span>
+    </a>
+    
+    <a id="nav-search-btn" class="nav-icon" title="搜索" style="display: none;">
+      <span class="material-symbols-rounded">search</span>
+    </a>
+    <div id="nav-menu-btn" class="nav-icon">
+      <span class="material-symbols-rounded">menu</span>
+    </div>
+  </nav>
+</navbar>
+<div id="nav-dropdown" class="hidden">
+  <div id="dropdown-link-list">
+    
+      <a class="nav-dropdown-link" href="/">主页</a>
+    
+      <a class="nav-dropdown-link" href="/archives">轨迹</a>
+    
+      <a class="nav-dropdown-link" href="/about">更多</a>
+    
+     
+    </div>
+</div>
+<script>
+  let dropdownBtn = document.getElementById("nav-menu-btn");
+  let dropdownEle = document.getElementById("nav-dropdown");
+  dropdownBtn.onclick = function() {
+    dropdownEle.classList.toggle("hidden");
+  }
+</script>
+    </div>
+    <div id="sidebar-wrapper">
+      <sidebar id="sidebar">
+  
+    <div class="widget-wrap">
+  <div class="info-card">
+    <div class="avatar">
+      
+        <image src=/assets/%E7%BD%97%E5%B0%8F%E9%BB%9102.png></image>
+      
+      <div class="img-dim"></div>
+    </div>
+    <div class="info">
+      <div class="username">changfeng_E </div>
+      <div class="dot"></div>
+      <div class="subtitle">about me </div>
+      <div class="link-list">
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com/changfengE" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://gitee.com/changfengE" title="Gitee"><i class="fa-brands fa-square-git"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/285349009?spm_id_from=333.1007.0.0" title="bilibili"><i class="fa-brands fa-bilibili"></i></a>
+         
+      </div>  
+    </div>
+  </div>
+</div>
+
+  
+  <div class="sticky">
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">最新文章</h3>
+      <ul>
+        
+          <a class="recent-link" href="/2023/09/02/%E6%AF%81%E7%81%AD%E5%90%A7/" title="death note" >
+            <div class="recent-link-text">
+              death note
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/01/hello-world/" title="Hello World" >
+            <div class="recent-link-text">
+              Hello World
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/08/17/self_Ajax/023%E6%A1%88%E4%BE%8B06-%E5%AD%A6%E4%B9%A0%E5%8F%8D%E9%A6%88/" title="Ajax-案例-学习反馈" >
+            <div class="recent-link-text">
+              Ajax-案例-学习反馈
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/08/17/self_Ajax/022%E6%A1%88%E4%BE%8B05-%E5%95%86%E5%93%81%E5%88%86%E7%B1%BB/" title="Ajax-案例-商品分类" >
+            <div class="recent-link-text">
+              Ajax-案例-商品分类
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/08/17/self_Ajax/021Promise.all%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95/" title="Ajax-Promise.all静态方法" >
+            <div class="recent-link-text">
+              Ajax-Promise.all静态方法
+            </div>
+          </a>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">标签</h3>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/CSS3/" rel="tag">CSS3</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/HTML5/" rel="tag">HTML5</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/axios/" rel="tag">axios</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/hexo-use/" rel="tag">hexo_use</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/typora/" rel="tag">typora</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" rel="tag">移动端</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+
+
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">分类</h3>
+      <div class="category-box">
+            <a class="category-link" href="/categories/markdown/">
+                markdown
+                <div class="category-count">1</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/markdown/%E4%BD%BF%E7%94%A8/">
+                使用
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/git/">
+                git
+                <div class="category-count">4</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/git/%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81/">
+                提交代码
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/git%E5%AE%89%E8%A3%85%E5%8F%8A%E9%83%A8%E5%88%86%E5%91%BD%E4%BB%A4/">
+                git安装及部分命令
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/branch/">
+                branch
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/ssh%E7%BB%91%E5%AE%9A/">
+                ssh绑定
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/hexo%E5%88%9D%E4%BD%93%E9%AA%8C/">
+                hexo初体验
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/HTML5-CSS3/">
+                HTML5&CSS3
+                <div class="category-count">14</div>
+            </a>
+        
+            <a class="category-link" href="/categories/hexo/">
+                hexo
+                <div class="category-count">1</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/hexo/using/">
+                using
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/">
+                浏览器
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/">
+                移动端
+                <div class="category-count">16</div>
+            </a>
+        
+            <a class="category-link" href="/categories/jQuery/">
+                jQuery
+                <div class="category-count">14</div>
+            </a>
+        
+            <a class="category-link" href="/categories/Ajax/">
+                Ajax
+                <div class="category-count">23</div>
+            </a>
+        
+            <a class="category-link" href="/categories/js%E5%9F%BA%E7%A1%80/">
+                js基础
+                <div class="category-count">42</div>
+            </a>
+        </div>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">归档</h3>
+      
+      
+        <a class="archive-link" href="/archives/2023/09 ">
+          九月 2023 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/08 ">
+          八月 2023 
+          <div class="archive-count">23 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/07 ">
+          七月 2023 
+          <div class="archive-count">10 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/05 ">
+          五月 2023 
+          <div class="archive-count">3 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/04 ">
+          四月 2023 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/03 ">
+          三月 2023 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/02 ">
+          二月 2023 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/01 ">
+          一月 2023 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/12 ">
+          十二月 2022 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/11 ">
+          十一月 2022 
+          <div class="archive-count">4 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/09 ">
+          九月 2022 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/08 ">
+          八月 2022 
+          <div class="archive-count">11 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/07 ">
+          七月 2022 
+          <div class="archive-count">22 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/06 ">
+          六月 2022 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/02 ">
+          二月 2022 
+          <div class="archive-count">6 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/01 ">
+          一月 2022 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/10 ">
+          十月 2021 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/09 ">
+          九月 2021 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/08 ">
+          八月 2021 
+          <div class="archive-count">6 </div>
+        </a>
+      
+    </div>
+  </div>
+
+
+    
+  </div>
+</sidebar>
+    </div>
+    <div id="content-body">
+       
+
+<article id="post-self_jq/008jQuery属性操作" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        jQuery属性操作
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-05-04T01:38:59.000Z" itemprop="datePublished">2023-05-04</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/jQuery/">jQuery</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            799 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>jQuery属性操作</title>
+        <link rel="shortcut icon" href="../xiaohei.ico">
+        <link rel="stylesheet" href="/globalsrc/mynormalize/mynormalize1.2.0.css">
+        <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <style>
+            .testbox ol {
+                padding: 0;
+            }
+
+            .testbox ol li {
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="div1">
+            <h2><span id="jquery-shu-xing-cao-zuo">jQuery属性操作</span><a href="#jquery-shu-xing-cao-zuo" class="header-anchor">#</a></h2>
+            <p>
+                实际开发中常用前两个
+                <code>prop()</code>
+                和
+                <code>attr()</code>
+            </p>
+            <div class="div2">
+                <h3><span id="she-zhi-huo-huo-qu-yuan-su-gu-you-shu-xing-zhi-prop">
+                    设置或获取元素固有属性值
+                    <code>prop()</code>
+                </span><a href="#she-zhi-huo-huo-qu-yuan-su-gu-you-shu-xing-zhi-prop" class="header-anchor">#</a></h3>
+                <p>所谓元素固有属性就是元素本身自带的属性，比如&lt;a&gt;元素里面的href，比如&lt;input&gt;元素里面的type。</p>
+                <div class="div3">
+                    <h4><span id="huo-qu-shu-xing-yu-fa">获取属性语法</span><a href="#huo-qu-shu-xing-yu-fa" class="header-anchor">#</a></h4>
+                    <pre class="code_block">
+                    <div class="lan-js">jQuery</div>
+                    <span>ele.prop('属性名')</span>
+                </pre>
+                    <h4><span id="she-zhi-shu-xing-yu-fa">设置属性语法</span><a href="#she-zhi-shu-xing-yu-fa" class="header-anchor">#</a></h4>
+                    <pre class="code_block">
+                    <div class="lan-js">jQuery</div>
+                    <span>ele.prop('属性名','属性值')</span>
+                </pre>
+                </div>
+                <div class="div3 clearfix">
+                    <div class="testbox testprop">
+                        <a href="http://www.baidu.com" target="_blank" title="百度一下">百度一下</a>
+                        <input type="checkbox" name id checked>
+                    </div>
+                </div>
+            </div>
+            <div class="div2">
+                <h3><span id="she-zhi-huo-huo-qu-yuan-su-zi-ding-yi-shu-xing-zhi-attr">
+                    设置或获取元素自定义属性值
+                    <code>attr()</code>
+                </span><a href="#she-zhi-huo-huo-qu-yuan-su-zi-ding-yi-shu-xing-zhi-attr" class="header-anchor">#</a></h3>
+                <p>用户自己给元素添加的属性，称之为自定义属性，比如给li添加index="1"。</p>
+                <div class="div3">
+                    <h4><span id="huo-qu-shu-xing-yu-fa">获取属性语法</span><a href="#huo-qu-shu-xing-yu-fa" class="header-anchor">#</a></h4>
+                    <pre class="code_block">
+                    <div class="lan-js">jQuery</div>
+                    <span>// 类似原生getAttribute()</span>
+                    <span>ele.attr('属性名')</span>
+                </pre>
+                    <h4><span id="she-zhi-shu-xing-yu-fa">设置属性语法</span><a href="#she-zhi-shu-xing-yu-fa" class="header-anchor">#</a></h4>
+                    <pre class="code_block">
+                    <div class="lan-js">jQuery</div>
+                    <span>// 类似原生setAttribute()</span>
+                    <span>ele.attr('属性名','属性值')</span>
+                </pre>
+                </div>
+                <p>该方法也可获取H5自定义属性</p>
+                <div class="div3 clearfix">
+                    <div class="testbox testattr">
+                        <ol>
+                            <li index="1">鼠标滑过</li>
+                            <li index="2">查看</li>
+                            <li index="3" data-index="03">自定义索引</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="div2">
+                <h3><span id="shu-ju-huan-cun-data">
+                    数据缓存
+                    <code>data()</code>
+                </span><a href="#shu-ju-huan-cun-data" class="header-anchor">#</a></h3>
+                <p>data()方法可以在指定的元素上存取数据，并不会修改DOM元素结构，一旦页面刷新，之前存放的数据都将被移除。</p>
+                <div class="div3">
+                    <h4><span id="fu-jia-shu-ju-yu-fa">附加数据语法</span><a href="#fu-jia-shu-ju-yu-fa" class="header-anchor">#</a></h4>
+                    <pre class="code_block">
+                    <div class="lan-js">jQuery</div>
+                    <span>// 向被选元素附加数据</span>
+                    <span>ele.data('name','value')</span>
+                </pre>
+                    <h4><span id="huo-qu-shu-ju-yu-fa">获取数据语法</span><a href="#huo-qu-shu-ju-yu-fa" class="header-anchor">#</a></h4>
+                    <pre class="code_block">
+                    <div class="lan-js">jQuery</div>
+                    <span>// 向被选元素获取数据</span>
+                    <span>ele.data('name')</span>
+                    <span>// 与attr()方法不同，H5自定义属性不用加data-</span>
+                    <span>&lt;span data-index="2"&gt;&lt;/span&gt;</span>
+                    <span>ele.data('index')</span>
+                </pre>
+                </div>
+                <p>同时，还可以读取H5自定义属性data-，得到的是数字型</p>
+                <div class="div3 clearfix">
+                    <div class="testbox testdata">
+                        <span data-index="2">data()数据缓存</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(function () {
+                // 1.ele.prop('属性名') 获取元素固有属性值
+                $('.testprop')
+                    .children('a')
+                    .mouseover(function () {
+                        console.log('原来的title：' + $(this).prop('title'));
+                        $(this).prop('title', '你就知道');
+                    })
+                    .siblings('input')
+                    .change(function () {
+                        console.log('当前checkbox选中状态：' + $(this).prop('checked'));
+                    });
+
+                // 2.元素的自定义属性，通过attr()获取或设置
+                $('.testattr')
+                    .find('li')
+                    .mouseover(function () {
+                        // console.log($(this).index());
+                        console.log('当前li的自定义索引index=' + $(this).attr('index'));
+                    });
+                $('.testattr li:nth-child(3)').mouseover(function () {
+                    console.log('data-index=' + $(this).attr('data-index'));
+                });
+
+                // 3.数据缓存data()，数据存放在元素的内存里
+                $('.testdata')
+                    .children('span')
+                    .data('uname', 'andy')
+                    .mouseover(function () {
+                        console.log('uname=' + $(this).data('uname'));
+                        // 获取h5自定义属性，属性名不用写data-，返回的是数字型
+                        console.log('data-index=' + $(this).data('index'));
+                    });
+            });
+        </script>
+    </body>
+</html>
+
+        
+      </div>
+
+         
+    </div>
+    
+     
+  </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left "
+    
+      href="/2023/05/24/self_jq/009jQuery%E5%86%85%E5%AE%B9%E6%96%87%E6%9C%AC%E5%80%BC/"
+      title="jQuery内容文本值"
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+      
+        jQuery内容文本值
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2023/04/10/self_jq/006jQuery%E6%95%88%E6%9E%9C/"
+      title="jQuery效果"
+     >
+
+    <p class="title-text">
+      
+        jQuery效果
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+ 
+    </div>
+    <div id="footer-wrapper">
+      <footer id="footer">
+  
+  <div id="footer-info" class="inner">
+    
+    &copy; 2023 changfeng_E<br>
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
+  </div>
+</footer>
+
+    </div>
+    <div class="back-to-top-wrapper">
+    <button id="back-to-top-btn" class="back-to-top-btn hide" onclick="topFunction()">
+        <span class="material-symbols-rounded">keyboard_arrow_up</span>
+    </button>
+</div>
+
+<script>
+    function topFunction() {
+        window.scroll({ top: 0, behavior: 'smooth' });
+    }
+    let btn = document.getElementById('back-to-top-btn');
+    function scrollFunction() {
+        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+            btn.classList.remove('hide')
+        } else {
+            btn.classList.add('hide')
+        }
+    }
+    window.onscroll = function() {
+        scrollFunction();
+    }
+</script>
+
+  </div>
+  <script src="/js/light-dark-switch.js"></script>
+</body>
+</html>

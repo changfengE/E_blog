@@ -1,0 +1,58 @@
+.c-nav {
+    position: relative;
+    width: 700px;
+    height: 42px;
+    /* background-color: pink; */
+}
+
+.c-nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.c-nav ul li {
+    float: left;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.c-nav ul li a {
+    color: #888;
+    font-size: 16px;
+    line-height: 42px;
+}
+
+.c-nav ul li a:hover {
+    color: green;
+}
+
+.cloud {
+    position: absolute;
+    z-index: -1;
+    width: 83px;
+    height: 42px;
+    /* border: 1px solid #000; */
+}
+
+.cloudimg {
+    top: 0;
+    width: 80%;
+    height: 80%;
+}
+
+.flexRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.flexColumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

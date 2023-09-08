@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+
+
+<html theme="dark" showBanner="true" hasBanner="true" > 
+<link href="/fontawesome/css/fontawesome.css" rel="stylesheet">
+<link href="/fontawesome/css/brands.css" rel="stylesheet">
+<link href="/fontawesome/css/solid.css" rel="stylesheet">
+<script src="/js/color.global.min.js" ></script>
+<script src="/js/load-settings.js" ></script>
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+
+  
+  <title>Ajax-Promise | cfE_blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/MaterialSymbolsRounded.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+  <meta name="description" content="Promise                                                                                                Promise#                              定义#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ajax-Promise">
+<meta property="og:url" content="http://example.com/2023/08/15/self_Ajax/013Promise/index.html">
+<meta property="og:site_name" content="cfE_blog">
+<meta property="og:description" content="Promise                                                                                                Promise#                              定义#">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/assets/images/self_Ajax/013_cut_01Promise%E4%B8%89%E7%A7%8D%E7%8A%B6%E6%80%81.png">
+<meta property="article:published_time" content="2023-08-15T08:43:09.000Z">
+<meta property="article:modified_time" content="2023-09-08T18:02:59.110Z">
+<meta property="article:author" content="changfeng_E">
+<meta property="article:tag" content="Ajax">
+<meta property="article:tag" content="axios">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/assets/images/self_Ajax/013_cut_01Promise%E4%B8%89%E7%A7%8D%E7%8A%B6%E6%80%81.png">
+  
+  
+    <link rel="shortcut icon" href="/xiaohei.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  
+  
+    
+<div id="banner" class="">
+  <img src="/assets/%E8%8A%B1%E8%8A%B1bg02.jpg" itemprop="image">
+  <div id="banner-dim"></div>
+</div>
+ 
+   
+  <div id="main-grid" class="shadow   ">
+    <div id="nav" class=""  >
+      <navbar id="navbar">
+  <nav id="title-nav">
+    <a href="/">
+      <div id="vivia-logo">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div>cfE_blog </div>
+    </a>
+  </nav>
+  <nav id="main-nav">
+    
+      <a class="main-nav-link" href="/">主页</a>
+    
+      <a class="main-nav-link" href="/archives">轨迹</a>
+    
+      <a class="main-nav-link" href="/about">更多</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    <a id="theme-btn" class="nav-icon">
+      <span class="material-symbols-rounded light-mode-icon">wb_sunny</span>
+      <span class="material-symbols-rounded dark-mode-icon">dark_mode</span>
+    </a>
+    
+    <a id="nav-search-btn" class="nav-icon" title="搜索" style="display: none;">
+      <span class="material-symbols-rounded">search</span>
+    </a>
+    <div id="nav-menu-btn" class="nav-icon">
+      <span class="material-symbols-rounded">menu</span>
+    </div>
+  </nav>
+</navbar>
+<div id="nav-dropdown" class="hidden">
+  <div id="dropdown-link-list">
+    
+      <a class="nav-dropdown-link" href="/">主页</a>
+    
+      <a class="nav-dropdown-link" href="/archives">轨迹</a>
+    
+      <a class="nav-dropdown-link" href="/about">更多</a>
+    
+     
+    </div>
+</div>
+<script>
+  let dropdownBtn = document.getElementById("nav-menu-btn");
+  let dropdownEle = document.getElementById("nav-dropdown");
+  dropdownBtn.onclick = function() {
+    dropdownEle.classList.toggle("hidden");
+  }
+</script>
+    </div>
+    <div id="sidebar-wrapper">
+      <sidebar id="sidebar">
+  
+    <div class="widget-wrap">
+  <div class="info-card">
+    <div class="avatar">
+      
+        <image src=/assets/%E7%BD%97%E5%B0%8F%E9%BB%9102.png></image>
+      
+      <div class="img-dim"></div>
+    </div>
+    <div class="info">
+      <div class="username">changfeng_E </div>
+      <div class="dot"></div>
+      <div class="subtitle">about me </div>
+      <div class="link-list">
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com/changfengE" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://gitee.com/changfengE" title="Gitee"><i class="fa-brands fa-square-git"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/285349009?spm_id_from=333.1007.0.0" title="bilibili"><i class="fa-brands fa-bilibili"></i></a>
+         
+      </div>  
+    </div>
+  </div>
+</div>
+
+  
+  <div class="sticky">
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">最新文章</h3>
+      <ul>
+        
+          <a class="recent-link" href="/2023/09/02/%E6%AF%81%E7%81%AD%E5%90%A7/" title="death note" >
+            <div class="recent-link-text">
+              death note
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/01/hello-world/" title="Hello World" >
+            <div class="recent-link-text">
+              Hello World
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/08/17/self_Ajax/023%E6%A1%88%E4%BE%8B06-%E5%AD%A6%E4%B9%A0%E5%8F%8D%E9%A6%88/" title="Ajax-案例-学习反馈" >
+            <div class="recent-link-text">
+              Ajax-案例-学习反馈
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/08/17/self_Ajax/022%E6%A1%88%E4%BE%8B05-%E5%95%86%E5%93%81%E5%88%86%E7%B1%BB/" title="Ajax-案例-商品分类" >
+            <div class="recent-link-text">
+              Ajax-案例-商品分类
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/08/17/self_Ajax/021Promise.all%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95/" title="Ajax-Promise.all静态方法" >
+            <div class="recent-link-text">
+              Ajax-Promise.all静态方法
+            </div>
+          </a>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">标签</h3>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/CSS3/" rel="tag">CSS3</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/HTML5/" rel="tag">HTML5</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/axios/" rel="tag">axios</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/hexo-use/" rel="tag">hexo_use</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/typora/" rel="tag">typora</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" rel="tag">移动端</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+
+
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">分类</h3>
+      <div class="category-box">
+            <a class="category-link" href="/categories/markdown/">
+                markdown
+                <div class="category-count">1</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/markdown/%E4%BD%BF%E7%94%A8/">
+                使用
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/git/">
+                git
+                <div class="category-count">4</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/git/%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81/">
+                提交代码
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/git%E5%AE%89%E8%A3%85%E5%8F%8A%E9%83%A8%E5%88%86%E5%91%BD%E4%BB%A4/">
+                git安装及部分命令
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/branch/">
+                branch
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/ssh%E7%BB%91%E5%AE%9A/">
+                ssh绑定
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/hexo%E5%88%9D%E4%BD%93%E9%AA%8C/">
+                hexo初体验
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/HTML5-CSS3/">
+                HTML5&CSS3
+                <div class="category-count">14</div>
+            </a>
+        
+            <a class="category-link" href="/categories/hexo/">
+                hexo
+                <div class="category-count">1</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/hexo/using/">
+                using
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/">
+                浏览器
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/">
+                移动端
+                <div class="category-count">16</div>
+            </a>
+        
+            <a class="category-link" href="/categories/jQuery/">
+                jQuery
+                <div class="category-count">14</div>
+            </a>
+        
+            <a class="category-link" href="/categories/Ajax/">
+                Ajax
+                <div class="category-count">23</div>
+            </a>
+        
+            <a class="category-link" href="/categories/js%E5%9F%BA%E7%A1%80/">
+                js基础
+                <div class="category-count">42</div>
+            </a>
+        </div>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">归档</h3>
+      
+      
+        <a class="archive-link" href="/archives/2023/09 ">
+          九月 2023 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/08 ">
+          八月 2023 
+          <div class="archive-count">23 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/07 ">
+          七月 2023 
+          <div class="archive-count">10 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/05 ">
+          五月 2023 
+          <div class="archive-count">3 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/04 ">
+          四月 2023 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/03 ">
+          三月 2023 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/02 ">
+          二月 2023 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/01 ">
+          一月 2023 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/12 ">
+          十二月 2022 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/11 ">
+          十一月 2022 
+          <div class="archive-count">4 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/09 ">
+          九月 2022 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/08 ">
+          八月 2022 
+          <div class="archive-count">11 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/07 ">
+          七月 2022 
+          <div class="archive-count">22 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/06 ">
+          六月 2022 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/02 ">
+          二月 2022 
+          <div class="archive-count">6 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/01 ">
+          一月 2022 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/10 ">
+          十月 2021 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/09 ">
+          九月 2021 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/08 ">
+          八月 2021 
+          <div class="archive-count">6 </div>
+        </a>
+      
+    </div>
+  </div>
+
+
+    
+  </div>
+</sidebar>
+    </div>
+    <div id="content-body">
+       
+
+<article id="post-self_Ajax/013Promise" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        Ajax-Promise
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-08-15T08:43:09.000Z" itemprop="datePublished">2023-08-15</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/Ajax/">Ajax</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            1.1k 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/axios/" rel="tag">axios</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Promise</title>
+        <link rel="shortcut icon" href="../xiaohei.ico">
+        <link rel="stylesheet" href="/globalsrc/mynormalize/mynormalize1.2.0.css">
+        <link rel="stylesheet" href="/globalsrc/components/prism/prism.css">
+    </head>
+
+    <body class="line-numbers">
+        <div class="sidebar"></div>
+        <div class="mask"></div>
+        <div class="godown"></div>
+        <div class="backtop"></div>
+        <div class="div1">
+            <h2><span id="promise">Promise</span><a href="#promise" class="header-anchor">#</a></h2>
+            <div class="div2">
+                <h3><span id="ding-yi">定义</span><a href="#ding-yi" class="header-anchor">#</a></h3>
+                <blockquote>
+                    <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank">Promise</a>
+                    ：一个表示（管理）异步操作最终的完成（或失败）以及其结果值的
+                    <strong>对象</strong>
+                </blockquote>
+                <p>好处：</p>
+                <ol>
+                    <li>逻辑更清晰</li>
+                    <li>了解axios函数内部运作机制</li>
+                    <li>能解决回调函数地狱问题</li>
+                </ol>
+                <p>语法：</p>
+                <pre><code class="language-js">// 1.创建Promise对象
+const p = new Promise((resolve, reject) => &#123;
+    // 2.执行异步任务，并传递结果
+    // 成功调用：resolve(值) 触发 then()执行
+    // 失败调用：reject(值) 触发 catch()执行
+&#125;);
+// 3.接收结果
+p.then(result => &#123;
+    // 成功
+&#125;).catch(error => &#123;
+    // 失败
+&#125;)</code></pre>
+            </div>
+            <div class="div3">
+                <p>初体验：使用Promise管理异步任务</p>
+                <pre><code class="language-js">// 1.创建Promise对象
+const p = new Promise((resolve, reject) => &#123;
+    // 2.执行异步代码
+    setTimeout(() => &#123;
+        // resolve('模拟AJAX请求-成功结束')
+        reject(new Error('模拟AJAX请求-失败结果'))
+    &#125;, 2000);
+&#125;);
+// 3.获取结果
+p.then(res => &#123;
+    console.log(res);
+&#125;).catch(err => &#123;
+    console.log(err);
+&#125;)</code></pre>
+            </div>
+            <div class="div2">
+                <h3><span id="promise-dui-xiang-de-san-chong-zhuang-tai">Promise对象的三种状态</span><a href="#promise-dui-xiang-de-san-chong-zhuang-tai" class="header-anchor">#</a></h3>
+                <p>作用：了解Promise对象如何关联的处理函数，以及代码执行顺序</p>
+                <p>概念：一个Promise对象，必然处于以下三种状态之一</p>
+                <ul>
+                    <li>
+                        <code>pending</code>
+                        待定：初始状态，既没有兑现，也没有被拒绝
+                    </li>
+                    <li>
+                        <code>fullfilled</code>
+                        已兑现：操作成功完成
+                        <p>
+                            执行了
+                            <code>resolve()</code>
+                            时，立即处于该状态，表示Promise已经被解决，任务执行成功
+                        </p>
+                    </li>
+                    <li>
+                        <code>rejected</code>
+                        已拒绝：操作失败
+                        <p>
+                            执行了
+                            <code>reject()</code>
+                            时，立即处于该状态，表示 Promise已经被拒绝，任务执行失败。
+                        </p>
+                    </li>
+                </ul>
+                <img src="/assets/images/self_Ajax/013_cut_01Promise三种状态.png" alt>
+                <p>
+                    注意：Promise对象一旦被
+                    <strong>兑现/拒绝</strong>
+                    就是
+                    <strong>已敲定</strong>
+                    了，状态无法再被改变
+                </p>
+                <pre><code class="language-js">// 1.创建Promise对象(pending-待定状态)
+const p = new Promise((resolve, reject) => &#123;
+    console.log('Promise对象创建时，里面的代码立即执行');
+    // 2.执行异步代码
+    setTimeout(() => &#123;
+        // resolve()=>'fullfilled状态-已兑现'=>then()
+        resolve('模拟AJAX请求-成功结束');
+        // reject()=>'rejected状态-已拒绝'=>catch()
+        // reject(new Error('模拟AJAX请求-失败结果'))
+    &#125;, 2000);
+&#125;);
+console.log(p); // &#123;[[PromiseState]]:pending/fullfilled/rejected&#125;
+// 3.获取结果
+p.then(res => &#123;
+    console.log(res);
+&#125;).catch(err => &#123;
+    console.log(err);
+&#125;)</code></pre>
+            </div>
+            <div class="div2">
+                <h3><span id="an-li-promise-xhr-huo-qu-sheng-fen-lie-biao">案例-Promise+XHR获取省份列表</span><a href="#an-li-promise-xhr-huo-qu-sheng-fen-lie-biao" class="header-anchor">#</a></h3>
+                <p>需求：使用Promise管理XHR获取省份列表，回显到页面</p>
+                <p>步骤：</p>
+                <ol>
+                    <li>创建Promise对象</li>
+                    <li>执行XHR异步代码，获取省份列表</li>
+                    <li>关联成功或失败函数，做后续处理</li>
+                </ol>
+                <div class="div3">
+                    <div class="provincebox"></div>
+                </div>
+                <pre><code class="language-js">// 1.创建Promise对象
+const p = new Promise((resolve, reject) => &#123;
+        // 2.XHR请求省份列表
+        const xhr = new XMLHttpRequest()
+        xhr.open('get', 'http://hmajax.itheima.net/api/province')
+        xhr.addEventListener('loadend', function() &#123;
+            console.log(xhr.response);
+            // xhr如何判断相应成功或失败
+            // 2xx开头的响应状态码为成功
+            if (xhr.status >= 200 && xhr.status < 300) &#123;
+                resolve(JSON.parse(xhr.response))
+            &#125; else &#123;
+                reject(new Error(xhr.response))
+            &#125;
+        &#125;)
+        xhr.send()
+    &#125;)
+    // 3.关联成功或失败函数，做后续处理
+p.then(res => &#123;
+    console.log(res);
+    document.querySelector('.provincebox').innerHTML = res.list.join('---')
+&#125;).catch(err => &#123;
+    // 错误对象要用console.dir详细打印
+    console.dir(err);
+    document.querySelector('.provincebox').innerHTML = err.message
+&#125;)</code></pre>
+            </div>
+        </div>
+        <script src="/js/self_Ajax/trans-animate.js"></script>
+        <script src="/js/self_Ajax/mynormalize.js"></script>
+        <script src="/globalsrc/components/prism/prism.js"></script>
+        <script>
+            const dash = (name = '') => console.log(`${name}---------------------`);
+            (function () {
+                /*
+                 *例-初体验
+                 *目标：使用Promise管理异步任务
+                 */
+                // 1.创建Promise对象(pending-待定状态)
+                const p = new Promise((resolve, reject) => {
+                    console.log('Promise对象创建时，里面的代码立即执行');
+                    // 2.执行异步代码
+                    setTimeout(() => {
+                        // resolve()=>'fullfilled状态-已兑现'=>then()
+                        resolve('模拟AJAX请求-成功结束');
+                        // reject()=>'rejected状态-已拒绝'=>catch()
+                        // reject(new Error('模拟AJAX请求-失败结果'))
+                    }, 2000);
+                });
+                console.log(p); // {[[PromiseState]]:pending/fullfilled/rejected}
+                // 3.获取结果
+                p.then(res => {
+                    console.log(res);
+                }).catch(err => {
+                    console.log(err);
+                });
+            })();
+            (function () {
+                /*
+                 *案例-Promise管理XHR请求省份数据
+                 */
+                dash('Promise管理XHR获取省份数据');
+
+                // 1.创建Promise对象
+                const p = new Promise((resolve, reject) => {
+                    // 2.XHR请求省份列表
+                    const xhr = new XMLHttpRequest();
+                    xhr.open('get', 'http://hmajax.itheima.net/api/province');
+                    xhr.addEventListener('loadend', function () {
+                        console.log(xhr.response);
+                        // xhr如何判断相应成功或失败
+                        // 2xx开头的响应状态码为成功
+                        if (xhr.status >= 200 && xhr.status < 300) {
+                            resolve(JSON.parse(xhr.response));
+                        } else {
+                            reject(new Error(xhr.response));
+                        }
+                    });
+                    xhr.send();
+                });
+                // 3.关联成功或失败函数，做后续处理
+                p.then(res => {
+                    console.log(res);
+                    document.querySelector('.provincebox').innerHTML = res.list.join('---');
+                }).catch(err => {
+                    // 错误对象要用console.dir详细打印
+                    console.dir(err);
+                    document.querySelector('.provincebox').innerHTML = err.message;
+                });
+            })();
+        </script>
+    </body>
+</html>
+
+        
+      </div>
+
+         
+    </div>
+    
+     
+  </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left "
+    
+      href="/2023/08/15/self_Ajax/014%E5%B0%81%E8%A3%85%E7%AE%80%E6%98%93axios/"
+      title="Ajax-封装简易axios"
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+      
+        Ajax-封装简易axios
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2023/08/14/self_Ajax/012XMLHttpRequest/"
+      title="Ajax-XMLHttpRequest"
+     >
+
+    <p class="title-text">
+      
+        Ajax-XMLHttpRequest
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+ 
+    </div>
+    <div id="footer-wrapper">
+      <footer id="footer">
+  
+  <div id="footer-info" class="inner">
+    
+    &copy; 2023 changfeng_E<br>
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
+  </div>
+</footer>
+
+    </div>
+    <div class="back-to-top-wrapper">
+    <button id="back-to-top-btn" class="back-to-top-btn hide" onclick="topFunction()">
+        <span class="material-symbols-rounded">keyboard_arrow_up</span>
+    </button>
+</div>
+
+<script>
+    function topFunction() {
+        window.scroll({ top: 0, behavior: 'smooth' });
+    }
+    let btn = document.getElementById('back-to-top-btn');
+    function scrollFunction() {
+        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+            btn.classList.remove('hide')
+        } else {
+            btn.classList.add('hide')
+        }
+    }
+    window.onscroll = function() {
+        scrollFunction();
+    }
+</script>
+
+  </div>
+  <script src="/js/light-dark-switch.js"></script>
+</body>
+</html>

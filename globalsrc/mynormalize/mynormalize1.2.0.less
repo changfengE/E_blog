@@ -3,7 +3,7 @@
  * @Email: 3517134128@qq.com
  * @Date: 2023-03-09 22:27:20 
  * @Last Modified by: 3517134128@qq.com
- * @Last Modified time: 2023-09-08 01:18:53
+ * @Last Modified time: 2023-09-09 01:58:11
  * @Description: my normalize less版，版本号：1.2.0，较上一版本（原始版）：修改部分常用样式如body背景色，边框块背景色，iconfont字体图标
  */
 :root {
@@ -66,6 +66,9 @@ html[theme='dark'] {
     }
     code {
         background-color: #9d9d9d;
+        &[class^='lan'] {
+            background-color: unset;
+        }
     }
     blockquote {
         &.steps {
@@ -614,6 +617,9 @@ iconfont
 
     /* 代码块样式结束 */
 
+    pre {
+        background-color: @dark;
+    }
     /* prismjs代码高亮 
 2023年7月25日22点50分
 */

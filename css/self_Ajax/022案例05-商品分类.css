@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    margin: 0 auto;
+}
+
+.container h3 {
+    margin: 10px;
+    font-size: 18px;
+    color: #666;
+    font-weight: normal;
+    text-align: center;
+    line-height: 30px;
+}
+
+.container h3:hover::before {
+    content: '';
+}
+
+.container .sub-list {
+    border-radius: 10px;
+}
+
+.container .sub-list ul {
+    display: flex;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.container .sub-list ul li {
+    list-style: none;
+    margin: 10px;
+    width: calc((100% - 80px)/4);
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3);
+}
+
+.container .sub-list ul li a {
+    text-align: center;
+    display: block;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.container .sub-list ul li a img {
+    width: 80%;
+}
+
+.container .sub-list ul li a p {
+    /* line-height: 40px; */
+}
+
+.container .sub-list ul li a:hover {
+    color: var(--xtx-color);
+}
+
+.ref-goods {
+    background-color: #fff;
+    margin-top: 20px;
+    position: relative;
+}
+
+.ref-goods .head .xtx-more {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.ref-goods .head .tag {
+    text-align: center;
+    color: #999;
+    font-size: 20px;
+    position: relative;
+    top: -20px;
+}
+
+.ref-goods .body {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 0 65px 30px;
+}
+
+.ref-goods .body .none {
+    height: 220px;
+    text-align: center;
+    width: 100%;
+    line-height: 220px;
+    color: #999;
+}

@@ -1,0 +1,94 @@
+* {
+    background-color: rgba(0, 128, 0, 0.066);
+}
+
+.redBd {
+    border: 2px solid red;
+}
+
+.textarea {
+    height: 100%;
+    width: 85%;
+}
+
+textarea {
+    width: 90%;
+    height: 60%;
+    padding: 20px;
+    padding-left: 20px;
+    border-radius: 10px;
+    border: none;
+    font-size: large;
+    resize: none;
+    /* 锁死文本域尺寸，不能拖拽 */
+}
+
+.flexColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.flexRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.upper {
+    width: 500px;
+    height: 100px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    /* border: 5px solid red; */
+    border-radius: 10px;
+}
+
+.lower {
+    width: 500px;
+    padding: 20px;
+    margin: 50px;
+    background-color: #f0f0f0;
+    /* border: 5px solid red; */
+    border-radius: 10px;
+}
+
+.detail {
+    border-radius: 10px;
+}
+
+.detail li {
+    width: 80%;
+    margin: 20px;
+    padding: 10px;
+    line-height: 30px;
+    background-color: pink;
+    /* 强制文字换行 */
+    word-wrap: break-word;
+    border-radius: 10px;
+}
+
+.detail li a {
+    float: right;
+}
+
+.submitBtn {
+    width: 10%;
+    height: 100%;
+}
+
+button {
+    width: 100%;
+    height: 100%;
+    border: none;
+    color: grey;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.boxShadow {
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+}

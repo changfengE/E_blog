@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+
+
+<html theme="dark" showBanner="true" hasBanner="true" > 
+<link href="/fontawesome/css/fontawesome.css" rel="stylesheet">
+<link href="/fontawesome/css/brands.css" rel="stylesheet">
+<link href="/fontawesome/css/solid.css" rel="stylesheet">
+<script src="/js/color.global.min.js" ></script>
+<script src="/js/load-settings.js" ></script>
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+
+  
+  <title>jQuery事件 | cfE_blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/MaterialSymbolsRounded.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+  <meta name="description" content="jQuery事件                                                                   .on2 ul,             .on3 ol {                 padding: 0;             }              .on2 u">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery事件">
+<meta property="og:url" content="http://example.com/2023/07/04/self_jq/012jQuery%E4%BA%8B%E4%BB%B6/index.html">
+<meta property="og:site_name" content="cfE_blog">
+<meta property="og:description" content="jQuery事件                                                                   .on2 ul,             .on3 ol {                 padding: 0;             }              .on2 u">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-07-04T06:49:29.000Z">
+<meta property="article:modified_time" content="2023-09-08T14:29:22.191Z">
+<meta property="article:author" content="changfeng_E">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="jQuery">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="shortcut icon" href="/xiaohei.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  
+  
+    
+<div id="banner" class="">
+  <img src="/assets/%E8%8A%B1%E8%8A%B1bg02.jpg" itemprop="image">
+  <div id="banner-dim"></div>
+</div>
+ 
+   
+  <div id="main-grid" class="shadow   ">
+    <div id="nav" class=""  >
+      <navbar id="navbar">
+  <nav id="title-nav">
+    <a href="/">
+      <div id="vivia-logo">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div>cfE_blog </div>
+    </a>
+  </nav>
+  <nav id="main-nav">
+    
+      <a class="main-nav-link" href="/">主页</a>
+    
+      <a class="main-nav-link" href="/archives">轨迹</a>
+    
+      <a class="main-nav-link" href="/about">更多</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    <a id="theme-btn" class="nav-icon">
+      <span class="material-symbols-rounded light-mode-icon">wb_sunny</span>
+      <span class="material-symbols-rounded dark-mode-icon">dark_mode</span>
+    </a>
+    
+    <a id="nav-search-btn" class="nav-icon" title="搜索" style="display: none;">
+      <span class="material-symbols-rounded">search</span>
+    </a>
+    <div id="nav-menu-btn" class="nav-icon">
+      <span class="material-symbols-rounded">menu</span>
+    </div>
+  </nav>
+</navbar>
+<div id="nav-dropdown" class="hidden">
+  <div id="dropdown-link-list">
+    
+      <a class="nav-dropdown-link" href="/">主页</a>
+    
+      <a class="nav-dropdown-link" href="/archives">轨迹</a>
+    
+      <a class="nav-dropdown-link" href="/about">更多</a>
+    
+     
+    </div>
+</div>
+<script>
+  let dropdownBtn = document.getElementById("nav-menu-btn");
+  let dropdownEle = document.getElementById("nav-dropdown");
+  dropdownBtn.onclick = function() {
+    dropdownEle.classList.toggle("hidden");
+  }
+</script>
+    </div>
+    <div id="sidebar-wrapper">
+      <sidebar id="sidebar">
+  
+    <div class="widget-wrap">
+  <div class="info-card">
+    <div class="avatar">
+      
+        <image src=/assets/%E7%BD%97%E5%B0%8F%E9%BB%9102.png></image>
+      
+      <div class="img-dim"></div>
+    </div>
+    <div class="info">
+      <div class="username">changfeng_E </div>
+      <div class="dot"></div>
+      <div class="subtitle">about me </div>
+      <div class="link-list">
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com/changfengE" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://gitee.com/changfengE" title="Gitee"><i class="fa-brands fa-square-git"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/285349009?spm_id_from=333.1007.0.0" title="bilibili"><i class="fa-brands fa-bilibili"></i></a>
+         
+      </div>  
+    </div>
+  </div>
+</div>
+
+  
+  <div class="sticky">
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">最新文章</h3>
+      <ul>
+        
+          <a class="recent-link" href="/2023/09/02/%E6%AF%81%E7%81%AD%E5%90%A7/" title="death note" >
+            <div class="recent-link-text">
+              death note
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/01/hello-world/" title="Hello World" >
+            <div class="recent-link-text">
+              Hello World
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/08/17/self_Ajax/023%E6%A1%88%E4%BE%8B06-%E5%AD%A6%E4%B9%A0%E5%8F%8D%E9%A6%88/" title="Ajax-案例-学习反馈" >
+            <div class="recent-link-text">
+              Ajax-案例-学习反馈
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/08/17/self_Ajax/022%E6%A1%88%E4%BE%8B05-%E5%95%86%E5%93%81%E5%88%86%E7%B1%BB/" title="Ajax-案例-商品分类" >
+            <div class="recent-link-text">
+              Ajax-案例-商品分类
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/08/17/self_Ajax/021Promise.all%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95/" title="Ajax-Promise.all静态方法" >
+            <div class="recent-link-text">
+              Ajax-Promise.all静态方法
+            </div>
+          </a>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">标签</h3>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/CSS3/" rel="tag">CSS3</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/HTML5/" rel="tag">HTML5</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/axios/" rel="tag">axios</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/hexo-use/" rel="tag">hexo_use</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/typora/" rel="tag">typora</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" rel="tag">移动端</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+
+
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">分类</h3>
+      <div class="category-box">
+            <a class="category-link" href="/categories/markdown/">
+                markdown
+                <div class="category-count">1</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/markdown/%E4%BD%BF%E7%94%A8/">
+                使用
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/git/">
+                git
+                <div class="category-count">4</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/git/%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81/">
+                提交代码
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/git%E5%AE%89%E8%A3%85%E5%8F%8A%E9%83%A8%E5%88%86%E5%91%BD%E4%BB%A4/">
+                git安装及部分命令
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/branch/">
+                branch
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/ssh%E7%BB%91%E5%AE%9A/">
+                ssh绑定
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/hexo%E5%88%9D%E4%BD%93%E9%AA%8C/">
+                hexo初体验
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/HTML5-CSS3/">
+                HTML5&CSS3
+                <div class="category-count">14</div>
+            </a>
+        
+            <a class="category-link" href="/categories/hexo/">
+                hexo
+                <div class="category-count">1</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/hexo/using/">
+                using
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/">
+                浏览器
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/">
+                移动端
+                <div class="category-count">16</div>
+            </a>
+        
+            <a class="category-link" href="/categories/jQuery/">
+                jQuery
+                <div class="category-count">14</div>
+            </a>
+        
+            <a class="category-link" href="/categories/Ajax/">
+                Ajax
+                <div class="category-count">23</div>
+            </a>
+        
+            <a class="category-link" href="/categories/js%E5%9F%BA%E7%A1%80/">
+                js基础
+                <div class="category-count">42</div>
+            </a>
+        </div>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">归档</h3>
+      
+      
+        <a class="archive-link" href="/archives/2023/09 ">
+          九月 2023 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/08 ">
+          八月 2023 
+          <div class="archive-count">23 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/07 ">
+          七月 2023 
+          <div class="archive-count">10 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/05 ">
+          五月 2023 
+          <div class="archive-count">3 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/04 ">
+          四月 2023 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/03 ">
+          三月 2023 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/02 ">
+          二月 2023 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/01 ">
+          一月 2023 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/12 ">
+          十二月 2022 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/11 ">
+          十一月 2022 
+          <div class="archive-count">4 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/09 ">
+          九月 2022 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/08 ">
+          八月 2022 
+          <div class="archive-count">11 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/07 ">
+          七月 2022 
+          <div class="archive-count">22 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/06 ">
+          六月 2022 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/02 ">
+          二月 2022 
+          <div class="archive-count">6 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/01 ">
+          一月 2022 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/10 ">
+          十月 2021 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/09 ">
+          九月 2021 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/08 ">
+          八月 2021 
+          <div class="archive-count">6 </div>
+        </a>
+      
+    </div>
+  </div>
+
+
+    
+  </div>
+</sidebar>
+    </div>
+    <div id="content-body">
+       
+
+<article id="post-self_jq/012jQuery事件" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        jQuery事件
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-07-04T06:49:29.000Z" itemprop="datePublished">2023-07-04</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/jQuery/">jQuery</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            1.3k 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>jQuery事件</title>
+        <link rel="shortcut icon" href="../xiaohei.ico">
+        <link rel="stylesheet" href="/globalsrc/mynormalize/mynormalize1.2.0.css">
+        <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="/globalsrc/mynormalize/trans-animate.js"></script>
+        <script src="/globalsrc/mynormalize/mynormalize.js"></script>
+        <style>
+            .on2 ul,
+            .on3 ol {
+                padding: 0;
+            }
+
+            .on2 ul li,
+            .on3 ol li {
+                cursor: pointer;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                margin-bottom: 5px;
+                background-color: #fff;
+                border-radius: 5px;
+                font-size: 1em;
+            }
+
+            .default,
+            .nodefault {
+                margin: 0;
+                width: 100%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="backtop"></div>
+        <div class="godown"></div>
+        <div class="mask"></div>
+        <div class="sidebar"></div>
+        <div class="div1">
+            <h2><span id="jquery-shi-jian">jQuery事件</span><a href="#jquery-shi-jian" class="header-anchor">#</a></h2>
+            <div class="div2">
+                <h3><span id="mu-biao">目标</span><a href="#mu-biao" class="header-anchor">#</a></h3>
+                <ul>
+                    <li>能够说出4种常见的注册事件</li>
+                    <li>能够说出on绑定事件的优势</li>
+                    <li>能够说出jQuery事件委派的优点以及方式</li>
+                    <li>能够说出绑定事件与解绑事件</li>
+                </ul>
+            </div>
+            <div class="div2">
+                <h3><span id="jquery-shi-jian-zhu-ce">jQuery事件注册</span><a href="#jquery-shi-jian-zhu-ce" class="header-anchor">#</a></h3>
+                <div class="div3">
+                    <h4><span id="dan-ge-shi-jian-zhu-ce">单个事件注册</span><a href="#dan-ge-shi-jian-zhu-ce" class="header-anchor">#</a></h4>
+                    <p>语法：</p>
+                    <pre class="code_block">
+                    <div class="lan-js">jQuery</div>
+                    <span>element.事件(function(){})</span>
+                    <span>$('div').click(function(){事件处理程序})</span>
+                </pre>
+                    <p>其它事件和原生基本一致。</p>
+                    <p>比如mouseover、mouseout、blur、focus、change、keydown、keyup、resize、scroll等</p>
+                </div>
+            </div>
+            <div class="div2">
+                <h3><span id="jquery-shi-jian-chu-li">jQuery事件处理</span><a href="#jquery-shi-jian-chu-li" class="header-anchor">#</a></h3>
+                <div class="div3">
+                    <h4><span id="shi-jian-chu-li-on-bang-ding-shi-jian">事件处理on()绑定事件</span><a href="#shi-jian-chu-li-on-bang-ding-shi-jian" class="header-anchor">#</a></h4>
+                    <p>on()方法在匹配元素上绑定一个或多个事件的事件处理函数</p>
+                    <p>语法：</p>
+                    <pre class="code_block">
+                    <div class="lan-js">jQuery</div>
+                    <span>element.on(events,[selector],fn)</span>
+                </pre>
+                    <ol>
+                        <li>
+                            <code>events</code>
+                            ：一个或多个用空格分隔的事件类型，如
+                            <code>click</code>
+                            或
+                            <code>keydown</code>
+                        </li>
+                        <li>
+                            <code>selector</code>
+                            ：元素的子元素选择器
+                        </li>
+                        <li>
+                            <code>fn</code>
+                            ：回调函数，即绑定在元素身上的侦听函数。
+                        </li>
+                    </ol>
+
+                    <div class="div4 bigcard">
+                        <h4><span id="on-fang-fa-you-shi-1">on()方法优势1：</span><a href="#on-fang-fa-you-shi-1" class="header-anchor">#</a></h4>
+                        <p>可以绑定多个事件，多个处理事件处理程序。</p>
+                        <pre class="code_block">
+                        <div class="lan-js">jQuery</div>
+                        <span>// 1.不同事件不同处理</span>
+                        <span>$('div').on({</span>
+                        <span>mouseover:function(){},</span>
+                        <span>mouseout:function(){},</span>
+                        <span>click:function(){}</span>
+                        <span>});</span>
+                        <span>// 2.不同事件相同处理</span>
+                        <span>$('div').on('mouseover mouseout',function(){</span>
+                        <span>$(this).toggleClass('current');</span>
+                        <span>});</span>
+                    </pre>
+                    </div>
+                    <div class="div4 bigcard">
+                        <h4><span id="on-fang-fa-you-shi-2">on()方法优势2：</span><a href="#on-fang-fa-you-shi-2" class="header-anchor">#</a></h4>
+                        <p>可以事件1委派操作。事件委派的定义就是：把原来给子元素身上绑定的事件绑定在父元素身上，即将事件委派给父元素。</p>
+                        <pre class="code_block">
+                    <div class="lan-js">jQuery</div>
+                    <span>$('ul').on('click','li',function(){</span>
+                    <span>alert('hello world!');</span>
+                    <span>});</span>
+                    <span>$('ul').one('click',function(){}); // 只触发一次事件</span>
+                </pre>
+                        <p>在此之前有bind()，live()，delegate()等方法来处理事件绑定或者事件委派，最新版本的使用on替代他们。</p>
+                    </div>
+                    <div class="div4">
+                        <h4><span id="on-fang-fa-you-shi-3">on()方法优势3：</span><a href="#on-fang-fa-you-shi-3" class="header-anchor">#</a></h4>
+                        <p>动态创建的元素，click()方法没有办法绑定事件，on()可以给动态生成的元素绑定事件。</p>
+                    </div>
+                    <div class="div4 clearfix">
+                        <div class="testbox on">鼠标移入变蓝，点击变紫</div>
+                        <div class="testbox on2">
+                            <ul>
+                                <li>hello</li>
+                                <li>hello</li>
+                                <li>hello</li>
+                            </ul>
+                        </div>
+                        <div class="testbox on3">
+                            <ol>
+                                <li>普通li</li>
+                                <li>普通li</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="div3">
+                    <h4><span id="shi-jian-chu-li-off-jie-bang-shi-jian">事件处理off()解绑事件</span><a href="#shi-jian-chu-li-off-jie-bang-shi-jian" class="header-anchor">#</a></h4>
+                    <p>off()方法可以移除通过on()方法添加的事件处理程序</p>
+                    <pre class="code_block">
+                    <div class="lan-js">jQuery</div>
+                    <span>$('div').off(); // 解绑所有事件</span>
+                    <span>$('div').off('click'); // 解绑点击事件</span>
+                    <span>$('ul').off('click','li'); // 解绑事件委托</span>
+                </pre>
+                    <p>若有的事件只想触发一次，可以使用one()来绑定事件。</p>
+                    <div class="div4 bigcard clearfix">
+                        <div class="testbox off"></div>
+                        <button class="btn-toggle">toogle</button>
+                        <button class="btn-off">off</button>
+                    </div>
+                </div>
+                <div class="div3">
+                    <h4><span id="zi-dong-hong-fa-shi-jian-trigger">自动触发事件trigger()</span><a href="#zi-dong-hong-fa-shi-jian-trigger" class="header-anchor">#</a></h4>
+                    <p>有些事件希望自动触发，比如轮播图自动播放功能跟点击右侧按钮一致，可以利用定时器自动触发右侧按钮点击事件，不必鼠标点击触发。</p>
+                    <pre class="code_block">
+                    <div class="lan-js">jQuery</div>
+                    <span>element.click();   //第一种简写形式</span>
+                    <span>element.trigger('事件');   // 第二种自动触发</span>
+                    <span>$('p').on('click',function(){</span>
+                    <span>alert('hi~');</span>
+                    <span>});</span>
+                    <span>$('p').trigger('click'); // 此时自动触发点击事件，不需要鼠标点击</span>
+                    <span>element.triggerHandler('事件');   // 第三种自动触发模式</span>
+                </pre>
+                    <p>
+                        <code>triggerHandler</code>
+                        不会触发元素的默认行为
+                    </p>
+                    <div class="div4">
+                        <input type="text" name id class="default">
+                        会触发默认行为(input光标)的自动触发
+                    </div>
+                    <div class="div4">
+                        <input type="text" name id class="nodefault">
+                        不会触发默认行为的自动触发
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            // 1.单个事件注册
+            // $('.on').click(function() {
+            //     $(this).css('background', 'purple');
+            // });
+            // $('.on').mouseenter(function() {
+            //     $(this).css('background', 'skyblue');
+            // });
+
+            // 2.事件处理on
+            $('.on').on({
+                mouseenter: function () {
+                    $(this).css('background', 'skyblue');
+                },
+                click: function () {
+                    $(this).css('background', 'purple');
+                },
+            });
+            // on可以实现事件委托
+            $('.on2 ul').on('click', 'li', function () {
+                alert('world!');
+            });
+            // on给动态生成的元素绑定事件
+            // $('.on3 ol li').click(function() {
+            //     alert('普通的ol>li');
+            // });
+            var li = $('<li>后来创建的li</li>');
+            $('.on3 ol').append(li);
+            $('.on3 ol').on('click', 'li', function () {
+                alert('on()方法给固定的或动态创建的元素都能绑定事件');
+            });
+
+            // 事件解绑
+            $('.btn-toggle').on('click', function () {
+                // $(this).parent().css('background', 'skyblue');
+                $(this).siblings('.off').toggle(1000);
+            });
+            $('.btn-off').on('click', function () {
+                $(this).siblings('.btn-toggle').off('click');
+                var tips = $('<p>toggle已禁用</p>');
+                $(this).after(tips).off('click');
+            });
+
+            // 事件自动触发
+            // 会触发默认行为
+            $('.default').on('focus', function () {
+                $(this).val('泥嚎吗？');
+            });
+            $('.nodefault').on('focus', function () {
+                $(this).val('窝嚎吗？');
+            });
+            $('.default').trigger('focus');
+            // 不会触发默认行为
+            $('.nodefault').triggerHandler('focus');
+        </script>
+    </body>
+</html>
+
+        
+      </div>
+
+         
+    </div>
+    
+     
+  </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left "
+    
+      href="/2023/07/05/self_jq/014jQuery%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1/"
+      title="jQuery事件对象"
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+      
+        jQuery事件对象
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2023/07/03/self_jq/011jQuery%E5%B0%BA%E5%AF%B8%E4%BD%8D%E7%BD%AE%E6%93%8D%E4%BD%9C/"
+      title="jQuery尺寸位置操作"
+     >
+
+    <p class="title-text">
+      
+        jQuery尺寸位置操作
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+ 
+    </div>
+    <div id="footer-wrapper">
+      <footer id="footer">
+  
+  <div id="footer-info" class="inner">
+    
+    &copy; 2023 changfeng_E<br>
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
+  </div>
+</footer>
+
+    </div>
+    <div class="back-to-top-wrapper">
+    <button id="back-to-top-btn" class="back-to-top-btn hide" onclick="topFunction()">
+        <span class="material-symbols-rounded">keyboard_arrow_up</span>
+    </button>
+</div>
+
+<script>
+    function topFunction() {
+        window.scroll({ top: 0, behavior: 'smooth' });
+    }
+    let btn = document.getElementById('back-to-top-btn');
+    function scrollFunction() {
+        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+            btn.classList.remove('hide')
+        } else {
+            btn.classList.add('hide')
+        }
+    }
+    window.onscroll = function() {
+        scrollFunction();
+    }
+</script>
+
+  </div>
+  <script src="/js/light-dark-switch.js"></script>
+</body>
+</html>

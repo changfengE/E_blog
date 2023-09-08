@@ -1,0 +1,66 @@
+/*
+ * @Author: 3517134128@qq.com 
+ * @Email: 3517134128@qq.com
+ * @Date: 2023-04-03 10:50:45 
+ * @Last Modified by: 3517134128@qq.com
+ * @Last Modified time: 2023-04-03 19:17:47
+ * @Description: 002jQuery选择器
+ */
+
+.jqsel li {
+    margin: 5px;
+    padding: 10px;
+    width: calc(25% - 10px);
+    background-color: var(--dark);
+    color: var(--lightgrey);
+    text-align: center;
+    border-radius: 5px;
+}
+
+/* 案例，新浪下拉菜单 */
+.nav {
+    a {
+        color: var(--fontgrey);
+    }
+
+    &>li>a {
+        display: block;
+        padding-left: 10px;
+        width: 100%;
+        border-right: 1px solid var(--fontgrey);
+    }
+
+    li {
+        float: left;
+        list-style: none;
+        margin: 0;
+        margin-right: 1px;
+        padding-right: 0;
+        width: calc(25% - 1px);
+        line-height: 40px;
+        background-color: #fff;
+    }
+
+    ul {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+
+        li {
+            width: calc(100% - 10px);
+            border-bottom: 1px solid #fecc5b;
+
+            &:hover {
+                background-color: #fff8e4;
+            }
+
+            a:hover {
+                background-color: #fff5da;
+            }
+        }
+
+    }
+
+}
+
+/* 案例，新浪下拉菜单结束 */

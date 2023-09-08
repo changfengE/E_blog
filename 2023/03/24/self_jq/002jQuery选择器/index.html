@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+
+
+<html theme="dark" showBanner="true" hasBanner="true" > 
+<link href="/fontawesome/css/fontawesome.css" rel="stylesheet">
+<link href="/fontawesome/css/brands.css" rel="stylesheet">
+<link href="/fontawesome/css/solid.css" rel="stylesheet">
+<script src="/js/color.global.min.js" ></script>
+<script src="/js/load-settings.js" ></script>
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+
+  
+  <title>jQuery选择器 | cfE_blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/MaterialSymbolsRounded.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+  <meta name="description" content="jQuery选择器                                                                                                         jQuery选择器#                              jQue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery选择器">
+<meta property="og:url" content="http://example.com/2023/03/24/self_jq/002jQuery%E9%80%89%E6%8B%A9%E5%99%A8/index.html">
+<meta property="og:site_name" content="cfE_blog">
+<meta property="og:description" content="jQuery选择器                                                                                                         jQuery选择器#                              jQue">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-03-24T11:05:50.000Z">
+<meta property="article:modified_time" content="2023-09-08T14:58:30.674Z">
+<meta property="article:author" content="changfeng_E">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="jQuery">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="shortcut icon" href="/xiaohei.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  
+  
+    
+<div id="banner" class="">
+  <img src="/assets/%E8%8A%B1%E8%8A%B1bg02.jpg" itemprop="image">
+  <div id="banner-dim"></div>
+</div>
+ 
+   
+  <div id="main-grid" class="shadow   ">
+    <div id="nav" class=""  >
+      <navbar id="navbar">
+  <nav id="title-nav">
+    <a href="/">
+      <div id="vivia-logo">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div>cfE_blog </div>
+    </a>
+  </nav>
+  <nav id="main-nav">
+    
+      <a class="main-nav-link" href="/">主页</a>
+    
+      <a class="main-nav-link" href="/archives">轨迹</a>
+    
+      <a class="main-nav-link" href="/about">更多</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    <a id="theme-btn" class="nav-icon">
+      <span class="material-symbols-rounded light-mode-icon">wb_sunny</span>
+      <span class="material-symbols-rounded dark-mode-icon">dark_mode</span>
+    </a>
+    
+    <a id="nav-search-btn" class="nav-icon" title="搜索" style="display: none;">
+      <span class="material-symbols-rounded">search</span>
+    </a>
+    <div id="nav-menu-btn" class="nav-icon">
+      <span class="material-symbols-rounded">menu</span>
+    </div>
+  </nav>
+</navbar>
+<div id="nav-dropdown" class="hidden">
+  <div id="dropdown-link-list">
+    
+      <a class="nav-dropdown-link" href="/">主页</a>
+    
+      <a class="nav-dropdown-link" href="/archives">轨迹</a>
+    
+      <a class="nav-dropdown-link" href="/about">更多</a>
+    
+     
+    </div>
+</div>
+<script>
+  let dropdownBtn = document.getElementById("nav-menu-btn");
+  let dropdownEle = document.getElementById("nav-dropdown");
+  dropdownBtn.onclick = function() {
+    dropdownEle.classList.toggle("hidden");
+  }
+</script>
+    </div>
+    <div id="sidebar-wrapper">
+      <sidebar id="sidebar">
+  
+    <div class="widget-wrap">
+  <div class="info-card">
+    <div class="avatar">
+      
+        <image src=/assets/%E7%BD%97%E5%B0%8F%E9%BB%9102.png></image>
+      
+      <div class="img-dim"></div>
+    </div>
+    <div class="info">
+      <div class="username">changfeng_E </div>
+      <div class="dot"></div>
+      <div class="subtitle">about me </div>
+      <div class="link-list">
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com/changfengE" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://gitee.com/changfengE" title="Gitee"><i class="fa-brands fa-square-git"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/285349009?spm_id_from=333.1007.0.0" title="bilibili"><i class="fa-brands fa-bilibili"></i></a>
+         
+      </div>  
+    </div>
+  </div>
+</div>
+
+  
+  <div class="sticky">
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">最新文章</h3>
+      <ul>
+        
+          <a class="recent-link" href="/2023/09/02/%E6%AF%81%E7%81%AD%E5%90%A7/" title="death note" >
+            <div class="recent-link-text">
+              death note
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/01/hello-world/" title="Hello World" >
+            <div class="recent-link-text">
+              Hello World
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/08/17/self_Ajax/023%E6%A1%88%E4%BE%8B06-%E5%AD%A6%E4%B9%A0%E5%8F%8D%E9%A6%88/" title="Ajax-案例-学习反馈" >
+            <div class="recent-link-text">
+              Ajax-案例-学习反馈
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/08/17/self_Ajax/022%E6%A1%88%E4%BE%8B05-%E5%95%86%E5%93%81%E5%88%86%E7%B1%BB/" title="Ajax-案例-商品分类" >
+            <div class="recent-link-text">
+              Ajax-案例-商品分类
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/08/17/self_Ajax/021Promise.all%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95/" title="Ajax-Promise.all静态方法" >
+            <div class="recent-link-text">
+              Ajax-Promise.all静态方法
+            </div>
+          </a>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">标签</h3>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/CSS3/" rel="tag">CSS3</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/HTML5/" rel="tag">HTML5</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/axios/" rel="tag">axios</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/hexo-use/" rel="tag">hexo_use</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/typora/" rel="tag">typora</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" rel="tag">移动端</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+
+
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">分类</h3>
+      <div class="category-box">
+            <a class="category-link" href="/categories/markdown/">
+                markdown
+                <div class="category-count">1</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/markdown/%E4%BD%BF%E7%94%A8/">
+                使用
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/git/">
+                git
+                <div class="category-count">4</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/git/%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81/">
+                提交代码
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/git%E5%AE%89%E8%A3%85%E5%8F%8A%E9%83%A8%E5%88%86%E5%91%BD%E4%BB%A4/">
+                git安装及部分命令
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/branch/">
+                branch
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/ssh%E7%BB%91%E5%AE%9A/">
+                ssh绑定
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/hexo%E5%88%9D%E4%BD%93%E9%AA%8C/">
+                hexo初体验
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/HTML5-CSS3/">
+                HTML5&CSS3
+                <div class="category-count">14</div>
+            </a>
+        
+            <a class="category-link" href="/categories/hexo/">
+                hexo
+                <div class="category-count">1</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/hexo/using/">
+                using
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/">
+                浏览器
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/">
+                移动端
+                <div class="category-count">16</div>
+            </a>
+        
+            <a class="category-link" href="/categories/jQuery/">
+                jQuery
+                <div class="category-count">14</div>
+            </a>
+        
+            <a class="category-link" href="/categories/Ajax/">
+                Ajax
+                <div class="category-count">23</div>
+            </a>
+        
+            <a class="category-link" href="/categories/js%E5%9F%BA%E7%A1%80/">
+                js基础
+                <div class="category-count">42</div>
+            </a>
+        </div>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">归档</h3>
+      
+      
+        <a class="archive-link" href="/archives/2023/09 ">
+          九月 2023 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/08 ">
+          八月 2023 
+          <div class="archive-count">23 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/07 ">
+          七月 2023 
+          <div class="archive-count">10 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/05 ">
+          五月 2023 
+          <div class="archive-count">3 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/04 ">
+          四月 2023 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/03 ">
+          三月 2023 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/02 ">
+          二月 2023 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/01 ">
+          一月 2023 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/12 ">
+          十二月 2022 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/11 ">
+          十一月 2022 
+          <div class="archive-count">4 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/09 ">
+          九月 2022 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/08 ">
+          八月 2022 
+          <div class="archive-count">11 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/07 ">
+          七月 2022 
+          <div class="archive-count">22 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/06 ">
+          六月 2022 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/02 ">
+          二月 2022 
+          <div class="archive-count">6 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/01 ">
+          一月 2022 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/10 ">
+          十月 2021 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/09 ">
+          九月 2021 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/08 ">
+          八月 2021 
+          <div class="archive-count">6 </div>
+        </a>
+      
+    </div>
+  </div>
+
+
+    
+  </div>
+</sidebar>
+    </div>
+    <div id="content-body">
+       
+
+<article id="post-self_jq/002jQuery选择器" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        jQuery选择器
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-03-24T11:05:50.000Z" itemprop="datePublished">2023-03-24</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/jQuery/">jQuery</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            1.5k 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>jQuery选择器</title>
+        <link rel=" shortcut icon" href="../xiaohei.ico">
+        <link rel="stylesheet" href="/globalsrc/mynormalize/mynormalize1.2.0.css">
+        <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <link rel="stylesheet " href="/css/self_jq/002jQuery选择器.css">
+    </head>
+
+    <body>
+        <div class="sidebar"></div>
+        <div class="mask"></div>
+        <div class="backtop"></div>
+        <div class="godown"></div>
+        <div class="div1">
+            <h2><span id="jquery-xuan-ze-qi">jQuery选择器</span><a href="#jquery-xuan-ze-qi" class="header-anchor">#</a></h2>
+            <div class="div2">
+                <h3><span id="jquery-ji-chu-xuan-ze-qi">jQuery基础选择器</span><a href="#jquery-ji-chu-xuan-ze-qi" class="header-anchor">#</a></h3>
+                <p>原生js获取元素方式很多，很杂，而且兼容性情况不一致，因此jQuery做了封装，使获取元素统一标准。</p>
+                <pre class="code_block">
+                <div class="lan-js ">jQuery</div>
+                <span>$("选择器 ") // 里面选择器直接写css选择器即可，但是要加引号</span>
+            </pre>
+                <table>
+                    <caption>jQuery基础选择器</caption>
+                    <thead>
+                        <tr>
+                            <th>名称</th>
+                            <th>用法</th>
+                            <th>描述</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ID选择器</td>
+                            <td>$('#id')</td>
+                            <td>获取指定ID的元素</td>
+                        </tr>
+                        <tr>
+                            <td>全选选择器</td>
+                            <td>$('*')</td>
+                            <td>匹配所有元素</td>
+                        </tr>
+                        <tr>
+                            <td>类选择器</td>
+                            <td>$('.class')</td>
+                            <td>获取同一类class的元素</td>
+                        </tr>
+                        <tr>
+                            <td>标签选择器</td>
+                            <td>$('div')</td>
+                            <td>获取同一类标签的所有元素</td>
+                        </tr>
+                        <tr>
+                            <td>并集选择器</td>
+                            <td>$('div,p,li')</td>
+                            <td>获取多个元素</td>
+                        </tr>
+                        <tr>
+                            <td>交集选择器</td>
+                            <td>$('li.current')</td>
+                            <td>交集元素</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="div2">
+                <h3><span id="jquery-ceng-ji-xuan-ze-qi">jQuery层级选择器</span><a href="#jquery-ceng-ji-xuan-ze-qi" class="header-anchor">#</a></h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>名称</th>
+                            <th>用法</th>
+                            <th>描述</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>子代选择器</td>
+                            <td>$('ul>li');</td>
+                            <td>
+                                使用
+                                <code>></code>
+                                号，获取子级元素；注意，并不会获取孙级元素[doge]
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>后代选择器</td>
+                            <td>$('ul li');</td>
+                            <td>使用空格，代表后代选择器，获取ul下所有的li元素，包括孙级</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="div2">
+                <h3><span id="jquery-she-zhi-yang-shi">jQuery设置样式</span><a href="#jquery-she-zhi-yang-shi" class="header-anchor">#</a></h3>
+                <pre class="code_block">
+                <div class="lan-js ">jQuery</div>
+                <span>$('div').css('属性','值')</span>
+            </pre>
+            </div>
+            <div class="div3">
+                <h3><span id="ji-chu-ceng-ji-xuan-ze-qi-xiao-guo">基础+层级选择器效果</span><a href="#ji-chu-ceng-ji-xuan-ze-qi-xiao-guo" class="header-anchor">#</a></h3>
+                <ol class="flex-row jqsel jqsel1">
+                    <li>ol第1个li</li>
+                    <li class="sec">ol第2个li</li>
+                    <li id="thi">ol第3个li</li>
+                    <li>ol第4个li</li>
+                </ol>
+            </div>
+            <div class="div2">
+                <h3><span id="jquery-yin-shi-die-dai"><strong>jQuery隐式迭代</strong></span><a href="#jquery-yin-shi-die-dai" class="header-anchor">#</a></h3>
+                <p>
+                    遍历内部DOM元素（伪数组形式存储）的过程就叫做
+                    <strong>隐式迭代</strong>
+                    。
+                </p>
+                <p>简单理解：给匹配到的所有元素进行循环遍历，执行相应的方法，而不用再进行循环，简化操作，方便调用。</p>
+            </div>
+            <div class="div2">
+                <h3><span id="jquery-shai-xuan-xuan-ze-qi">jQuery筛选选择器</span><a href="#jquery-shai-xuan-xuan-ze-qi" class="header-anchor">#</a></h3>
+                <table>
+                    <caption>jQuery筛选选择器</caption>
+                    <thead>
+                        <tr>
+                            <th>语法</th>
+                            <th>用法</th>
+                            <th>描述</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>:first</td>
+                            <td>$('li:first')</td>
+                            <td>获取第一个li元素</td>
+                        </tr>
+                        <tr>
+                            <td>:last</td>
+                            <td>$('li:last')</td>
+                            <td>获取最后一个li元素</td>
+                        </tr>
+                        <tr>
+                            <td>:eq(index)</td>
+                            <td>$('li:eq(2)')</td>
+                            <td>获取到的li元素中，选择索引号为2的元素，索引号从0开始</td>
+                        </tr>
+                        <tr>
+                            <td>:odd</td>
+                            <td>$('li:odd')</td>
+                            <td>获取到的li元素中，选择索引号为奇数的元素</td>
+                        </tr>
+                        <tr>
+                            <td>:even</td>
+                            <td>$('li:even')</td>
+                            <td>获取到的li元素中，选择索引号为偶数的元素</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="div3">
+                <h3><span id="shai-xuan-xuan-ze-qi-xiao-guo">筛选选择器效果</span><a href="#shai-xuan-xuan-ze-qi-xiao-guo" class="header-anchor">#</a></h3>
+                <ol class="flex-row jqsel jqsel2">
+                    <li>ol第1个li</li>
+                    <li class="sec">ol第2个li</li>
+                    <li id="thi">ol第3个li</li>
+                    <li>ol第4个li</li>
+                </ol>
+            </div>
+            <div class="div2">
+                <h3><span id="jquery-shai-xuan-fang-fa"><strong>jQuery筛选方法</strong></span><a href="#jquery-shai-xuan-fang-fa" class="header-anchor">#</a></h3>
+                <table>
+                    <caption>jQuery筛选方法(重点)</caption>
+                    <thead>
+                        <tr>
+                            <th>语法</th>
+                            <th>用法</th>
+                            <th>描述</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>parent()</td>
+                            <td>$('li').parent();</td>
+                            <td>查找父级</td>
+                        </tr>
+                        <tr>
+                            <td>children(selector)</td>
+                            <td>$('ul').children('li')</td>
+                            <td>
+                                相当于
+                                <code>$('ul>li')</code>
+                                ，最近一级
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>find(selector)</td>
+                            <td>$('ul').find('li')</td>
+                            <td>
+                                相当于
+                                <code>$('ul li')</code>
+                                ，后代选择器
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>siblings(selector)</td>
+                            <td>$(".first ").siblings("li ");</td>
+                            <td>查找兄弟节点，不包括自己本身</td>
+                        </tr>
+                        <tr>
+                            <td>nextAll([expr])</td>
+                            <td>$(".first ").nextAll()</td>
+                            <td>查找当前元素之后所有的同辈元素</td>
+                        </tr>
+                        <tr>
+                            <td>prevtAll([expr])</td>
+                            <td>$('.last').prevAll()</td>
+                            <td>查找当前元素之前所有的同辈元素</td>
+                        </tr>
+                        <tr>
+                            <td>hasClass(class)</td>
+                            <td>$('div').hasClass('protected')</td>
+                            <td>检查当前的元素是否含有某个特定的类，如果有，则返回true</td>
+                        </tr>
+                        <tr>
+                            <td>eq(index)</td>
+                            <td>$("li ").eq(2);</td>
+                            <td>
+                                相当于
+                                <code>$('li:eq(2)")</code>
+                                ，index从0开始
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="div2">
+                <h3><span id="an-li-xin-lang-xia-la-cai-dan">案例-新浪下拉菜单</span><a href="#an-li-xin-lang-xia-la-cai-dan" class="header-anchor">#</a></h3>
+                <div class="div3 clearfix">
+                    <ul class="nav">
+                        <li>
+                            <a href="#">微博</a>
+                            <ul>
+                                <li>
+                                    <a href="#">私信</a>
+                                </li>
+                                <li>
+                                    <a href="#">评论</a>
+                                </li>
+                                <li>
+                                    <a href="#">@我</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">微博</a>
+                            <ul>
+                                <li>
+                                    <a href="#">私信</a>
+                                </li>
+                                <li>
+                                    <a href="#">评论</a>
+                                </li>
+                                <li>
+                                    <a href="#">@我</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">微博</a>
+                            <ul>
+                                <li>
+                                    <a href="#">私信</a>
+                                </li>
+                                <li>
+                                    <a href="#">评论</a>
+                                </li>
+                                <li>
+                                    <a href="#">@我</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">微博</a>
+                            <ul>
+                                <li>
+                                    <a href="#">私信</a>
+                                </li>
+                                <li>
+                                    <a href="#">评论</a>
+                                </li>
+                                <li>
+                                    <a href="#">@我</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="div2">
+                <h3><span id="jquery-li-mian-de-pai-ta-si-xiang">jQuery里面的排他思想</span><a href="#jquery-li-mian-de-pai-ta-si-xiang" class="header-anchor">#</a></h3>
+                <p>想要多选一的效果，排他思想：当前元素设置样式，其余的兄弟元素清除样式。</p>
+                <div class="div3">
+                    <h4><span id="an-li">案例</span><a href="#an-li" class="header-anchor">#</a></h4>
+                    <div class="btnrow flex-row">
+                        <button>[doge]</button>
+                        <button>[doge]</button>
+                        <button>[doge]</button>
+                        <button>[doge]</button>
+                        <button>排他</button>
+                        <button>排他</button>
+                        <button>排他</button>
+                        <button>排他</button>
+                    </div>
+                </div>
+            </div>
+            <div class="div2">
+                <h3><span id="lian-shi-bian-cheng">链式编程</span><a href="#lian-shi-bian-cheng" class="header-anchor">#</a></h3>
+                <p>链式编程是为了节省代码量，看起来更优雅。</p>
+                <pre class="code_block">
+                <div class="lan-js">jQuery</div>
+                <span>$(this).css('color','red').sibling().css('color','');</span>
+            </pre>
+                <p>使用链式编程一定注意是哪个对象执行样式</p>
+                <p>以点击按钮变色为例</p>
+                <div class="div3">
+                    <h4><span id="yuan-xie-fa">原写法</span><a href="#yuan-xie-fa" class="header-anchor">#</a></h4>
+                    <pre class="code_block">
+                    <div class="lan-js">jQuery</div>
+                    <span>// 2.当前的元素变化背景色</span>
+                    <span>$(this).css('background', 'var(--pink)');</span>
+                    <span>// 3.其余的兄弟去掉背景色，隐式迭代</span>
+                    <span>$(this).siblings('button').css('background', '');</span>
+                </pre>
+                </div>
+                <div class="div3">
+                    <h4><span id="lian-shi-bian-cheng-xie-fa">链式编程写法</span><a href="#lian-shi-bian-cheng-xie-fa" class="header-anchor">#</a></h4>
+                    <pre class="code_block">
+                    <div class="lan-js">jQuery</div>
+                    <span>$(this).css('background','var(--pink)').siblings().css('background','');</span>
+                </pre>
+                </div>
+            </div>
+        </div>
+        <script src="/js/self_jq/002jQuery选择器.js"></script>
+        <script src="/globalsrc/mynormalize/mynormalize.js"></script>
+        <script src="/globalsrc/mynormalize/trans-animate.js"></script>
+    </body>
+</html>
+
+        
+      </div>
+
+         
+    </div>
+    
+     
+  </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left "
+    
+      href="/2023/04/05/self_jq/004jQuery%E6%A0%B7%E5%BC%8F%E6%93%8D%E4%BD%9C/"
+      title="jQuery样式操作"
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+      
+        jQuery样式操作
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2023/03/16/self_jq/001jQuery%E6%A6%82%E8%BF%B0/"
+      title="jQuery概述"
+     >
+
+    <p class="title-text">
+      
+        jQuery概述
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+ 
+    </div>
+    <div id="footer-wrapper">
+      <footer id="footer">
+  
+  <div id="footer-info" class="inner">
+    
+    &copy; 2023 changfeng_E<br>
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
+  </div>
+</footer>
+
+    </div>
+    <div class="back-to-top-wrapper">
+    <button id="back-to-top-btn" class="back-to-top-btn hide" onclick="topFunction()">
+        <span class="material-symbols-rounded">keyboard_arrow_up</span>
+    </button>
+</div>
+
+<script>
+    function topFunction() {
+        window.scroll({ top: 0, behavior: 'smooth' });
+    }
+    let btn = document.getElementById('back-to-top-btn');
+    function scrollFunction() {
+        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+            btn.classList.remove('hide')
+        } else {
+            btn.classList.add('hide')
+        }
+    }
+    window.onscroll = function() {
+        scrollFunction();
+    }
+</script>
+
+  </div>
+  <script src="/js/light-dark-switch.js"></script>
+</body>
+</html>

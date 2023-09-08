@@ -1,0 +1,57 @@
+.div1 {
+    .regbox,
+    .logbox {
+        position: relative;
+        margin: 0 auto;
+        width: 200px;
+        height: 250px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+        form {
+            margin-top: 10px;
+        }
+        label {
+            padding: 0 10px;
+            font-size: 14px;
+        }
+        input {
+            width: calc(100% - 20px);
+            border: 1px solid #ccc;
+        }
+
+        p.title {
+            padding: 5px;
+            font-weight: bold;
+            font-size: 500;
+            text-align: center;
+        }
+        // 提示信息
+        .alert {
+            padding: 5px 10px;
+            margin: 0 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            color: #fff;
+            opacity: 0;
+            &.alert-success {
+                background-color: rgba(38, 174, 38, 0.563);
+            }
+            &.alert-fail {
+                background-color: rgba(220, 41, 41, 0.671);
+            }
+            &.show {
+                opacity: 1;
+            }
+        }
+    }
+
+    .regsubmit,
+    .logsubmit {
+        position: absolute;
+        margin: 0 10px;
+        width: 180px;
+        bottom: 20px;
+        left: 0;
+    }
+}
