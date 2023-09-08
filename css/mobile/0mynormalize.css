@@ -1,0 +1,339 @@
+/* 
+author:3517134128@qq.com
+原始css版
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    background-color: rgba(128, 128, 128, 0.03);
+    --dark: #424242;
+}
+
+
+/* 
+icomoon字体图标引入 
+注意路径
+*/
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?rgzkco');
+    src: url('../fonts/icomoon.eot?rgzkco#iefix') format('embedded-opentype'), url('../fonts/icomoon.ttf?rgzkco') format('truetype'), url('../fonts/icomoon.woff?rgzkco') format('woff'), url('../fonts/icomoon.svg?rgzkco#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: green;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+p {
+    /* padding: 20px; */
+    padding: 10px;
+    /* background-color: pink; */
+}
+
+strong {
+    color: red;
+}
+
+
+/* 代码块样式开始 2022-12-10 */
+
+
+/* 原自定义样式 */
+
+
+/* 新样式 */
+
+.code_block {
+    position: relative;
+    background: #2d2d2d;
+    color: rgb(201, 209, 217);
+    font-family: Consolas;
+    text-align: left;
+    padding: 1em;
+    /* padding-left: 0.8em; */
+    padding-left: 70px;
+    margin: 1em;
+    border-radius: 5px;
+    /* 创建计数器 */
+    counter-reset: line;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 0;
+}
+
+
+/* 在 .code_block 的 css 内，第十行 counter-reset: line;已经定义了行数标记名称为 line */
+
+.code_block span {
+    /* 设置为块级元素，实现自动换行效果 */
+    display: block;
+    line-height: 25px;
+    /* 使存放代码的 span 具有预格式文本效果 */
+    white-space: pre-wrap;
+}
+
+.code_block span:before {
+    /* 实现行号的自增长和输出,递增计数器 */
+    counter-increment: line;
+    content: counter(line) "";
+    /* 将 before 和 span 同行 */
+    display: inline-block;
+    /* 将before绝对定位 */
+    position: absolute;
+    left: 0;
+    width: 40px;
+    text-align: right;
+    border-right: 2px solid #999;
+    padding-right: 10px;
+    color: #999;
+}
+
+
+/* 代码块样式结束 */
+
+button {
+    /* 当鼠标经过button按钮时，鼠标变成小手 */
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+img {
+    /* border: 0;是为了照顾低版本浏览器，若图片外面包含了链接会有边框的问题 */
+    border: 0;
+    /* 取消图片底侧有空白缝隙的问题 */
+    vertical-align: middle;
+}
+
+img[src*="cut"] {
+    display: block;
+    width: 60%;
+    margin: 10px;
+}
+
+li {
+    margin-left: 20px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+ul li {
+    list-style: disc;
+}
+
+
+/* table表格样式 */
+
+table {
+    margin-left: 10px;
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+
+table caption {
+    margin: 10px 0;
+    padding: 10px 0;
+    color: #424242;
+    text-align: left;
+    font-size: 1em;
+    font-weight: bold;
+    border-bottom: 2px solid var(--dark);
+}
+
+table caption::before {
+    font-family: "icomoon";
+    content: "\e921";
+    margin-right: 10px;
+    color: #424242;
+    font-size: 20px;
+}
+
+thead tr {
+    color: #f0f0f0;
+    background-color: #424242;
+}
+
+th,
+td {
+    border: 1px solid #000;
+    padding: 5px;
+    transition: all .1s;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #ccc;
+}
+
+td:hover {
+    color: #fff;
+    background-color: #424242;
+}
+
+iframe {
+    width: 95%;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgba(0, 128, 0, 0.1);
+    border-radius: 10px;
+}
+
+input {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 5px 10px;
+    height: 30px;
+    line-height: 30px;
+    outline: none;
+    border-radius: 5px;
+    vertical-align: middle;
+}
+
+
+/* after伪类清除浮动第一种方法 */
+
+.clearfix::after {
+    content: "";
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+}
+
+
+/* 为了照顾ie6浏览器 */
+
+.clearfix {
+    zoom: 1;
+}
+
+.boxShadow {
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+.div1,
+.div2,
+.div3,
+.div4 {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.div1 {
+    border: 1px solid black;
+}
+
+.div2 {
+    border: 1px solid red;
+    overflow: hidden;
+}
+
+.div3 {
+    border: 1px solid blue;
+}
+
+.div4 {
+    border: 1px solid green;
+}
+
+@media screen and (min-width:640px) {
+    .div4 {
+        display: inline-block;
+        width: 45%;
+        vertical-align: top;
+    }
+}
+
+
+/* 要点 */
+
+.tips {
+    display: inline-block;
+    font-size: 1.1em;
+    color: green;
+}
+
+
+/* flex布局row方向 */
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+/* flex布局column方向 */
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* blockquote引用块样式 */
+
+blockquote {
+    position: relative;
+    background: rgba(235, 255, 244, 0.675);
+    padding: 10px 40px;
+    margin: 1em;
+    font-size: .8em;
+    border-style: solid;
+    border-width: 0 0 0 5px;
+    border-color: #009b74;
+    border-radius: 4px;
+    line-height: 200%;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+blockquote::before {
+    content: "\e91e";
+    font-family: "icomoon";
+    position: absolute;
+    left: 10px;
+    font-size: 1.2rem;
+}
+
+
+/* 步骤、长文段块 */
+
+blockquote.steps {
+    padding: 10px 20px;
+    line-height: 100%;
+    background: #e5e5e5ac;
+    border-color: #a0a0a0;
+}
+
+blockquote.steps::before {
+    content: '';
+}
+
+del {
+    color: #aaa;
+}

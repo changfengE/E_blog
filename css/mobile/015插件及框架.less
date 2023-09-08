@@ -1,0 +1,134 @@
+.multi li {
+    padding: 0;
+
+    ul {
+        padding: 0;
+        li.div4 {
+            // margin-left: 0;
+            list-style: none;
+
+            img {
+                width: 95%;
+            }
+        }
+    }
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mySwiper2 {
+    .swiper-slide {
+        display: flex;
+        height: 20vh;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        font-weight: bold;
+        color: #fff;
+
+        &:nth-child(1n) {
+            background-color: rgb(206, 17, 17);
+        }
+
+        &:nth-child(2n) {
+            background-color: rgb(0, 140, 255);
+        }
+
+        &:nth-child(3n) {
+            background-color: rgb(10, 184, 111);
+        }
+
+        &:nth-child(4n) {
+            background-color: rgb(211, 122, 7);
+        }
+
+        &:nth-child(5n) {
+            background-color: rgb(118, 163, 12);
+        }
+    }
+
+    .current {
+        /* 定制分页器当前索引的圆点样式 */
+        opacity: 1;
+        width: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        transition: all .3s;
+        vertical-align: middle;
+    }
+
+    .firstparallax {
+        display: flex;
+        flex-direction: column;
+        font-size: 16px;
+    }
+}
+
+/* zyMedia插件 */
+.h5video {
+    width: 80% !important;
+    float: left;
+}
+
+.zy_media {
+    width: 500px;
+}
+
+@media screen and (max-width:767px) {
+    .zy_media {
+        width: 350px;
+    }
+}
+
+.zy_timeline {
+    cursor: pointer;
+}
+
+.zy_playback_rate {
+    cursor: pointer;
+
+    .zy_playback_rate_option {
+        // cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.3) !important;
+
+        li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            width: 100%;
+            font-size: 12px;
+
+            &.active {
+                color: skyblue !important;
+            }
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.5);
+                transition: all .3s;
+            }
+        }
+    }
+}

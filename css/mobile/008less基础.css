@@ -1,0 +1,30 @@
+.linkless {
+  font-size: 14px;
+  color: blue;
+  background-color: pink;
+}
+.header {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-color: pink;
+}
+.header a {
+  margin: 20px;
+  color: red;
+}
+.header a:hover {
+  color: blue;
+}
+.header a::before {
+  content: "this is a tag";
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.count {
+  width: 120px;
+  height: 50px;
+  border: 12px solid red;
+  background-color: #444444;
+}

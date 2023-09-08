@@ -1,0 +1,40 @@
+// 定义一个粉色的变量
+@color:pink;
+@uglyblue: blue;
+// 定义一个大小为14px的变量
+@font14: 14px;
+.linkless{
+    font-size: @font14;
+    color: @uglyblue;
+    background-color: @color;
+}
+// Less嵌套
+.header{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: @color;
+    a{
+        margin: 20px;
+        color: red;
+        // 交集|伪类|伪元素选择器加 & 符号指父元素本身
+        &:hover{
+            color: @uglyblue;
+        }
+        &::before{
+            content: "this is a tag";
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+}
+// less运算
+@border:2px + 5*2;
+.count{
+    width: 100px * 1.2;
+    height: 100px - 50;
+    border: @border solid red;
+    // 颜色也可以运算
+    background-color: #666 - #222;
+}

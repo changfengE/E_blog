@@ -1,0 +1,679 @@
+/*
+ * @Author: 3517134128@qq.com 
+ * @Email: 3517134128@qq.com
+ * @Date: 2023-03-09 22:27:20 
+ * @Last Modified by: 3517134128@qq.com
+ * @Last Modified time: 2023-09-07 18:47:45
+ * @Description: my normalize less版
+ * 版本号：1.2.0
+ * 较上一版本（原始版）：修改部分常用样式如body背景色，边框块背景色，iconfont字体图标
+ */
+:root {
+  --dark: #424242;
+  --fontgrey: #555666;
+  --bggrey: rgba(85, 85, 85, 0.8);
+  --lightgrey: #fafafa;
+  --pink: rgba(255, 122, 122, 0.8);
+  --red: #ff3555;
+  --yellow: #ffd630;
+  --purple: #9d31cc;
+  --lightgreen: #84ab92;
+  --green: #128f12;
+  --shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.3);
+  /* less写法：@dark:#424242; */
+}
+* {
+  font-family: 'opposans-l';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+body {
+  margin: 0 auto;
+  color: unset;
+  background-color: #eaeaea;
+}
+/* 
+icomoon字体图标引入 
+注意路径
+*/
+@font-face {
+  font-family: 'icomoon';
+  src: url('/fonts/icomoon/icomoon.eot?rgzkco');
+  src: url('/fonts/icomoon/icomoon.eot?rgzkco#iefix') format('embedded-opentype'), url('/fonts/icomoon/icomoon.ttf?rgzkco') format('truetype'), url('/fonts/icomoon/icomoon.woff?rgzkco') format('woff'), url('/fonts/icomoon/icomoon.svg?rgzkco#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+/* 
+iconfont
+*/
+@font-face {
+  font-family: 'iconfont';
+  src: url('/fonts/iconfont/iconfont.woff2?t=1678453781276') format('woff2'), url('/fonts/iconfont/iconfont.woff?t=1678453781276') format('woff'), url('/fonts/iconfont/iconfont.ttf?t=1678453781276') format('truetype');
+}
+/* oppo sans 
+2023年4月3日
+*/
+@font-face {
+  font-family: 'opposans-b';
+  src: url('../font/font-opposans/OPlusSans3-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'opposans-el';
+  src: url('../font/font-opposans/OPlusSans3-ExtraLight.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'opposans-l';
+  src: url('../font/font-opposans/OPlusSans3-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'opposans-m';
+  src: url('../font/font-opposans/OPlusSans3-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'opposans-r';
+  src: url('../font/font-opposans/OPlusSans3-Regular.ttf') format('truetype');
+}
+.iconfont {
+  font-family: 'iconfont' !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.sidebar {
+  /*  侧边导航栏 
+*   2023年2月25日
+*/
+  position: fixed;
+  left: -300px;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  z-index: 9999;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: var(--shadow);
+}
+.sidebar .catalog {
+  /* 目录按钮 */
+  position: absolute;
+  z-index: -1;
+  top: 10px;
+  right: -80px;
+  cursor: pointer;
+  width: 80px;
+  height: 30px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: var(--shadow);
+  border-radius: 0 5px 5px 0;
+}
+.sidebar .catalog::before {
+  font-family: 'icomoon';
+  content: '\e91c';
+  margin: 0 5px 0 10px;
+  vertical-align: middle;
+  line-height: 30px;
+}
+.sidebar .catalog::after {
+  content: '目录';
+}
+.sidebar .close::before {
+  /* 关闭按钮 */
+  font-family: 'icomoon';
+  content: '\e925';
+  cursor: pointer;
+  font-size: 18px;
+  font-style: normal;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.sidebar h2 {
+  padding: 30px 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+}
+.sidebar ul {
+  overflow: scroll;
+  padding: 10px;
+  margin: 10px 0 0 30px;
+  height: calc(100% - 103px);
+  border-radius: 10px 0 0 10px;
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: var(--shadow);
+}
+.sidebar ul li {
+  padding: 5px;
+  margin: 0;
+  background-color: transparent;
+  list-style: none;
+}
+.sidebar ul li:nth-of-type(4n)::after {
+  display: block;
+  content: '';
+  padding-top: 10px;
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px solid var(--dark);
+}
+.sidebar ul li:hover a {
+  margin-left: 5px;
+  box-shadow: var(--shadow);
+}
+.sidebar ul li a {
+  display: block;
+  padding: 10px;
+  margin: 0 0 0 10px;
+  font-size: 13px;
+  text-decoration: none;
+  color: #fff;
+  background-color: var(--bggrey);
+  border-radius: 5px;
+  transition: all 0.1s;
+}
+.sidebar ul li a.active {
+  margin-left: 5px;
+  background-color: var(--red);
+}
+.mask {
+  /* 侧边导航遮罩层 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  /* mask遮罩层比侧边导航低一层 */
+  z-index: 9998;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+@media screen and (max-width: 767px) {
+  /* 控制sidebar宽度 */
+  .sidebar {
+    left: -200px;
+    width: 200px;
+  }
+  .sidebar ul li a {
+    font-size: 12px;
+  }
+}
+/* backtop返回顶部模块
+    2023年3月14日
+*/
+.backtop,
+.godown {
+  position: fixed;
+  z-index: 999;
+  right: 20px;
+  padding: 5px;
+  line-height: 25px;
+  background-color: #fff;
+  box-shadow: var(--shadow);
+  border: 1px solid transparent;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+.backtop::after,
+.godown::after {
+  content: '\e6c6';
+  font-family: 'iconfont';
+  font-size: 30px;
+  color: var(--fontgrey);
+}
+.backtop:hover,
+.godown:hover {
+  border: 1px solid #ccc;
+}
+.backtop .backcon,
+.godown .backcon,
+.backtop .downcon,
+.godown .downcon {
+  position: absolute;
+  opacity: 0;
+  bottom: 0;
+  width: calc(100% - 10px);
+  font-size: 10px;
+  text-align: center;
+  color: var(--fontgrey);
+  transition: all 0.3s;
+}
+.backtop .backcon::before,
+.godown .backcon::before {
+  content: '顶部';
+}
+.backtop {
+  bottom: 150px;
+}
+/* 返回顶部模块结束 */
+/* 直达底部模块 */
+.godown {
+  position: fixed;
+  top: calc(100% - 140px);
+}
+.godown::after {
+  content: '\e620';
+}
+.godown .downcon::before {
+  content: '底部';
+}
+.div1,
+.div2,
+.div3,
+.div4 {
+  padding: 20px;
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.div2 {
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.div3 {
+  background-color: var(--lightgrey);
+}
+.div4 {
+  box-shadow: var(--shadow);
+}
+@media screen and (min-width: 640px) {
+  .div4 {
+    display: inline-block;
+    width: calc((100% - 50px) / 2);
+    vertical-align: top;
+  }
+  .div4.bigcard {
+    display: block;
+    width: unset;
+  }
+}
+.div1 {
+  margin: 10px 0;
+  box-shadow: var(--shadow);
+  /* 自定义颜色 */
+  /* 代码块样式开始 2022-12-10 */
+  /* 原自定义样式 */
+  /* 新样式 */
+  /* 代码块样式结束 */
+  /* table表格样式 */
+  /* after伪类清除浮动第一种方法 */
+  /* 为了照顾ie6浏览器 */
+  /* 要点 */
+  /* flex布局row方向 */
+  /* flex布局column方向 */
+  /* blockquote引用块样式 */
+  /* 直达底部模块结束 */
+  /* 测试盒子 */
+  /* 测试盒子结束 */
+}
+.div1 .my-color.flex-row {
+  justify-content: start;
+}
+.div1 .my-color.flex-row li {
+  display: block;
+  padding: 0 20px;
+  margin: 0;
+  height: 50px;
+  line-height: 50px;
+  list-style: none;
+  font-size: 12px;
+  color: #fff;
+  border: 1px solid #f0f0f0;
+  border-top: none;
+  border-left: none;
+}
+.div1 h1,
+.div1 h2,
+.div1 h3,
+.div1 h4,
+.div1 h5,
+.div1 h6 {
+  padding: 0 10px;
+}
+.div1 h1 span,
+.div1 h2 span,
+.div1 h3 span,
+.div1 h4 span,
+.div1 h5 span,
+.div1 h6 span {
+  padding-right: 10px;
+}
+.div1 a {
+  text-decoration: none;
+  color: green;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+.div1 p {
+  padding: 5px 10px;
+  line-height: 1.5em;
+}
+.div1 strong {
+  color: red;
+}
+.div1 .code_block {
+  position: relative;
+  background: #2d2d2d;
+  color: #c9d1d9;
+  font-family: Consolas;
+  /* 为了解决span盒子间隙问题，将span的父级字体设置为0，span盒子字体再重新指定 */
+  font-size: 0;
+  padding: 15px;
+  /* padding-left: 0.8em; */
+  padding-left: 40px;
+  margin: 10px;
+  border-radius: 5px;
+  /* 创建计数器 */
+  counter-reset: line;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 0;
+  /* 2023年3月10日
+     * 新增：代码块语言角标
+    */
+}
+.div1 .code_block [class^='lan'] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 10px;
+  height: 20px;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: center;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.div1 .code_block [class^='lan']::before {
+  font-family: 'iconfont';
+  position: absolute;
+  right: 100%;
+  padding-left: 10px;
+  font-size: 16px;
+  border-radius: 0 0 0 5px;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.div1 .code_block .lan-html {
+  color: var(--green);
+}
+.div1 .code_block .lan-html::before {
+  content: '\e61c';
+}
+.div1 .code_block .lan-css {
+  color: var(--purple);
+}
+.div1 .code_block .lan-css::before {
+  content: '\e700';
+}
+.div1 .code_block .lan-js {
+  color: var(--yellow);
+}
+.div1 .code_block .lan-js::before {
+  content: '\e676';
+}
+.div1 .code_block span {
+  /* 在 .code_block 的 css 内，第十行 counter-reset: line;已经定义了行数标记名称为 line */
+  /* 设置为块级元素，实现自动换行效果 */
+  display: block;
+  line-height: 25px;
+  /* 使存放代码的 span 具有预格式文本效果 */
+  white-space: pre-wrap;
+  /* 调整字母间距 */
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+.div1 .code_block span::before {
+  /* 实现行号的自增长和输出,递增计数器 */
+  counter-increment: line;
+  content: counter(line) '';
+  /* 将 before 和 span 同行 */
+  display: inline-block;
+  /* 将before绝对定位 */
+  position: absolute;
+  left: 0;
+  width: 20px;
+  text-align: right;
+  border-right: 2px solid #999;
+  padding-right: 10px;
+  color: #999;
+}
+.div1 button {
+  /* 当鼠标经过button按钮时，鼠标变成小手 */
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
+}
+.div1 img {
+  /* border: 0;是为了照顾低版本浏览器，若图片外面包含了链接会有边框的问题 */
+  border: 0;
+  /* 取消图片底侧有空白缝隙的问题 */
+  vertical-align: middle;
+}
+.div1 img[src*='cut'] {
+  display: block;
+  width: 60%;
+  margin: 10px;
+}
+.div1 li {
+  margin-left: 10px;
+  padding: 5px 10px;
+  /* 2023年3月24日 
+    修改li编号位置，以便与li内容背景色相同
+    */
+  list-style-position: inside;
+  font-size: 16px;
+}
+.div1 ul {
+  padding-left: 10px;
+}
+.div1 ul li {
+  list-style: disc inside;
+}
+.div1 ol {
+  padding-left: 10px;
+}
+.div1 table {
+  margin-left: 10px;
+  border: 1px solid #000;
+  border-collapse: collapse;
+  caption-side: top !important;
+}
+.div1 table caption {
+  margin: 10px 0;
+  padding: 10px 0;
+  color: var(--dark);
+  text-align: left;
+  font-size: 1em;
+  font-weight: bold;
+  border-bottom: 2px solid var(--dark);
+}
+.div1 table caption::before {
+  font-family: 'icomoon';
+  content: '\e921';
+  margin-right: 10px;
+  color: var(--dark);
+  font-size: 20px;
+}
+.div1 table th {
+  color: #f0f0f0;
+  background-color: var(--dark);
+}
+.div1 table th,
+.div1 table td {
+  border: 1px solid #000;
+  padding: 5px;
+  transition: all 0.1s;
+}
+.div1 table td:hover {
+  color: #fff;
+  background-color: var(--dark);
+}
+.div1 table tbody tr:nth-child(even) {
+  background-color: #ccc;
+}
+.div1 iframe {
+  width: 95%;
+  padding: 10px;
+  margin: 10px;
+  background-color: rgba(0, 128, 0, 0.1);
+  border-radius: 10px;
+}
+.div1 input {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 5px 10px;
+  height: 30px;
+  line-height: 30px;
+  outline: none;
+  border-radius: 5px;
+  vertical-align: middle;
+}
+.div1 input[type='button'],
+.div1 button {
+  /* 按钮样式 
+    2023年4月3日
+    */
+  margin: 5px;
+  padding: 0 10px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px;
+  color: #424242;
+  border: none;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  background-color: #fafafa;
+  transition: all 0.1s;
+}
+.div1 input[type='button']:hover,
+.div1 button:hover,
+.div1 input[type='button']:focus,
+.div1 button:focus {
+  color: #6c6d82;
+  background-color: #e1e1e1;
+}
+.div1 input[type='button']:active,
+.div1 button:active {
+  box-shadow: none;
+  transform: translateY(1px);
+}
+.div1 .clearfix::after {
+  content: '';
+  display: block;
+  visibility: hidden;
+  clear: both;
+  height: 0;
+}
+.div1 .clearfix {
+  zoom: 1;
+}
+.div1 .boxShadow {
+  box-shadow: var(--shadow);
+}
+.div1 .tips {
+  display: inline-block;
+  font-size: 1.1em;
+  color: green;
+}
+.div1 .flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.div1 .flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.div1 blockquote {
+  position: relative;
+  background: rgba(235, 255, 244, 0.675);
+  padding: 10px 40px;
+  margin: 1em;
+  border-style: solid;
+  border-width: 0 0 0 7px;
+  border-color: #009b74;
+  border-radius: 4px;
+  line-height: 200%;
+  color: var(--fontgrey, blue);
+  transition: all 0.5s;
+}
+.div1 blockquote:hover {
+  box-shadow: var(--shadow);
+}
+.div1 blockquote::before {
+  content: '\e91e';
+  font-family: 'icomoon';
+  position: absolute;
+  left: 10px;
+  font-size: 1.5em;
+}
+.div1 blockquote ul,
+.div1 blockquote ol {
+  margin-bottom: 5px;
+  padding: 10px;
+  border: 1px solid #afafaf;
+  border-radius: 5px;
+}
+.div1 blockquote ul li,
+.div1 blockquote ol li {
+  padding: 5px;
+  line-height: 150%;
+  font-size: 0.9em;
+}
+.div1 blockquote.steps {
+  /* 步骤、长文段块 */
+  background: #e5e5e5ac;
+  border-color: #afafaf;
+  border-radius: 0;
+}
+.div1 blockquote.steps::before {
+  content: '\e919';
+}
+.div1 del {
+  margin: 0 10px;
+  color: #aaa;
+}
+.div1 code {
+  padding: 0.3em 0.4em;
+  font-size: 0.9em;
+  font-weight: bold;
+  background-color: #ffe7e7;
+  color: #ff502c;
+  border-radius: 5px;
+}
+.div1 .note {
+  /*  注意事项 
+    *   2023年2月27日
+    */
+  margin: 10px;
+  padding: 15px 10px;
+  border-radius: 5px;
+  color: var(--dark);
+  background-color: var(--pink);
+  box-shadow: var(--shadow);
+}
+.div1 .note::before {
+  font-family: 'icomoon';
+  content: '\e936';
+  margin: 10px;
+  font-size: 20px;
+  color: var(--fontgrey);
+  vertical-align: middle;
+}
+.div1 .testbox {
+  /* display: inline-block;使用行内盒会发现在盒子之间会有一定的外边距。这是因为行内块级元素对于空格、回车等字符也会解析成可见的空白字符，因此在排版时会产生一定的间隔。 */
+  float: left;
+  margin-right: 10px;
+  padding: 5px;
+  width: 100px;
+  height: 100px;
+  font-size: 0.8em;
+  background-color: var(--pink);
+}

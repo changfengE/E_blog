@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+
+
+<html theme="dark" showBanner="true" hasBanner="true" > 
+<link href="/fontawesome/css/fontawesome.css" rel="stylesheet">
+<link href="/fontawesome/css/brands.css" rel="stylesheet">
+<link href="/fontawesome/css/solid.css" rel="stylesheet">
+<script src="/js/color.global.min.js" ></script>
+<script src="/js/load-settings.js" ></script>
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+
+  
+  <title>js对象 | cfE_blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/MaterialSymbolsRounded.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+  <meta name="description" content="js对象                                        &#x2F;&#x2F; 对象:一个具体的事物             &#x2F;&#x2F; 在js中,对象是一组无序的相关属性和方法的集合,所有的事物都是对象,例如字符串\数值\数组\函数等.             &#x2F;&#x2F; 对象由属性和方法组成">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js对象">
+<meta property="og:url" content="http://example.com/2021/10/07/self_js/052js%E5%AF%B9%E8%B1%A1/index.html">
+<meta property="og:site_name" content="cfE_blog">
+<meta property="og:description" content="js对象                                        &#x2F;&#x2F; 对象:一个具体的事物             &#x2F;&#x2F; 在js中,对象是一组无序的相关属性和方法的集合,所有的事物都是对象,例如字符串\数值\数组\函数等.             &#x2F;&#x2F; 对象由属性和方法组成">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-10-07T09:50:32.000Z">
+<meta property="article:modified_time" content="2023-09-07T14:54:51.963Z">
+<meta property="article:author" content="changfeng_E">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="shortcut icon" href="/xiaohei.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  
+  
+    
+<div id="banner" class="">
+  <img src="/assets/%E8%8A%B1%E8%8A%B1bg02.jpg" itemprop="image">
+  <div id="banner-dim"></div>
+</div>
+ 
+   
+  <div id="main-grid" class="shadow   ">
+    <div id="nav" class=""  >
+      <navbar id="navbar">
+  <nav id="title-nav">
+    <a href="/">
+      <div id="vivia-logo">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div>cfE_blog </div>
+    </a>
+  </nav>
+  <nav id="main-nav">
+    
+      <a class="main-nav-link" href="/">主页</a>
+    
+      <a class="main-nav-link" href="/archives">轨迹</a>
+    
+      <a class="main-nav-link" href="/about">更多</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    <a id="theme-btn" class="nav-icon">
+      <span class="material-symbols-rounded light-mode-icon">wb_sunny</span>
+      <span class="material-symbols-rounded dark-mode-icon">dark_mode</span>
+    </a>
+    
+    <a id="nav-search-btn" class="nav-icon" title="搜索" style="display: none;">
+      <span class="material-symbols-rounded">search</span>
+    </a>
+    <div id="nav-menu-btn" class="nav-icon">
+      <span class="material-symbols-rounded">menu</span>
+    </div>
+  </nav>
+</navbar>
+<div id="nav-dropdown" class="hidden">
+  <div id="dropdown-link-list">
+    
+      <a class="nav-dropdown-link" href="/">主页</a>
+    
+      <a class="nav-dropdown-link" href="/archives">轨迹</a>
+    
+      <a class="nav-dropdown-link" href="/about">更多</a>
+    
+     
+    </div>
+</div>
+<script>
+  let dropdownBtn = document.getElementById("nav-menu-btn");
+  let dropdownEle = document.getElementById("nav-dropdown");
+  dropdownBtn.onclick = function() {
+    dropdownEle.classList.toggle("hidden");
+  }
+</script>
+    </div>
+    <div id="sidebar-wrapper">
+      <sidebar id="sidebar">
+  
+    <div class="widget-wrap">
+  <div class="info-card">
+    <div class="avatar">
+      
+        <image src=/assets/%E7%BD%97%E5%B0%8F%E9%BB%9102.png></image>
+      
+      <div class="img-dim"></div>
+    </div>
+    <div class="info">
+      <div class="username">changfeng_E </div>
+      <div class="dot"></div>
+      <div class="subtitle">about me </div>
+      <div class="link-list">
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com/changfengE" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://gitee.com/changfengE" title="Gitee"><i class="fa-brands fa-square-git"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/285349009?spm_id_from=333.1007.0.0" title="bilibili"><i class="fa-brands fa-bilibili"></i></a>
+         
+      </div>  
+    </div>
+  </div>
+</div>
+
+  
+  <div class="sticky">
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">最新文章</h3>
+      <ul>
+        
+          <a class="recent-link" href="/2023/09/02/%E6%AF%81%E7%81%AD%E5%90%A7/" title="death note" >
+            <div class="recent-link-text">
+              death note
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/01/hello-world/" title="Hello World" >
+            <div class="recent-link-text">
+              Hello World
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/07/21/self_js/131%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="正则表达式" >
+            <div class="recent-link-text">
+              正则表达式
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/07/17/self_js/130_%E8%A1%A5%E5%85%85_%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0/" title="补充-回调函数" >
+            <div class="recent-link-text">
+              补充-回调函数
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/07/16/self_js/129%E9%80%BB%E8%BE%91%E4%B8%AD%E6%96%AD/" title="逻辑中断" >
+            <div class="recent-link-text">
+              逻辑中断
+            </div>
+          </a>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">标签</h3>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/hexo-use/" rel="tag">hexo_use</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/typora/" rel="tag">typora</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" rel="tag">移动端</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+
+
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">分类</h3>
+      <div class="category-box">
+            <a class="category-link" href="/categories/markdown/">
+                markdown
+                <div class="category-count">1</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/markdown/%E4%BD%BF%E7%94%A8/">
+                使用
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/git/">
+                git
+                <div class="category-count">4</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/git/git%E5%AE%89%E8%A3%85%E5%8F%8A%E9%83%A8%E5%88%86%E5%91%BD%E4%BB%A4/">
+                git安装及部分命令
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/ssh%E7%BB%91%E5%AE%9A/">
+                ssh绑定
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81/">
+                提交代码
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/branch/">
+                branch
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/hexo%E5%88%9D%E4%BD%93%E9%AA%8C/">
+                hexo初体验
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/hexo/">
+                hexo
+                <div class="category-count">1</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/hexo/using/">
+                using
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/">
+                移动端
+                <div class="category-count">16</div>
+            </a>
+        
+            <a class="category-link" href="/categories/js%E5%9F%BA%E7%A1%80/">
+                js基础
+                <div class="category-count">42</div>
+            </a>
+        </div>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">归档</h3>
+      
+      
+        <a class="archive-link" href="/archives/2023/09 ">
+          九月 2023 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/07 ">
+          七月 2023 
+          <div class="archive-count">3 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/03 ">
+          三月 2023 
+          <div class="archive-count">3 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/02 ">
+          二月 2023 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/01 ">
+          一月 2023 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/12 ">
+          十二月 2022 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/11 ">
+          十一月 2022 
+          <div class="archive-count">4 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/09 ">
+          九月 2022 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/08 ">
+          八月 2022 
+          <div class="archive-count">7 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/07 ">
+          七月 2022 
+          <div class="archive-count">15 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/06 ">
+          六月 2022 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/02 ">
+          二月 2022 
+          <div class="archive-count">6 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/01 ">
+          一月 2022 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/10 ">
+          十月 2021 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/09 ">
+          九月 2021 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/08 ">
+          八月 2021 
+          <div class="archive-count">6 </div>
+        </a>
+      
+    </div>
+  </div>
+
+
+    
+  </div>
+</sidebar>
+    </div>
+    <div id="content-body">
+       
+
+<article id="post-self_js/052js对象" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        js对象
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2021-10-07T09:50:32.000Z" itemprop="datePublished">2021-10-07</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/js%E5%9F%BA%E7%A1%80/">js基础</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            2.7k 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>js对象</title>
+        <link rel="shortcut icon" href="../xiaohei.ico">
+        <link rel="stylesheet" href="/globalsrc/mynormalize/mynormalize1.2.0.css">
+        <script>
+            // 对象:一个具体的事物
+            // 在js中,对象是一组无序的相关属性和方法的集合,所有的事物都是对象,例如字符串\数值\数组\函数等.
+            // 对象由属性和方法组成
+            // 属性:事物特征(常用名词)
+            // 方法:事物行为(常用动词)
+
+            // 创建对象三种方式:
+            // 一、1、利用字面量创建对象{}
+            // 对象字面量：就是花括号{}里面包含了表达这个具体事物（对象）的属性和方法。
+            //var obj = {}; // 创建了一个空的对象
+            var obj = {
+                uname: '张三',
+                age: 18,
+                sex: '男',
+                sayHi: function () {
+                    console.log('hi~');
+                },
+            };
+            // (1)里面的属性或方法采用键值对的形式 键 属性名 ：值 属性值
+            // (2)多个属性或者方法间用逗号隔开
+            // (3)方法冒号后面跟的是一个匿名函数
+
+            // 2、使用对象
+            // (1)调用对象的属性，采取 对象名.属性名，理解为：对象的XX属性
+            console.log(obj.uname);
+            // (2)调用属性还有一种方法，对象名['属性名']
+            console.log(obj['age']);
+            // (3)调用对象的方法，对象名.方法名();
+            obj.sayHi();
+
+            // 练习：按照要求写出对象
+            // 姓名：可可，类型（type）：阿拉斯加犬，年龄：5岁，颜色：棕红色，技能：汪汪汪（bark），演电影（showFilm）
+            var dog = {
+                name: '可可',
+                type: '阿拉斯加犬',
+                age: 5,
+                color: '棕红色',
+                bark: function () {
+                    console.log('汪汪汪~');
+                },
+                showFilm: function () {
+                    console.log('演电影');
+                },
+            };
+
+            // 二、利用new Object创建对象
+            var obj2 = new Object(); // 创建了一个空对象
+            obj2.uname = '李四';
+            obj2.age = 18;
+            obj2.sex = '男';
+            obj2.sayHi = function () {
+                console.log('hi~');
+            };
+
+            // (1)我们是利用 等号= 赋值的方法 添加对象的属性和方法
+            // (2)每个属性和方法之间用分号结束
+            console.log(obj.uname);
+            console.log(obj['sex']);
+            obj.sayHi();
+
+            // 练习：按照要求写出对象
+            // 姓名：鸣人，性别：男，年龄：19，技能（skill）：影分身术
+            var mingRen = new Object();
+            mingRen.name = '鸣人';
+            mingRen.sex = '男';
+            mingRen.age = 19;
+            mingRen.skill = function () {
+                console.log('影分身术');
+            };
+            console.log(mingRen);
+            console.log(mingRen.skill());
+
+            // 三、利用构造函数创建对象
+            // 使用构造函数是因为前两种创建方式一次只能创建一个对象
+            // 一次创建一个对象，里面有很多的属性和方法是大量相同的，因此可以利用函数的方法，重复这些相同的代码，就把这个函数称为构造函数
+            // 因为这个函数不一样，里面封装的不是普通代码，而是对象
+            // 构造函数就是把对象里面一些相同的属性和方法抽象出来封装到函数里
+
+            // 构造函数语法：
+            /* function 构造函数名() {
+            this.属性 = 值;
+            this.方法 = function() {}
+        }
+        new 构造函数名(); */
+
+            console.log('====================================');
+            // 例：创建四大天王的对象，相同的属性：名字、年龄、性别 相同的方法：唱歌
+
+            function Star(uname, age, sex) {
+                // 括号内形参
+                this.name = uname;
+                this.age = age;
+                this.sex = sex;
+                this.sing = function (sang) {
+                    console.log(sang);
+                };
+            }
+            var ldh = new Star('刘德华', 18, '男'); // 调用函数返回的是一个对象
+            // console.log(typeof ldh);
+            console.log(ldh.name);
+            console.log(ldh['sex']);
+            ldh.sing('冰雨');
+
+            var zxy = new Star('张学友', 19, '男');
+            console.log(zxy.name);
+            console.log(zxy.age);
+            zxy.sing('李香兰');
+
+            // 1.构造函数首字母大写
+            // 2.构造函数不需要return就可以返回结果
+            // 3.调用构造函数必须使用new
+            // 4.只要new Star()调用函数就创建一个对象 ldh{}
+            // new关键字执行过程：
+            // (1)new构造函数可以在内存中创建一个空对象
+            // (2)this就会指向刚才创建的空对象
+            // (3)执行构造函数里面的代码，给这个对象添加属性和方法
+            // (4)返回这个对象
+            // 5.属性和方法前必须添加this
+
+            // 练习：按照要求创建对象
+            // 姓名(name)、类型(type)、血量(blood)、攻击方式(attack)
+            function Hero(uname, type, blood) {
+                this.name = uname;
+                this.type = type;
+                this.blood = blood;
+                this.attack = function (attack) {
+                    console.log(attack);
+                };
+            }
+            var lp = new Hero('廉颇', '力量型', '500血量');
+            lp.attack('近战');
+            var hy = new Hero('后裔', '射手型', '100血量');
+            hy.attack('远程');
+            console.log(lp.name);
+            console.log(hy.blood);
+
+            // 构造函数和对象：
+            // 对象是特指具体的事物个体
+            // 构造函数是泛指某一大类，类似于java语言里面的类(class)
+            // eg:构造函数：汽车设计图纸，对象：一辆宝马车
+            // 利用构造函数创建对象的过程也称为对象的实例化
+        </script>
+    </head>
+
+    <body>
+        <!-- 2023年7月17日11点18分 -->
+        <div class="godown"></div>
+        <div class="backtop"></div>
+        <div class="mask"></div>
+        <div class="sidebar"></div>
+        <div class="div1">
+            <h2><span id="dui-xiang">对象</span><a href="#dui-xiang" class="header-anchor">#</a></h2>
+            <p>保存网站用户信息，比如姓名，年龄，电话号码等，用之前的数据类型来保存不方便</p>
+            <p>因此引入对象（Object）这一数据类型，可以详细地描述某个事物</p>
+            <p>可以理解是一种无序的数据集合，不同于数组（有序的数据集合）</p>
+            <p>用来描述某个事物，例如描述一个人：姓名、年龄、性别（属性）、吃饭、跑步（功能）</p>
+            <div class="div2">
+                <h3><span id="dui-xiang-sheng-ming">对象声明</span><a href="#dui-xiang-sheng-ming" class="header-anchor">#</a></h3>
+                <p>实际开发中，多使用花括号{}，{}是字面量</p>
+                <pre class="code_block">
+                <div class="lan-js">JavaScript</div>
+                <span>let 对象名 = {}</span>
+                <span>let 对象名 = new Object()</span>
+                <span>// 声明了一个person对象</span>
+                <span>let person={}</span>
+            </pre>
+            </div>
+            <div class="div2">
+                <h3><span id="dui-xiang-fang-fa-ji-shu-xing">对象方法及属性</span><a href="#dui-xiang-fang-fa-ji-shu-xing" class="header-anchor">#</a></h3>
+                <p>属性：信息或特征，如手机：尺寸、颜色、重量，属性成对出现，包含属性名和值</p>
+                <p>方法：功能或行为，如手机：打电话、发短信、玩游戏</p>
+                <pre class="code_block">
+                <div class="lan-js">JavaScript</div>
+                <span>let 对象名 = {</span>
+                <span>&nbsp;&nbsp;属性名:属性值,</span>
+                <span>&nbsp;&nbsp;方法名:函数</span>
+                <span>}</span>
+                <span>let obj = {</span>
+                <span>&nbsp;&nbsp;'uname':'德华',</span>
+                <span>&nbsp;&nbsp;age:18,</span>
+                <span>&nbsp;&nbsp;gender:'沃尔玛购物袋（bushi）'</span>
+                <span>}</span>
+            </pre>
+                <div class="div3">
+                    <p>在JavaScript中，如果一个对象的属性名和变量名相同，并且你想将这个变量作为属性值传递给该对象，你可以使用ES6的简写语法。</p>
+                    <p>pname和cname都是变量，而params是一个对象。当你将pname和cname作为属性值传递给params对象时，你可以使用简写语法，只写一次变量名即可。</p>
+                    <pre class="code_block">
+                    <div class="lan-js">JavaScript</div>
+                    <span>const pname = '重庆'</span>
+                    <span>const cname = '重庆市'</span>
+                    <span>let params = {</span>
+                    <span>  pname,</span>
+                    <span>  cname</span>
+                    <span>}</span>
+                    <span>// 这相当于以下写法</span>
+                    <span>let params = {</span>
+                    <span>  pname:pname,</span>
+                    <span>  cname:cname</span>
+                    <span>}</span>
+                </pre>
+                    <p>
+                        简写语法只适用于当
+                        <strong>属性名和变量名相同</strong>
+                        时。它可以提高代码的可读性，并减少不必要的重复。
+                    </p>
+                </div>
+            </div>
+            <div class="div2">
+                <h3><span id="dui-xiang-shi-yong">对象使用</span><a href="#dui-xiang-shi-yong" class="header-anchor">#</a></h3>
+                <div class="div3">
+                    <h4><span id="zeng">增</span><a href="#zeng" class="header-anchor">#</a></h4>
+                    <p>对象添加新数据</p>
+                    <pre class="code_block">
+                    <div class="lan-js">JavaScript</div>
+                    <span>对象名.新属性名 = 新值</span>
+                </pre>
+                </div>
+                <div class="div3">
+                    <h4><span id="shan">删</span><a href="#shan" class="header-anchor">#</a></h4>
+                    <p>删除对象中属性</p>
+                    <pre class="code_block">
+                    <div class="lan-js">JavaScript</div>
+                    <span>delete 对象名.属性名</span>
+                </pre>
+                </div>
+                <div class="div3">
+                    <h4><span id="gai">改</span><a href="#gai" class="header-anchor">#</a></h4>
+                    <p>属性重新赋值</p>
+                    <pre class="code_block">
+                    <div class="lan-js">JavaScript</div>
+                    <span>对象名.属性名 = 值</span>
+                </pre>
+                </div>
+                <div class="div3">
+                    <h4><span id="cha">查</span><a href="#cha" class="header-anchor">#</a></h4>
+                    <p>查询对象</p>
+                    <pre class="code_block">
+                    <div class="lan-js">JavaScript</div>
+                    <span>对象名.属性名</span>
+                    <span>// 使用中括号查找，属性名需要加引号</span>
+                    <span>对象名['属性名']</span>
+                </pre>
+                </div>
+            </div>
+            <div class="div2">
+                <h3><span id="dui-xiang-zhong-de-fang-fa">对象中的方法</span><a href="#dui-xiang-zhong-de-fang-fa" class="header-anchor">#</a></h3>
+                <p>数据行为性的信息称为方法，如跑步、唱歌等，一般是动词性的，其本质是函数</p>
+                <p>方法名可以使用""或''，一般情况下省略，除非遇到特殊符号如空格、中横线-等</p>
+                <pre class="code_block">
+                <div class="lan-js">JavaScript</div>
+                <span>let person = {</span>
+                <span>name:'andy',</span>
+                <span>sayHi:function(txt){</span>
+                <span>document.write('hi~'+txt)</span>
+                <span>}</span>
+                <span>}</span>
+            </pre>
+                <p>方法调用：对象名.方法名()，可传参</p>
+                <p>person.sayHi('boy~')</p>
+            </div>
+            <div class="div2">
+                <h3><span id="bian-li-dui-xiang">遍历对象</span><a href="#bian-li-dui-xiang" class="header-anchor">#</a></h3>
+                <p>for遍历对象的问题：</p>
+                <ul>
+                    <li>对象没有像数组一样的length属性，所以无法确定长度</li>
+                    <li>对象里面是无序的键值对，没有规律，不像数组里面有规律的下标</li>
+                </ul>
+                <pre class="code_block">
+                <div class="lan-js">JavaScript</div>
+                <span>for (let k in obj){</span>
+                <span>console.log(k) // 打印属性名</span>
+                <span>console.log(obj[k]) // 打印属性值</span>
+            </pre>
+                <p>for in语法中的k是一个变量，在循环的过程中依次代表对象的属性名</p>
+                <p>由于k是变量，所以必须使用[]语法解析</p>
+                <p>k：获得对象的属性名，对象名[k]：获得属性值</p>
+            </div>
+            <div class="div2">
+                <h3><span id="an-li-bian-li-shu-zu-dui-xiang">案例-遍历数组对象</span><a href="#an-li-bian-li-shu-zu-dui-xiang" class="header-anchor">#</a></h3>
+                <p>需求1：把下面数据中的对象打印到控制台</p>
+                <p>需求2：将数据渲染为表格</p>
+                <pre class="code_block">
+                <div class="lan-js">JavaScript</div>
+                <span>// 定义一个存储了若干学生信息的数组</span>
+                <span>let students=[</span>
+                <span>{name:'小明',age:18,gender:'男',hometown:'河北省'},</span>
+                <span>{name:'小红',age:19,gender:'女',hometown:'河南省'},</span>
+                <span>{name:'小刚',age:17,gender:'女',hometown:'上东省'},</span>
+                <span>{name:'andy',age:16,gender:'男',hometown:'四川省'}</span>
+                <span>]</span>
+            </pre>
+                <div class="div3">
+                    <table class="stuTable">
+                        <caption>学生表</caption>
+                        <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>姓名</th>
+                                <th>年龄</th>
+                                <th>性别</th>
+                                <th>家乡</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="div2">
+                <h3><span id="nei-zhi-dui-xiang">内置对象</span><a href="#nei-zhi-dui-xiang" class="header-anchor">#</a></h3>
+                <p>js内部提供的对象，包含各种属性和方法</p>
+                <p>eg：document.write()、console.log()</p>
+                <div class="div3">
+                    <h4><span id="math">Math</span><a href="#math" class="header-anchor">#</a></h4>
+                    <p>Math对象是js提供的一个"数学"对象</p>
+                    <p>提供了一系列做数学运算的方法</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>方法</th>
+                                <th>功能</th>
+                                <th>方法</th>
+                                <th>功能</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>random</td>
+                                <td>生成0~1之间的随机数（包含0不包含1）</td>
+                                <td>ceil</td>
+                                <td>向上取整</td>
+                            </tr>
+                            <tr>
+                                <td>floor</td>
+                                <td>向下取整</td>
+                                <td>max</td>
+                                <td>最大数</td>
+                            </tr>
+                            <tr>
+                                <td>min</td>
+                                <td>最小数</td>
+                                <td>pow</td>
+                                <td>幂运算</td>
+                            </tr>
+                            <tr>
+                                <td>abs</td>
+                                <td>绝对值</td>
+                                <td>round</td>
+                                <td>四舍五入整数</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <pre class="code_block">
+                    <div class="lan-js">JavaScript</div>
+                    <span>// 向上取整</span>
+                    <span>console.log(Math.ceil(1.1)) // 2</span>
+                    <span>console.log(Math.ceil(1.5)) // 2</span>
+                    <span>// 最大值</span>
+                    <span>console.log(Math.max(1,2,3,4)) // 4</span>
+                </pre>
+                </div>
+            </div>
+        </div>
+        <script src="../js/trans-animate.js"></script>
+        <script src="../js/mynormalize.js"></script>
+        <script>
+            // 定义一个存储了若干学生信息的数组
+            let students = [
+                {
+                    name: '小明',
+                    age: 18,
+                    gender: '男',
+                    hometown: '河北省',
+                },
+                {
+                    name: '小红',
+                    age: 19,
+                    gender: '女',
+                    hometown: '河南省',
+                },
+                {
+                    name: '小刚',
+                    age: 17,
+                    gender: '女',
+                    hometown: '山东省',
+                },
+                {
+                    name: 'andy',
+                    age: 16,
+                    gender: '男',
+                    hometown: '四川省',
+                },
+            ];
+            let trs = '';
+            for (let i = 0; i < students.length; i++) {
+                // 1.输出到控制台
+                console.log(i);
+                console.log(students[i]);
+                console.log(students[i].name);
+                // 2.渲染到表格
+                trs += `<tr>
+                <td>${i + 1}</td>
+                <td>${students[i].name}</td>
+                <td>${students[i].age}</td>
+                <td>${students[i].gender}</td>
+                <td>${students[i].hometown}</td>
+                </tr>`;
+            }
+            document.querySelector('.stuTable').querySelector('tbody').innerHTML = trs;
+        </script>
+    </body>
+</html>
+
+        
+      </div>
+
+         
+    </div>
+    
+     
+  </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left "
+    
+      href="/2022/01/22/self_js/059Date%E6%97%A5%E6%9C%9F%E5%AF%B9%E8%B1%A1/"
+      title="Date日期对象"
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+      
+        Date日期对象
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2021/10/07/self_js/049js%E4%BD%9C%E7%94%A8%E5%9F%9F/"
+      title="js作用域"
+     >
+
+    <p class="title-text">
+      
+        js作用域
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+ 
+    </div>
+    <div id="footer-wrapper">
+      <footer id="footer">
+  
+  <div id="footer-info" class="inner">
+    
+    &copy; 2023 changfeng_E<br>
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
+  </div>
+</footer>
+
+    </div>
+    <div class="back-to-top-wrapper">
+    <button id="back-to-top-btn" class="back-to-top-btn hide" onclick="topFunction()">
+        <span class="material-symbols-rounded">keyboard_arrow_up</span>
+    </button>
+</div>
+
+<script>
+    function topFunction() {
+        window.scroll({ top: 0, behavior: 'smooth' });
+    }
+    let btn = document.getElementById('back-to-top-btn');
+    function scrollFunction() {
+        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+            btn.classList.remove('hide')
+        } else {
+            btn.classList.add('hide')
+        }
+    }
+    window.onscroll = function() {
+        scrollFunction();
+    }
+</script>
+
+  </div>
+  <script src="/js/light-dark-switch.js"></script>
+</body>
+</html>

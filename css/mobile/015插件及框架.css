@@ -1,0 +1,108 @@
+.multi li {
+  padding: 0;
+}
+.multi li ul {
+  padding: 0;
+}
+.multi li ul li.div4 {
+  list-style: none;
+}
+.multi li ul li.div4 img {
+  width: 95%;
+}
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.mySwiper2 .swiper-slide {
+  display: flex;
+  height: 20vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+.mySwiper2 .swiper-slide:nth-child(1n) {
+  background-color: #ce1111;
+}
+.mySwiper2 .swiper-slide:nth-child(2n) {
+  background-color: #008cff;
+}
+.mySwiper2 .swiper-slide:nth-child(3n) {
+  background-color: #0ab86f;
+}
+.mySwiper2 .swiper-slide:nth-child(4n) {
+  background-color: #d37a07;
+}
+.mySwiper2 .swiper-slide:nth-child(5n) {
+  background-color: #76a30c;
+}
+.mySwiper2 .current {
+  /* 定制分页器当前索引的圆点样式 */
+  opacity: 1;
+  width: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  transition: all 0.3s;
+  vertical-align: middle;
+}
+.mySwiper2 .firstparallax {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+}
+/* zyMedia插件 */
+.h5video {
+  width: 80% !important;
+  float: left;
+}
+.zy_media {
+  width: 500px;
+}
+@media screen and (max-width: 767px) {
+  .zy_media {
+    width: 350px;
+  }
+}
+.zy_timeline {
+  cursor: pointer;
+}
+.zy_playback_rate {
+  cursor: pointer;
+}
+.zy_playback_rate .zy_playback_rate_option {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+}
+.zy_playback_rate .zy_playback_rate_option li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  font-size: 12px;
+}
+.zy_playback_rate .zy_playback_rate_option li.active {
+  color: skyblue !important;
+}
+.zy_playback_rate .zy_playback_rate_option li:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: all 0.3s;
+}

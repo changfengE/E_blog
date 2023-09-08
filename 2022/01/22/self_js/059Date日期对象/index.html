@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+
+
+<html theme="dark" showBanner="true" hasBanner="true" > 
+<link href="/fontawesome/css/fontawesome.css" rel="stylesheet">
+<link href="/fontawesome/css/brands.css" rel="stylesheet">
+<link href="/fontawesome/css/solid.css" rel="stylesheet">
+<script src="/js/color.global.min.js" ></script>
+<script src="/js/load-settings.js" ></script>
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+
+  
+  <title>Date日期对象 | cfE_blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/MaterialSymbolsRounded.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+  <meta name="description" content="Date日期对象                                        &#x2F;&#x2F; Date()日期对象是一个构造函数，必须使用new来调用日期对象             var arr &#x3D; new Array(); &#x2F;&#x2F;创建一个数组对象             var obj &#x3D; new Ob">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Date日期对象">
+<meta property="og:url" content="http://example.com/2022/01/22/self_js/059Date%E6%97%A5%E6%9C%9F%E5%AF%B9%E8%B1%A1/index.html">
+<meta property="og:site_name" content="cfE_blog">
+<meta property="og:description" content="Date日期对象                                        &#x2F;&#x2F; Date()日期对象是一个构造函数，必须使用new来调用日期对象             var arr &#x3D; new Array(); &#x2F;&#x2F;创建一个数组对象             var obj &#x3D; new Ob">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-01-22T13:27:33.000Z">
+<meta property="article:modified_time" content="2023-09-07T14:55:27.994Z">
+<meta property="article:author" content="changfeng_E">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="shortcut icon" href="/xiaohei.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  
+  
+    
+<div id="banner" class="">
+  <img src="/assets/%E8%8A%B1%E8%8A%B1bg02.jpg" itemprop="image">
+  <div id="banner-dim"></div>
+</div>
+ 
+   
+  <div id="main-grid" class="shadow   ">
+    <div id="nav" class=""  >
+      <navbar id="navbar">
+  <nav id="title-nav">
+    <a href="/">
+      <div id="vivia-logo">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div>cfE_blog </div>
+    </a>
+  </nav>
+  <nav id="main-nav">
+    
+      <a class="main-nav-link" href="/">主页</a>
+    
+      <a class="main-nav-link" href="/archives">轨迹</a>
+    
+      <a class="main-nav-link" href="/about">更多</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    <a id="theme-btn" class="nav-icon">
+      <span class="material-symbols-rounded light-mode-icon">wb_sunny</span>
+      <span class="material-symbols-rounded dark-mode-icon">dark_mode</span>
+    </a>
+    
+    <a id="nav-search-btn" class="nav-icon" title="搜索" style="display: none;">
+      <span class="material-symbols-rounded">search</span>
+    </a>
+    <div id="nav-menu-btn" class="nav-icon">
+      <span class="material-symbols-rounded">menu</span>
+    </div>
+  </nav>
+</navbar>
+<div id="nav-dropdown" class="hidden">
+  <div id="dropdown-link-list">
+    
+      <a class="nav-dropdown-link" href="/">主页</a>
+    
+      <a class="nav-dropdown-link" href="/archives">轨迹</a>
+    
+      <a class="nav-dropdown-link" href="/about">更多</a>
+    
+     
+    </div>
+</div>
+<script>
+  let dropdownBtn = document.getElementById("nav-menu-btn");
+  let dropdownEle = document.getElementById("nav-dropdown");
+  dropdownBtn.onclick = function() {
+    dropdownEle.classList.toggle("hidden");
+  }
+</script>
+    </div>
+    <div id="sidebar-wrapper">
+      <sidebar id="sidebar">
+  
+    <div class="widget-wrap">
+  <div class="info-card">
+    <div class="avatar">
+      
+        <image src=/assets/%E7%BD%97%E5%B0%8F%E9%BB%9102.png></image>
+      
+      <div class="img-dim"></div>
+    </div>
+    <div class="info">
+      <div class="username">changfeng_E </div>
+      <div class="dot"></div>
+      <div class="subtitle">about me </div>
+      <div class="link-list">
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com/changfengE" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://gitee.com/changfengE" title="Gitee"><i class="fa-brands fa-square-git"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/285349009?spm_id_from=333.1007.0.0" title="bilibili"><i class="fa-brands fa-bilibili"></i></a>
+         
+      </div>  
+    </div>
+  </div>
+</div>
+
+  
+  <div class="sticky">
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">最新文章</h3>
+      <ul>
+        
+          <a class="recent-link" href="/2023/09/02/%E6%AF%81%E7%81%AD%E5%90%A7/" title="death note" >
+            <div class="recent-link-text">
+              death note
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/01/hello-world/" title="Hello World" >
+            <div class="recent-link-text">
+              Hello World
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/07/21/self_js/131%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="正则表达式" >
+            <div class="recent-link-text">
+              正则表达式
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/07/17/self_js/130_%E8%A1%A5%E5%85%85_%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0/" title="补充-回调函数" >
+            <div class="recent-link-text">
+              补充-回调函数
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/07/16/self_js/129%E9%80%BB%E8%BE%91%E4%B8%AD%E6%96%AD/" title="逻辑中断" >
+            <div class="recent-link-text">
+              逻辑中断
+            </div>
+          </a>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">标签</h3>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/hexo-use/" rel="tag">hexo_use</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/typora/" rel="tag">typora</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" rel="tag">移动端</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+
+
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">分类</h3>
+      <div class="category-box">
+            <a class="category-link" href="/categories/markdown/">
+                markdown
+                <div class="category-count">1</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/markdown/%E4%BD%BF%E7%94%A8/">
+                使用
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/git/">
+                git
+                <div class="category-count">4</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/git/git%E5%AE%89%E8%A3%85%E5%8F%8A%E9%83%A8%E5%88%86%E5%91%BD%E4%BB%A4/">
+                git安装及部分命令
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/ssh%E7%BB%91%E5%AE%9A/">
+                ssh绑定
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81/">
+                提交代码
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/branch/">
+                branch
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/hexo%E5%88%9D%E4%BD%93%E9%AA%8C/">
+                hexo初体验
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/hexo/">
+                hexo
+                <div class="category-count">1</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/hexo/using/">
+                using
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/">
+                移动端
+                <div class="category-count">16</div>
+            </a>
+        
+            <a class="category-link" href="/categories/js%E5%9F%BA%E7%A1%80/">
+                js基础
+                <div class="category-count">42</div>
+            </a>
+        </div>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">归档</h3>
+      
+      
+        <a class="archive-link" href="/archives/2023/09 ">
+          九月 2023 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/07 ">
+          七月 2023 
+          <div class="archive-count">3 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/03 ">
+          三月 2023 
+          <div class="archive-count">3 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/02 ">
+          二月 2023 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/01 ">
+          一月 2023 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/12 ">
+          十二月 2022 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/11 ">
+          十一月 2022 
+          <div class="archive-count">4 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/09 ">
+          九月 2022 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/08 ">
+          八月 2022 
+          <div class="archive-count">7 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/07 ">
+          七月 2022 
+          <div class="archive-count">15 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/06 ">
+          六月 2022 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/02 ">
+          二月 2022 
+          <div class="archive-count">6 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/01 ">
+          一月 2022 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/10 ">
+          十月 2021 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/09 ">
+          九月 2021 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/08 ">
+          八月 2021 
+          <div class="archive-count">6 </div>
+        </a>
+      
+    </div>
+  </div>
+
+
+    
+  </div>
+</sidebar>
+    </div>
+    <div id="content-body">
+       
+
+<article id="post-self_js/059Date日期对象" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        Date日期对象
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2022-01-22T13:27:33.000Z" itemprop="datePublished">2022-01-22</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/js%E5%9F%BA%E7%A1%80/">js基础</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            1.2k 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Date日期对象</title>
+        <link rel="shortcut icon" href="../xiaohei.ico">
+        <link rel="stylesheet" href="/globalsrc/mynormalize/mynormalize1.2.0.css">
+        <script>
+            // Date()日期对象是一个构造函数，必须使用new来调用日期对象
+            var arr = new Array(); //创建一个数组对象
+            var obj = new Object(); //创建一个对象实例
+            // 1.使用Date
+            var date = new Date();
+            console.log(date);
+            // 2.参数常用的写法：数字型 2019，10，01。或者是字符串型'2019-10-01 8:8:8'
+            var date1 = new Date(2019, 10, 1);
+            console.log(date1); //返回的是11月不是10月
+            var date2 = new Date('2019-10-01 8:8:8');
+            console.log(date2);
+
+            // 格式化日期 年月日
+            console.log(date.getFullYear()); //返回当前日期的年份
+            console.log(date.getMonth() + 1); //月份 返回的月份小1个月，所以+1
+            console.log(date.getDate()); //返回的是几号
+            console.log(date.getDay()); //周一返回的是1，周六返回6，周日为0
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var dates = date.getDate();
+            var day = date.getDay();
+            var arr01 = new Array('星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六');
+            console.log('今天是：' + year + '年' + month + '月' + dates + '日' + arr01[day]);
+
+            // 格式化日期 时分秒
+            console.log(date.getHours());
+            console.log(date.getMinutes());
+            console.log(date.getSeconds());
+            // 要求封装一个函数返回当前的时分秒 格式00：00：00
+            function getTime() {
+                var time = new Date();
+                var h = time.getHours();
+                h = h < 10 ? '0' + h : h;
+                var m = time.getMinutes();
+                m = m < 10 ? '0' + m : m;
+                var s = time.getSeconds();
+                s = s < 10 ? '0' + s : s;
+                return h + ':' + m + ':' + s;
+            }
+            console.log(getTime());
+
+            // 获得Date总的毫秒数(时间戳) 不是当前时间的毫秒数，而是距离1970年1月1日过了多少毫秒数
+            // 1.通过valueOf()、getTime()
+            console.log('============================');
+            console.log(date.valueOf());
+            console.log(date.getTime());
+            // 2.简单写法
+            var date3 = +new Date(); //+new Date()返回的就是总的毫秒数
+            console.log(date3);
+            // 3.H5新增的，获得总的毫秒数
+            console.log(Date.now());
+        </script>
+    </head>
+
+    <body>
+        <div class="div1">
+            <h2><span id="ri-qi-dui-xiang">日期对象</span><a href="#ri-qi-dui-xiang" class="header-anchor">#</a></h2>
+            <p>用来表示时间的对象，可以得到当前系统时间</p>
+            <div class="div2">
+                <h3><span id="shi-li-hua">实例化</span><a href="#shi-li-hua" class="header-anchor">#</a></h3>
+                <p>
+                    在代码中发现了
+                    <code>new</code>
+                    关键字，一般将这个操作称为实例化
+                </p>
+                <pre class="code_block">
+                <div class="lan-js">JavaScript</div>
+                <span>// 获得当前时间</span>
+                <span>const date=new Date()</span>
+                <span>// 获得指定时间</span>
+                <span>const date=new Date('2023-7-19')</span>
+            </pre>
+            </div>
+            <div class="div2">
+                <h3><span id="ri-qi-dui-xiang-fang-fa">日期对象方法</span><a href="#ri-qi-dui-xiang-fang-fa" class="header-anchor">#</a></h3>
+                <p>使用场景：因为日期对象返回的数据不能直接使用，所以需要转换为实际开发中常用的格式</p>
+                <table>
+                    <caption>日期对象方法</caption>
+                    <thead>
+                        <tr>
+                            <th>方法</th>
+                            <th>作用</th>
+                            <th>说明</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>getFullYear()</td>
+                            <td>获得年份</td>
+                            <td>获取四位年份</td>
+                        </tr>
+                        <tr>
+                            <td>getMonth()</td>
+                            <td>获得月份</td>
+                            <td>取值为0~11</td>
+                        </tr>
+                        <tr>
+                            <td>getDate()</td>
+                            <td>获取月份中的每一天</td>
+                            <td>不同月份取值也不同</td>
+                        </tr>
+                        <tr>
+                            <td>getDay()</td>
+                            <td>获取星期</td>
+                            <td>取值为0~6</td>
+                        </tr>
+                        <tr>
+                            <td>getHours()</td>
+                            <td>获取小时</td>
+                            <td>取值为0~23</td>
+                        </tr>
+                        <tr>
+                            <td>getMinutes()</td>
+                            <td>获取分钟</td>
+                            <td>取值为0~59</td>
+                        </tr>
+                        <tr>
+                            <td>getSeconds()</td>
+                            <td>获取秒</td>
+                            <td>取值为0~59</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="div3 clearfix">
+                    <div class="testbox timeNow"></div>
+                    <div class="testbox timeNow2"></div>
+                </div>
+            </div>
+            <div class="div2">
+                <h3><span id="shi-jian-chuo">时间戳</span><a href="#shi-jian-chuo" class="header-anchor">#</a></h3>
+                <p>
+                    是指1970年01月01日00时00分00秒起至现在的
+                    <strong>毫秒数</strong>
+                    ，它是一种特殊的计量时间的方式
+                </p>
+                <p>使用场景：若计算倒计时效果，需要借助时间戳完成</p>
+                <blockquote class="steps">
+                    <ul>
+                        <li>将来的时间戳-现在的时间戳=剩余的时间毫秒数</li>
+                        <li>剩余时间毫秒数 转换为 剩余时间的年月日时分秒，就是倒计时时间</li>
+                        <li>比如：将来时间戳2000ms-现在时间戳1000ms=1000ms</li>
+                        <li>1000ms转换为倒计时时间就是0小时0分1秒</li>
+                    </ul>
+                </blockquote>
+                <div class="div3">
+                    <h4><span id="huo-qu-shi-jian-chuo">获取时间戳</span><a href="#huo-qu-shi-jian-chuo" class="header-anchor">#</a></h4>
+                    <ol>
+                        <li>
+                            使用getTime()方法
+                            <pre class="code_block">
+                            <div class="lan-js">JavaScript</div>
+                            <span>const date=new Date()</span>
+                            <span>console.log(date.getTime())</span>
+                            <span>// 得到指定时间的时间戳</span>
+                            <span>console.log(+new Date('2023-7-19 19:01:00'))</span>
+                        </pre>
+                        </li>
+                        <li>
+                            <strong>简写 +new Date()</strong>
+                            <p>无需实例化</p>
+                            <pre class="code_block">
+                            <div class="lan-js">JavaScript</div>
+                            <span>console.log(+new Date())</span>
+                        </pre>
+                        </li>
+                        <li>
+                            使用Date.now()
+                            <p>无需实例化</p>
+                            <p>但是只能得到当前的时间戳，而前面两种可以返回指定时间的时间戳</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <script>
+            // 方法1
+            const time = document.querySelector('.timeNow');
+
+            function getMyDate() {
+                const date = new Date();
+                let h = date.getHours();
+                let m = date.getMinutes();
+                let s = date.getSeconds();
+                h = h < 10 ? '0' + h : h;
+                m = m < 10 ? '0' + m : m;
+                s = s < 10 ? '0' + s : s;
+                return `现在是：${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}号 ${h}:${m}:${s}`;
+            }
+            time.innerHTML = getMyDate();
+            setInterval(function () {
+                // 每隔1秒调用一次回调函数
+                time.innerHTML = getMyDate();
+            }, 1000);
+        </script>
+        <script>
+            // 方法2
+            const time2 = document.querySelector('.timeNow2');
+            const date4 = new Date();
+            time2.innerHTML = date4.toLocaleString(); // xxxx/xx/xx 00:00:00
+            setInterval(function () {
+                const date4 = new Date();
+                time2.innerHTML = date4.toLocaleString(); // xxxx/xx/xx 00:00:00
+            }, 1000);
+        </script>
+    </body>
+</html>
+
+        
+      </div>
+
+         
+    </div>
+    
+     
+  </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left "
+    
+      href="/2022/02/12/self_js/068WebAPIs/"
+      title="WebAPIs"
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+      
+        WebAPIs
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2021/10/07/self_js/052js%E5%AF%B9%E8%B1%A1/"
+      title="js对象"
+     >
+
+    <p class="title-text">
+      
+        js对象
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+ 
+    </div>
+    <div id="footer-wrapper">
+      <footer id="footer">
+  
+  <div id="footer-info" class="inner">
+    
+    &copy; 2023 changfeng_E<br>
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
+  </div>
+</footer>
+
+    </div>
+    <div class="back-to-top-wrapper">
+    <button id="back-to-top-btn" class="back-to-top-btn hide" onclick="topFunction()">
+        <span class="material-symbols-rounded">keyboard_arrow_up</span>
+    </button>
+</div>
+
+<script>
+    function topFunction() {
+        window.scroll({ top: 0, behavior: 'smooth' });
+    }
+    let btn = document.getElementById('back-to-top-btn');
+    function scrollFunction() {
+        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+            btn.classList.remove('hide')
+        } else {
+            btn.classList.add('hide')
+        }
+    }
+    window.onscroll = function() {
+        scrollFunction();
+    }
+</script>
+
+  </div>
+  <script src="/js/light-dark-switch.js"></script>
+</body>
+</html>

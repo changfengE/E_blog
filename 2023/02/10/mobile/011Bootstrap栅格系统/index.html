@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+
+
+<html theme="dark" showBanner="true" hasBanner="true" > 
+<link href="/fontawesome/css/fontawesome.css" rel="stylesheet">
+<link href="/fontawesome/css/brands.css" rel="stylesheet">
+<link href="/fontawesome/css/solid.css" rel="stylesheet">
+<script src="/js/color.global.min.js" ></script>
+<script src="/js/load-settings.js" ></script>
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+
+  
+  <title>Bootstrap栅格系统 | cfE_blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/MaterialSymbolsRounded.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+  <meta name="description" content="Bootstrap栅格系统                                                 .row {                 margin-bottom: 10px;             }              .row &gt; div {">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bootstrap栅格系统">
+<meta property="og:url" content="http://example.com/2023/02/10/mobile/011Bootstrap%E6%A0%85%E6%A0%BC%E7%B3%BB%E7%BB%9F/index.html">
+<meta property="og:site_name" content="cfE_blog">
+<meta property="og:description" content="Bootstrap栅格系统                                                 .row {                 margin-bottom: 10px;             }              .row &gt; div {">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-02-10T15:36:17.000Z">
+<meta property="article:modified_time" content="2023-09-07T09:01:19.076Z">
+<meta property="article:author" content="changfeng_E">
+<meta property="article:tag" content="移动端">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="shortcut icon" href="/xiaohei.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  
+  
+    
+<div id="banner" class="">
+  <img src="/assets/%E8%8A%B1%E8%8A%B1bg02.jpg" itemprop="image">
+  <div id="banner-dim"></div>
+</div>
+ 
+   
+  <div id="main-grid" class="shadow   ">
+    <div id="nav" class=""  >
+      <navbar id="navbar">
+  <nav id="title-nav">
+    <a href="/">
+      <div id="vivia-logo">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div>cfE_blog </div>
+    </a>
+  </nav>
+  <nav id="main-nav">
+    
+      <a class="main-nav-link" href="/">主页</a>
+    
+      <a class="main-nav-link" href="/archives">轨迹</a>
+    
+      <a class="main-nav-link" href="/about">更多</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    <a id="theme-btn" class="nav-icon">
+      <span class="material-symbols-rounded light-mode-icon">wb_sunny</span>
+      <span class="material-symbols-rounded dark-mode-icon">dark_mode</span>
+    </a>
+    
+    <a id="nav-search-btn" class="nav-icon" title="搜索" style="display: none;">
+      <span class="material-symbols-rounded">search</span>
+    </a>
+    <div id="nav-menu-btn" class="nav-icon">
+      <span class="material-symbols-rounded">menu</span>
+    </div>
+  </nav>
+</navbar>
+<div id="nav-dropdown" class="hidden">
+  <div id="dropdown-link-list">
+    
+      <a class="nav-dropdown-link" href="/">主页</a>
+    
+      <a class="nav-dropdown-link" href="/archives">轨迹</a>
+    
+      <a class="nav-dropdown-link" href="/about">更多</a>
+    
+     
+    </div>
+</div>
+<script>
+  let dropdownBtn = document.getElementById("nav-menu-btn");
+  let dropdownEle = document.getElementById("nav-dropdown");
+  dropdownBtn.onclick = function() {
+    dropdownEle.classList.toggle("hidden");
+  }
+</script>
+    </div>
+    <div id="sidebar-wrapper">
+      <sidebar id="sidebar">
+  
+    <div class="widget-wrap">
+  <div class="info-card">
+    <div class="avatar">
+      
+        <image src=/assets/%E7%BD%97%E5%B0%8F%E9%BB%9102.png></image>
+      
+      <div class="img-dim"></div>
+    </div>
+    <div class="info">
+      <div class="username">changfeng_E </div>
+      <div class="dot"></div>
+      <div class="subtitle">about me </div>
+      <div class="link-list">
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com/changfengE" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://gitee.com/changfengE" title="Gitee"><i class="fa-brands fa-square-git"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/285349009?spm_id_from=333.1007.0.0" title="bilibili"><i class="fa-brands fa-bilibili"></i></a>
+         
+      </div>  
+    </div>
+  </div>
+</div>
+
+  
+  <div class="sticky">
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">最新文章</h3>
+      <ul>
+        
+          <a class="recent-link" href="/2023/09/02/%E6%AF%81%E7%81%AD%E5%90%A7/" title="death note" >
+            <div class="recent-link-text">
+              death note
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/01/hello-world/" title="Hello World" >
+            <div class="recent-link-text">
+              Hello World
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/07/21/self_js/131%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" title="正则表达式" >
+            <div class="recent-link-text">
+              正则表达式
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/07/17/self_js/130_%E8%A1%A5%E5%85%85_%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0/" title="补充-回调函数" >
+            <div class="recent-link-text">
+              补充-回调函数
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/07/16/self_js/129%E9%80%BB%E8%BE%91%E4%B8%AD%E6%96%AD/" title="逻辑中断" >
+            <div class="recent-link-text">
+              逻辑中断
+            </div>
+          </a>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">标签</h3>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/hexo-use/" rel="tag">hexo_use</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/typora/" rel="tag">typora</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" rel="tag">移动端</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+
+
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">分类</h3>
+      <div class="category-box">
+            <a class="category-link" href="/categories/markdown/">
+                markdown
+                <div class="category-count">1</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/markdown/%E4%BD%BF%E7%94%A8/">
+                使用
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/git/">
+                git
+                <div class="category-count">4</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/git/git%E5%AE%89%E8%A3%85%E5%8F%8A%E9%83%A8%E5%88%86%E5%91%BD%E4%BB%A4/">
+                git安装及部分命令
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/ssh%E7%BB%91%E5%AE%9A/">
+                ssh绑定
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81/">
+                提交代码
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/branch/">
+                branch
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/hexo%E5%88%9D%E4%BD%93%E9%AA%8C/">
+                hexo初体验
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/hexo/">
+                hexo
+                <div class="category-count">1</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/hexo/using/">
+                using
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/">
+                移动端
+                <div class="category-count">16</div>
+            </a>
+        
+            <a class="category-link" href="/categories/js%E5%9F%BA%E7%A1%80/">
+                js基础
+                <div class="category-count">42</div>
+            </a>
+        </div>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">归档</h3>
+      
+      
+        <a class="archive-link" href="/archives/2023/09 ">
+          九月 2023 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/07 ">
+          七月 2023 
+          <div class="archive-count">3 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/03 ">
+          三月 2023 
+          <div class="archive-count">3 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/02 ">
+          二月 2023 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/01 ">
+          一月 2023 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/12 ">
+          十二月 2022 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/11 ">
+          十一月 2022 
+          <div class="archive-count">4 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/09 ">
+          九月 2022 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/08 ">
+          八月 2022 
+          <div class="archive-count">7 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/07 ">
+          七月 2022 
+          <div class="archive-count">15 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/06 ">
+          六月 2022 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/02 ">
+          二月 2022 
+          <div class="archive-count">6 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/01 ">
+          一月 2022 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/10 ">
+          十月 2021 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/09 ">
+          九月 2021 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/08 ">
+          八月 2021 
+          <div class="archive-count">6 </div>
+        </a>
+      
+    </div>
+  </div>
+
+
+    
+  </div>
+</sidebar>
+    </div>
+    <div id="content-body">
+       
+
+<article id="post-mobile/011Bootstrap栅格系统" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        Bootstrap栅格系统
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-02-10T15:36:17.000Z" itemprop="datePublished">2023-02-10</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/">移动端</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            2k 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" rel="tag">移动端</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bootstrap栅格系统</title>
+        <link rel="shortcut icon" href="../xiaohei.ico">
+        <link rel="stylesheet" href="/css/mobile/mynormalize.css">
+        <link rel="stylesheet" href="/components/bootstrap/css/bootstrap.min.css">
+        <style>
+            .row {
+                margin-bottom: 10px;
+            }
+
+            .row > div {
+                padding: 10px;
+            }
+            /* 以col开头的类 */
+
+            [class^='col'] {
+                background-color: lightblue;
+                border: 5px double #424242;
+                border-radius: 5px;
+            }
+
+            .dlg {
+                background-color: lightpink;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="mask"></div>
+        <aside class="sidebar"></aside>
+        <div class="div1">
+            <h2><span id="bootstrap-zha-ge-xi-tong">Bootstrap栅格系统</span><a href="#bootstrap-zha-ge-xi-tong" class="header-anchor">#</a></h2>
+            <div class="div2">
+                <h3><span id="zha-ge-xi-tong-jian-jie">栅格系统简介</span><a href="#zha-ge-xi-tong-jian-jie" class="header-anchor">#</a></h3>
+                <p>
+                    <strong>栅格系统("grid systems")</strong>
+                    ，也有人翻译为“网格系统”，它是指将页面布局划分为等宽的列，然后通过列数的定义来模块化页面布局。
+                </p>
+                <p>
+                    Bootstrap提供了一套响应式、移动设备优先的流式栅格系统，随着屏幕或视口（viewport）尺寸的增加，系统会自动分为最多
+                    <strong>12列</strong>
+                    。
+                </p>
+                <p>Bootstrap里面container宽度是固定的，但是不同屏幕下，container的宽度不同，再把container划分为12等份</p>
+            </div>
+            <div class="div2">
+                <h3><span id="zha-ge-xuan-xiang-can-shu">栅格选项参数</span><a href="#zha-ge-xuan-xiang-can-shu" class="header-anchor">#</a></h3>
+                <p>
+                    栅格系统用于通过一系列的行（
+                    <code>row</code>
+                    ）与列（
+                    <code>column</code>
+                    ）的组合来创建页面布局，网页内容就可以放入这些创建好的布局中。
+                </p>
+                <p><strong>注意：Bootstrap v5版本有新的划分</strong></p>
+                <!-- bootstrap v3 -->
+                <table>
+                    <caption><del>栅格选项参数(bootstrap v3)</del></caption>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>超小屏幕（手机）&lt;768px</th>
+                            <th>小屏设备（平板）&gt;=768px</th>
+                            <th>中等屏幕（桌面显示器）&gt;=992px</th>
+                            <th>宽屏设备（大桌面显示器）&gt;=1200px</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>.container最大宽度</th>
+                            <td>自动（100%）</td>
+                            <td>750px</td>
+                            <td>970px</td>
+                            <td>1170px</td>
+                        </tr>
+                        <tr>
+                            <th>类前缀</th>
+                            <td>.col-xs-</td>
+                            <td>.col-sm-</td>
+                            <td>.col-md-</td>
+                            <td>.col-lg-</td>
+                        </tr>
+                        <tr>
+                            <th>列（column）数</th>
+                            <td colspan="4">12</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- bootstrap v5 -->
+                <table>
+                    <caption><strong>栅格选项参数(bootstrap v5)</strong></caption>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>超小设备&lt;576px</th>
+                            <th>小屏设备（平板）&gt;=576px</th>
+                            <th>中等屏幕（桌面显示器）&gt;=768px</th>
+                            <th>宽屏设备（大桌面显示器）&gt;=992px</th>
+                            <th>特大桌面显示器&gt;=1200px</th>
+                            <th>超大桌面显示器&gt;=1400px</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>.container最大宽度</th>
+                            <td>自动（100%）</td>
+                            <td>540px</td>
+                            <td>720px</td>
+                            <td>960px</td>
+                            <td>1140px</td>
+                            <td>1320px</td>
+                        </tr>
+                        <tr>
+                            <th>类前缀</th>
+                            <td>.col-*</td>
+                            <td>.col-sm-*</td>
+                            <td>.col-md-*</td>
+                            <td>.col-lg-*</td>
+                            <td>.col-xl-*</td>
+                            <td>.col-xxl-*</td>
+                        </tr>
+                        <tr>
+                            <th>列（column）数</th>
+                            <td colspan="6">12</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <ul>
+                    <li>行（row）必须放到container布局容器里面</li>
+                    <li>
+                        实现列的平均划分，需要给列添加
+                        <strong>类前缀</strong>
+                    </li>
+                    <li>
+                        <code>xs-extra small</code>
+                        :超小；
+                        <code>sm-small</code>
+                        :小；
+                        <code>md-medium</code>
+                        :中等；
+                        <code>lg-large</code>
+                        :大；
+                    </li>
+                    <li>列（column）大于12，多余的“列”所在的元素将被作为一个整体另起一行排列</li>
+                    <li>
+                        每一列默认有
+                        <strong>
+                            左右15像素的
+                            <code>padding</code>
+                        </strong>
+                    </li>
+                    <li>
+                        可以同时为一列指定多个设备的类名，以便划分不同份数，例如
+                        <code>class="col-md-4 col-sm-6"</code>
+                    </li>
+                </ul>
+                <div class="div3">
+                    <div class="container">
+                        <div class="row grid">
+                            <div class="col-1"></div>
+                            <div class="col-1"></div>
+                            <div class="col-1"></div>
+                            <div class="col-1"></div>
+                            <div class="col-1"></div>
+                            <div class="col-1"></div>
+                            <div class="col-1"></div>
+                            <div class="col-1"></div>
+                            <div class="col-1"></div>
+                            <div class="col-1"></div>
+                            <div class="col-1"></div>
+                            <div class="col-1"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xxl-2">.col-6 sm-4 md-3 lg-2 xxl-2</div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xxl-10">col-6 sm-4 md-3 lg-2 xxl-10</div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xxl-5">col-6 sm-4 md-3 lg-2 xxl-5</div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xxl-7">col-6 sm-4 md-3 lg-2 xxl-7</div>
+                        </div>
+                        <hr>
+                        <p>若子盒子的份数相加小于12，则占不满整个container的宽度，会有空白</p>
+                        <div class="row">
+                            <div class="col-6">6</div>
+                            <div class="col-2">2</div>
+                            <div class="col-2">2</div>
+                            <div class="col-1">1</div>
+                        </div>
+                        <hr>
+                        <p>若子盒子的份数相加大于12，则多余的那一列会另起一行显示</p>
+                        <div class="row">
+                            <div class="col-6">6</div>
+                            <div class="col-2">2</div>
+                            <div class="col-2">2</div>
+                            <div class="col-3">3</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="div2">
+                <h3><span id="lie-qian-tao">列嵌套</span><a href="#lie-qian-tao" class="header-anchor">#</a></h3>
+                <p>
+                    栅格系统内置的栅格系统将内容再次嵌套。简单理解就是一个列内再划分成若干小列。可以通过添加一个新的
+                    <code>.row</code>
+                    元素和一系列
+                    <code>.col-sm-*</code>
+                    元素到已经存在的
+                    <code>.col-sm-*</code>
+                    元素内
+                </p>
+                <p>
+                    列嵌套最好再加一个行
+                    <code>.row</code>
+                    盒子，这样可以取消父元素默认的左右
+                    <code>padding</code>
+                    值，而且高度自动和父级一样高
+                </p>
+                <div class="div3">
+                    <div class="container">
+                        <div class="row grid">
+                            <div class="col-1"></div>
+                            <div class="col-1"></div>
+                            <div class="col-1"></div>
+                            <div class="col-1"></div>
+                            <div class="col-1"></div>
+                            <div class="col-1"></div>
+                            <div class="col-1"></div>
+                            <div class="col-1"></div>
+                            <div class="col-1"></div>
+                            <div class="col-1"></div>
+                            <div class="col-1"></div>
+                            <div class="col-1"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="row">
+                                    <div class="col-4">4</div>
+                                    <div class="col-8">8</div>
+                                </div>
+                            </div>
+                            <div class="col-4">4</div>
+                            <div class="col-4">4</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="div2">
+                <h3><span id="lie-pian-yi">列偏移</span><a href="#lie-pian-yi" class="header-anchor">#</a></h3>
+                <p>
+                    使用
+                    <code><del>.col-md-offset-*</del></code>
+                    (v4.0前)，当前v5版本使用
+                    <code>.offset-md-*/offset-*</code>
+                    类可以将列向右侧偏移。这些类实际是通过使用
+                    <code>*</code>
+                    选择器为当前元素添加了左侧的边距
+                    <code>margin</code>
+                </p>
+                <div class="div3">
+                    <div class="container">
+                        <div class="row grid">
+                            <div class="col-1"></div>
+                            <div class="col-1"></div>
+                            <div class="col-1"></div>
+                            <div class="col-1"></div>
+                            <div class="col-1"></div>
+                            <div class="col-1"></div>
+                            <div class="col-1"></div>
+                            <div class="col-1"></div>
+                            <div class="col-1"></div>
+                            <div class="col-1"></div>
+                            <div class="col-1"></div>
+                            <div class="col-1"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">左</div>
+                            <div class="col-4">右</div>
+                        </div>
+                        <p>偏移的份数=12-两个盒子的份数</p>
+                        <div class="row">
+                            <div class="col-4">左</div>
+                            <div class="col-4 offset-md-4">右</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2 offset-1">左</div>
+                            <div class="col-7 offset-2">右</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="div2">
+                <h3><span id="lie-pai-xu">列排序</span><a href="#lie-pai-xu" class="header-anchor">#</a></h3>
+                <p>
+                    通过使用
+                    <code>.col-md-push-*</code>
+                    和
+                    <code>.col-md-pull-*</code>
+                    类就可以很容易的改变列
+                    <code>column</code>
+                    的顺序。
+                </p>
+                <div class="container">
+                    <div class="row grid">
+                        <div class="col-1"></div>
+                        <div class="col-1"></div>
+                        <div class="col-1"></div>
+                        <div class="col-1"></div>
+                        <div class="col-1"></div>
+                        <div class="col-1"></div>
+                        <div class="col-1"></div>
+                        <div class="col-1"></div>
+                        <div class="col-1"></div>
+                        <div class="col-1"></div>
+                        <div class="col-1"></div>
+                        <div class="col-1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">左</div>
+                        <div class="col-8">右</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 order-2">左</div>
+                        <div class="col-8 order-1">右</div>
+                    </div>
+                </div>
+            </div>
+            <div class="div2">
+                <h3><span id="xiang-ying-shi-gong-ju">响应式工具</span><a href="#xiang-ying-shi-gong-ju" class="header-anchor">#</a></h3>
+                <p>为了加快对移动设备友好的页面开发工作，利用媒体查询功能，并使用这些工具类可以方便的针对不同设备展示或隐藏页面内容。</p>
+                <table>
+                    <caption>响应式工具隐藏内容</caption>
+                    <thead>
+                        <tr>
+                            <th>类名</th>
+                            <th>超小屏幕（手机）</th>
+                            <th>小屏设备（平板）</th>
+                            <th>中等屏幕（桌面显示器）</th>
+                            <th>大屏</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <del>.hidden-xs</del>
+                                v5:.d-none
+                            </td>
+                            <td>隐藏</td>
+                            <td>可见</td>
+                            <td>可见</td>
+                            <td>可见</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <del>.hidden-sm</del>
+                                v5:.d-sm-none
+                            </td>
+                            <td>可见</td>
+                            <td>隐藏</td>
+                            <td>可见</td>
+                            <td>可见</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <del>.hidden-md</del>
+                                v5:.d-md-none
+                            </td>
+                            <td>可见</td>
+                            <td>可见</td>
+                            <td>隐藏</td>
+                            <td>可见</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <del>.hidden-lg</del>
+                                v5:.d-lg-none
+                            </td>
+                            <td>可见</td>
+                            <td>可见</td>
+                            <td>可见</td>
+                            <td>隐藏</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>
+                    显示内容使用
+                    <code>.d-断点-block</code>
+                </p>
+                <div class="div3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-3">1</div>
+                            <div class="col-3">2</div>
+                            <div class="col-3 d-md-none dlg d-lg-block">md隐藏，lg显示</div>
+                            <div class="col-3">4</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/js/mobile/trans-animate.js"></script>
+        <script src="/js/mobile/mynormalize.js"></script>
+    </body>
+</html>
+
+        
+      </div>
+
+         
+    </div>
+    
+     
+  </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left "
+    
+      href="/2023/02/22/mobile/012vw%E5%92%8Cvh/"
+      title="vw和vh"
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+      
+        vw和vh
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2023/02/08/mobile/010Bootstrap%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E6%A1%86%E6%9E%B6/"
+      title="Bootstrap框架"
+     >
+
+    <p class="title-text">
+      
+        Bootstrap框架
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+ 
+    </div>
+    <div id="footer-wrapper">
+      <footer id="footer">
+  
+  <div id="footer-info" class="inner">
+    
+    &copy; 2023 changfeng_E<br>
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
+  </div>
+</footer>
+
+    </div>
+    <div class="back-to-top-wrapper">
+    <button id="back-to-top-btn" class="back-to-top-btn hide" onclick="topFunction()">
+        <span class="material-symbols-rounded">keyboard_arrow_up</span>
+    </button>
+</div>
+
+<script>
+    function topFunction() {
+        window.scroll({ top: 0, behavior: 'smooth' });
+    }
+    let btn = document.getElementById('back-to-top-btn');
+    function scrollFunction() {
+        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+            btn.classList.remove('hide')
+        } else {
+            btn.classList.add('hide')
+        }
+    }
+    window.onscroll = function() {
+        scrollFunction();
+    }
+</script>
+
+  </div>
+  <script src="/js/light-dark-switch.js"></script>
+</body>
+</html>
