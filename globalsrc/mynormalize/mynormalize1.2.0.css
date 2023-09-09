@@ -3,7 +3,7 @@
  * @Email: 3517134128@qq.com
  * @Date: 2023-03-09 22:27:20 
  * @Last Modified by: 3517134128@qq.com
- * @Last Modified time: 2023-09-09 01:58:11
+ * @Last Modified time: 2023-09-09 23:42:15
  * @Description: my normalize less版，版本号：1.2.0，较上一版本（原始版）：修改部分常用样式如body背景色，边框块背景色，iconfont字体图标
  */
 :root {
@@ -27,6 +27,9 @@
   box-sizing: border-box;
   word-wrap: break-word;
 }
+/*
+    适配hexo主题暗黑模式
+*/
 html[theme='dark'] .div1,
 html[theme='dark'] .div2,
 html[theme='dark'] .div3,
@@ -124,7 +127,7 @@ iconfont
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.sidebar {
+div.sidebar {
   /*  侧边导航栏 
 *   2023年2月25日
 */
@@ -137,7 +140,7 @@ iconfont
   background-color: rgba(255, 255, 255, 0.8);
   box-shadow: var(--shadow);
 }
-.sidebar .catalog {
+div.sidebar .catalog {
   /* 目录按钮 */
   position: absolute;
   z-index: -1;
@@ -150,17 +153,17 @@ iconfont
   box-shadow: var(--shadow);
   border-radius: 0 5px 5px 0;
 }
-.sidebar .catalog::before {
+div.sidebar .catalog::before {
   font-family: 'icomoon';
   content: '\e91c';
   margin: 0 5px 0 10px;
   vertical-align: middle;
   line-height: 30px;
 }
-.sidebar .catalog::after {
+div.sidebar .catalog::after {
   content: '目录';
 }
-.sidebar .close::before {
+div.sidebar .close::before {
   /* 关闭按钮 */
   font-family: 'icomoon';
   content: '\e925';
@@ -171,15 +174,15 @@ iconfont
   top: 10px;
   right: 10px;
 }
-.sidebar h2 {
+div.sidebar h2 {
   padding: 30px 20px;
   background-color: #fff;
   border-bottom: 1px solid #ccc;
 }
-.sidebar h2:hover::before {
+div.sidebar h2:hover::before {
   content: '';
 }
-.sidebar ul {
+div.sidebar ul {
   overflow: scroll;
   padding: 10px;
   margin: 10px 0 0 30px;
@@ -188,13 +191,13 @@ iconfont
   background-color: rgba(255, 255, 255, 0.3);
   box-shadow: var(--shadow);
 }
-.sidebar ul li {
+div.sidebar ul li {
   padding: 5px;
   margin: 0;
   background-color: transparent;
   list-style: none;
 }
-.sidebar ul li:nth-of-type(4n)::after {
+div.sidebar ul li:nth-of-type(4n)::after {
   display: block;
   content: '';
   padding-top: 10px;
@@ -202,11 +205,11 @@ iconfont
   height: 1px;
   border-bottom: 1px solid var(--dark);
 }
-.sidebar ul li:hover a {
+div.sidebar ul li:hover a {
   margin-left: 5px;
   box-shadow: var(--shadow);
 }
-.sidebar ul li a {
+div.sidebar ul li a {
   display: block;
   padding: 10px;
   margin: 0 0 0 10px;
@@ -217,11 +220,11 @@ iconfont
   border-radius: 5px;
   transition: all 0.1s;
 }
-.sidebar ul li a.active {
+div.sidebar ul li a.active {
   margin-left: 5px;
   background-color: var(--red);
 }
-.mask {
+div.mask {
   /* 侧边导航遮罩层 */
   position: fixed;
   top: 0;
@@ -336,7 +339,6 @@ iconfont
   font-family: 'opposans-r';
   margin: 10px auto;
   max-width: 1000px;
-  min-width: 500px;
   box-shadow: var(--shadow);
   /* 代码块样式开始 2022-12-10 */
   /* 原自定义样式 */
