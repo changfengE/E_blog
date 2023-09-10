@@ -9,22 +9,23 @@ function getWeather(cityCode) {
     myAxios({
         url: 'http://hmajax.itheima.net/api/weather',
         params: {
-            city: cityCode
-        }
-    }).then(res => {
-        console.log(res);
-        const wObj = res.data;
-        // 1.2数据回显
-        // 阳历和农历日期
-        const dateStr = `<span class="dateShort">${wObj.date}</span>
+            city: cityCode,
+        },
+    })
+        .then(res => {
+            console.log(res);
+            const wObj = res.data;
+            // 1.2数据回显
+            // 阳历和农历日期
+            const dateStr = `<span class="dateShort">${wObj.date}</span>
         <span class="calendar">农历&nbsp;
             <span class="dateLunar">${wObj.dateLunar}</span>
-        </span>`
-        document.querySelector('.title').innerHTML = dateStr;
-        // 城市名字
-        document.querySelector('.area').innerHTML = wObj.area;
-        // 当天气温
-        const nowWStr = `<div class="tem-box">
+        </span>`;
+            document.querySelector('.title').innerHTML = dateStr;
+            // 城市名字
+            document.querySelector('.area').innerHTML = wObj.area;
+            // 当天气温
+            const nowWStr = `<div class="tem-box">
         <span class="temp">
       <span class="temperature">${wObj.temperature}</span>
         <span>°</span>
@@ -43,11 +44,11 @@ function getWeather(cityCode) {
             <li class="windDirection">${wObj.windDirection}</li>
             <li class="windPower">${wObj.windPower}</li>
         </ul>
-    </div>`
-        document.querySelector('.weather-box').innerHTML = nowWStr;
-        // 当天天气
-        const twObj = wObj.todayWeather
-        const todayWStr = `<div class="range-box">
+    </div>`;
+            document.querySelector('.weather-box').innerHTML = nowWStr;
+            // 当天天气
+            const twObj = wObj.todayWeather;
+            const todayWStr = `<div class="range-box">
         <span>今天：</span>
         <span class="range">
       <span class="weather">${twObj.weather}</span>
@@ -74,13 +75,14 @@ function getWeather(cityCode) {
             <span>日落</span>
             <span class="sunsetTime">${twObj.sunsetTime}</span>
         </li>
-    </ul>`
-        document.querySelector('.today-weather').innerHTML = todayWStr;
+    </ul>`;
+            document.querySelector('.today-weather').innerHTML = todayWStr;
 
-        // 7日内天气预报
-        const dayForecast = wObj.dayForecast
-        const dayForecastStr = dayForecast.map(item => {
-            return `<li class="item">
+            // 7日内天气预报
+            const dayForecast = wObj.dayForecast;
+            const dayForecastStr = dayForecast
+                .map(item => {
+                    return `<li class="item">
             <div class="date-box">
                 <span class="dateFormat">${item.dateFormat}</span>
                 <span class="date">${item.date}</span>
@@ -96,15 +98,17 @@ function getWeather(cityCode) {
                 <span class="windDirection">${item.windDirection}</span>
                 <span class="windPower">${item.windPower}</span>
             </div>
-        </li>`
+        </li>`;
+                })
+                .join('');
+            document.querySelector('.week-wrap').innerHTML = dayForecastStr;
         })
-        document.querySelector('.week-wrap').innerHTML = dayForecastStr
-    }).catch(err => {
-        console.log(err);
-    })
+        .catch(err => {
+            console.log(err);
+        });
 }
 // 默认进入网页就获取天气数据，北京市城市编码：'110100'
-getWeather('110100')
+getWeather('110100');
 
 /*
  * 目标2：搜索城市列表
@@ -112,22 +116,24 @@ getWeather('110100')
  * 2.2 获取展示城市列表数据
  */
 // 2.1 input获取关键字
-document.querySelector('.search-city').addEventListener('input', function(e) {
+document.querySelector('.search-city').addEventListener('input', function (e) {
     console.log(e.target.value);
     // 2.2 获取城市列表
     myAxios({
         url: 'http://hmajax.itheima.net/api/weather/city',
         params: {
-            city: e.target.value
-        }
+            city: e.target.value,
+        },
     }).then(res => {
         console.log(res.data);
-        const citieStr = res.data.map(item => {
-            return `<li class="city-item" data-code="${item.code}">${item.name}</li>`
-        }).join('')
-        document.querySelector('.search-list').innerHTML = citieStr
-    })
-})
+        const citieStr = res.data
+            .map(item => {
+                return `<li class="city-item" data-code="${item.code}">${item.name}</li>`;
+            })
+            .join('');
+        document.querySelector('.search-list').innerHTML = citieStr;
+    });
+});
 
 /*
  * 目标3：切换城市天气
@@ -135,12 +141,12 @@ document.querySelector('.search-city').addEventListener('input', function(e) {
  * 3.2 调用获取城市天气函数
  */
 // 3.1事件委托点击获取城市code
-document.querySelector('.search-list').addEventListener('click', function(e) {
+document.querySelector('.search-list').addEventListener('click', function (e) {
     console.log(e.target);
     if (e.target.classList.contains('city-item')) {
-        const cityCode = e.target.dataset.code
+        const cityCode = e.target.dataset.code;
         console.log(cityCode);
         // 3.2调用获取天气函数
-        getWeather(cityCode)
+        getWeather(cityCode);
     }
-})
+});
