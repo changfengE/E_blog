@@ -47,11 +47,11 @@ html[theme='dark'] .div3 {
 html[theme='dark'] .div1 table caption {
   color: #fafafa;
 }
-html[theme='dark'] .div1 code {
-  background-color: #9d9d9d;
-}
-html[theme='dark'] .div1 code[class^='lan'] {
+html[theme='dark'] .div1 code [class^='lan'] {
   background-color: unset;
+}
+html[theme='dark'] .div1 blockquote {
+  background: #ebfff4;
 }
 html[theme='dark'] .div1 blockquote.steps {
   color: #fff;
@@ -59,7 +59,8 @@ html[theme='dark'] .div1 blockquote.steps {
 }
 html[theme='dark'] .div1 ul li,
 html[theme='dark'] .div1 ol li {
-  background-color: #555;
+  background-color: unset;
+  border-bottom: 1px dashed rgba(85, 85, 85, 0.8);
 }
 body {
   margin: 0 auto;
