@@ -52,20 +52,18 @@ ul {
 .container .sub-list ul li a {
     text-align: center;
     display: block;
-    padding: 10px;
     font-size: 14px;
+    background-color: #fff;
 }
 
 .container .sub-list ul li a img {
+    margin: 0 auto;
     width: 80%;
 }
 
-.container .sub-list ul li a p {
-    /* line-height: 40px; */
-}
 
 .container .sub-list ul li a:hover {
-    color: var(--xtx-color);
+    color: rgba(40, 197, 40, 0.645);
 }
 
 .ref-goods {
@@ -101,4 +99,25 @@ ul {
     width: 100%;
     line-height: 220px;
     color: #999;
+}
+
+html[theme='dark'] {
+    .container .sub-list h3 {
+        color: #fff;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .container .sub-list ul {
+        flex-wrap: wrap;
+    }
+
+    .container .sub-list ul li {
+        margin: 5px;
+        width: calc((100% - 20px)/2);
+    }
+
+    .container .sub-list ul li a img {
+        width: 30%;
+    }
 }

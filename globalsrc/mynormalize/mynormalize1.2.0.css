@@ -3,7 +3,7 @@
  * @Email: 3517134128@qq.com
  * @Date: 2023-03-09 22:27:20 
  * @Last Modified by: 3517134128@qq.com
- * @Last Modified time: 2023-09-09 01:58:11
+ * @Last Modified time: 2023-09-10 21:39:23
  * @Description: my normalize less版，版本号：1.2.0，较上一版本（原始版）：修改部分常用样式如body背景色，边框块背景色，iconfont字体图标
  */
 :root {
@@ -27,6 +27,9 @@
   box-sizing: border-box;
   word-wrap: break-word;
 }
+/*
+    适配hexo主题暗黑模式
+*/
 html[theme='dark'] .div1,
 html[theme='dark'] .div2,
 html[theme='dark'] .div3,
@@ -41,18 +44,23 @@ html[theme='dark'] .div2 {
 html[theme='dark'] .div3 {
   background-color: #0f0f0f;
 }
-html[theme='dark'] table caption {
+html[theme='dark'] .div1 table caption {
   color: #fafafa;
 }
-html[theme='dark'] code {
-  background-color: #9d9d9d;
-}
-html[theme='dark'] code[class^='lan'] {
+html[theme='dark'] .div1 code [class^='lan'] {
   background-color: unset;
 }
-html[theme='dark'] blockquote.steps {
+html[theme='dark'] .div1 blockquote {
+  background: #ebfff4;
+}
+html[theme='dark'] .div1 blockquote.steps {
   color: #fff;
   background-color: #555;
+}
+html[theme='dark'] .div1 ul li,
+html[theme='dark'] .div1 ol li {
+  background-color: unset;
+  border-bottom: 1px dashed rgba(85, 85, 85, 0.8);
 }
 body {
   margin: 0 auto;
@@ -124,7 +132,7 @@ iconfont
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.sidebar {
+div.sidebar {
   /*  侧边导航栏 
 *   2023年2月25日
 */
@@ -137,7 +145,7 @@ iconfont
   background-color: rgba(255, 255, 255, 0.8);
   box-shadow: var(--shadow);
 }
-.sidebar .catalog {
+div.sidebar .catalog {
   /* 目录按钮 */
   position: absolute;
   z-index: -1;
@@ -150,17 +158,17 @@ iconfont
   box-shadow: var(--shadow);
   border-radius: 0 5px 5px 0;
 }
-.sidebar .catalog::before {
+div.sidebar .catalog::before {
   font-family: 'icomoon';
   content: '\e91c';
   margin: 0 5px 0 10px;
   vertical-align: middle;
   line-height: 30px;
 }
-.sidebar .catalog::after {
+div.sidebar .catalog::after {
   content: '目录';
 }
-.sidebar .close::before {
+div.sidebar .close::before {
   /* 关闭按钮 */
   font-family: 'icomoon';
   content: '\e925';
@@ -171,15 +179,15 @@ iconfont
   top: 10px;
   right: 10px;
 }
-.sidebar h2 {
+div.sidebar h2 {
   padding: 30px 20px;
   background-color: #fff;
   border-bottom: 1px solid #ccc;
 }
-.sidebar h2:hover::before {
+div.sidebar h2:hover::before {
   content: '';
 }
-.sidebar ul {
+div.sidebar ul {
   overflow: scroll;
   padding: 10px;
   margin: 10px 0 0 30px;
@@ -188,13 +196,13 @@ iconfont
   background-color: rgba(255, 255, 255, 0.3);
   box-shadow: var(--shadow);
 }
-.sidebar ul li {
+div.sidebar ul li {
   padding: 5px;
   margin: 0;
   background-color: transparent;
   list-style: none;
 }
-.sidebar ul li:nth-of-type(4n)::after {
+div.sidebar ul li:nth-of-type(4n)::after {
   display: block;
   content: '';
   padding-top: 10px;
@@ -202,11 +210,11 @@ iconfont
   height: 1px;
   border-bottom: 1px solid var(--dark);
 }
-.sidebar ul li:hover a {
+div.sidebar ul li:hover a {
   margin-left: 5px;
   box-shadow: var(--shadow);
 }
-.sidebar ul li a {
+div.sidebar ul li a {
   display: block;
   padding: 10px;
   margin: 0 0 0 10px;
@@ -217,11 +225,11 @@ iconfont
   border-radius: 5px;
   transition: all 0.1s;
 }
-.sidebar ul li a.active {
+div.sidebar ul li a.active {
   margin-left: 5px;
   background-color: var(--red);
 }
-.mask {
+div.mask {
   /* 侧边导航遮罩层 */
   position: fixed;
   top: 0;
@@ -233,7 +241,15 @@ iconfont
   height: 100%;
   background-color: rgba(0, 0, 0, 0.3);
 }
+/* 适配移动端 */
 @media screen and (max-width: 767px) {
+  html[theme='dark'] .div1 {
+    box-shadow: none;
+  }
+  html[theme='dark'] .div2 {
+    border: none;
+    box-shadow: 0px 0px 10px rgba(85, 85, 85, 0.8);
+  }
   /* 控制sidebar宽度 */
   .sidebar {
     left: -200px;
@@ -241,6 +257,41 @@ iconfont
   }
   .sidebar ul li a {
     font-size: 12px;
+  }
+  div.div1 {
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+    box-shadow: none;
+  }
+  div.div1 h2 {
+    font-size: 1.375rem;
+  }
+  div.div1 h3 {
+    font-size: 1.25rem;
+  }
+  div.div1 h4 {
+    font-size: 1.125rem;
+  }
+  div.div1 pre.code_block {
+    padding-left: 40px;
+  }
+  div.div1 pre.code_block span::before {
+    width: 20px;
+  }
+  div.div2 {
+    margin: 0.625rem 0;
+    padding: 0.625rem;
+  }
+  div.div3,
+  ul.div3 {
+    padding: 0.625rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  div.div4 {
+    box-shadow: unset;
+    padding: 0.3125rem;
   }
 }
 /* backtop返回顶部模块
@@ -306,10 +357,10 @@ iconfont
 .div2,
 .div3,
 .div4 {
-  padding: 20px;
-  margin: 10px;
+  padding: 1.25rem 1.875rem;
+  margin: 0.625rem 0;
   background-color: #fff;
-  border-radius: 10px;
+  border-radius: 0.625rem;
 }
 .div2 {
   box-shadow: var(--shadow);
@@ -318,13 +369,17 @@ iconfont
 .div3 {
   background-color: var(--lightgrey);
 }
+.div3 ol ul li {
+  background-color: #f5f5f5;
+}
 .div4 {
+  margin: 0 0.625rem;
   box-shadow: var(--shadow);
 }
 @media screen and (min-width: 640px) {
   .div4 {
     display: inline-block;
-    width: calc((100% - 50px) / 2);
+    width: calc((100% - 44px) / 2);
     vertical-align: top;
   }
   .div4.bigcard {
@@ -334,9 +389,8 @@ iconfont
 }
 .div1 {
   font-family: 'opposans-r';
-  margin: 10px auto;
+  margin: 0.625rem auto;
   max-width: 1000px;
-  min-width: 500px;
   box-shadow: var(--shadow);
   /* 代码块样式开始 2022-12-10 */
   /* 原自定义样式 */
@@ -366,8 +420,7 @@ iconfont
 .div1 h4,
 .div1 h5,
 .div1 h6 {
-  margin: 15px 0;
-  padding: 0 10px;
+  margin: 5px 0;
 }
 .div1 h1 span,
 .div1 h2 span,
@@ -446,7 +499,7 @@ iconfont
 }
 .div1 p {
   margin: 0;
-  padding: 5px 10px;
+  padding: 5px 0;
   line-height: 1.5em;
 }
 .div1 strong {
@@ -541,17 +594,26 @@ iconfont
   color: #999;
 }
 .div1 pre {
+  margin: 0.3125rem 0;
+  padding: 0.625rem;
   background-color: #424242;
+}
+.div1 pre code[class*='language-'] {
+  font-size: 0.9em;
+}
+.div1 code {
+  padding: 0.3em 0.4em;
+  font-size: 0.9em;
+  font-weight: bold;
+  background-color: #ffe7e7;
+  color: #ff502c;
+  border-radius: 5px;
 }
 .div1 .line-numbers-rows > span {
   display: block;
   counter-increment: linenumber;
   line-height: 1.6rem;
   /* add this */
-}
-.div1 pre[class*='language-'] {
-  margin: 10px !important;
-  border-radius: 5px;
 }
 .div1 div.code-toolbar > .toolbar {
   right: 0.8em !important;
@@ -568,7 +630,7 @@ iconfont
 }
 .div1 img {
   /* border: 0;是为了照顾低版本浏览器，若图片外面包含了链接会有边框的问题 */
-  margin: 10px;
+  margin: 0.625rem 0;
   border: 0;
   /* 取消图片底侧有空白缝隙的问题 */
   vertical-align: middle;
@@ -576,41 +638,41 @@ iconfont
 .div1 img[src*='cut'] {
   display: block;
   width: 60%;
-  margin: 10px;
 }
-.div1 li {
-  padding: 10px;
-  /* 2023年3月24日 
-    修改li编号位置，以便与li内容背景色相同
-    */
-  list-style-position: inside;
-  font-size: 16px;
+.div1 ul,
+.div1 ol {
+  margin: 0;
 }
-.div1 ul {
-  padding-left: 10px;
-}
-.div1 ul li {
+.div1 ul li,
+.div1 ol li {
+  padding: 0.3125rem;
+  margin: 0.3125rem 0;
   list-style: disc inside;
+  border-radius: 0.3125rem;
+  background-color: #fafafa;
+}
+.div1 ol > li {
+  width: 100%;
+  padding-left: 0.3125rem;
+  list-style: decimal inside;
 }
 .div1 table {
-  margin-left: 10px;
+  margin: 0.3125rem 0;
   border-collapse: collapse;
   caption-side: top !important;
 }
 .div1 table caption {
-  margin: 10px 0;
-  padding: 10px 0;
+  margin: 0.3125rem 0;
+  padding: 0.3125rem 0;
   color: var(--dark);
-  text-align: left;
-  font-size: 1em;
   font-weight: bold;
   border-bottom: 2px solid var(--dark);
 }
 .div1 table caption::before {
   font-family: 'icomoon';
   content: '\e921';
-  margin-right: 10px;
-  font-size: 20px;
+  margin-right: 0.625rem;
+  font-size: 1.25rem;
 }
 .div1 table th {
   color: #f0f0f0;
@@ -620,6 +682,7 @@ iconfont
 .div1 table td {
   border: 1px solid #555;
   padding: 5px;
+  font-size: 0.9em;
   transition: all 0.1s;
 }
 .div1 table td:hover {
@@ -725,12 +788,10 @@ iconfont
   position: relative;
   background: rgba(235, 255, 244, 0.675);
   padding: 10px 40px;
-  margin: 1em;
-  border-style: solid;
-  border-width: 0 0 0 7px;
-  border-color: #009b74;
-  border-radius: 4px;
-  line-height: 200%;
+  padding-right: 0.625rem;
+  margin: 0.3125rem 0;
+  border-left: 0.4375rem solid #009b74;
+  border-radius: 0 0.3125rem 0.3125rem 0;
   /* 若--fontgrey 没有被设置，将使用回退值blue。 */
   color: var(--fontgrey, blue);
   transition: all 0.5s;
@@ -742,7 +803,7 @@ iconfont
   content: '\e91e';
   font-family: 'icomoon';
   position: absolute;
-  left: 10px;
+  left: 0.625rem;
   font-size: 1.5em;
 }
 .div1 blockquote ul,
@@ -769,14 +830,6 @@ iconfont
 .div1 del {
   margin: 0 10px;
   color: #aaa;
-}
-.div1 code {
-  padding: 0.3em 0.4em;
-  font-size: 0.9em;
-  font-weight: bold;
-  background-color: #ffe7e7;
-  color: #ff502c;
-  border-radius: 5px;
 }
 .div1 .note {
   /*  注意事项 
