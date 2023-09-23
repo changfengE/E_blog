@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+
+
+<html theme="dark" showBanner="true" hasBanner="true" > 
+<link href="/fontawesome/css/fontawesome.css" rel="stylesheet">
+<link href="/fontawesome/css/brands.css" rel="stylesheet">
+<link href="/fontawesome/css/solid.css" rel="stylesheet">
+<!-- 2023-9-19 添加统一的prism -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.css" /> 
+<script src="/js/color.global.min.js" ></script>
+<script src="/js/load-settings.js" ></script>
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+
+  
+  <title>Vue指令 | cfE_blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/MaterialSymbolsRounded.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+  <meta name="description" content="Vue指令                                                                                               Vue指令#                              Vue会根据不同的                 指令">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue指令">
+<meta property="og:url" content="https://changfenge.github.io/2023/09/18/self_Vue/002Vue%E6%8C%87%E4%BB%A4/index.html">
+<meta property="og:site_name" content="cfE_blog">
+<meta property="og:description" content="Vue指令                                                                                               Vue指令#                              Vue会根据不同的                 指令">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://changfenge.github.io/assets/images/self_Vue/002_cut_01%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4.png">
+<meta property="og:image" content="https://changfenge.github.io/assets/images/self_Vue/002_cut_02%E9%9A%90%E8%97%8F.png">
+<meta property="og:image" content="https://changfenge.github.io/2023/09/18/self_Vue/002Vue%E6%8C%87%E4%BB%A4/imgUrl">
+<meta property="og:image" content="https://changfenge.github.io/2023/09/18/self_Vue/002Vue%E6%8C%87%E4%BB%A4/list[index]">
+<meta property="article:published_time" content="2023-09-17T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-09-23T09:53:43.096Z">
+<meta property="article:author" content="changfeng_E">
+<meta property="article:tag" content="vue">
+<meta property="article:tag" content="vue2">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://changfenge.github.io/assets/images/self_Vue/002_cut_01%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4.png">
+  
+  
+    <link rel="shortcut icon" href="/xiaohei.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  
+  
+    
+<div id="banner" class="">
+  <img src="/assets/%E8%8A%B1%E8%8A%B1bg02.jpg" itemprop="image">
+  <div id="banner-dim"></div>
+</div>
+ 
+   
+  <div id="main-grid" class="shadow   ">
+    <div id="nav" class=""  >
+      <navbar id="navbar">
+  <nav id="title-nav">
+    <a href="/">
+      <div id="vivia-logo">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div>cfE_blog </div>
+    </a>
+  </nav>
+  <nav id="main-nav">
+    
+      <a class="main-nav-link" href="/">主页</a>
+    
+      <a class="main-nav-link" href="/archives">轨迹</a>
+    
+      <a class="main-nav-link" href="/about">更多</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    <a id="theme-btn" class="nav-icon">
+      <span class="material-symbols-rounded light-mode-icon">wb_sunny</span>
+      <span class="material-symbols-rounded dark-mode-icon">dark_mode</span>
+    </a>
+    
+    <a id="nav-search-btn" class="nav-icon" title="搜索" style="display: none;">
+      <span class="material-symbols-rounded">search</span>
+    </a>
+    <div id="nav-menu-btn" class="nav-icon">
+      <span class="material-symbols-rounded">menu</span>
+    </div>
+  </nav>
+</navbar>
+<div id="nav-dropdown" class="hidden">
+  <div id="dropdown-link-list">
+    
+      <a class="nav-dropdown-link" href="/">主页</a>
+    
+      <a class="nav-dropdown-link" href="/archives">轨迹</a>
+    
+      <a class="nav-dropdown-link" href="/about">更多</a>
+    
+     
+    </div>
+</div>
+<script>
+  let dropdownBtn = document.getElementById("nav-menu-btn");
+  let dropdownEle = document.getElementById("nav-dropdown");
+  dropdownBtn.onclick = function() {
+    dropdownEle.classList.toggle("hidden");
+  }
+</script>
+    </div>
+    <div id="sidebar-wrapper">
+      <sidebar id="sidebar">
+  
+    <div class="widget-wrap">
+  <div class="info-card">
+    <div class="avatar">
+      
+        <image src=/assets/%E7%BD%97%E5%B0%8F%E9%BB%9102.png></image>
+      
+      <div class="img-dim"></div>
+    </div>
+    <div class="info">
+      <div class="username">changfeng_E </div>
+      <div class="dot"></div>
+      <div class="subtitle">about me </div>
+      <div class="link-list">
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com/changfengE" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://gitee.com/changfengE" title="Gitee"><i class="fa-brands fa-square-git"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/285349009?spm_id_from=333.1007.0.0" title="bilibili"><i class="fa-brands fa-bilibili"></i></a>
+         
+      </div>  
+    </div>
+  </div>
+</div>
+
+  
+  <div class="sticky">
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">最新文章</h3>
+      <ul>
+        
+          <a class="recent-link" href="/2023/09/22/self_Vue/008-%E6%A1%88%E4%BE%8B02%E6%88%90%E7%BB%A9%E7%AE%A1%E7%90%86/" title="案例-成绩管理" >
+            <div class="recent-link-text">
+              案例-成绩管理
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/21/self_Vue/007%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7/" title="计算属性" >
+            <div class="recent-link-text">
+              计算属性
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/21/self_Vue/006v-model%E6%8B%93%E5%B1%95%E5%BA%94%E7%94%A8/" title="v-model拓展应用" >
+            <div class="recent-link-text">
+              v-model拓展应用
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/21/self_Vue/005v-bind%E5%A2%9E%E5%BC%BA%E6%A0%B7%E5%BC%8F%E6%8E%A7%E5%88%B6/" title="v-bind增强样式控制" >
+            <div class="recent-link-text">
+              v-bind增强样式控制
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/21/self_Vue/004%E6%8C%87%E4%BB%A4%E4%BF%AE%E9%A5%B0%E7%AC%A6/" title="指令修饰符" >
+            <div class="recent-link-text">
+              指令修饰符
+            </div>
+          </a>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">标签</h3>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/CSS3/" rel="tag">CSS3</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/HTML5/" rel="tag">HTML5</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/axios/" rel="tag">axios</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/hexo-use/" rel="tag">hexo_use</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/normalize/" rel="tag">normalize</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/typora/" rel="tag">typora</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/vue2/" rel="tag">vue2</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" rel="tag">移动端</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+
+
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">分类</h3>
+      <div class="category-box">
+            <a class="category-link" href="/categories/markdown/">
+                markdown
+                <div class="category-count">1</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/markdown/%E4%BD%BF%E7%94%A8/">
+                使用
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/git/">
+                git
+                <div class="category-count">10</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/git/ssh%E7%BB%91%E5%AE%9A/">
+                ssh绑定
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/git%E5%AE%89%E8%A3%85%E5%8F%8A%E9%83%A8%E5%88%86%E5%91%BD%E4%BB%A4/">
+                git安装及部分命令
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81/">
+                提交代码
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/branch/">
+                branch
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/hexo%E5%88%9D%E4%BD%93%E9%AA%8C/">
+                hexo初体验
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/hexo/">
+                hexo
+                <div class="category-count">1</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/hexo/using/">
+                using
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/HTML5-CSS3/">
+                HTML5&CSS3
+                <div class="category-count">14</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/">
+                浏览器
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/">
+                移动端
+                <div class="category-count">16</div>
+            </a>
+        
+            <a class="category-link" href="/categories/mynormalize/">
+                mynormalize
+                <div class="category-count">3</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/mynormalize/1-2-0/">
+                1.2.0
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/mynormalize/1-1-0/">
+                1.1.0
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/mynormalize/wheels/">
+                wheels
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/Ajax/">
+                Ajax
+                <div class="category-count">23</div>
+            </a>
+        
+            <a class="category-link" href="/categories/nodejs/">
+                nodejs
+                <div class="category-count">25</div>
+            </a>
+        
+            <a class="category-link" href="/categories/jQuery/">
+                jQuery
+                <div class="category-count">13</div>
+            </a>
+        
+            <a class="category-link" href="/categories/vue2/">
+                vue2
+                <div class="category-count">8</div>
+            </a>
+        
+            <a class="category-link" href="/categories/js%E5%9F%BA%E7%A1%80/">
+                js基础
+                <div class="category-count">42</div>
+            </a>
+        </div>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">归档</h3>
+      
+      
+        <a class="archive-link" href="/archives/2023/09 ">
+          九月 2023 
+          <div class="archive-count">10 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/08 ">
+          八月 2023 
+          <div class="archive-count">54 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/07 ">
+          七月 2023 
+          <div class="archive-count">11 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/05 ">
+          五月 2023 
+          <div class="archive-count">3 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/04 ">
+          四月 2023 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/03 ">
+          三月 2023 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/02 ">
+          二月 2023 
+          <div class="archive-count">6 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/01 ">
+          一月 2023 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/12 ">
+          十二月 2022 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/11 ">
+          十一月 2022 
+          <div class="archive-count">4 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/09 ">
+          九月 2022 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/08 ">
+          八月 2022 
+          <div class="archive-count">11 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/07 ">
+          七月 2022 
+          <div class="archive-count">22 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/06 ">
+          六月 2022 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/02 ">
+          二月 2022 
+          <div class="archive-count">6 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/01 ">
+          一月 2022 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/10 ">
+          十月 2021 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/09 ">
+          九月 2021 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/08 ">
+          八月 2021 
+          <div class="archive-count">6 </div>
+        </a>
+      
+    </div>
+  </div>
+
+
+    
+  </div>
+</sidebar>
+    </div>
+    <div id="content-body">
+       
+
+<article id="post-self_Vue/002Vue指令" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        Vue指令
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-09-17T16:00:00.000Z" itemprop="datePublished">2023-09-18</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/vue2/">vue2</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            3.4k 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue2/" rel="tag">vue2</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vue指令</title>
+        <link rel="shortcut icon" href="../xiaohei.ico">
+        <link rel="stylesheet" href="/globalsrc/mynormalize/mynormalize1.2.0.css">
+        <link rel="stylesheet" href="/globalsrc/mynormalize/prism.css">
+    </head>
+    <body class="line-numbers">
+        <div class="sidebar"></div>
+        <div class="mask"></div>
+        <div class="godown"></div>
+        <div class="backtop"></div>
+        <div class="div1">
+            <h2><span id="vue-zhi-ling">Vue指令</span><a href="#vue-zhi-ling" class="header-anchor">#</a></h2>
+            <p>
+                Vue会根据不同的
+                <strong>指令</strong>
+                ，针对标签实现不同的
+                <strong>功能</strong>
+                。
+            </p>
+            <p>
+                指令：带有
+                <code>v-</code>
+                <strong>前缀</strong>
+                的特殊
+                <strong>标签属性</strong>
+            </p>
+            <p>例如：</p>
+            <pre><code class="language-html">&lt;!-- Vue指令：v-前缀的标签属性 --&gt;
+&lt;div v-html="str"&gt;&lt;/div&gt;</code></pre>
+            <p>v-html:作用：设置元素的innerHTML</p>
+            <p>
+                语法：v-html="
+                <strong>表达式</strong>
+                "
+            </p>
+            <div class="div2">
+                <h3><span id="lian-xi-dong-tai-xuan-ran-biao-qian">练习-动态渲染标签</span><a href="#lian-xi-dong-tai-xuan-ran-biao-qian" class="header-anchor">#</a></h3>
+                <p>将一个链接动态渲染到页面</p>
+                <div class="div3">
+                    <div id="link">
+                        <div v-html="msg"></div>
+                    </div>
+                </div>
+                <div class="div3">
+                    <pre><code class="language-html">&lt;div id="link"&gt;
+    &lt;div v-html="msg"&gt;&lt;/div&gt; 
+&lt;/div&gt;</code></pre>
+                    <pre><code class="language-js">const link = new Vue(&#123;
+    el: '#link',
+    data: &#123;
+        msg: `<a href="https://www.baidu.com/" target="_blank">百度一下</a>`,
+    &#125;,
+&#125;);</code></pre>
+                </div>
+            </div>
+            <p>
+                常用指令有10个，在
+                <a href="https://v2.cn.vuejs.org/v2/api/#%E6%8C%87%E4%BB%A4" target="_blank">官方API</a>
+                中可以查看详细解释
+            </p>
+            <img src="/assets/images/self_Vue/002_cut_01常用指令.png" alt>
+            <div class="div2">
+                <h3><span id="v-show">v-show</span><a href="#v-show" class="header-anchor">#</a></h3>
+                <ol>
+                    <li>作用：控制元素显示隐藏</li>
+                    <li>
+                        语法：
+                        <pre><code class="language-html">v-show="表达式"
+&lt;!-- 表达式值为true则显示，false隐藏 --&gt;</code></pre>
+                    </li>
+                    <li>
+                        原理：
+                        <strong>切换</strong>
+                        <code>display:none</code>
+                        控制显示隐藏
+                    </li>
+                    <li>
+                        场景：频繁切换显示隐藏的场景
+                        <p>eg:鼠标移入显示对应模块内容，移出隐藏</p>
+                    </li>
+                </ol>
+            </div>
+            <div class="div2">
+                <h3><span id="v-if">v-if</span><a href="#v-if" class="header-anchor">#</a></h3>
+                <ol>
+                    <li>
+                        作用：控制元素显示隐藏（
+                        <strong>条件渲染</strong>
+                        ）
+                    </li>
+                    <li>
+                        语法：
+                        <pre><code class="language-html">v-if="表达式"
+&lt;!-- 表达式值为true则显示，false隐藏 --&gt;</code></pre>
+                    </li>
+                    <li>
+                        原理：基于
+                        <strong>条件判断</strong>
+                        ，是否
+                        <strong>创建</strong>
+                        或
+                        <strong>移除</strong>
+                        元素节点
+                    </li>
+                    <li>
+                        场景：要么显示，要么隐藏，不频繁切换的场景
+                        <p>eg:登录提示信息，叉掉则隐藏不再显示</p>
+                    </li>
+                </ol>
+            </div>
+            <div class="div3">
+                <h4><span id="shi-li">实例</span><a href="#shi-li" class="header-anchor">#</a></h4>
+                <p>
+                    探索
+                    <code>v-show</code>
+                    和
+                    <code>v-if</code>
+                    的异同
+                </p>
+                <div id="hide" class="clearfix">
+                    <div v-show="flag" class="testbox">v-show控制的盒子</div>
+                    <div v-if="flag" class="testbox">v-if控制的盒子</div>
+                </div>
+                <img src="/assets/images/self_Vue/002_cut_02隐藏.png" alt>
+                <p>当flag为true时，可以发现两个指令底层原理的不同</p>
+                <p>
+                    由
+                    <code>v-show</code>
+                    控制的盒子是通过切换css的
+                    <code>display:none</code>
+                    来将盒子隐藏掉的，实际盒子还在文档流中
+                </p>
+                <p>
+                    而
+                    <code>v-if</code>
+                    则不同，它直接将其控制的盒子
+                    <strong>从文档流中移除</strong>
+                    ，即根据判断条件控制元素的创建和移除
+                </p>
+                <pre><code class="language-html">&lt;div id="hide"&gt;
+    &lt;div v-show="flag" class="testbox"&gt;v-show控制的盒子&lt;/div&gt;
+    &lt;div v-if="flag" class="testbox"&gt;v-if控制的盒子&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                <pre><code class="language-js">const hide = new Vue(&#123;
+    el: '#hide',
+    data: &#123;
+        flag: false,
+    &#125;,
+&#125;);</code></pre>
+            </div>
+            <div class="div2">
+                <h3><span id="v-else-v-else-if">v-else/v-else-if</span><a href="#v-else-v-else-if" class="header-anchor">#</a></h3>
+                <ol>
+                    <li>
+                        作用：辅助
+                        <code>v-if</code>
+                        进行判断渲染
+                    </li>
+                    <li>
+                        语法：
+                        <pre><code class="language-html">v-else/v-else-if="表达式"</code></pre>
+                    </li>
+                    <li>
+                        注意：需要紧挨着
+                        <code>v-if</code>
+                        一起使用
+                    </li>
+                </ol>
+                <div class="div3">
+                    <div id="score">
+                        <p v-if="gender===1">性别：男</p>
+                        <p v-else>性别：女</p>
+                        <hr>
+                        <p v-if="score>=90">成绩评定A：奖励电脑一台</p>
+                        <p v-else-if="score>=70">成绩评定B：奖励周末郊游</p>
+                        <p v-else-if="score>=60">成绩评定C：奖励零食礼包</p>
+                        <p v-else>成绩评定D：惩罚一周不能玩手机</p>
+                    </div>
+                </div>
+                <div class="div3">
+                    <pre><code class="language-html">&lt;div id="score"&gt;
+    &lt;p v-if="gender===1"&gt;性别：男&lt;/p&gt;
+    &lt;p v-else&gt;性别：女&lt;/p&gt;
+    &lt;hr /&gt;
+    &lt;p v-if="score&gt;=90"&gt;成绩评定A：奖励电脑一台&lt;/p&gt;
+    &lt;p v-else-if="score&gt;=70"&gt;成绩评定B：奖励周末郊游&lt;/p&gt;
+    &lt;p v-else-if="score&gt;=60"&gt;成绩评定C：奖励零食礼包&lt;/p&gt;
+    &lt;p v-else&gt;成绩评定D：惩罚一周不能玩手机&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                    <pre><code class="language-js">// v-else v-else-if
+const score = new Vue(&#123;
+    el: '#score',
+    data: &#123; gender: 1, score: 80 &#125;,
+&#125;);</code></pre>
+                </div>
+            </div>
+            <div class="div2">
+                <h3><span id="v-on-shi-jian-bang-ding">v-on事件绑定</span><a href="#v-on-shi-jian-bang-ding" class="header-anchor">#</a></h3>
+                <ol>
+                    <li>作用：注册事件=添加监听+提供处理逻辑</li>
+                    <li>
+                        语法：
+                        <pre><code class="language-html">v-on:事件名="内联语句"</code></pre>
+                        <pre><code class="language-html">v-on:事件名="methods中的函数名"</code></pre>
+                    </li>
+                    <li>
+                        简写：
+                        <code>@事件名</code>
+                    </li>
+                    <li>
+                        注意：methods函数内的
+                        <strong>this指向Vue实例</strong>
+                    </li>
+                </ol>
+                <div class="div3">
+                    <div id="count">
+                        <button v-on:click="count--">-</button>
+                        <span>{{ count }}</span>
+                        <button @click="count++">+</button>
+                    </div>
+                </div>
+                <div class="div3">
+                    <pre><code class="language-html">&lt;div id="count"&gt;
+    &lt;button v-on:click="count--"&gt;-&lt;/button&gt;
+    &lt;span&gt;{{ count }}&lt;/span&gt;
+    &lt;button @click="count++"&gt;+&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+                    <pre><code class="language-js">// v-on
+const count = new Vue(&#123;
+    el: '#count',
+    data: &#123; count: 0 &#125;,
+&#125;);</code></pre>
+                </div>
+                <p>以上效果采用的是第一种语法</p>
+                <p>但在实际开发中，全用内联语句来写不太现实</p>
+                <p>
+                    因此有第二种语法，
+                    <code>methods</code>
+                    即vue实例对象中除
+                    <code>el</code>
+                    和
+                    <code>data</code>
+                    外的另一个属性，用于提供处理逻辑函数，以完成更多效果
+                </p>
+                <p>
+                    而原本的内联语句，直接替换为methods中的逻辑
+                    <strong>函数名</strong>
+                    即可
+                </p>
+                <div class="div3">
+                    <div id="tooglevis">
+                        <button @click="toogleVis">切换显示隐藏</button>
+                        <p v-show="flag">hello vue</p>
+                    </div>
+                </div>
+                <div class="div3">
+                    <pre><code class="language-html">&lt;div id="tooglevis"&gt;
+    &lt;button @click="toogleVis"&gt;切换显示隐藏&lt;/button&gt;
+    &lt;p v-show="flag"&gt;hello vue&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                    <pre><code class="language-js">const tooglevis = new Vue(&#123;
+    el: '#tooglevis',
+    data: &#123; flag: true &#125;,
+    methods: &#123;
+        toogleVis() &#123;
+            console.log('点击了切换');
+            // 注意，模板中使用data的数据直接使用，而在methods中要使用data的数据需要用this
+            // vue让提供的methods中的所有函数，this都指向当前实例，避免使用实例名操作数据时，若实例名改变其它都要改的情况
+            this.flag = !this.flag;
+        &#125;,
+    &#125;,
+&#125;);</code></pre>
+                </div>
+                <div class="div3">
+                    <h4><span id="v-on-diao-yong-chuan-can">v-on调用传参</span><a href="#v-on-diao-yong-chuan-can" class="header-anchor">#</a></h4>
+                    <p>若在调用函数中需要传递参数，很简单，用实参传递形参接收</p>
+                    <pre><code class="language-html">&lt;p @click="fn(参数1,参数2)"&gt;&lt;/p&gt;</code></pre>
+                    <div class="div4 bigcard">
+                        <div id="goods">
+                            <h5><span id="zi-dong-shou-huo-ji">自动售货机</span><a href="#zi-dong-shou-huo-ji" class="header-anchor">#</a></h5>
+                            <button @click="buy(3)">可乐3元</button>
+                            <button @click="buy(10)">咖啡10元</button>
+                            <p>余额：{{ money }}</p>
+                        </div>
+                    </div>
+                    <div class="div4 bigcard">
+                        <pre><code class="language-html">&lt;div id="goods"&gt;
+    &lt;h5&gt;自动售货机&lt;/h5&gt;
+    &lt;button @click="buy(3)"&gt;可乐3元&lt;/button&gt;
+    &lt;button @click="buy(10)"&gt;咖啡10元&lt;/button&gt;
+    &lt;p&gt;余额：{{ money }}&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                        <pre><code class="language-js">// v-on调用传参
+const goods = new Vue(&#123;
+    el: '#goods',
+    data: &#123; money: 100 &#125;,
+    methods: &#123;
+        buy(p) &#123;
+            this.money -= p;
+        &#125;,
+    &#125;,
+&#125;);</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="div2">
+                <h3><span id="v-bind-shu-xing-bang-ding">v-bind属性绑定</span><a href="#v-bind-shu-xing-bang-ding" class="header-anchor">#</a></h3>
+                <ol>
+                    <li>作用：动态地设置html的标签属性--src、url、title...</li>
+                    <li>
+                        语法：
+                        <pre><code class="language-html">v-bind:属性名="表达式"</code></pre>
+                    </li>
+                    <li>
+                        注意：简写形式：
+                        <strong>:属性名="表达式"</strong>
+                    </li>
+                </ol>
+                <div class="div3">
+                    <div id="autumn"><img v-bind:src="imgUrl" :title="msg" alt></div>
+                </div>
+                <div class="div3">
+                    <pre><code class="language-html">&lt;div id="autumn"&gt;
+    &lt;img v-bind:src="imgUrl" :title="msg" alt="" /&gt;
+&lt;/div&gt;</code></pre>
+                    <pre><code class="language-js">// v-bind
+const picbind = new Vue(&#123;
+    el: '#autumn',
+    data: &#123;
+        imgUrl: '/assets/images/self_Vue/cut_autumn.png',
+        msg: 'hello autumn',
+    &#125;,
+&#125;);</code></pre>
+                </div>
+            </div>
+            <div class="div2">
+                <h3><span id="an-li-bo-zi-xue-xi-zhi-lu">案例-波仔学习之旅</span><a href="#an-li-bo-zi-xue-xi-zhi-lu" class="header-anchor">#</a></h3>
+                <p>核心思路分析：</p>
+                <ol>
+                    <li>数组存储图片路径</li>
+                    <li>
+                        准备下标index，用于取出图片路径--
+                        <code>v-bind</code>
+                        设置src展示图片--修改下标切换图片
+                    </li>
+                </ol>
+                <div class="div3">
+                    <div id="bzstudy">
+                        <button @click="index--" v-show="index>0">上一页</button>
+                        <img :src="list[index]" alt>
+                        <button @click="index++" v-show="index<list.length-1">下一页</button>
+                    </div>
+                </div>
+                <div class="div3">
+                    <pre><code class="language-html">&lt;div id="bzstudy"&gt;
+    &lt;button @click="index--" v-show="index&gt;0"&gt;上一页&lt;/button&gt;
+    &lt;img :src="list[index]" alt="" /&gt;
+    &lt;button @click="index++" v-show="index&lt;list.length-1"&gt;下一页&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+                    <pre><code class="language-js">// 案例-波仔的学习之旅
+const bzstudy = new Vue(&#123;
+    el: '#bzstudy',
+    data: &#123;
+        index: 0,
+        list: [
+            '/assets/images/self_Vue/bozai/11-00.gif',
+            '/assets/images/self_Vue/bozai/11-01.gif',
+            '/assets/images/self_Vue/bozai/11-02.gif',
+            '/assets/images/self_Vue/bozai/11-03.gif',
+            '/assets/images/self_Vue/bozai/11-04.png',
+            '/assets/images/self_Vue/bozai/11-05.png'
+        ],
+    &#125;,
+&#125;);</code></pre>
+                </div>
+            </div>
+            <div class="div2">
+                <h3><span id="v-for">v-for</span><a href="#v-for" class="header-anchor">#</a></h3>
+                <ol>
+                    <li>
+                        作用：基于
+                        <strong>数据</strong>
+                        （
+                        <strong>数组</strong>
+                        、对象、数字）循环，多次渲染整个元素
+                    </li>
+                    <li>
+                        遍历数组语法：
+                        <pre><code class="language-html">v-for="(item, index) in 数组" :key="index"</code></pre>
+                        <p>item：每一项，index：下标</p>
+                        <p>若用不上index，可以省略index：v-for="item in 数组"</p>
+                    </li>
+                </ol>
+                <div class="div3">
+                    <h4><span id="v-for-zhong-de-key">v-for中的key</span><a href="#v-for-zhong-de-key" class="header-anchor">#</a></h4>
+                    <p>
+                        语法：
+                        <strong>key属性="唯一标识"</strong>
+                    </p>
+                    <p>作用：给列表项添加的唯一标识。便于Vue进行列表项的正确排序复用</p>
+                    <p>
+                        若不加key，v-for的默认行为会尝试
+                        <strong>原地修改元素（就地复用）</strong>
+                        ，比如删除一个li，不会删除li节点，而只是更新数据
+                    </p>
+                    <p>注意点：</p>
+                    <ol>
+                        <li>
+                            key的值只能是
+                            <strong>字符串</strong>
+                            或
+                            <strong>数字类型</strong>
+                        </li>
+                        <li>key的值必须具有唯一性</li>
+                        <li>
+                            推荐使用
+                            <code>id</code>
+                            作为key（唯一），不推荐使用
+                            <code>index</code>
+                            作为key（会变化，不对应）
+                        </li>
+                    </ol>
+                </div>
+                <div class="div3">
+                    <div id="fruit">
+                        <p>小黑水果店</p>
+                        <ul>
+                            <li v-for="(item, index) in list">{{ item }}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="div3">
+                    <pre><code class="language-html">&lt;div id="fruit"&gt;
+    &lt;p&gt;小黑水果店&lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li v-for="(item, index) in list"&gt;{{ item }}&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+                    <pre><code class="language-js">// v-for
+const fruit = new Vue(&#123;
+    el: '#fruit',
+    data: &#123;
+        list: ['苹果', '西瓜', '梨'],
+    &#125;,
+&#125;);</code></pre>
+                </div>
+            </div>
+            <div class="div2">
+                <h3><span id="an-li-xiao-hei-de-shu-jia">案例-小黑的书架</span><a href="#an-li-xiao-hei-de-shu-jia" class="header-anchor">#</a></h3>
+                <p>需求：1.渲染、2.删除功能</p>
+                <div class="div3">
+                    <div id="book">
+                        <p>小黑的书架</p>
+                        <ul>
+                            <li v-for="(item, index) in bookList" :key="item.id">
+                                <span>{{ item.name }}</span>
+                                <span>{{ item.author }}</span>
+                                <!-- 注册点击事件--通过id进行删除数组中的对应项 -->
+                                <button @click="removeBook(item.id)">删除</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="div3">
+                    <pre><code class="language-html">&lt;div id="book"&gt;
+    &lt;p&gt;小黑的书架&lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li v-for="(item, index) in bookList" :key="item.id"&gt;
+            &lt;span&gt;{{ item.name }}&lt;/span&gt;
+            &lt;span&gt;{{ item.author }}&lt;/span&gt;
+            &lt;!-- 注册点击事件--通过id进行删除数组中的对应项 --&gt;
+            &lt;button @click="removeBook(item.id)"&gt;删除&lt;/button&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+                    <pre><code class="language-js">// 案例-小黑的书架
+const book = new Vue(&#123;
+    el: '#book',
+    data: &#123;
+        bookList: [
+            &#123; id: 1, name: '《红楼梦》', author: '曹雪芹' &#125;,
+            &#123; id: 2, name: '《西游记》', author: '吴承恩' &#125;,
+            &#123; id: 3, name: '《水浒传》', author: '施耐庵' &#125;,
+            &#123; id: 4, name: '《三国演义》', author: '罗贯中' &#125;,
+        ],
+    &#125;,
+    methods: &#123;
+        removeBook(id) &#123;
+            // 优先通过id删除对应项
+            // filter:根据条件，保留满足条件的对应项，得到一个新数组
+            this.bookList = this.bookList.filter(item => item.id !== id);
+        &#125;,
+    &#125;,
+&#125;);</code></pre>
+                </div>
+            </div>
+            <div class="div2">
+                <h3><span id="v-model">v-model</span><a href="#v-model" class="header-anchor">#</a></h3>
+                <ol>
+                    <li>
+                        作用：给
+                        <strong>表单元素</strong>
+                        使用，
+                        <strong>双向数据绑定</strong>
+                        --可以快速
+                        <strong>获取或设置</strong>
+                        表单元素内容
+                        <ul>
+                            <li>数据变化--视图自动更新</li>
+                            <li>视图变化--数据自动更新</li>
+                        </ul>
+                    </li>
+                    <li>
+                        语法：
+                        <pre><code class="language-html">v-model='变量'</code></pre>
+                    </li>
+                </ol>
+                <div class="div3">
+                    <div id="logform">
+                        <label for="account">账户：</label>
+                        <input type="text" name="account" id v-model="username">
+                        <br>
+                        <label for="pwd">密码：</label>
+                        <input type="password" name="pwd" id v-model="password">
+                        <br>
+                        <button @click="login">登录</button>
+                        <button @click="reset">重置</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/globalsrc/mynormalize/trans-animate.js"></script>
+        <script src="/globalsrc/mynormalize/mynormalize.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+        <script src="/globalsrc/mynormalize/prism.js"></script>
+        <script>
+            // v-html
+            const link = new Vue({
+                el: '#link',
+                data: {
+                    msg: `<a href="https://www.baidu.com/" target="_blank">百度一下</a>`,
+                },
+            });
+            // v-show / v-if
+            const hide = new Vue({
+                el: '#hide',
+                data: {
+                    flag: true,
+                },
+            });
+            // v-else v-else-if
+            const score = new Vue({
+                el: '#score',
+                data: { gender: 1, score: 80 },
+            });
+            // v-on
+            const count = new Vue({
+                el: '#count',
+                data: { count: 0 },
+            });
+            const tooglevis = new Vue({
+                el: '#tooglevis',
+                data: { flag: true },
+                methods: {
+                    toogleVis() {
+                        console.log('点击了切换');
+                        // 注意，模板中使用data的数据直接使用，而在methods中要使用data的数据需要用this
+                        // vue让提供的methods中的所有函数，this都指向当前实例，避免使用实例名操作数据时，若实例名改变其它都要改的情况
+                        this.flag = !this.flag;
+                    },
+                },
+            });
+            // v-on调用传参
+            const goods = new Vue({
+                el: '#goods',
+                data: { money: 100 },
+                methods: {
+                    buy(p) {
+                        this.money -= p;
+                    },
+                },
+            });
+            // v-bind
+            const picbind = new Vue({
+                el: '#autumn',
+                data: {
+                    imgUrl: '/assets/images/self_Vue/cut_autumn.png',
+                    msg: 'hello autumn',
+                },
+            });
+            // v-for
+            const fruit = new Vue({
+                el: '#fruit',
+                data: {
+                    list: ['苹果', '西瓜', '梨'],
+                },
+            });
+            // v-model
+            const form = new Vue({
+                el: '#logform',
+                data: {
+                    username: '',
+                    password: '',
+                },
+                methods: {
+                    login() {
+                        console.log(this.username, this.password);
+                    },
+                    reset() {
+                        this.username = '';
+                        this.password = '';
+                    },
+                },
+            });
+        </script>
+        <script>
+            // 案例-波仔的学习之旅
+            const bzstudy = new Vue({
+                el: '#bzstudy',
+                data: {
+                    index: 0,
+                    list: [
+                        '/assets/images/self_Vue/bozai/11-00.gif',
+                        '/assets/images/self_Vue/bozai/11-01.gif',
+                        '/assets/images/self_Vue/bozai/11-02.gif',
+                        '/assets/images/self_Vue/bozai/11-03.gif',
+                        '/assets/images/self_Vue/bozai/11-04.png',
+                        '/assets/images/self_Vue/bozai/11-05.png',
+                    ],
+                },
+            });
+        </script>
+        <script>
+            // 案例-小黑的书架
+            const book = new Vue({
+                el: '#book',
+                data: {
+                    bookList: [
+                        { id: 1, name: '《红楼梦》', author: '曹雪芹' },
+                        { id: 2, name: '《西游记》', author: '吴承恩' },
+                        { id: 3, name: '《水浒传》', author: '施耐庵' },
+                        { id: 4, name: '《三国演义》', author: '罗贯中' },
+                    ],
+                },
+                methods: {
+                    removeBook(id) {
+                        // 优先通过id删除对应项
+                        // filter:根据条件，保留满足条件的对应项，得到一个新数组
+                        this.bookList = this.bookList.filter(item => item.id !== id);
+                    },
+                },
+            });
+        </script>
+    </body>
+</html>
+
+        
+      </div>
+
+         
+    </div>
+    
+     
+  </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left "
+    
+      href="/2023/09/20/self_Vue/003-%E6%A1%88%E4%BE%8B01%E5%B0%8F%E9%BB%91%E8%AE%B0%E4%BA%8B%E6%9C%AC/"
+      title="案例-小黑记事本"
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+      
+        案例-小黑记事本
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2023/09/16/self_Vue/001Vue%E5%88%9D%E4%BD%93%E9%AA%8C/"
+      title="Vue初体验"
+     >
+
+    <p class="title-text">
+      
+        Vue初体验
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+ 
+    </div>
+    <div id="footer-wrapper">
+      <footer id="footer">
+  
+  <div id="footer-info" class="inner">
+    
+    &copy; 2023 changfeng_E<br>
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
+  </div>
+</footer>
+
+    </div>
+    <div class="back-to-top-wrapper">
+    <button id="back-to-top-btn" class="back-to-top-btn hide" onclick="topFunction()">
+        <span class="material-symbols-rounded">keyboard_arrow_up</span>
+    </button>
+</div>
+
+<script>
+    function topFunction() {
+        window.scroll({ top: 0, behavior: 'smooth' });
+    }
+    let btn = document.getElementById('back-to-top-btn');
+    function scrollFunction() {
+        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+            btn.classList.remove('hide')
+        } else {
+            btn.classList.add('hide')
+        }
+    }
+    window.onscroll = function() {
+        scrollFunction();
+    }
+</script>
+
+  </div>
+  <script src="/js/light-dark-switch.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js"></script>
+</body>
+</html>

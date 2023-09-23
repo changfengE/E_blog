@@ -5,6 +5,9 @@
 <link href="/fontawesome/css/fontawesome.css" rel="stylesheet">
 <link href="/fontawesome/css/brands.css" rel="stylesheet">
 <link href="/fontawesome/css/solid.css" rel="stylesheet">
+<!-- 2023-9-19 添加统一的prism -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.css" /> 
 <script src="/js/color.global.min.js" ></script>
 <script src="/js/load-settings.js" ></script>
 <head>
@@ -21,15 +24,15 @@
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/MaterialSymbolsRounded.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
-  <meta name="description" content="bug什么的都狗带">
+  <meta name="description" content="bug 什么的都狗带">
 <meta property="og:type" content="article">
 <meta property="og:title" content="death note">
 <meta property="og:url" content="https://changfenge.github.io/2023/09/02/%E6%AF%81%E7%81%AD%E5%90%A7/index.html">
 <meta property="og:site_name" content="cfE_blog">
-<meta property="og:description" content="bug什么的都狗带">
+<meta property="og:description" content="bug 什么的都狗带">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-09-02T13:00:31.000Z">
-<meta property="article:modified_time" content="2023-09-12T15:40:40.112Z">
+<meta property="article:published_time" content="2023-09-02T13:00:00.000Z">
+<meta property="article:modified_time" content="2023-09-20T15:30:27.056Z">
 <meta property="article:author" content="changfeng_E">
 <meta property="article:tag" content="hexo_use">
 <meta name="twitter:card" content="summary">
@@ -146,33 +149,33 @@
       <h3 class="widget-title">最新文章</h3>
       <ul>
         
-          <a class="recent-link" href="/2023/09/02/%E6%AF%81%E7%81%AD%E5%90%A7/" title="death note" >
+          <a class="recent-link" href="/2023/09/22/self_Vue/008-%E6%A1%88%E4%BE%8B02%E6%88%90%E7%BB%A9%E7%AE%A1%E7%90%86/" title="案例-成绩管理" >
             <div class="recent-link-text">
-              death note
+              案例-成绩管理
             </div>
           </a>
         
-          <a class="recent-link" href="/2023/09/01/hello-world/" title="Hello World" >
+          <a class="recent-link" href="/2023/09/21/self_Vue/007%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7/" title="计算属性" >
             <div class="recent-link-text">
-              Hello World
+              计算属性
             </div>
           </a>
         
-          <a class="recent-link" href="/2023/08/31/self_Git/006Git%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/" title="Git远程仓库" >
+          <a class="recent-link" href="/2023/09/21/self_Vue/006v-model%E6%8B%93%E5%B1%95%E5%BA%94%E7%94%A8/" title="v-model拓展应用" >
             <div class="recent-link-text">
-              Git远程仓库
+              v-model拓展应用
             </div>
           </a>
         
-          <a class="recent-link" href="/2023/08/30/self_Git/005Git%E5%88%86%E6%94%AF/" title="Git分支" >
+          <a class="recent-link" href="/2023/09/21/self_Vue/005v-bind%E5%A2%9E%E5%BC%BA%E6%A0%B7%E5%BC%8F%E6%8E%A7%E5%88%B6/" title="v-bind增强样式控制" >
             <div class="recent-link-text">
-              Git分支
+              v-bind增强样式控制
             </div>
           </a>
         
-          <a class="recent-link" href="/2023/08/28/self_Git/004%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" title="Git回退版本" >
+          <a class="recent-link" href="/2023/09/21/self_Vue/004%E6%8C%87%E4%BB%A4%E4%BF%AE%E9%A5%B0%E7%AC%A6/" title="指令修饰符" >
             <div class="recent-link-text">
-              Git回退版本
+              指令修饰符
             </div>
           </a>
         
@@ -185,7 +188,7 @@
   <div class="widget-wrap">
     <div class="widget">
       <h3 class="widget-title">标签</h3>
-      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/CSS3/" rel="tag">CSS3</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/HTML5/" rel="tag">HTML5</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/axios/" rel="tag">axios</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/hexo-use/" rel="tag">hexo_use</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/normalize/" rel="tag">normalize</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/typora/" rel="tag">typora</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" rel="tag">移动端</a></li></ul>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/CSS3/" rel="tag">CSS3</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/HTML5/" rel="tag">HTML5</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/axios/" rel="tag">axios</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/hexo-use/" rel="tag">hexo_use</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/normalize/" rel="tag">normalize</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/typora/" rel="tag">typora</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/vue2/" rel="tag">vue2</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" rel="tag">移动端</a></li></ul>
     </div>
   </div>
 
@@ -198,13 +201,23 @@
     <div class="widget">
       <h3 class="widget-title">分类</h3>
       <div class="category-box">
+            <a class="category-link" href="/categories/markdown/">
+                markdown
+                <div class="category-count">1</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/markdown/%E4%BD%BF%E7%94%A8/">
+                使用
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
             <a class="category-link" href="/categories/git/">
                 git
                 <div class="category-count">10</div>
             </a>
         <div class="children"><div class="category-box">
-            <a class="category-link" href="/categories/git/branch/">
-                branch
+            <a class="category-link" href="/categories/git/ssh%E7%BB%91%E5%AE%9A/">
+                ssh绑定
                 <div class="category-count">1</div>
             </a>
         
@@ -218,29 +231,14 @@
                 <div class="category-count">1</div>
             </a>
         
-            <a class="category-link" href="/categories/git/ssh%E7%BB%91%E5%AE%9A/">
-                ssh绑定
-                <div class="category-count">1</div>
-            </a>
-        </div></div>
-            <a class="category-link" href="/categories/markdown/">
-                markdown
-                <div class="category-count">1</div>
-            </a>
-        <div class="children"><div class="category-box">
-            <a class="category-link" href="/categories/markdown/%E4%BD%BF%E7%94%A8/">
-                使用
+            <a class="category-link" href="/categories/git/branch/">
+                branch
                 <div class="category-count">1</div>
             </a>
         </div></div>
             <a class="category-link" href="/categories/hexo%E5%88%9D%E4%BD%93%E9%AA%8C/">
                 hexo初体验
                 <div class="category-count">1</div>
-            </a>
-        
-            <a class="category-link" href="/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/">
-                移动端
-                <div class="category-count">16</div>
             </a>
         
             <a class="category-link" href="/categories/hexo/">
@@ -263,18 +261,23 @@
                 <div class="category-count">1</div>
             </a>
         
+            <a class="category-link" href="/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/">
+                移动端
+                <div class="category-count">16</div>
+            </a>
+        
             <a class="category-link" href="/categories/mynormalize/">
                 mynormalize
                 <div class="category-count">3</div>
             </a>
         <div class="children"><div class="category-box">
-            <a class="category-link" href="/categories/mynormalize/1-1-0/">
-                1.1.0
+            <a class="category-link" href="/categories/mynormalize/1-2-0/">
+                1.2.0
                 <div class="category-count">1</div>
             </a>
         
-            <a class="category-link" href="/categories/mynormalize/1-2-0/">
-                1.2.0
+            <a class="category-link" href="/categories/mynormalize/1-1-0/">
+                1.1.0
                 <div class="category-count">1</div>
             </a>
         
@@ -288,14 +291,19 @@
                 <div class="category-count">23</div>
             </a>
         
+            <a class="category-link" href="/categories/nodejs/">
+                nodejs
+                <div class="category-count">25</div>
+            </a>
+        
             <a class="category-link" href="/categories/jQuery/">
                 jQuery
                 <div class="category-count">13</div>
             </a>
         
-            <a class="category-link" href="/categories/nodejs/">
-                nodejs
-                <div class="category-count">25</div>
+            <a class="category-link" href="/categories/vue2/">
+                vue2
+                <div class="category-count">8</div>
             </a>
         
             <a class="category-link" href="/categories/js%E5%9F%BA%E7%A1%80/">
@@ -316,7 +324,7 @@
       
         <a class="archive-link" href="/archives/2023/09 ">
           九月 2023 
-          <div class="archive-count">2 </div>
+          <div class="archive-count">10 </div>
         </a>
       
         <a class="archive-link" href="/archives/2023/08 ">
@@ -441,7 +449,7 @@
 
         <div class='meta-info-bar'>
           <div class="meta-info">
-  <time class="dt-published" datetime="2023-09-02T13:00:31.000Z" itemprop="datePublished">2023-09-02</time>
+  <time class="dt-published" datetime="2023-09-02T13:00:00.000Z" itemprop="datePublished">2023-09-02</time>
 </div>
           <div class="need-seperator meta-info">
             <div class="meta-cate-flex">
@@ -452,7 +460,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            1.4k 词 
+            1.9k 词 
           </div>
         </div>
         
@@ -544,6 +552,24 @@
 <p>ok，今天算是初步完成了移动端的适配，可是相较原本的样式丑多了[危笑]</p>
 <h5><span id="zi-ti-da-xiao-wei-jie-jue">字体大小（未解决）</span><a href="#zi-ti-da-xiao-wei-jie-jue" class="header-anchor">#</a></h5><p>2023-9-9</p>
 <p>好的新问题来了[危笑，阴暗地爬行]，移动端字体大了一点，且使用的盒子框架在移动端反而影响了内容，尺寸不合适了会挤压内容</p>
+<p>已解决，忘记记录时间了</p>
+<h4><span id="7-4-3-prism-dai-ma-gao-liang-cha-jian-yang-shi-ji-js-jie-xi-wen-ti">7.4.3 prism 代码高亮插件样式及 js 解析问题</span><a href="#7-4-3-prism-dai-ma-gao-liang-cha-jian-yang-shi-ji-js-jie-xi-wen-ti" class="header-anchor">#</a></h4><p>2023-9-19</p>
+<p>用本地下载文件引入使用，解析不全，卡半路导致样式不能实现</p>
+<p>解决：换成 cdn</p>
+<h5><span id="zhu-ti-she-zhi">主题设置</span><a href="#zhu-ti-she-zhi" class="header-anchor">#</a></h5><p>2023-9-19 解决</p>
+<p>用默认的 <code>prism.min.css</code>的话，主题与我想要的不一样，原本本地下载的用的是 <code>Tomorrow Night</code>这个主题，用 cdn 的话把 <code>prism.min.css</code>改成 <code>prism-tomorrow.min.css</code>即可</p>
+<h5><span id="xing-hao-she-zhi">行号设置</span><a href="#xing-hao-she-zhi" class="header-anchor">#</a></h5><p>2023-9-19 解决</p>
+<p>引入相关文件</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.css&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5><span id="toolbar-wei-jie-jue">toolbar(未解决)</span><a href="#toolbar-wei-jie-jue" class="header-anchor">#</a></h5><h5><span id="tong-yi-yin-ru">统一引入</span><a href="#tong-yi-yin-ru" class="header-anchor">#</a></h5><p>2023-9-19 解决</p>
+<p>用 cdn 要引入的文件很多，既然是公用的，那么就统一引入到每篇文章，避免大量重复工作</p>
+<p>在 hexo 当前使用的主题包下（我现在使用的是 vivia）找到 layout&#x2F;layout.ejs，把要引入的 prism 相关文件放到指定位置，实现统一引入</p>
+<p>引入后测试发现有 bug：在最新的文章中行号和代码高度不一致，然而之前的文章有单独引入本地下载的 prism.css 的却是一致的。猜测是引入顺序不同，样式权重不同，在单独引入的 mynormalize 中重设 pre[class*&#x3D;’language-‘]的 line-height 即解决</p>
+<p>其它主题没试过，百度到的方法比如 inject 的 head&#x2F;script 中填写要统一引入的文件好像也只适用于 butterfly 主题</p>
+<h4><span id="7-4-4-vue-cha-zhi-biao-da-shi-bao-cuo">7.4.4 Vue 插值表达式报错</span><a href="#7-4-4-vue-cha-zhi-biao-da-shi-bao-cuo" class="header-anchor">#</a></h4><p>2023-9-19 解决</p>
+<p>上传 Vue 部分的文章时发现，hexo 编辑文章中带有插值表达式 <code>&#123;&#123; &#125;&#125;</code>则报错，无法 generate</p>
+<p>解决：使用 <code>&#123;</code> <code>% raw %</code> <code>&#125;</code>和 <code>&#123;</code> <code>% endraw %</code> <code>&#125;</code>包裹插值表达式双括号即可，注意花括号与百分号之间无空格，百分号和 raw&#x2F;endraw 之间有空格</p>
 <hr>
 <h2><span id="8-hexo-hou-tai-guan-li">8 hexo 后台管理</span><a href="#8-hexo-hou-tai-guan-li" class="header-anchor">#</a></h2><p>虽然使用久了命令行来创建文章，markdown 编辑也能习惯，但谁不想要一个带 GUI 的管理方式呢[doge]，我可以不用，但不能没有！！！哈哈哈</p>
 <p>安装及使用教程来源：<a target="_blank" rel="noopener" href="https://yesifang.com/zh/others/59825/index.html">https://yesifang.com/zh/others/59825/index.html</a></p>
@@ -582,10 +608,15 @@
   
     
 <nav id="article-nav">
-  <a class="article-nav-btn left  disabled "
+  <a class="article-nav-btn left "
+    
+      href="/2023/09/16/self_Vue/001Vue%E5%88%9D%E4%BD%93%E9%AA%8C/"
+      title="Vue初体验"
      >
     <i class="fa-solid fa-angle-left"></i>
     <p class="title-text">
+      
+        Vue初体验
         
     </p>
   </a>
@@ -646,5 +677,7 @@
 
   </div>
   <script src="/js/light-dark-switch.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js"></script>
 </body>
 </html>

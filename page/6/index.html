@@ -5,6 +5,9 @@
 <link href="/fontawesome/css/fontawesome.css" rel="stylesheet">
 <link href="/fontawesome/css/brands.css" rel="stylesheet">
 <link href="/fontawesome/css/solid.css" rel="stylesheet">
+<!-- 2023-9-19 添加统一的prism -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.css" /> 
 <script src="/js/color.global.min.js" ></script>
 <script src="/js/load-settings.js" ></script>
 <head>
@@ -144,33 +147,33 @@
       <h3 class="widget-title">最新文章</h3>
       <ul>
         
-          <a class="recent-link" href="/2023/09/02/%E6%AF%81%E7%81%AD%E5%90%A7/" title="death note" >
+          <a class="recent-link" href="/2023/09/22/self_Vue/008-%E6%A1%88%E4%BE%8B02%E6%88%90%E7%BB%A9%E7%AE%A1%E7%90%86/" title="案例-成绩管理" >
             <div class="recent-link-text">
-              death note
+              案例-成绩管理
             </div>
           </a>
         
-          <a class="recent-link" href="/2023/09/01/hello-world/" title="Hello World" >
+          <a class="recent-link" href="/2023/09/21/self_Vue/007%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7/" title="计算属性" >
             <div class="recent-link-text">
-              Hello World
+              计算属性
             </div>
           </a>
         
-          <a class="recent-link" href="/2023/08/31/self_Git/006Git%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/" title="Git远程仓库" >
+          <a class="recent-link" href="/2023/09/21/self_Vue/006v-model%E6%8B%93%E5%B1%95%E5%BA%94%E7%94%A8/" title="v-model拓展应用" >
             <div class="recent-link-text">
-              Git远程仓库
+              v-model拓展应用
             </div>
           </a>
         
-          <a class="recent-link" href="/2023/08/30/self_Git/005Git%E5%88%86%E6%94%AF/" title="Git分支" >
+          <a class="recent-link" href="/2023/09/21/self_Vue/005v-bind%E5%A2%9E%E5%BC%BA%E6%A0%B7%E5%BC%8F%E6%8E%A7%E5%88%B6/" title="v-bind增强样式控制" >
             <div class="recent-link-text">
-              Git分支
+              v-bind增强样式控制
             </div>
           </a>
         
-          <a class="recent-link" href="/2023/08/28/self_Git/004%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" title="Git回退版本" >
+          <a class="recent-link" href="/2023/09/21/self_Vue/004%E6%8C%87%E4%BB%A4%E4%BF%AE%E9%A5%B0%E7%AC%A6/" title="指令修饰符" >
             <div class="recent-link-text">
-              Git回退版本
+              指令修饰符
             </div>
           </a>
         
@@ -183,7 +186,7 @@
   <div class="widget-wrap">
     <div class="widget">
       <h3 class="widget-title">标签</h3>
-      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/CSS3/" rel="tag">CSS3</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/HTML5/" rel="tag">HTML5</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/axios/" rel="tag">axios</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/hexo-use/" rel="tag">hexo_use</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/normalize/" rel="tag">normalize</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/typora/" rel="tag">typora</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" rel="tag">移动端</a></li></ul>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/CSS3/" rel="tag">CSS3</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/HTML5/" rel="tag">HTML5</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/axios/" rel="tag">axios</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/hexo-use/" rel="tag">hexo_use</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/normalize/" rel="tag">normalize</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/typora/" rel="tag">typora</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/vue2/" rel="tag">vue2</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" rel="tag">移动端</a></li></ul>
     </div>
   </div>
 
@@ -196,13 +199,23 @@
     <div class="widget">
       <h3 class="widget-title">分类</h3>
       <div class="category-box">
+            <a class="category-link" href="/categories/markdown/">
+                markdown
+                <div class="category-count">1</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/markdown/%E4%BD%BF%E7%94%A8/">
+                使用
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
             <a class="category-link" href="/categories/git/">
                 git
                 <div class="category-count">10</div>
             </a>
         <div class="children"><div class="category-box">
-            <a class="category-link" href="/categories/git/branch/">
-                branch
+            <a class="category-link" href="/categories/git/ssh%E7%BB%91%E5%AE%9A/">
+                ssh绑定
                 <div class="category-count">1</div>
             </a>
         
@@ -216,29 +229,14 @@
                 <div class="category-count">1</div>
             </a>
         
-            <a class="category-link" href="/categories/git/ssh%E7%BB%91%E5%AE%9A/">
-                ssh绑定
-                <div class="category-count">1</div>
-            </a>
-        </div></div>
-            <a class="category-link" href="/categories/markdown/">
-                markdown
-                <div class="category-count">1</div>
-            </a>
-        <div class="children"><div class="category-box">
-            <a class="category-link" href="/categories/markdown/%E4%BD%BF%E7%94%A8/">
-                使用
+            <a class="category-link" href="/categories/git/branch/">
+                branch
                 <div class="category-count">1</div>
             </a>
         </div></div>
             <a class="category-link" href="/categories/hexo%E5%88%9D%E4%BD%93%E9%AA%8C/">
                 hexo初体验
                 <div class="category-count">1</div>
-            </a>
-        
-            <a class="category-link" href="/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/">
-                移动端
-                <div class="category-count">16</div>
             </a>
         
             <a class="category-link" href="/categories/hexo/">
@@ -261,18 +259,23 @@
                 <div class="category-count">1</div>
             </a>
         
+            <a class="category-link" href="/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/">
+                移动端
+                <div class="category-count">16</div>
+            </a>
+        
             <a class="category-link" href="/categories/mynormalize/">
                 mynormalize
                 <div class="category-count">3</div>
             </a>
         <div class="children"><div class="category-box">
-            <a class="category-link" href="/categories/mynormalize/1-1-0/">
-                1.1.0
+            <a class="category-link" href="/categories/mynormalize/1-2-0/">
+                1.2.0
                 <div class="category-count">1</div>
             </a>
         
-            <a class="category-link" href="/categories/mynormalize/1-2-0/">
-                1.2.0
+            <a class="category-link" href="/categories/mynormalize/1-1-0/">
+                1.1.0
                 <div class="category-count">1</div>
             </a>
         
@@ -286,14 +289,19 @@
                 <div class="category-count">23</div>
             </a>
         
+            <a class="category-link" href="/categories/nodejs/">
+                nodejs
+                <div class="category-count">25</div>
+            </a>
+        
             <a class="category-link" href="/categories/jQuery/">
                 jQuery
                 <div class="category-count">13</div>
             </a>
         
-            <a class="category-link" href="/categories/nodejs/">
-                nodejs
-                <div class="category-count">25</div>
+            <a class="category-link" href="/categories/vue2/">
+                vue2
+                <div class="category-count">8</div>
             </a>
         
             <a class="category-link" href="/categories/js%E5%9F%BA%E7%A1%80/">
@@ -314,7 +322,7 @@
       
         <a class="archive-link" href="/archives/2023/09 ">
           九月 2023 
-          <div class="archive-count">2 </div>
+          <div class="archive-count">10 </div>
         </a>
       
         <a class="archive-link" href="/archives/2023/08 ">
@@ -417,6 +425,783 @@
     </div>
     <div id="content-body">
       
+   
+
+<article id="post-self_Ajax/014封装简易axios" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2023/08/15/self_Ajax/014%E5%B0%81%E8%A3%85%E7%AE%80%E6%98%93axios/">Ajax-封装简易axios</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-08-15T13:50:30.000Z" itemprop="datePublished">2023-08-15</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/Ajax/">Ajax</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            1.5k 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/axios/" rel="tag">axios</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+
+    
+        
+        
+        封装简易axios
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+        
+            封装简易axios#
+            
+                基于
+                Promise
+                +
+                XHR
+                封装
+                myAxios
+                函数
+            
+            
+                封装axios获取省份列表#
+                步骤：
+                
+                    
+                        定义myAxios函数，接收
+                        配置对象
+...  
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2023/08/15/self_Ajax/014%E5%B0%81%E8%A3%85%E7%AE%80%E6%98%93axios/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+ 
+
+   
+
+<article id="post-self_Ajax/013Promise" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2023/08/15/self_Ajax/013Promise/">Ajax-Promise</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-08-15T08:43:09.000Z" itemprop="datePublished">2023-08-15</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/Ajax/">Ajax</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            1.1k 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/axios/" rel="tag">axios</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+
+    
+        
+        
+        Promise
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+        
+            Promise#
+            
+                定义#
+                
+                    Promise
+                    ：一个表示（管理）异步操作最终的完成（或失败）以及其结果值的
+                    对象
+                
+                好处：
+                
+                    逻辑更清晰
+                    了解axios函数内部运作机制
+                    能解决回调函数地狱问题
+                
+                语法：
+               ...  
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2023/08/15/self_Ajax/013Promise/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+ 
+
+   
+
+<article id="post-self_Ajax/012XMLHttpRequest" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2023/08/14/self_Ajax/012XMLHttpRequest/">Ajax-XMLHttpRequest</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-08-14T10:34:16.000Z" itemprop="datePublished">2023-08-14</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/Ajax/">Ajax</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            2.2k 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/axios/" rel="tag">axios</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+
+    
+        
+        
+        XMLHttpRequest
+        
+        
+        
+        
+        
+            .product {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .province,
+            .city {
+                width: 50%;
+            }
+            .province input,
+            .city input {
+                width: 80%;
+            }
+
+            input[type='button'].search {
+                margin-left: 10px;
+     ...  
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2023/08/14/self_Ajax/012XMLHttpRequest/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+ 
+
+   
+
+<article id="post-self_Ajax/011案例03-个人信息设置" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2023/08/13/self_Ajax/011%E6%A1%88%E4%BE%8B03-%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF%E8%AE%BE%E7%BD%AE/">Ajax-案例-个人信息设置</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-08-13T14:10:28.000Z" itemprop="datePublished">2023-08-13</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/Ajax/">Ajax</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            925 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/axios/" rel="tag">axios</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+
+
+
+    
+    
+    案例-个人信息设置
+    
+    
+    
+    
+    
+
+
+
+    
+    
+    
+    
+    
+        
+        
+            
+                
+                    操作成功
+                
+            
+        
+        
+        
+            
+                基本设置
+                安全设置
+                账号绑定
+                新消息通知
+            
+            
+                
+                    基本设置#
+                    
+                        
+                            邮箱
+                            
+             ...  
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2023/08/13/self_Ajax/011%E6%A1%88%E4%BE%8B03-%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF%E8%AE%BE%E7%BD%AE/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+ 
+
+   
+
+<article id="post-self_Ajax/010图片上传" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2023/08/13/self_Ajax/010%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/">Ajax-图片上传</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-08-13T10:31:07.000Z" itemprop="datePublished">2023-08-13</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/Ajax/">Ajax</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            683 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/axios/" rel="tag">axios</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+
+    
+        
+        
+        图片上传
+        
+        
+        
+        
+            .uploadimg {
+                width: 80%;
+            }
+            /* 案例-更换网页背景 */
+
+            .topbar {
+                cursor: pointer;
+                padding: 10px;
+                color: #fff;
+                background-color: #46464680;
+                text-align: right;
+            }
+
+            .changebg {
+                cursor: pointer;
+                padding: 5px;
+                margin-right: ...  
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2023/08/13/self_Ajax/010%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+ 
+
+   
+
+<article id="post-self_Ajax/009案例02-图书管理" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2023/08/13/self_Ajax/009%E6%A1%88%E4%BE%8B02-%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86/">Ajax-案例-图书管理</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-08-13T01:54:13.000Z" itemprop="datePublished">2023-08-13</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/Ajax/">Ajax</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            1.5k 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/axios/" rel="tag">axios</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+
+    
+        
+        
+        案例-图书管理
+        
+        
+        
+        
+        
+    
+
+    
+        
+        
+        
+        
+        
+            
+            
+                
+                
+                    图书管理#
+                    + 添加
+                
+                
+                
+                    
+                        
+                            序号
+                            书名
+                            作者
+                            出版社
+                      ...  
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2023/08/13/self_Ajax/009%E6%A1%88%E4%BE%8B02-%E5%9B%BE%E4%B9%A6%E7%AE%A1%E7%90%86/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+ 
+
+   
+
+<article id="post-self_Ajax/008bootstrap弹框" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2023/08/13/self_Ajax/008bootstrap%E5%BC%B9%E6%A1%86/">Ajax-bootstrap弹框</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-08-13T00:13:17.000Z" itemprop="datePublished">2023-08-13</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/Ajax/">Ajax</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            453 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/axios/" rel="tag">axios</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+
+    
+        
+        
+        bootstrap弹框
+        
+        
+        
+        
+    
+
+    
+        
+            bootstrap弹框#
+            功能：不离开当前页面，显示单独内容，供用户操作
+            步骤：
+            
+                引入bootstrap的css和js
+                准备弹框标签，确认结构
+                通过自定义属性，控制弹框的显示和隐藏
+            
+            bootstrap的modal弹框：添加modal类名（默认隐藏）
+            
+                通过js控制，弹框显示或隐藏
+                // 创建弹框对象
+const modalDom = document.querySelector('.my-box')
+const modal = new bootstrap....  
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2023/08/13/self_Ajax/008bootstrap%E5%BC%B9%E6%A1%86/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+ 
+
+   
+
+<article id="post-self_Ajax/007form-serialize插件" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2023/08/12/self_Ajax/007form-serialize%E6%8F%92%E4%BB%B6/">Ajax-form-serizlize插件</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-08-12T01:44:06.000Z" itemprop="datePublished">2023-08-12</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/Ajax/">Ajax</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            947 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/axios/" rel="tag">axios</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+
+    
+        
+        
+        form-serialize插件
+        
+        
+        
+        
+    
+
+    
+        
+            form-serialize插件#
+            作用：快速收集表单元素的值
+            在页面表单要收集数据较多的情况下，使用form-serialize插件更简便
+            语法：
+            &lt;!--引入插件--&gt;
+&lt;script src="/globalsrc/components/form-serialize/form-serialize.js">&lt/script&gt;
+            const form=document.querySelector('表单元素')
+const data=serialize(form,&#123;hash:true,empty:true&#125;)
+            
+                
+       ...  
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2023/08/12/self_Ajax/007form-serialize%E6%8F%92%E4%BB%B6/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+ 
+
    
 
 <article id="post-self_Ajax/006接口文档" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
@@ -612,734 +1397,6 @@
 
  
 
-   
-
-<article id="post-self_Ajax/004请求方法-数据提交" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2023/08/11/self_Ajax/004%E8%AF%B7%E6%B1%82%E6%96%B9%E6%B3%95-%E6%95%B0%E6%8D%AE%E6%8F%90%E4%BA%A4/">Ajax-请求方法-数据提交</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2023-08-11T01:22:12.000Z" itemprop="datePublished">2023-08-11</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-  <a class="meta-cate-link" href="/categories/Ajax/">Ajax</a>
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            775 词 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/axios/" rel="tag">axios</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-
-    
-        
-        
-        请求方法-数据提交
-        
-        
-        
-        
-    
-
-    
-        
-            请求方法-数据提交#
-            常用请求方法
-            请求方法：对服务器资源，要执行的操作
-            
-                常用请求方法
-                
-                    
-                        请求方法
-                        操作
-                    
-                
-                
-                    
-                        GET
-                        获取数据
-                    
-                    
-                    ...  
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2023/08/11/self_Ajax/004%E8%AF%B7%E6%B1%82%E6%96%B9%E6%B3%95-%E6%95%B0%E6%8D%AE%E6%8F%90%E4%BA%A4/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
- 
-
-   
-
-<article id="post-self_Ajax/003案例01-地区查询" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2023/08/10/self_Ajax/003%E6%A1%88%E4%BE%8B01-%E5%9C%B0%E5%8C%BA%E6%9F%A5%E8%AF%A2/">Ajax-案例-地区查询</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2023-08-10T13:12:44.000Z" itemprop="datePublished">2023-08-10</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-  <a class="meta-cate-link" href="/categories/Ajax/">Ajax</a>
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            535 词 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/axios/" rel="tag">axios</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-
-    
-        
-        
-        案例-地区查询
-        
-        
-        
-        
-            .product {
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-            }
-
-            .province,
-            .city {
-                width: 50%;
-            }
-            .province input,
-            .city input {
-                width: 80%;
-            }
-
-            input[type='button'].search {
-                margin-left: 10px;
-            }
-
-      ...  
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2023/08/10/self_Ajax/003%E6%A1%88%E4%BE%8B01-%E5%9C%B0%E5%8C%BA%E6%9F%A5%E8%AF%A2/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
- 
-
-   
-
-<article id="post-self_Ajax/002URL" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2023/08/10/self_Ajax/002URL/">Ajax-URL</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2023-08-10T07:05:40.000Z" itemprop="datePublished">2023-08-10</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-  <a class="meta-cate-link" href="/categories/Ajax/">Ajax</a>
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            638 词 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/axios/" rel="tag">axios</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-
-    
-        
-        
-        URL
-        
-        
-        
-        
-            .red,
-            .blue,
-            .green {
-                font-weight: bold;
-            }
-
-            .red {
-                color: red;
-            }
-
-            .blue {
-                color: blue;
-            }
-
-            .green {
-                color: green;
-            }
-        
-    
-
-    
-        
-            URL#
-            认识URL，知道作用及组成，方便与后端沟通
-            
-                URL：
-           ...  
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2023/08/10/self_Ajax/002URL/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
- 
-
-   
-
-<article id="post-self_Ajax/001Ajax入门" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2023/08/10/self_Ajax/001Ajax%E5%85%A5%E9%97%A8/">Ajax-Ajax入门</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2023-08-10T02:49:09.000Z" itemprop="datePublished">2023-08-10</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-  <a class="meta-cate-link" href="/categories/Ajax/">Ajax</a>
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            611 词 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/axios/" rel="tag">axios</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-
-    
-        
-        
-        Ajax入门
-        
-        
-        
-    
-
-    
-        
-            Ajax入门#
-            
-                定义：异步 JavaScript 和 XML，或 Ajax 本身不是一种技术，而是一种将一些现有技术结合起来使用的方法，包括：HTML 或 XHTML、CSS、JavaScript、DOM、XML、XSLT、以及最重要的
-                XMLHttpRequest
-                对象。当使用结合了这些技术的 Ajax 模型以后，网页应用能够快速地将增量更新呈现在用户界面上，而不需要重载（刷新）整个页面。这使得程序能够更快地回应用户的操作。Ajax
-                最吸引人的特性是它的“异步”性质，这意味着它可以与
-                服务器通信、动态交换数据并更新页面
-                ，而无需刷新页面。
-            
-  ...  
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2023/08/10/self_Ajax/001Ajax%E5%85%A5%E9%97%A8/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
- 
-
-   
-
-<article id="post-self_js/131正则表达式" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2023/07/21/self_js/131%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">正则表达式</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2023-07-21T07:09:00.000Z" itemprop="datePublished">2023-07-21</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-  <a class="meta-cate-link" href="/categories/js%E5%9F%BA%E7%A1%80/">js基础</a>
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            2.7k 词 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-
-    
-        
-        
-        正则表达式
-        
-        
-        
-            .error {
-                color: red;
-            }
-
-            .error::before {
-                content: '\e626';
-                font-family: 'iconfont';
-            }
-
-            .right {
-                color: green;
-            }
-
-            .right::before {
-                font-family: 'iconfont';
-                content: '\e61f';
-            }
-
-            .replace textarea {
-                resize: none;
- ...  
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2023/07/21/self_js/131%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
- 
-
-   
-
-<article id="post-mynormalize/wheels" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2023/07/20/mynormalize/wheels/">wheels</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2023-07-20T07:42:08.000Z" itemprop="datePublished">2023-07-20</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-  <a class="meta-cate-link" href="/categories/mynormalize/">mynormalize</a>><a class="meta-cate-link" href="/categories/mynormalize/wheels/">wheels</a>
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            175 词 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/normalize/" rel="tag">normalize</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          随机颜色工具
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2023/07/20/mynormalize/wheels/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
- 
-
-   
-
-<article id="post-self_js/130_补充_回调函数" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2023/07/17/self_js/130_%E8%A1%A5%E5%85%85_%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0/">补充-回调函数</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2023-07-17T13:58:38.000Z" itemprop="datePublished">2023-07-17</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-  <a class="meta-cate-link" href="/categories/js%E5%9F%BA%E7%A1%80/">js基础</a>
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            270 词 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-
-    
-        
-        
-        回调函数
-        
-        
-    
-
-    
-        
-            回调函数#
-            
-                若将函数A作为参数传递给函数B时，称函数A为
-                回调函数
-            
-            即：当一个函数当做参数传递给另外一个函数时，这个函数就是回调函数(调用一个函数，里面的参数是一个函数，就要回头先调用这个参数的函数，再执行外层函数)
-            常见的使用场景：
-            
-            JavaScript
-            // 1
-            function fn(){
-            console.log('回调函数在此！')
-            }
-            // fn传递给了setInterval，fn就是回调函数
-            setInterval(fn,1000)
-     ...  
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2023/07/17/self_js/130_%E8%A1%A5%E5%85%85_%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
- 
-
-   
-
-<article id="post-self_js/129逻辑中断" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2023/07/16/self_js/129%E9%80%BB%E8%BE%91%E4%B8%AD%E6%96%AD/">逻辑中断</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2023-07-16T13:42:56.000Z" itemprop="datePublished">2023-07-16</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-  <a class="meta-cate-link" href="/categories/js%E5%9F%BA%E7%A1%80/">js基础</a>
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            375 词 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-
-    
-        
-        
-        逻辑中断
-        
-        
-    
-
-    
-        
-            逻辑中断#
-            
-                逻辑运算符里的短路#
-                短路：只存在于&&和||中，当满足一定条件会让右边代码不执行
-                
-                    
-                        
-                            符号
-                            短路条件
-                        
-                    
-                    
-                        
-                            &&
-                            左边为false就短路
-                        
- ...  
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2023/07/16/self_js/129%E9%80%BB%E8%BE%91%E4%B8%AD%E6%96%AD/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
- 
-
 
   <nav id="page-nav">
     <!-- 在第二页时 page.prev_link 不知为何无法返回正确的链接 -->
@@ -1347,7 +1404,7 @@
       <span class="material-symbols-rounded">navigate_before</span>
     </a>
     <div id="num-bar">
-      <a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a>  
+      <a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a>  
     </div>
     <a id="next-btn" class="page-nav-btn " href="/page/7/">
       <span class="material-symbols-rounded">navigate_next</span>
@@ -1392,5 +1449,7 @@
 
   </div>
   <script src="/js/light-dark-switch.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js"></script>
 </body>
 </html>

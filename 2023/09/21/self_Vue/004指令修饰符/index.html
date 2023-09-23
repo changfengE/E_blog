@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+
+
+<html theme="dark" showBanner="true" hasBanner="true" > 
+<link href="/fontawesome/css/fontawesome.css" rel="stylesheet">
+<link href="/fontawesome/css/brands.css" rel="stylesheet">
+<link href="/fontawesome/css/solid.css" rel="stylesheet">
+<!-- 2023-9-19 添加统一的prism -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.css" /> 
+<script src="/js/color.global.min.js" ></script>
+<script src="/js/load-settings.js" ></script>
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+
+  
+  <title>指令修饰符 | cfE_blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/MaterialSymbolsRounded.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+  <meta name="description" content="指令修饰符                                                 .father {                 width: 100px;                 height: 100px;                 background-color: pink;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="指令修饰符">
+<meta property="og:url" content="https://changfenge.github.io/2023/09/21/self_Vue/004%E6%8C%87%E4%BB%A4%E4%BF%AE%E9%A5%B0%E7%AC%A6/index.html">
+<meta property="og:site_name" content="cfE_blog">
+<meta property="og:description" content="指令修饰符                                                 .father {                 width: 100px;                 height: 100px;                 background-color: pink;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://changfenge.github.io/assets/images/self_Vue/004_cut_01v-model%E4%BF%AE%E9%A5%B0%E7%AC%A6%E5%89%8D.png">
+<meta property="og:image" content="https://changfenge.github.io/assets/images/self_Vue/004_cut_02v-model%E4%BF%AE%E9%A5%B0%E7%AC%A6%E5%90%8E.png">
+<meta property="article:published_time" content="2023-09-21T02:48:00.000Z">
+<meta property="article:modified_time" content="2023-09-23T09:53:52.196Z">
+<meta property="article:author" content="changfeng_E">
+<meta property="article:tag" content="vue">
+<meta property="article:tag" content="vue2">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://changfenge.github.io/assets/images/self_Vue/004_cut_01v-model%E4%BF%AE%E9%A5%B0%E7%AC%A6%E5%89%8D.png">
+  
+  
+    <link rel="shortcut icon" href="/xiaohei.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  
+  
+    
+<div id="banner" class="">
+  <img src="/assets/%E8%8A%B1%E8%8A%B1bg02.jpg" itemprop="image">
+  <div id="banner-dim"></div>
+</div>
+ 
+   
+  <div id="main-grid" class="shadow   ">
+    <div id="nav" class=""  >
+      <navbar id="navbar">
+  <nav id="title-nav">
+    <a href="/">
+      <div id="vivia-logo">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div>cfE_blog </div>
+    </a>
+  </nav>
+  <nav id="main-nav">
+    
+      <a class="main-nav-link" href="/">主页</a>
+    
+      <a class="main-nav-link" href="/archives">轨迹</a>
+    
+      <a class="main-nav-link" href="/about">更多</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    <a id="theme-btn" class="nav-icon">
+      <span class="material-symbols-rounded light-mode-icon">wb_sunny</span>
+      <span class="material-symbols-rounded dark-mode-icon">dark_mode</span>
+    </a>
+    
+    <a id="nav-search-btn" class="nav-icon" title="搜索" style="display: none;">
+      <span class="material-symbols-rounded">search</span>
+    </a>
+    <div id="nav-menu-btn" class="nav-icon">
+      <span class="material-symbols-rounded">menu</span>
+    </div>
+  </nav>
+</navbar>
+<div id="nav-dropdown" class="hidden">
+  <div id="dropdown-link-list">
+    
+      <a class="nav-dropdown-link" href="/">主页</a>
+    
+      <a class="nav-dropdown-link" href="/archives">轨迹</a>
+    
+      <a class="nav-dropdown-link" href="/about">更多</a>
+    
+     
+    </div>
+</div>
+<script>
+  let dropdownBtn = document.getElementById("nav-menu-btn");
+  let dropdownEle = document.getElementById("nav-dropdown");
+  dropdownBtn.onclick = function() {
+    dropdownEle.classList.toggle("hidden");
+  }
+</script>
+    </div>
+    <div id="sidebar-wrapper">
+      <sidebar id="sidebar">
+  
+    <div class="widget-wrap">
+  <div class="info-card">
+    <div class="avatar">
+      
+        <image src=/assets/%E7%BD%97%E5%B0%8F%E9%BB%9102.png></image>
+      
+      <div class="img-dim"></div>
+    </div>
+    <div class="info">
+      <div class="username">changfeng_E </div>
+      <div class="dot"></div>
+      <div class="subtitle">about me </div>
+      <div class="link-list">
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com/changfengE" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://gitee.com/changfengE" title="Gitee"><i class="fa-brands fa-square-git"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/285349009?spm_id_from=333.1007.0.0" title="bilibili"><i class="fa-brands fa-bilibili"></i></a>
+         
+      </div>  
+    </div>
+  </div>
+</div>
+
+  
+  <div class="sticky">
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">最新文章</h3>
+      <ul>
+        
+          <a class="recent-link" href="/2023/09/22/self_Vue/008-%E6%A1%88%E4%BE%8B02%E6%88%90%E7%BB%A9%E7%AE%A1%E7%90%86/" title="案例-成绩管理" >
+            <div class="recent-link-text">
+              案例-成绩管理
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/21/self_Vue/007%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7/" title="计算属性" >
+            <div class="recent-link-text">
+              计算属性
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/21/self_Vue/006v-model%E6%8B%93%E5%B1%95%E5%BA%94%E7%94%A8/" title="v-model拓展应用" >
+            <div class="recent-link-text">
+              v-model拓展应用
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/21/self_Vue/005v-bind%E5%A2%9E%E5%BC%BA%E6%A0%B7%E5%BC%8F%E6%8E%A7%E5%88%B6/" title="v-bind增强样式控制" >
+            <div class="recent-link-text">
+              v-bind增强样式控制
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/21/self_Vue/004%E6%8C%87%E4%BB%A4%E4%BF%AE%E9%A5%B0%E7%AC%A6/" title="指令修饰符" >
+            <div class="recent-link-text">
+              指令修饰符
+            </div>
+          </a>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">标签</h3>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/CSS3/" rel="tag">CSS3</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/HTML5/" rel="tag">HTML5</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/axios/" rel="tag">axios</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/hexo-use/" rel="tag">hexo_use</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/normalize/" rel="tag">normalize</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/typora/" rel="tag">typora</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/vue2/" rel="tag">vue2</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" rel="tag">移动端</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+
+
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">分类</h3>
+      <div class="category-box">
+            <a class="category-link" href="/categories/markdown/">
+                markdown
+                <div class="category-count">1</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/markdown/%E4%BD%BF%E7%94%A8/">
+                使用
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/git/">
+                git
+                <div class="category-count">10</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/git/ssh%E7%BB%91%E5%AE%9A/">
+                ssh绑定
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/git%E5%AE%89%E8%A3%85%E5%8F%8A%E9%83%A8%E5%88%86%E5%91%BD%E4%BB%A4/">
+                git安装及部分命令
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81/">
+                提交代码
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/branch/">
+                branch
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/hexo%E5%88%9D%E4%BD%93%E9%AA%8C/">
+                hexo初体验
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/hexo/">
+                hexo
+                <div class="category-count">1</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/hexo/using/">
+                using
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/HTML5-CSS3/">
+                HTML5&CSS3
+                <div class="category-count">14</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/">
+                浏览器
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/">
+                移动端
+                <div class="category-count">16</div>
+            </a>
+        
+            <a class="category-link" href="/categories/mynormalize/">
+                mynormalize
+                <div class="category-count">3</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/mynormalize/1-2-0/">
+                1.2.0
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/mynormalize/1-1-0/">
+                1.1.0
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/mynormalize/wheels/">
+                wheels
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/Ajax/">
+                Ajax
+                <div class="category-count">23</div>
+            </a>
+        
+            <a class="category-link" href="/categories/nodejs/">
+                nodejs
+                <div class="category-count">25</div>
+            </a>
+        
+            <a class="category-link" href="/categories/jQuery/">
+                jQuery
+                <div class="category-count">13</div>
+            </a>
+        
+            <a class="category-link" href="/categories/vue2/">
+                vue2
+                <div class="category-count">8</div>
+            </a>
+        
+            <a class="category-link" href="/categories/js%E5%9F%BA%E7%A1%80/">
+                js基础
+                <div class="category-count">42</div>
+            </a>
+        </div>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">归档</h3>
+      
+      
+        <a class="archive-link" href="/archives/2023/09 ">
+          九月 2023 
+          <div class="archive-count">10 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/08 ">
+          八月 2023 
+          <div class="archive-count">54 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/07 ">
+          七月 2023 
+          <div class="archive-count">11 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/05 ">
+          五月 2023 
+          <div class="archive-count">3 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/04 ">
+          四月 2023 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/03 ">
+          三月 2023 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/02 ">
+          二月 2023 
+          <div class="archive-count">6 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/01 ">
+          一月 2023 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/12 ">
+          十二月 2022 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/11 ">
+          十一月 2022 
+          <div class="archive-count">4 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/09 ">
+          九月 2022 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/08 ">
+          八月 2022 
+          <div class="archive-count">11 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/07 ">
+          七月 2022 
+          <div class="archive-count">22 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/06 ">
+          六月 2022 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/02 ">
+          二月 2022 
+          <div class="archive-count">6 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/01 ">
+          一月 2022 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/10 ">
+          十月 2021 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/09 ">
+          九月 2021 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/08 ">
+          八月 2021 
+          <div class="archive-count">6 </div>
+        </a>
+      
+    </div>
+  </div>
+
+
+    
+  </div>
+</sidebar>
+    </div>
+    <div id="content-body">
+       
+
+<article id="post-self_Vue/004指令修饰符" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        指令修饰符
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-09-21T02:48:00.000Z" itemprop="datePublished">2023-09-21</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/vue2/">vue2</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            957 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue2/" rel="tag">vue2</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>指令修饰符</title>
+        <link rel="shortcut icon" href="../xiaohei.ico">
+        <link rel="stylesheet" href="/globalsrc/mynormalize/mynormalize1.2.0.css">
+        <link rel="stylesheet" href="/globalsrc/mynormalize/prism.css">
+        <style>
+            .father {
+                width: 100px;
+                height: 100px;
+                background-color: pink;
+            }
+            .son {
+                width: 50px;
+                height: 50px;
+                background-color: skyblue;
+            }
+        </style>
+    </head>
+    <body class="line-numbers">
+        <div class="div1">
+            <h2><span id="zhi-ling-xiu-shi-fu">指令修饰符</span><a href="#zhi-ling-xiu-shi-fu" class="header-anchor">#</a></h2>
+            <p>
+                通过
+                <code>"."</code>
+                指明一些指令
+                <strong>后缀</strong>
+                ，不同
+                <strong>后缀</strong>
+                封装了不同的处理操作--简化代码
+            </p>
+            <ol>
+                <li>
+                    按键修饰符
+                    <p>
+                        <code>@keyup.enter</code>
+                        --键盘回车监听
+                    </p>
+                </li>
+                <li>
+                    v-model修饰符
+                    <p>
+                        <code>v-model.trim</code>
+                        --去除首尾空格
+                    </p>
+                    <p>
+                        <code>v-model.number</code>
+                        --转数字
+                    </p>
+                </li>
+                <li>
+                    事件修饰符
+                    <p>@事件名.stop--阻止冒泡</p>
+                    <p>@事件名.prevent--阻止默认行为</p>
+                </li>
+            </ol>
+            <div class="div2">
+                <h3><span id="an-jian-xiu-shi-fu">按键修饰符</span><a href="#an-jian-xiu-shi-fu" class="header-anchor">#</a></h3>
+                <p>
+                    <code>@keyup.enter</code>
+                    键盘回车监听
+                </p>
+                <p>以案例-小黑记事本为例</p>
+                <p>
+                    为表单元素绑定
+                    <code>keyup.enter</code>
+                    事件，即可实现回车添加功能
+                </p>
+                <div class="div3">
+                    <pre><code class="language-html">&lt;input placeholder="请输入任务" class="new-todo" v-model=input"todoName" v-on:keyup.enter="add" /&gt;</code></pre>
+                </div>
+                <p>
+                    再来做另一个实验，看看去掉
+                    <code>enter</code>
+                    会发生什么
+                </p>
+                <div class="div3">
+                    <div id="keyup">
+                        <p>@keyup--监听键盘事件</p>
+                        <input @keyup="fn" v-model="uname" type="text" placeholder="控制台打印信息">
+                    </div>
+                </div>
+                <p>在表单按下键盘，除了enter的其他键也会触发keyup事件</p>
+                <p>
+                    <code>.enter</code>
+                    相当于封装了判断按键是否为enter的逻辑
+                </p>
+            </div>
+            <div class="div2">
+                <h3><span id="v-model-xiu-shi-fu">v-model修饰符</span><a href="#v-model-xiu-shi-fu" class="header-anchor">#</a></h3>
+                <div class="div3">
+                    <h4><span id="trim-number">.trim/.number</span><a href="#trim-number" class="header-anchor">#</a></h4>
+                    <div id="user">
+                        <label for="uname">姓名：</label>
+                        <input v-model.trim="uname" type="text" id="uname">
+                        <br>
+                        <label for="age">年龄：</label>
+                        <input v-model.number="age" type="number" id="age">
+                    </div>
+                </div>
+                <div class="div3">
+                    <p>添加.trim/.number之前</p>
+                    <img src="/assets/images/self_Vue/004_cut_01v-model修饰符前.png" alt>
+                    <p>添加.trim/.number之后</p>
+                    <img src="/assets/images/self_Vue/004_cut_02v-model修饰符后.png" alt>
+                    <p>
+                        可见姓名表单在添加
+                        <code>.trim</code>
+                        之后，将表单值进行了首尾空格处理，表单在失焦之后也会按数据更新视图，去除输入的首尾空格
+                    </p>
+                    <p>
+                        而年龄表单在添加
+                        <code>.number</code>
+                        修饰符之前存入data的数据是字符串型数据，在添加之后会存入正确的数值型
+                    </p>
+                    <pre><code class="language-html">&lt;label for="uname"&gt;姓名：&lt;/label&gt;
+&lt;input v-model.trim="uname" type="text" id="uname" /&gt;
+&lt;br /&gt;
+&lt;label for="age"&gt;年龄：&lt;/label&gt;
+&lt;input v-model.number="age" type="number" id="age" /&gt;</code></pre>
+                </div>
+            </div>
+            <div class="div2">
+                <h3><span id="shi-jian-xiu-shi-fu">事件修饰符</span><a href="#shi-jian-xiu-shi-fu" class="header-anchor">#</a></h3>
+                <div class="div3">
+                    <div id="event">
+                        <p>@事件名.stop--阻止冒泡</p>
+                        <div @click="fa" class="father">
+                            father
+                            <div @click.stop="so" class="son">son</div>
+                        </div>
+                        <p>@事件名.prevent--阻止默认行为</p>
+                        <a @click.prevent href="https://www.baidu.com" target="_blank">百度一下</a>
+                    </div>
+                </div>
+                <div class="div3">
+                    <p>按事件冒泡来看，点击了son会触发son绑定的点击事件，但同时也会触发father的点击事件</p>
+                    <p>
+                        在添加
+                        <code>.stop</code>
+                        修饰符后即可阻止冒泡，相当于在回调函数中添加
+                        <code>e.stopPropagation()</code>
+                    </p>
+                    <p>
+                        阻止默认行为，添加
+                        <code>.prevent</code>
+                        修饰符即可，相当于
+                        <code>e.preventDefault()</code>
+                    </p>
+                    <pre><code class="language-html">&lt;div @click="fa" class="father"&gt;
+    father
+    &lt;div @click.stop="so" class="son"&gt;son&lt;/div&gt;
+&lt;/div&gt;
+&lt;a @click.prevent href="https://www.baidu.com" target="_blank"&gt;百度一下&lt;/a&gt;</code></pre>
+                    <pre><code class="language-js">// 事件修饰符
+const event = new Vue(&#123;
+    el: '#event',
+    methods: &#123;
+        fa() &#123;
+            alert('点击了father');
+        &#125;,
+        so() &#123;
+            alert('点击了son');
+        &#125;,
+    &#125;,
+&#125;);</code></pre>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+        <script src="/globalsrc/mynormalize/prism.js"></script>
+        <script>
+            // 键盘修饰符
+            const keyup = new Vue({
+                el: '#keyup',
+                data: {
+                    uname: '',
+                },
+                methods: {
+                    fn() {
+                        console.log('键盘按下时触发，输入的内容：', this.uname);
+                    },
+                },
+            });
+
+            // v-model修饰符
+            const user = new Vue({
+                el: '#user',
+                data: {
+                    uname: '',
+                    age: '',
+                },
+            });
+
+            // 事件修饰符
+            const event = new Vue({
+                el: '#event',
+                methods: {
+                    fa() {
+                        alert('点击了father');
+                    },
+                    so() {
+                        alert('点击了son');
+                    },
+                },
+            });
+        </script>
+    </body>
+</html>
+
+        
+      </div>
+
+         
+    </div>
+    
+     
+  </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left "
+    
+      href="/2023/09/21/self_Vue/005v-bind%E5%A2%9E%E5%BC%BA%E6%A0%B7%E5%BC%8F%E6%8E%A7%E5%88%B6/"
+      title="v-bind增强样式控制"
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+      
+        v-bind增强样式控制
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2023/09/20/self_Vue/003-%E6%A1%88%E4%BE%8B01%E5%B0%8F%E9%BB%91%E8%AE%B0%E4%BA%8B%E6%9C%AC/"
+      title="案例-小黑记事本"
+     >
+
+    <p class="title-text">
+      
+        案例-小黑记事本
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+ 
+    </div>
+    <div id="footer-wrapper">
+      <footer id="footer">
+  
+  <div id="footer-info" class="inner">
+    
+    &copy; 2023 changfeng_E<br>
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
+  </div>
+</footer>
+
+    </div>
+    <div class="back-to-top-wrapper">
+    <button id="back-to-top-btn" class="back-to-top-btn hide" onclick="topFunction()">
+        <span class="material-symbols-rounded">keyboard_arrow_up</span>
+    </button>
+</div>
+
+<script>
+    function topFunction() {
+        window.scroll({ top: 0, behavior: 'smooth' });
+    }
+    let btn = document.getElementById('back-to-top-btn');
+    function scrollFunction() {
+        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+            btn.classList.remove('hide')
+        } else {
+            btn.classList.add('hide')
+        }
+    }
+    window.onscroll = function() {
+        scrollFunction();
+    }
+</script>
+
+  </div>
+  <script src="/js/light-dark-switch.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js"></script>
+</body>
+</html>

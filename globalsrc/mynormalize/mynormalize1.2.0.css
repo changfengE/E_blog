@@ -3,7 +3,7 @@
  * @Email: 3517134128@qq.com
  * @Date: 2023-03-09 22:27:20 
  * @Last Modified by: 3517134128@qq.com
- * @Last Modified time: 2023-09-10 21:39:23
+ * @Last Modified time: 2023-09-20 01:30:05
  * @Description: my normalize less版，版本号：1.2.0，较上一版本（原始版）：修改部分常用样式如body背景色，边框块背景色，iconfont字体图标
  */
 :root {
@@ -105,26 +105,6 @@ iconfont
 /* oppo sans 
 2023年4月3日
 */
-@font-face {
-  font-family: 'opposans-b';
-  src: url('/globalsrc/fonts/font-opposans/OPlusSans3-Bold.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'opposans-el';
-  src: url('/globalsrc/fonts/font-opposans/OPlusSans3-ExtraLight.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'opposans-l';
-  src: url('/globalsrc/fonts/font-opposans/OPlusSans3-Light.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'opposans-m';
-  src: url('/globalsrc/fonts/font-opposans/OPlusSans3-Medium.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'opposans-r';
-  src: url('/globalsrc/fonts/font-opposans/OPlusSans3-Regular.ttf') format('truetype');
-}
 .iconfont {
   font-family: 'iconfont' !important;
   font-size: 16px;
@@ -373,17 +353,21 @@ div.mask {
   background-color: #f5f5f5;
 }
 .div4 {
-  margin: 0 0.625rem;
   box-shadow: var(--shadow);
 }
 @media screen and (min-width: 640px) {
   .div4 {
     display: inline-block;
-    width: calc((100% - 44px) / 2);
+    margin: 0;
+    width: calc((100% - 10px) / 2);
     vertical-align: top;
+  }
+  .div4:nth-of-type(2) {
+    margin-left: 4px;
   }
   .div4.bigcard {
     display: block;
+    margin: 0.625rem 0;
     width: unset;
   }
 }
@@ -598,9 +582,6 @@ div.mask {
   padding: 0.625rem;
   background-color: #424242;
 }
-.div1 pre code[class*='language-'] {
-  font-size: 0.9em;
-}
 .div1 code {
   padding: 0.3em 0.4em;
   font-size: 0.9em;
@@ -612,8 +593,10 @@ div.mask {
 .div1 .line-numbers-rows > span {
   display: block;
   counter-increment: linenumber;
-  line-height: 1.6rem;
   /* add this */
+}
+.div1 pre[class*='language-'] {
+  line-height: 1;
 }
 .div1 div.code-toolbar > .toolbar {
   right: 0.8em !important;

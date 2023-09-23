@@ -5,6 +5,9 @@
 <link href="/fontawesome/css/fontawesome.css" rel="stylesheet">
 <link href="/fontawesome/css/brands.css" rel="stylesheet">
 <link href="/fontawesome/css/solid.css" rel="stylesheet">
+<!-- 2023-9-19 添加统一的prism -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.css" /> 
 <script src="/js/color.global.min.js" ></script>
 <script src="/js/load-settings.js" ></script>
 <head>
@@ -144,33 +147,33 @@
       <h3 class="widget-title">最新文章</h3>
       <ul>
         
-          <a class="recent-link" href="/2023/09/02/%E6%AF%81%E7%81%AD%E5%90%A7/" title="death note" >
+          <a class="recent-link" href="/2023/09/22/self_Vue/008-%E6%A1%88%E4%BE%8B02%E6%88%90%E7%BB%A9%E7%AE%A1%E7%90%86/" title="案例-成绩管理" >
             <div class="recent-link-text">
-              death note
+              案例-成绩管理
             </div>
           </a>
         
-          <a class="recent-link" href="/2023/09/01/hello-world/" title="Hello World" >
+          <a class="recent-link" href="/2023/09/21/self_Vue/007%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7/" title="计算属性" >
             <div class="recent-link-text">
-              Hello World
+              计算属性
             </div>
           </a>
         
-          <a class="recent-link" href="/2023/08/31/self_Git/006Git%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/" title="Git远程仓库" >
+          <a class="recent-link" href="/2023/09/21/self_Vue/006v-model%E6%8B%93%E5%B1%95%E5%BA%94%E7%94%A8/" title="v-model拓展应用" >
             <div class="recent-link-text">
-              Git远程仓库
+              v-model拓展应用
             </div>
           </a>
         
-          <a class="recent-link" href="/2023/08/30/self_Git/005Git%E5%88%86%E6%94%AF/" title="Git分支" >
+          <a class="recent-link" href="/2023/09/21/self_Vue/005v-bind%E5%A2%9E%E5%BC%BA%E6%A0%B7%E5%BC%8F%E6%8E%A7%E5%88%B6/" title="v-bind增强样式控制" >
             <div class="recent-link-text">
-              Git分支
+              v-bind增强样式控制
             </div>
           </a>
         
-          <a class="recent-link" href="/2023/08/28/self_Git/004%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" title="Git回退版本" >
+          <a class="recent-link" href="/2023/09/21/self_Vue/004%E6%8C%87%E4%BB%A4%E4%BF%AE%E9%A5%B0%E7%AC%A6/" title="指令修饰符" >
             <div class="recent-link-text">
-              Git回退版本
+              指令修饰符
             </div>
           </a>
         
@@ -183,7 +186,7 @@
   <div class="widget-wrap">
     <div class="widget">
       <h3 class="widget-title">标签</h3>
-      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/CSS3/" rel="tag">CSS3</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/HTML5/" rel="tag">HTML5</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/axios/" rel="tag">axios</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/hexo-use/" rel="tag">hexo_use</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/normalize/" rel="tag">normalize</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/typora/" rel="tag">typora</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" rel="tag">移动端</a></li></ul>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/CSS3/" rel="tag">CSS3</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/HTML5/" rel="tag">HTML5</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/axios/" rel="tag">axios</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/hexo-use/" rel="tag">hexo_use</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/normalize/" rel="tag">normalize</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/typora/" rel="tag">typora</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/vue2/" rel="tag">vue2</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" rel="tag">移动端</a></li></ul>
     </div>
   </div>
 
@@ -196,13 +199,23 @@
     <div class="widget">
       <h3 class="widget-title">分类</h3>
       <div class="category-box">
+            <a class="category-link" href="/categories/markdown/">
+                markdown
+                <div class="category-count">1</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/markdown/%E4%BD%BF%E7%94%A8/">
+                使用
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
             <a class="category-link" href="/categories/git/">
                 git
                 <div class="category-count">10</div>
             </a>
         <div class="children"><div class="category-box">
-            <a class="category-link" href="/categories/git/branch/">
-                branch
+            <a class="category-link" href="/categories/git/ssh%E7%BB%91%E5%AE%9A/">
+                ssh绑定
                 <div class="category-count">1</div>
             </a>
         
@@ -216,29 +229,14 @@
                 <div class="category-count">1</div>
             </a>
         
-            <a class="category-link" href="/categories/git/ssh%E7%BB%91%E5%AE%9A/">
-                ssh绑定
-                <div class="category-count">1</div>
-            </a>
-        </div></div>
-            <a class="category-link" href="/categories/markdown/">
-                markdown
-                <div class="category-count">1</div>
-            </a>
-        <div class="children"><div class="category-box">
-            <a class="category-link" href="/categories/markdown/%E4%BD%BF%E7%94%A8/">
-                使用
+            <a class="category-link" href="/categories/git/branch/">
+                branch
                 <div class="category-count">1</div>
             </a>
         </div></div>
             <a class="category-link" href="/categories/hexo%E5%88%9D%E4%BD%93%E9%AA%8C/">
                 hexo初体验
                 <div class="category-count">1</div>
-            </a>
-        
-            <a class="category-link" href="/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/">
-                移动端
-                <div class="category-count">16</div>
             </a>
         
             <a class="category-link" href="/categories/hexo/">
@@ -261,18 +259,23 @@
                 <div class="category-count">1</div>
             </a>
         
+            <a class="category-link" href="/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/">
+                移动端
+                <div class="category-count">16</div>
+            </a>
+        
             <a class="category-link" href="/categories/mynormalize/">
                 mynormalize
                 <div class="category-count">3</div>
             </a>
         <div class="children"><div class="category-box">
-            <a class="category-link" href="/categories/mynormalize/1-1-0/">
-                1.1.0
+            <a class="category-link" href="/categories/mynormalize/1-2-0/">
+                1.2.0
                 <div class="category-count">1</div>
             </a>
         
-            <a class="category-link" href="/categories/mynormalize/1-2-0/">
-                1.2.0
+            <a class="category-link" href="/categories/mynormalize/1-1-0/">
+                1.1.0
                 <div class="category-count">1</div>
             </a>
         
@@ -286,14 +289,19 @@
                 <div class="category-count">23</div>
             </a>
         
+            <a class="category-link" href="/categories/nodejs/">
+                nodejs
+                <div class="category-count">25</div>
+            </a>
+        
             <a class="category-link" href="/categories/jQuery/">
                 jQuery
                 <div class="category-count">13</div>
             </a>
         
-            <a class="category-link" href="/categories/nodejs/">
-                nodejs
-                <div class="category-count">25</div>
+            <a class="category-link" href="/categories/vue2/">
+                vue2
+                <div class="category-count">8</div>
             </a>
         
             <a class="category-link" href="/categories/js%E5%9F%BA%E7%A1%80/">
@@ -314,7 +322,7 @@
       
         <a class="archive-link" href="/archives/2023/09 ">
           九月 2023 
-          <div class="archive-count">2 </div>
+          <div class="archive-count">10 </div>
         </a>
       
         <a class="archive-link" href="/archives/2023/08 ">
@@ -417,6 +425,732 @@
     </div>
     <div id="content-body">
       
+   
+
+<article id="post-self_js/123_mouseenter和mouseover的区别" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2022/08/17/self_js/123_mouseenter%E5%92%8Cmouseover%E7%9A%84%E5%8C%BA%E5%88%AB/">mouseenter和mouseover</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2022-08-17T09:42:28.000Z" itemprop="datePublished">2022-08-17</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/js%E5%9F%BA%E7%A1%80/">js基础</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            293 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+
+    
+        
+        
+        
+        mouseenter和mouseover的区别
+        
+        
+        
+        
+            .father,
+            .father2 {
+                display: inline-block;
+                width: 200px;
+                height: 100px;
+                background-color: pink;
+            }
+
+            .son,
+            .son2 {
+                width: 100px;
+                height: 50px;
+                background-color: skyblue;
+            }
+
+            .father2 {
+                b...  
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2022/08/17/self_js/123_mouseenter%E5%92%8Cmouseover%E7%9A%84%E5%8C%BA%E5%88%AB/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+ 
+
+   
+
+<article id="post-self_js/121_元素滚动scroll系列" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2022/08/16/self_js/121_%E5%85%83%E7%B4%A0%E6%BB%9A%E5%8A%A8scroll%E7%B3%BB%E5%88%97/">元素滚动</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2022-08-16T14:25:07.000Z" itemprop="datePublished">2022-08-16</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/js%E5%9F%BA%E7%A1%80/">js基础</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            748 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+
+    
+        
+        
+        
+        元素滚动scroll系列
+        
+        
+        
+        
+            .test_box {
+                padding: 10px;
+                width: 200px;
+                height: 100px;
+                background-color: pink;
+                border: 10px solid red;
+                /* 显示滚动条 */
+                overflow: auto;
+            }
+        
+    
+
+    
+        
+            元素滚动scroll系列#
+            
+                元素scroll系列属性#
+                
+                    s...  
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2022/08/16/self_js/121_%E5%85%83%E7%B4%A0%E6%BB%9A%E5%8A%A8scroll%E7%B3%BB%E5%88%97/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+ 
+
+   
+
+<article id="post-self_js/119_元素可视区client系列" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2022/08/16/self_js/119_%E5%85%83%E7%B4%A0%E5%8F%AF%E8%A7%86%E5%8C%BAclient%E7%B3%BB%E5%88%97/">元素可视区</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2022-08-16T08:10:10.000Z" itemprop="datePublished">2022-08-16</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/js%E5%9F%BA%E7%A1%80/">js基础</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            341 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+
+    
+        
+        
+        
+        元素可视区client系列
+        
+        
+        
+        
+            .test_box {
+                padding: 10px;
+                width: 200px;
+                height: 100px;
+                background-color: pink;
+                border: 10px solid red;
+            }
+        
+    
+
+    
+        
+            元素可视区client系列#
+            
+                client
+                即客户端，使用client系列的相关属性来获取元素可视区的相关信息。通过client系列的相关属性可以动态的得到元素的边框大小、元素大小等。
+            
+   ...  
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2022/08/16/self_js/119_%E5%85%83%E7%B4%A0%E5%8F%AF%E8%A7%86%E5%8C%BAclient%E7%B3%BB%E5%88%97/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+ 
+
+   
+
+<article id="post-HTML5_CSS3/011_广义的HTML5_CSS3" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2022/08/01/HTML5_CSS3/011_%E5%B9%BF%E4%B9%89%E7%9A%84HTML5_CSS3/">广义的H5&amp;CSS3</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2022-08-01T15:10:41.000Z" itemprop="datePublished">2022-08-01</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/HTML5-CSS3/">HTML5&CSS3</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            187 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/" rel="tag">CSS3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/" rel="tag">HTML5</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+
+    
+        
+        
+        
+        广义的HTML5_CSS3
+        
+        
+    
+
+    
+        
+            广义的HTML5_CSS3#
+            
+                狭义的#
+                HTML5结构标签本身+CSS3相关样式
+            
+            
+                广义的HTML5#
+                
+                    广义的HTML5是HTML5本身+CSS3+JavaScript
+                    这个集合有时称为HTML5和朋友，通常缩写为HTML5
+                    虽然HTML5的一些特性仍然不被某些浏览器支持，但它是一种发展趋势
+                    
+                        HTML5 MDN介绍
+                        ...  
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2022/08/01/HTML5_CSS3/011_%E5%B9%BF%E4%B9%89%E7%9A%84HTML5_CSS3/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+ 
+
+   
+
+<article id="post-HTML5_CSS3/010_CSS3过渡" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2022/08/01/HTML5_CSS3/010_CSS3%E8%BF%87%E6%B8%A1/">CSS3过渡</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2022-08-01T09:33:45.000Z" itemprop="datePublished">2022-08-01</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/HTML5-CSS3/">HTML5&CSS3</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            648 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/" rel="tag">CSS3</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+
+    
+        
+        
+        
+        CSS3过渡
+        
+        
+        
+            .tran {
+                width: 200px;
+                height: 100px;
+                background-color: pink;
+                /* transition: 变化的属性 花费时间 运动曲线 何时开始; */
+                /* transition: width 1s linear .3s, height 1s linear .3s; */
+                transition: all 1s 0.5s;
+            }
+
+            .tran:hover {
+                width: 400px;
+                height: 200px;
+                backgrou...  
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2022/08/01/HTML5_CSS3/010_CSS3%E8%BF%87%E6%B8%A1/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+ 
+
+   
+
+<article id="post-HTML5_CSS3/009_CSS3其他特性" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2022/08/01/HTML5_CSS3/009_CSS3%E5%85%B6%E4%BB%96%E7%89%B9%E6%80%A7/">CSS3其它特性</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2022-08-01T06:53:41.000Z" itemprop="datePublished">2022-08-01</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/HTML5-CSS3/">HTML5&CSS3</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            336 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/" rel="tag">CSS3</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+
+    
+        
+        
+        
+        CSS3其他特性
+        
+        
+        
+            .div3 img {
+                float: left;
+                width: 33%;
+                padding: 10px;
+            }
+
+            .div3 img:nth-of-type(2) {
+                /* blur是一个函数，小括号里面的数值越大，图片越模糊，数值带单位 */
+                filter: blur(5px);
+            }
+
+            .div3 img:nth-of-type(2):hover,
+            .div3 img:nth-of-type(3):hover {
+                filter: blur(0);
+            }
+
+           ...  
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2022/08/01/HTML5_CSS3/009_CSS3%E5%85%B6%E4%BB%96%E7%89%B9%E6%80%A7/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+ 
+
+   
+
+<article id="post-HTML5_CSS3/008_CSS3盒子模型" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2022/08/01/HTML5_CSS3/008_CSS3%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/">CSS3盒模型</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2022-08-01T05:12:11.000Z" itemprop="datePublished">2022-08-01</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/HTML5-CSS3/">HTML5&CSS3</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            251 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/" rel="tag">CSS3</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+
+    
+        
+        
+        
+        CSS3盒子模型
+        
+        
+        
+            .cool {
+                width: 200px;
+                height: 200px;
+                padding: 20px;
+                margin: 10px;
+                border: 20px solid red;
+                background-color: pink;
+            }
+
+            .pre {
+                float: left;
+                box-sizing: content-box;
+            }
+
+            .next {
+                float: left;
+                box-sizing: b...  
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2022/08/01/HTML5_CSS3/008_CSS3%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+ 
+
+   
+
+<article id="post-HTML5_CSS3/007_CSS3伪元素选择器" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2022/07/30/HTML5_CSS3/007_CSS3%E4%BC%AA%E5%85%83%E7%B4%A0%E9%80%89%E6%8B%A9%E5%99%A8/">CSS3伪元素选择器</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2022-07-30T10:38:59.000Z" itemprop="datePublished">2022-07-30</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/HTML5-CSS3/">HTML5&CSS3</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            764 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/" rel="tag">CSS3</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+
+    
+        
+        
+        
+        CSS3伪元素选择器
+        
+        
+        
+            @font-face {
+                font-family: 'icomoon';
+                src: url('/globalsrc/fonts/icomoon/icomoon.eot?33ik8w');
+                src: url('/globalsrc/fonts/icomoon/icomoon.eot?33ik8w#iefix') format('embedded-opentype'), url('/globalsrc/fonts/icomoon/icomoon.ttf?33ik8w') format('truetype'),
+                    url('/globalsrc/fonts/icomoon/icomoon.woff?33ik8w') format('woff'), url('/globals...  
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2022/07/30/HTML5_CSS3/007_CSS3%E4%BC%AA%E5%85%83%E7%B4%A0%E9%80%89%E6%8B%A9%E5%99%A8/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+ 
+
    
 
 <article id="post-HTML5_CSS3/006_CSS3结构伪类选择器" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
@@ -603,748 +1337,6 @@
 
  
 
-   
-
-<article id="post-HTML5_CSS3/004_HTML5表单属性" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2022/07/29/HTML5_CSS3/004_HTML5%E8%A1%A8%E5%8D%95%E5%B1%9E%E6%80%A7/">H5表单属性</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2022-07-29T14:42:29.000Z" itemprop="datePublished">2022-07-29</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-  <a class="meta-cate-link" href="/categories/HTML5-CSS3/">HTML5&CSS3</a>
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            324 词 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/" rel="tag">HTML5</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-
-    
-        
-        
-        
-        HTML5表单属性
-        
-        
-        
-            input::placeholder {
-                color: green;
-            }
-        
-    
-
-    
-        
-            HTML5新增的表单属性#
-            
-                
-                    
-                        属性
-                        值
-                        说明
-                    
-                
-                
-                    
-                        required
-                        required
-             ...  
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2022/07/29/HTML5_CSS3/004_HTML5%E8%A1%A8%E5%8D%95%E5%B1%9E%E6%80%A7/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
- 
-
-   
-
-<article id="post-HTML5_CSS3/003_HTML5input表单类型" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2022/07/29/HTML5_CSS3/003_HTML5input%E8%A1%A8%E5%8D%95%E7%B1%BB%E5%9E%8B/">H5input类型</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2022-07-29T14:16:04.000Z" itemprop="datePublished">2022-07-29</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-  <a class="meta-cate-link" href="/categories/HTML5-CSS3/">HTML5&CSS3</a>
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            383 词 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/" rel="tag">HTML5</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-
-    
-        
-        
-        
-        HTML5input类型
-        
-        
-    
-
-    
-        
-            HTML5新增的input表单类型#
-            
-                
-                    
-                        
-                            属性值
-                            说明
-                        
-                    
-                    
-                        
-                            type="email"
-                            限制用户输入必须为Email类型
-                        
-                        
-      ...  
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2022/07/29/HTML5_CSS3/003_HTML5input%E8%A1%A8%E5%8D%95%E7%B1%BB%E5%9E%8B/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
- 
-
-   
-
-<article id="post-HTML5_CSS3/002_HTML5多媒体标签" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2022/07/28/HTML5_CSS3/002_HTML5%E5%A4%9A%E5%AA%92%E4%BD%93%E6%A0%87%E7%AD%BE/">H5多媒体标签</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2022-07-28T14:34:09.000Z" itemprop="datePublished">2022-07-28</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-  <a class="meta-cate-link" href="/categories/HTML5-CSS3/">HTML5&CSS3</a>
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            834 词 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/" rel="tag">HTML5</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-
-    
-        
-        
-        
-        HTML5多媒体标签
-        
-        
-        
-            .div1 video {
-                width: 100%;
-            }
-        
-    
-
-    
-        
-            HTML5新增的多媒体标签#
-            新增的多媒体标签主要包含两个：
-            
-                视频&lt;video&gt;
-                音频&lt;audio&gt;
-            
-            使用它们可以很方便的在页面中嵌入音频和视频，而不再去使用flash或其它浏览器插件。
-            
-                视频&lt;video&gt;#
-                
-                    当前&lt;video&gt;元素支持包含mp4、WebM、Ogg在内的...  
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2022/07/28/HTML5_CSS3/002_HTML5%E5%A4%9A%E5%AA%92%E4%BD%93%E6%A0%87%E7%AD%BE/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
- 
-
-   
-
-<article id="post-HTML5_CSS3/001_HTML5语义化标签" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2022/07/28/HTML5_CSS3/001_HTML5%E8%AF%AD%E4%B9%89%E5%8C%96%E6%A0%87%E7%AD%BE/">H5语义化标签</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2022-07-28T07:08:24.000Z" itemprop="datePublished">2022-07-28</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-  <a class="meta-cate-link" href="/categories/HTML5-CSS3/">HTML5&CSS3</a>
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            478 词 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/" rel="tag">HTML5</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-
-    
-        
-        
-        
-        HTML5语义化标签
-        
-        
-        
-            .div1 header,
-            .div1 nav {
-                width: 800px;
-                height: 100px;
-                margin: 10px auto;
-                background-color: pink;
-                border-radius: 15px;
-            }
-
-            .div1 article {
-                width: 100px;
-                height: 50px;
-                background-color: purple;
-            }
-
-            .div1 section {
-      ...  
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2022/07/28/HTML5_CSS3/001_HTML5%E8%AF%AD%E4%B9%89%E5%8C%96%E6%A0%87%E7%AD%BE/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
- 
-
-   
-
-<article id="post-self_js/115_元素偏移量offset系列" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2022/07/09/self_js/115_%E5%85%83%E7%B4%A0%E5%81%8F%E7%A7%BB%E9%87%8Foffset%E7%B3%BB%E5%88%97/">元素偏移</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2022-07-09T10:22:32.000Z" itemprop="datePublished">2022-07-09</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-  <a class="meta-cate-link" href="/categories/js%E5%9F%BA%E7%A1%80/">js基础</a>
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            761 词 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-
-    
-        
-        
-        
-        元素偏移量offset系列
-        
-        
-            * {
-                margin: 0;
-                padding: 0;
-            }
-
-            .father {
-                position: relative;
-                width: 100px;
-                height: 100px;
-                background-color: pink;
-                margin: 50px auto;
-            }
-
-            .son {
-                width: 50px;
-                height: 50px;
-                background-color: #fff;
-          ...  
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2022/07/09/self_js/115_%E5%85%83%E7%B4%A0%E5%81%8F%E7%A7%BB%E9%87%8Foffset%E7%B3%BB%E5%88%97/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
- 
-
-   
-
-<article id="post-self_js/114_history对象" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2022/07/09/self_js/114_history%E5%AF%B9%E8%B1%A1/">history对象</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2022-07-09T10:02:56.000Z" itemprop="datePublished">2022-07-09</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-  <a class="meta-cate-link" href="/categories/js%E5%9F%BA%E7%A1%80/">js基础</a>
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            241 词 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-
-    
-        
-        
-        
-        history对象
-        
-    
-
-    
-        
-            history对象#
-            window对象提供了一个history对象，与浏览器历史记录进行交互，该对象包含用户（在浏览器窗口中）访问过的URL。
-            
-                
-                    
-                        history对象方法
-                        作用
-                    
-                
-                
-                    
-                        back()
-                        可以后退功能
-                    
-                    
-                        fo...  
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2022/07/09/self_js/114_history%E5%AF%B9%E8%B1%A1/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
- 
-
-   
-
-<article id="post-self_js/113_navigator对象" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2022/07/09/self_js/113_navigator%E5%AF%B9%E8%B1%A1/">navigator对象</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2022-07-09T09:53:50.000Z" itemprop="datePublished">2022-07-09</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-  <a class="meta-cate-link" href="/categories/js%E5%9F%BA%E7%A1%80/">js基础</a>
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            148 词 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-
-    
-        
-        
-        
-        navigator对象
-        
-    
-
-    
-        
-            navigator对象#
-            navigator对象包含有关浏览器的信息，它有很多属性，最常用的是userAgent，该属性可以返回由客户机发送服务器的user-agent头部的值。
-            以下前端代码可以判断用户从哪个终端打开页面，实现跳转
-            
-        
-    
-
-  
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2022/07/09/self_js/113_navigator%E5%AF%B9%E8%B1%A1/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
- 
-
-   
-
-<article id="post-self_js/111_location对象" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2022/07/08/self_js/111_location%E5%AF%B9%E8%B1%A1/">location对象</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2022-07-08T02:31:48.000Z" itemprop="datePublished">2022-07-08</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-  <a class="meta-cate-link" href="/categories/js%E5%9F%BA%E7%A1%80/">js基础</a>
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            785 词 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-
-    
-        
-        
-        
-        location对象
-        
-        
-        
-    
-
-    
-        
-            location对象#
-            
-                什么是location对象#
-                
-                    window对象提供了一个
-                    location属性
-                    用于
-                    获取或设置窗体的URL
-                    ，并且可以用于
-                    解析URL
-                    。因为这个属性返回的是一个对象，所以将这个属性也称为
-                    location对象
-                
-            
-            
-                U...  
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2022/07/08/self_js/111_location%E5%AF%B9%E8%B1%A1/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
- 
-
 
   <nav id="page-nav">
     <!-- 在第二页时 page.prev_link 不知为何无法返回正确的链接 -->
@@ -1352,7 +1344,7 @@
       <span class="material-symbols-rounded">navigate_before</span>
     </a>
     <div id="num-bar">
-      <a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a>  
+      <a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a>  
     </div>
     <a id="next-btn" class="page-nav-btn " href="/page/13/">
       <span class="material-symbols-rounded">navigate_next</span>
@@ -1397,5 +1389,7 @@
 
   </div>
   <script src="/js/light-dark-switch.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js"></script>
 </body>
 </html>

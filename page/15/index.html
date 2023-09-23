@@ -5,6 +5,9 @@
 <link href="/fontawesome/css/fontawesome.css" rel="stylesheet">
 <link href="/fontawesome/css/brands.css" rel="stylesheet">
 <link href="/fontawesome/css/solid.css" rel="stylesheet">
+<!-- 2023-9-19 添加统一的prism -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.css" /> 
 <script src="/js/color.global.min.js" ></script>
 <script src="/js/load-settings.js" ></script>
 <head>
@@ -144,33 +147,33 @@
       <h3 class="widget-title">最新文章</h3>
       <ul>
         
-          <a class="recent-link" href="/2023/09/02/%E6%AF%81%E7%81%AD%E5%90%A7/" title="death note" >
+          <a class="recent-link" href="/2023/09/22/self_Vue/008-%E6%A1%88%E4%BE%8B02%E6%88%90%E7%BB%A9%E7%AE%A1%E7%90%86/" title="案例-成绩管理" >
             <div class="recent-link-text">
-              death note
+              案例-成绩管理
             </div>
           </a>
         
-          <a class="recent-link" href="/2023/09/01/hello-world/" title="Hello World" >
+          <a class="recent-link" href="/2023/09/21/self_Vue/007%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7/" title="计算属性" >
             <div class="recent-link-text">
-              Hello World
+              计算属性
             </div>
           </a>
         
-          <a class="recent-link" href="/2023/08/31/self_Git/006Git%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/" title="Git远程仓库" >
+          <a class="recent-link" href="/2023/09/21/self_Vue/006v-model%E6%8B%93%E5%B1%95%E5%BA%94%E7%94%A8/" title="v-model拓展应用" >
             <div class="recent-link-text">
-              Git远程仓库
+              v-model拓展应用
             </div>
           </a>
         
-          <a class="recent-link" href="/2023/08/30/self_Git/005Git%E5%88%86%E6%94%AF/" title="Git分支" >
+          <a class="recent-link" href="/2023/09/21/self_Vue/005v-bind%E5%A2%9E%E5%BC%BA%E6%A0%B7%E5%BC%8F%E6%8E%A7%E5%88%B6/" title="v-bind增强样式控制" >
             <div class="recent-link-text">
-              Git分支
+              v-bind增强样式控制
             </div>
           </a>
         
-          <a class="recent-link" href="/2023/08/28/self_Git/004%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/" title="Git回退版本" >
+          <a class="recent-link" href="/2023/09/21/self_Vue/004%E6%8C%87%E4%BB%A4%E4%BF%AE%E9%A5%B0%E7%AC%A6/" title="指令修饰符" >
             <div class="recent-link-text">
-              Git回退版本
+              指令修饰符
             </div>
           </a>
         
@@ -183,7 +186,7 @@
   <div class="widget-wrap">
     <div class="widget">
       <h3 class="widget-title">标签</h3>
-      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/CSS3/" rel="tag">CSS3</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/HTML5/" rel="tag">HTML5</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/axios/" rel="tag">axios</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/hexo-use/" rel="tag">hexo_use</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/normalize/" rel="tag">normalize</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/typora/" rel="tag">typora</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" rel="tag">移动端</a></li></ul>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/CSS3/" rel="tag">CSS3</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/HTML5/" rel="tag">HTML5</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/axios/" rel="tag">axios</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/hexo-use/" rel="tag">hexo_use</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/normalize/" rel="tag">normalize</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/typora/" rel="tag">typora</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/vue2/" rel="tag">vue2</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" rel="tag">移动端</a></li></ul>
     </div>
   </div>
 
@@ -196,13 +199,23 @@
     <div class="widget">
       <h3 class="widget-title">分类</h3>
       <div class="category-box">
+            <a class="category-link" href="/categories/markdown/">
+                markdown
+                <div class="category-count">1</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/markdown/%E4%BD%BF%E7%94%A8/">
+                使用
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
             <a class="category-link" href="/categories/git/">
                 git
                 <div class="category-count">10</div>
             </a>
         <div class="children"><div class="category-box">
-            <a class="category-link" href="/categories/git/branch/">
-                branch
+            <a class="category-link" href="/categories/git/ssh%E7%BB%91%E5%AE%9A/">
+                ssh绑定
                 <div class="category-count">1</div>
             </a>
         
@@ -216,29 +229,14 @@
                 <div class="category-count">1</div>
             </a>
         
-            <a class="category-link" href="/categories/git/ssh%E7%BB%91%E5%AE%9A/">
-                ssh绑定
-                <div class="category-count">1</div>
-            </a>
-        </div></div>
-            <a class="category-link" href="/categories/markdown/">
-                markdown
-                <div class="category-count">1</div>
-            </a>
-        <div class="children"><div class="category-box">
-            <a class="category-link" href="/categories/markdown/%E4%BD%BF%E7%94%A8/">
-                使用
+            <a class="category-link" href="/categories/git/branch/">
+                branch
                 <div class="category-count">1</div>
             </a>
         </div></div>
             <a class="category-link" href="/categories/hexo%E5%88%9D%E4%BD%93%E9%AA%8C/">
                 hexo初体验
                 <div class="category-count">1</div>
-            </a>
-        
-            <a class="category-link" href="/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/">
-                移动端
-                <div class="category-count">16</div>
             </a>
         
             <a class="category-link" href="/categories/hexo/">
@@ -261,18 +259,23 @@
                 <div class="category-count">1</div>
             </a>
         
+            <a class="category-link" href="/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/">
+                移动端
+                <div class="category-count">16</div>
+            </a>
+        
             <a class="category-link" href="/categories/mynormalize/">
                 mynormalize
                 <div class="category-count">3</div>
             </a>
         <div class="children"><div class="category-box">
-            <a class="category-link" href="/categories/mynormalize/1-1-0/">
-                1.1.0
+            <a class="category-link" href="/categories/mynormalize/1-2-0/">
+                1.2.0
                 <div class="category-count">1</div>
             </a>
         
-            <a class="category-link" href="/categories/mynormalize/1-2-0/">
-                1.2.0
+            <a class="category-link" href="/categories/mynormalize/1-1-0/">
+                1.1.0
                 <div class="category-count">1</div>
             </a>
         
@@ -286,14 +289,19 @@
                 <div class="category-count">23</div>
             </a>
         
+            <a class="category-link" href="/categories/nodejs/">
+                nodejs
+                <div class="category-count">25</div>
+            </a>
+        
             <a class="category-link" href="/categories/jQuery/">
                 jQuery
                 <div class="category-count">13</div>
             </a>
         
-            <a class="category-link" href="/categories/nodejs/">
-                nodejs
-                <div class="category-count">25</div>
+            <a class="category-link" href="/categories/vue2/">
+                vue2
+                <div class="category-count">8</div>
             </a>
         
             <a class="category-link" href="/categories/js%E5%9F%BA%E7%A1%80/">
@@ -314,7 +322,7 @@
       
         <a class="archive-link" href="/archives/2023/09 ">
           九月 2023 
-          <div class="archive-count">2 </div>
+          <div class="archive-count">10 </div>
         </a>
       
         <a class="archive-link" href="/archives/2023/08 ">
@@ -417,6 +425,744 @@
     </div>
     <div id="content-body">
       
+   
+
+<article id="post-self_js/093_DOM重点核心" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2022/06/27/self_js/093_DOM%E9%87%8D%E7%82%B9%E6%A0%B8%E5%BF%83/">DOM核心</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2022-06-27T13:50:52.000Z" itemprop="datePublished">2022-06-27</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/js%E5%9F%BA%E7%A1%80/">js基础</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            702 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+
+    
+        
+        
+        
+        DOM重点核心
+        
+    
+
+    
+        
+            DOM重点核心#
+            
+                
+                    文档对象模型（Document Object Model，简称
+                    DOM
+                    )，是W3C组织推荐的处理可扩展标记语言(HTML或者XML)的标准
+                    编程接口
+                
+                W3C已经定义了一系列的DOM接口，通过这些接口可以改变网页的内容、结构和样式。
+                
+                    
+                        对于JavaScript，为了能使js操作HTML，js就有了一套自己的DOM编程接口
+                        对于HTML，...  
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2022/06/27/self_js/093_DOM%E9%87%8D%E7%82%B9%E6%A0%B8%E5%BF%83/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+ 
+
+   
+
+<article id="post-self_js/089节点操作" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2022/02/27/self_js/089%E8%8A%82%E7%82%B9%E6%93%8D%E4%BD%9C/">节点操作</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2022-02-27T07:25:01.000Z" itemprop="datePublished">2022-02-27</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/js%E5%9F%BA%E7%A1%80/">js基础</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            2.5k 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+
+    
+        
+        
+        
+        节点操作
+        
+        
+            .cb,
+            .cr,
+            .cg {
+                float: left;
+                width: 10%;
+                height: 3px;
+                border: 1px solid #fff;
+                background-color: black;
+            }
+            .cr {
+                border: 1px solid red;
+            }
+            .cg {
+                border: 1px solid green;
+            }
+        
+    
+
+    
+        
+            节点操作#
+        ...  
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2022/02/27/self_js/089%E8%8A%82%E7%82%B9%E6%93%8D%E4%BD%9C/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+ 
+
+   
+
+<article id="post-self_js/086自定义属性" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2022/02/26/self_js/086%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7/">自定义属性</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2022-02-26T07:33:07.000Z" itemprop="datePublished">2022-02-26</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/js%E5%9F%BA%E7%A1%80/">js基础</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            287 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+
+    
+        
+        
+        
+        自定义属性
+        
+        
+    
+
+    
+        
+            自定义属性#
+            标准属性：标签天生自带的属性如class、id、title等，可以直接使用点语法操作如：disabled、checked、selected
+            自定义属性：
+            
+                在html5中推出的专门的data-自定义属性
+                在标签上一律以data-开头
+                在DOM对象上一律以dataset对象方式获取
+            
+            
+        
+        
+            var div = document.querySelector('.atestbox');
+            // 自己添加的属性称为自定义属性 如上index
+            // 1.获取元素的属性值
+...  
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2022/02/26/self_js/086%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+ 
+
+   
+
+<article id="post-self_js/082排他思想" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2022/02/19/self_js/082%E6%8E%92%E4%BB%96%E6%80%9D%E6%83%B3/">排他思想</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2022-02-19T09:01:34.000Z" itemprop="datePublished">2022-02-19</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/js%E5%9F%BA%E7%A1%80/">js基础</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            194 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+
+    
+        
+        
+        
+        排他思想
+        
+    
+
+    
+        
+            排他思想#
+            排除其他，保留自己
+            获取所有按钮，点击其一，清除其它的按钮全部的样式，为当前添加样式
+            按钮1
+            按钮2
+            按钮3
+            按钮4
+            按钮5
+        
+        
+            // 1.获取所有按钮元素
+            var btns = document.getElementsByTagName('button');
+            // btns得到的是伪数组
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].onclick = function () {
+                    /...  
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2022/02/19/self_js/082%E6%8E%92%E4%BB%96%E6%80%9D%E6%83%B3/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+ 
+
+   
+
+<article id="post-self_js/072修改元素属性" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2022/02/15/self_js/072%E4%BF%AE%E6%94%B9%E5%85%83%E7%B4%A0%E5%B1%9E%E6%80%A7/">修改元素属性</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2022-02-15T09:25:46.000Z" itemprop="datePublished">2022-02-15</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/js%E5%9F%BA%E7%A1%80/">js基础</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            160 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+
+    
+        
+        
+        
+        修改元素属性
+        
+        
+            .star {
+                width: 300px;
+            }
+        
+    
+
+    
+        
+            修改元素属性#
+            刘德华
+            张学友
+            
+            
+        
+        
+            // 修改元素属性 src
+            var ldh = document.getElementById('ldh');
+            var zxy = document.getElementById('zxy');
+            var img = document.querySelector('.star');
+
+            zxy.onclick = function () {
+           ...  
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2022/02/15/self_js/072%E4%BF%AE%E6%94%B9%E5%85%83%E7%B4%A0%E5%B1%9E%E6%80%A7/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+ 
+
+   
+
+<article id="post-self_js/070事件" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2022/02/15/self_js/070%E4%BA%8B%E4%BB%B6/">事件</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2022-02-15T07:12:36.000Z" itemprop="datePublished">2022-02-15</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/js%E5%9F%BA%E7%A1%80/">js基础</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            282 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+
+    
+        
+        
+        
+        事件
+        
+        
+    
+
+    
+        
+            事件#
+            事件三要素：事件源+事件类型+事件处理程序
+            事件源：事件被触发的对象
+            事件类型：如何触发 什么事件 鼠标点击(onclick)、经过、键盘按下？
+            事件处理程序：通过一个函数赋值的方式完成
+            
+                例-点击事件#
+                click here
+                123
+            
+        
+        
+            // 点击按钮，弹出对话框
+            // 事件三要素：事件源+事件类型+事件处理程序
+            // 1.事件源：事件被触发的对象：按钮
+            var btn = document.getElementById...  
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2022/02/15/self_js/070%E4%BA%8B%E4%BB%B6/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+ 
+
+   
+
+<article id="post-self_js/068WebAPIs" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2022/02/12/self_js/068WebAPIs/">WebAPIs</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2022-02-12T13:38:39.000Z" itemprop="datePublished">2022-02-12</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/js%E5%9F%BA%E7%A1%80/">js基础</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            428 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+
+    
+        
+        
+        
+        Web APIs
+        
+        
+        
+            // 1.API是为程序员提供的一个接口,帮助我们实现某项功能,会使用即可
+            // 2.Web API主要是针对于浏览器提供的接口,主要针对于浏览器做交互效果
+            // 3.Web API一般都有输入和输出(函数的传参和返回值),Web API很多都是方法(函数)
+
+            // DOM:文档对象模型,是W3C组织推荐的处理可扩展标记语言(html,xml)的标准编程接口。
+        
+    
+
+    
+        
+            Web APIs#
+            作用：使用js去操作html和浏览器
+            分类：DOM(文档对象模型)、BOM(浏览器对象模型)
+            
+                DOM#
+                DOM(Document Obje...  
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2022/02/12/self_js/068WebAPIs/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+ 
+
+   
+
+<article id="post-self_js/059Date日期对象" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2022/01/22/self_js/059Date%E6%97%A5%E6%9C%9F%E5%AF%B9%E8%B1%A1/">Date日期对象</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2022-01-22T13:27:33.000Z" itemprop="datePublished">2022-01-22</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/js%E5%9F%BA%E7%A1%80/">js基础</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            1.2k 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+
+    
+        
+        
+        
+        Date日期对象
+        
+        
+        
+            // Date()日期对象是一个构造函数，必须使用new来调用日期对象
+            var arr = new Array(); //创建一个数组对象
+            var obj = new Object(); //创建一个对象实例
+            // 1.使用Date
+            var date = new Date();
+            console.log(date);
+            // 2.参数常用的写法：数字型 2019，10，01。或者是字符串型'2019-10-01 8:8:8'
+            var date1 = new Date(2019, 10, 1);
+            console.log(date1); //返回的是11月不是10月
+            var date2 = new ...  
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2022/01/22/self_js/059Date%E6%97%A5%E6%9C%9F%E5%AF%B9%E8%B1%A1/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+ 
+
    
 
 <article id="post-self_js/052js对象" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
@@ -596,726 +1342,6 @@
 
  
 
-   
-
-<article id="post-self_js/048函数的两种声明方式" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2021/09/26/self_js/048%E5%87%BD%E6%95%B0%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%A3%B0%E6%98%8E%E6%96%B9%E5%BC%8F/">函数声明</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2021-09-26T02:56:47.000Z" itemprop="datePublished">2021-09-26</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-  <a class="meta-cate-link" href="/categories/js%E5%9F%BA%E7%A1%80/">js基础</a>
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            436 词 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-
-    
-        
-        
-        
-        函数的两种声明方式
-        
-        
-        
-            // 函数的两种声明方式
-            // 1、利用函数关键字自定义函数（命名函数）
-            // 任何地方调用都行
-            function fn() {}
-            fn();
-            // 2、函数表达式（匿名函数）
-            // 需要先声明，才可调用
-            // var 变量名 = function() {};
-            var fun = function (aru) {
-                console.log('这是函数表达式');
-                console.log(aru);
-            };
-            fun('不愧是我!');
-
-            // (1) fun是变量名,不是函数名
-   ...  
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2021/09/26/self_js/048%E5%87%BD%E6%95%B0%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%A3%B0%E6%98%8E%E6%96%B9%E5%BC%8F/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
- 
-
-   
-
-<article id="post-self_js/029数组的使用" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2021/09/01/self_js/029%E6%95%B0%E7%BB%84%E7%9A%84%E4%BD%BF%E7%94%A8/">数组</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2021-09-01T14:08:43.000Z" itemprop="datePublished">2021-09-01</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-  <a class="meta-cate-link" href="/categories/js%E5%9F%BA%E7%A1%80/">js基础</a>
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            880 词 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-
-    
-        
-        
-        
-        数组的使用
-        
-        
-        
-            // 1、数组（Array），就是一组数据的集合存储在单个变量下
-            // 2、利用new创建数组
-            var arr = new Array(); //创建了一个空数组
-            // 3、利用数组字面量创建数组[]
-            var arr = []; // 创建了一个空数组
-            var arr1 = [1, 2, 'me', true]; // 数组中可以放任意数据类型
-            // 4、数组中的数据用逗号分隔
-            // 5、数组里的数据，比如1，2，我们成为数组元素
-            // 6、访问(获取)数组元素格式：数组名[索引号（从0开始）]
-            console.log(arr1);
-            console.log(arr1[2])...  
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2021/09/01/self_js/029%E6%95%B0%E7%BB%84%E7%9A%84%E4%BD%BF%E7%94%A8/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
- 
-
-   
-
-<article id="post-self_js/024循环流程控制" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2021/08/26/self_js/024%E5%BE%AA%E7%8E%AF%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/">循环流程控制</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2021-08-26T10:58:53.000Z" itemprop="datePublished">2021-08-26</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-  <a class="meta-cate-link" href="/categories/js%E5%9F%BA%E7%A1%80/">js基础</a>
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            1.3k 词 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-
-    
-        
-        
-        
-        循环流程控制
-        
-        
-        
-            // 循环的目的：可以重复执行某些代码
-            // 三种循环语句：
-            // for循环 重复执行某些代码，通常与次数有关
-            /*
-        for(初始化变量（只执行1次）;条件表达式;操作表达式){
-            // 循环体
-        } 
-         */
-            // 代码体验：
-            for (var i = 1; i   
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2021/08/26/self_js/024%E5%BE%AA%E7%8E%AF%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
- 
-
-   
-
-<article id="post-self_js/016分支流程控制" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2021/08/25/self_js/016%E5%88%86%E6%94%AF%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/">分支流程控制</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2021-08-25T09:42:14.000Z" itemprop="datePublished">2021-08-25</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-  <a class="meta-cate-link" href="/categories/js%E5%9F%BA%E7%A1%80/">js基础</a>
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            940 词 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-
-    
-        
-        
-        
-        分支流程控制
-        
-        
-        
-            // 分支结构：根据不同条件执行不同代码，多选1
-            // 1、if的语法结构
-            /* if (条件表达式) {
-            // 执行语句
-        } */
-            /*
-        if(条件表达式){
-
-        } else{
-
-        }
-         */
-            /*
-        if(条件表达式){
-
-        } else if(条件表达式){
-
-        }else{
-
-        }
-         */
-            // 2、执行思路：若if里面的条件表达式结果为真则执行大括号里面的执行语句
-            // 若为假则不执行大括号里面的语句，而执行if语句后面的代码
-            // 3、代码体验
-       ...  
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2021/08/25/self_js/016%E5%88%86%E6%94%AF%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
- 
-
-   
-
-<article id="post-self_js/015运算符优先级" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2021/08/25/self_js/015%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7/">运算符优先级</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2021-08-25T09:20:58.000Z" itemprop="datePublished">2021-08-25</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-  <a class="meta-cate-link" href="/categories/js%E5%9F%BA%E7%A1%80/">js基础</a>
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            346 词 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-
-    
-        
-        
-        
-        运算符优先级
-        
-        
-        
-            // 练习1
-            // 逻辑与>逻辑或
-            console.log(4 >= 6 || ('人' != '阿凡达' && !(12 * 2 == 144) && true));
-            // false||true&&true&&true ==true
-            var num = 10;
-            console.log(5 == num / 2 && (2 + 2 * num).toString() === '22');
-            // true&&true ==true;
-
-            console.log('=======================');
-            // 练习2
-            var a = 3 > 5 && 2 < 7 && 3 == 4;
-...  
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2021/08/25/self_js/015%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
- 
-
-   
-
-<article id="post-self_js/007数据类型转换" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2021/08/23/self_js/007%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/">数据类型转换</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2021-08-23T11:39:09.000Z" itemprop="datePublished">2021-08-23</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-  <a class="meta-cate-link" href="/categories/js%E5%9F%BA%E7%A1%80/">js基础</a>
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            798 词 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-
-    
-        
-        
-        
-        数据类型转换
-        
-        
-        
-            // 转换成字符串型
-            // 1、把数字型转换成字符串型 toString()
-            var num = 10;
-            var str = num.toString();
-            console.log(str);
-            console.log(typeof str);
-            // 2、利用String()
-            console.log(String(num));
-            // 3、利用+加号拼接字符串的方法实现转换效果，隐式转换
-            console.log(typeof (num + ''));
-            console.log('================================');
-
-            /...  
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2021/08/23/self_js/007%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
- 
-
-   
-
-<article id="post-self_js/006typeof检测变量数据类型" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2021/08/23/self_js/006typeof%E6%A3%80%E6%B5%8B%E5%8F%98%E9%87%8F%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">typeof检测变量数据类型</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2021-08-23T10:19:36.000Z" itemprop="datePublished">2021-08-23</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-  <a class="meta-cate-link" href="/categories/js%E5%9F%BA%E7%A1%80/">js基础</a>
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            269 词 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-
-    
-        
-        
-        
-        typeof检测变量数据类型
-        
-        
-        
-            var num = 10;
-            console.log(typeof num);
-            var str = 'me';
-            console.log(typeof str);
-            var flag = true;
-            console.log(typeof flag);
-            var vari = undefined;
-            console.log(typeof vari);
-            var timer = null;
-            console.log(typeof timer);
-
-            // prompt取过来的值是字符型的
-            var age = prompt('请输入您的年龄：');
-  ...  
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2021/08/23/self_js/006typeof%E6%A3%80%E6%B5%8B%E5%8F%98%E9%87%8F%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
- 
-
-   
-
-<article id="post-self_js/001js初体验" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-   
-  <div class="article-inner">
-    <div class="article-main">
-      <header class="article-header">
-        
-<div class="main-title-bar">
-  <div class="main-title-dot"></div>
-  
-    
-      <h1 itemprop="name">
-        <a class="p-name article-title" href="/2021/08/23/self_js/001js%E5%88%9D%E4%BD%93%E9%AA%8C/">js初体验</a>
-      </h1>
-    
-  
-</div>
-
-        <div class='meta-info-bar'>
-          <div class="meta-info">
-  <time class="dt-published" datetime="2021-08-22T16:00:00.000Z" itemprop="datePublished">2021-08-23</time>
-</div>
-          <div class="need-seperator meta-info">
-            <div class="meta-cate-flex">
-  
-  <a class="meta-cate-link" href="/categories/js%E5%9F%BA%E7%A1%80/">js基础</a>
-   
-</div>
-  
-          </div>
-          <div class="wordcount need-seperator meta-info">
-            1.1k 词 
-          </div>
-        </div>
-        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li></ul>
-
-      </header>
-      <div class="e-content article-entry" itemprop="articleBody">
-        
-          <div class="truncate-text">
-            
-
-    
-        
-        
-        
-        js初体验
-        
-        
-    
-
-    
-        
-            JavaScript#
-            
-                JavaScript是一门运行在
-                客户端（浏览器）
-                的编程语言
-            
-            
-                JS的组成#
-                ECMAScript+Web APIs(DOM+BOM)
-                
-                    ECMAScript#
-                    规定了js基础语法核心知识，如：变量、分支语句、循环语句、对象等
-                
-                
-                    Web APIs#
-                    DOM：操作文档，对页面元素...  
-          </div>
-        
-      </div>
-
-         
-    </div>
-    
-     
-    <a class="right-panel  non-pic  "
-      
-      href="/2021/08/23/self_js/001js%E5%88%9D%E4%BD%93%E9%AA%8C/" 
-    >
-       
-      <i class="fa-solid fa-angle-right non-pic"></i>
-       
-    </a>
-     
-  </div>
-  
-</article>
-
- 
-
 
   <nav id="page-nav">
     <!-- 在第二页时 page.prev_link 不知为何无法返回正确的链接 -->
@@ -1323,9 +1349,9 @@
       <span class="material-symbols-rounded">navigate_before</span>
     </a>
     <div id="num-bar">
-      <a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span>  
+      <a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a>  
     </div>
-    <a id="next-btn" class="page-nav-btn disabled" href="/">
+    <a id="next-btn" class="page-nav-btn " href="/page/16/">
       <span class="material-symbols-rounded">navigate_next</span>
     </a>
   </nav>
@@ -1368,5 +1394,7 @@
 
   </div>
   <script src="/js/light-dark-switch.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js"></script>
 </body>
 </html>

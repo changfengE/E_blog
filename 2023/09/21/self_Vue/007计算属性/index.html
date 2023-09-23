@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+
+
+<html theme="dark" showBanner="true" hasBanner="true" > 
+<link href="/fontawesome/css/fontawesome.css" rel="stylesheet">
+<link href="/fontawesome/css/brands.css" rel="stylesheet">
+<link href="/fontawesome/css/solid.css" rel="stylesheet">
+<!-- 2023-9-19 添加统一的prism -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.css" /> 
+<script src="/js/color.global.min.js" ></script>
+<script src="/js/load-settings.js" ></script>
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+
+  
+  <title>计算属性 | cfE_blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/MaterialSymbolsRounded.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+  <meta name="description" content="计算属性                                                 #modifyname input[type&#x3D;&#39;text&#39;] {                 width: 50px;             }">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算属性">
+<meta property="og:url" content="https://changfenge.github.io/2023/09/21/self_Vue/007%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7/index.html">
+<meta property="og:site_name" content="cfE_blog">
+<meta property="og:description" content="计算属性                                                 #modifyname input[type&#x3D;&#39;text&#39;] {                 width: 50px;             }">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-09-21T13:21:00.000Z">
+<meta property="article:modified_time" content="2023-09-23T09:07:03.859Z">
+<meta property="article:author" content="changfeng_E">
+<meta property="article:tag" content="vue">
+<meta property="article:tag" content="vue2">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="shortcut icon" href="/xiaohei.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  
+  
+    
+<div id="banner" class="">
+  <img src="/assets/%E8%8A%B1%E8%8A%B1bg02.jpg" itemprop="image">
+  <div id="banner-dim"></div>
+</div>
+ 
+   
+  <div id="main-grid" class="shadow   ">
+    <div id="nav" class=""  >
+      <navbar id="navbar">
+  <nav id="title-nav">
+    <a href="/">
+      <div id="vivia-logo">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div>cfE_blog </div>
+    </a>
+  </nav>
+  <nav id="main-nav">
+    
+      <a class="main-nav-link" href="/">主页</a>
+    
+      <a class="main-nav-link" href="/archives">轨迹</a>
+    
+      <a class="main-nav-link" href="/about">更多</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    <a id="theme-btn" class="nav-icon">
+      <span class="material-symbols-rounded light-mode-icon">wb_sunny</span>
+      <span class="material-symbols-rounded dark-mode-icon">dark_mode</span>
+    </a>
+    
+    <a id="nav-search-btn" class="nav-icon" title="搜索" style="display: none;">
+      <span class="material-symbols-rounded">search</span>
+    </a>
+    <div id="nav-menu-btn" class="nav-icon">
+      <span class="material-symbols-rounded">menu</span>
+    </div>
+  </nav>
+</navbar>
+<div id="nav-dropdown" class="hidden">
+  <div id="dropdown-link-list">
+    
+      <a class="nav-dropdown-link" href="/">主页</a>
+    
+      <a class="nav-dropdown-link" href="/archives">轨迹</a>
+    
+      <a class="nav-dropdown-link" href="/about">更多</a>
+    
+     
+    </div>
+</div>
+<script>
+  let dropdownBtn = document.getElementById("nav-menu-btn");
+  let dropdownEle = document.getElementById("nav-dropdown");
+  dropdownBtn.onclick = function() {
+    dropdownEle.classList.toggle("hidden");
+  }
+</script>
+    </div>
+    <div id="sidebar-wrapper">
+      <sidebar id="sidebar">
+  
+    <div class="widget-wrap">
+  <div class="info-card">
+    <div class="avatar">
+      
+        <image src=/assets/%E7%BD%97%E5%B0%8F%E9%BB%9102.png></image>
+      
+      <div class="img-dim"></div>
+    </div>
+    <div class="info">
+      <div class="username">changfeng_E </div>
+      <div class="dot"></div>
+      <div class="subtitle">about me </div>
+      <div class="link-list">
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com/changfengE" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://gitee.com/changfengE" title="Gitee"><i class="fa-brands fa-square-git"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/285349009?spm_id_from=333.1007.0.0" title="bilibili"><i class="fa-brands fa-bilibili"></i></a>
+         
+      </div>  
+    </div>
+  </div>
+</div>
+
+  
+  <div class="sticky">
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">最新文章</h3>
+      <ul>
+        
+          <a class="recent-link" href="/2023/09/22/self_Vue/008-%E6%A1%88%E4%BE%8B02%E6%88%90%E7%BB%A9%E7%AE%A1%E7%90%86/" title="案例-成绩管理" >
+            <div class="recent-link-text">
+              案例-成绩管理
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/21/self_Vue/007%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7/" title="计算属性" >
+            <div class="recent-link-text">
+              计算属性
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/21/self_Vue/006v-model%E6%8B%93%E5%B1%95%E5%BA%94%E7%94%A8/" title="v-model拓展应用" >
+            <div class="recent-link-text">
+              v-model拓展应用
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/21/self_Vue/005v-bind%E5%A2%9E%E5%BC%BA%E6%A0%B7%E5%BC%8F%E6%8E%A7%E5%88%B6/" title="v-bind增强样式控制" >
+            <div class="recent-link-text">
+              v-bind增强样式控制
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/09/21/self_Vue/004%E6%8C%87%E4%BB%A4%E4%BF%AE%E9%A5%B0%E7%AC%A6/" title="指令修饰符" >
+            <div class="recent-link-text">
+              指令修饰符
+            </div>
+          </a>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">标签</h3>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/CSS3/" rel="tag">CSS3</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/HTML5/" rel="tag">HTML5</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/axios/" rel="tag">axios</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/hexo-use/" rel="tag">hexo_use</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/normalize/" rel="tag">normalize</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/typora/" rel="tag">typora</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/vue2/" rel="tag">vue2</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" rel="tag">移动端</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+
+
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">分类</h3>
+      <div class="category-box">
+            <a class="category-link" href="/categories/markdown/">
+                markdown
+                <div class="category-count">1</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/markdown/%E4%BD%BF%E7%94%A8/">
+                使用
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/git/">
+                git
+                <div class="category-count">10</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/git/ssh%E7%BB%91%E5%AE%9A/">
+                ssh绑定
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/git%E5%AE%89%E8%A3%85%E5%8F%8A%E9%83%A8%E5%88%86%E5%91%BD%E4%BB%A4/">
+                git安装及部分命令
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81/">
+                提交代码
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/branch/">
+                branch
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/hexo%E5%88%9D%E4%BD%93%E9%AA%8C/">
+                hexo初体验
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/hexo/">
+                hexo
+                <div class="category-count">1</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/hexo/using/">
+                using
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/HTML5-CSS3/">
+                HTML5&CSS3
+                <div class="category-count">14</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/">
+                浏览器
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/">
+                移动端
+                <div class="category-count">16</div>
+            </a>
+        
+            <a class="category-link" href="/categories/mynormalize/">
+                mynormalize
+                <div class="category-count">3</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/mynormalize/1-2-0/">
+                1.2.0
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/mynormalize/1-1-0/">
+                1.1.0
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/mynormalize/wheels/">
+                wheels
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/Ajax/">
+                Ajax
+                <div class="category-count">23</div>
+            </a>
+        
+            <a class="category-link" href="/categories/nodejs/">
+                nodejs
+                <div class="category-count">25</div>
+            </a>
+        
+            <a class="category-link" href="/categories/jQuery/">
+                jQuery
+                <div class="category-count">13</div>
+            </a>
+        
+            <a class="category-link" href="/categories/vue2/">
+                vue2
+                <div class="category-count">8</div>
+            </a>
+        
+            <a class="category-link" href="/categories/js%E5%9F%BA%E7%A1%80/">
+                js基础
+                <div class="category-count">42</div>
+            </a>
+        </div>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">归档</h3>
+      
+      
+        <a class="archive-link" href="/archives/2023/09 ">
+          九月 2023 
+          <div class="archive-count">10 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/08 ">
+          八月 2023 
+          <div class="archive-count">54 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/07 ">
+          七月 2023 
+          <div class="archive-count">11 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/05 ">
+          五月 2023 
+          <div class="archive-count">3 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/04 ">
+          四月 2023 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/03 ">
+          三月 2023 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/02 ">
+          二月 2023 
+          <div class="archive-count">6 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/01 ">
+          一月 2023 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/12 ">
+          十二月 2022 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/11 ">
+          十一月 2022 
+          <div class="archive-count">4 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/09 ">
+          九月 2022 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/08 ">
+          八月 2022 
+          <div class="archive-count">11 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/07 ">
+          七月 2022 
+          <div class="archive-count">22 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/06 ">
+          六月 2022 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/02 ">
+          二月 2022 
+          <div class="archive-count">6 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/01 ">
+          一月 2022 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/10 ">
+          十月 2021 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/09 ">
+          九月 2021 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/08 ">
+          八月 2021 
+          <div class="archive-count">6 </div>
+        </a>
+      
+    </div>
+  </div>
+
+
+    
+  </div>
+</sidebar>
+    </div>
+    <div id="content-body">
+       
+
+<article id="post-self_Vue/007计算属性" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        计算属性
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-09-21T13:21:00.000Z" itemprop="datePublished">2023-09-21</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/vue2/">vue2</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            1.4k 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue2/" rel="tag">vue2</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>计算属性</title>
+        <link rel="shortcut icon" href="../xiaohei.ico">
+        <link rel="stylesheet" href="/globalsrc/mynormalize/mynormalize1.2.0.css">
+        <link rel="stylesheet" href="/globalsrc/mynormalize/prism.css">
+        <style>
+            #modifyname input[type='text'] {
+                width: 50px;
+            }
+        </style>
+    </head>
+    <body class="line-numbers">
+        <div class="div1">
+            <h2><span id="ji-suan-shu-xing">计算属性</span><a href="#ji-suan-shu-xing" class="header-anchor">#</a></h2>
+            <p>
+                概念：基于
+                <strong>现有的数据</strong>
+                ，计算出来的
+                <strong>新属性</strong>
+                。依赖的数据变化，自动重新计算
+            </p>
+            <p>语法：</p>
+            <ol>
+                <li>
+                    声明在
+                    <code>computed配置项</code>
+                    （与data/methods等同列） 中，一个计算属性对应一个函数
+                </li>
+                <li>
+                    使用起来和普通属性一样使用：
+                    <strong>{{ 计算属性名 }}</strong>
+                </li>
+            </ol>
+            <p>
+                计算属性--可以将一段
+                <strong>求值的代码</strong>
+                进行封装
+            </p>
+            <pre><code class="language-js">computed: &#123;
+    计算属性名()&#123;
+        基于现有数据，编写求值逻辑
+        return 结果
+    &#125;
+&#125;,</code></pre>
+            <div class="div2">
+                <h3><span id="an-li-xiao-hei-de-li-wu-qing-dan">案例-小黑的礼物清单</span><a href="#an-li-xiao-hei-de-li-wu-qing-dan" class="header-anchor">#</a></h3>
+                <div class="div3">
+                    <div id="gift">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>名字</th>
+                                    <th>数量</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="(item, index) in giftList" :key="item.id">
+                                    <td>{{ item.name }}</td>
+                                    <td>{{ item.num }}个</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>礼物总数：{{ totalCount }}个</p>
+                    </div>
+                </div>
+                <div class="div3">
+                    <pre><code class="language-html">&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;名字&lt;/th&gt;
+            &lt;th&gt;数量&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr v-for="(item, index) in giftList" :key="item.id"&gt;
+            &lt;td&gt;{{ item.name }}&lt;/td&gt;
+            &lt;td&gt;{{ item.num }}个&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;礼物总数：{{ totalCount }}个&lt;/p&gt;</code></pre>
+                    <pre><code class="language-js">// 案例-礼物清单
+const gift = new Vue(&#123;
+    el: '#gift',
+    data: &#123;
+        giftList: [
+            &#123; id: 1, name: '篮球', num: 1 &#125;,
+            &#123; id: 2, name: '乐高', num: 2 &#125;,
+            &#123; id: 3, name: '铅笔', num: 5 &#125;,
+        ],
+    &#125;,
+    computed: &#123;
+        totalCount() &#123;
+            // 基于现有数据，编写求值逻辑
+            // 对this.giftList中的num进行求和
+            let total = this.giftList.reduce((sum, item) => (sum += item.num), 0);
+            return total;
+        &#125;,
+    &#125;,
+&#125;);</code></pre>
+                </div>
+            </div>
+            <div class="div2">
+                <h3><span id="computed-ji-suan-shu-xing-vs-methods-fang-fa">computed计算属性 VS methods方法</span><a href="#computed-ji-suan-shu-xing-vs-methods-fang-fa" class="header-anchor">#</a></h3>
+                <div class="div3">
+                    <h4><span id="computed-ji-suan-shu-xing">computed计算属性</span><a href="#computed-ji-suan-shu-xing" class="header-anchor">#</a></h4>
+                    <p>
+                        作用：封装了一段对于
+                        <strong>数据</strong>
+                        的处理，求得一个
+                        <strong>结果</strong>
+                    </p>
+                    <p>语法：</p>
+                    <ol>
+                        <li>
+                            写在
+                            <code>computed</code>
+                            配置项中
+                        </li>
+                        <li>
+                            作为属性，直接使用--
+                            <strong>this.计算属性</strong>
+                            / {{
+                            <strong>计算属性</strong>
+                            }}
+                        </li>
+                    </ol>
+                </div>
+                <div class="div3">
+                    <h4><span id="methods-fang-fa">methods方法</span><a href="#methods-fang-fa" class="header-anchor">#</a></h4>
+                    <p>
+                        作用：给实例提供一个
+                        <strong>方法</strong>
+                        ，调用以处理
+                        <strong>业务逻辑</strong>
+                    </p>
+                    <p>语法：</p>
+                    <ol>
+                        <li>
+                            写在
+                            <code>methods</code>
+                            配置项中
+                        </li>
+                        <li>
+                            作为方法，需要调用--
+                            <strong>this.方法名()</strong>
+                            / {{
+                            <strong>方法名()</strong>
+                            }} / @事件名="
+                            <strong>方法名</strong>
+                            "
+                        </li>
+                    </ol>
+                </div>
+                <p>
+                    使用
+                    <code>methods</code>
+                    来封装数据的处理，其实也可以
+                </p>
+                <p>
+                    使用
+                    <code>computed</code>
+                    来封装是因为它有个更大的
+                    <strong>优势</strong>
+                    ：
+                    <strong>缓存特性</strong>
+                </p>
+                <div class="div3">
+                    <h4><span id="huan-cun-te-xing-ti-sheng-xing-neng">
+                        <strong>缓存特性</strong>
+                        （提升性能）
+                    </span><a href="#huan-cun-te-xing-ti-sheng-xing-neng" class="header-anchor">#</a></h4>
+                    <p>
+                        计算属性会对计算出来的
+                        <strong>结果缓存</strong>
+                        ，再次使用直接读取缓存，依赖项变了，会
+                        <strong>自动</strong>
+                        重新计算，并
+                        <strong>再次缓存</strong>
+                    </p>
+                </div>
+            </div>
+            <div class="div2">
+                <h3><span id="ji-suan-shu-xing-wan-zheng-xie-fa">计算属性完整写法</span><a href="#ji-suan-shu-xing-wan-zheng-xie-fa" class="header-anchor">#</a></h3>
+                <p>
+                    计算属性默认的简写写法，只能读取访问，
+                    <strong>不能'修改'</strong>
+                </p>
+                <p>
+                    若要
+                    <strong>'修改'</strong>
+                    ，需要用计算属性的
+                    <strong>完整写法</strong>
+                </p>
+                <pre><code class="language-js">computed: &#123;
+    计算属性名:&#123;
+        get()&#123;
+            一段代码逻辑（计算逻辑）
+            return 结果
+        &#125;,
+        set(修改的值)&#123;
+            一段代码逻辑（修改逻辑）
+        &#125;
+    &#125;
+&#125;,</code></pre>
+                <div class="div3">
+                    <div id="modifyname">
+                        <label for="firstName">姓：</label>
+                        <input type="text" id="firstName" v-model="firstName">
+                        +
+                        <label for="lastName">名：</label>
+                        <input type="text" id="lastName" v-model="lastName">
+                        =
+                        <span>{{ fullName }}</span>
+                        <br>
+                        <button @click="changeName">改名卡</button>
+                    </div>
+                </div>
+                <div class="div3">
+                    <pre><code class="language-html">&lt;div id="modifyname"&gt;
+    &lt;label for="firstName"&gt;姓：&lt;/label&gt;
+    &lt;input type="text" id="firstName" v-model="firstName" /&gt;
+    +
+    &lt;label for="lastName"&gt;名：&lt;/label&gt;
+    &lt;input type="text" id="lastName" v-model="lastName" /&gt;
+    =
+    &lt;span&gt;{{ fullName }}&lt;/span&gt;
+    &lt;br /&gt;
+    &lt;button @click="changeName"&gt;改名卡&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+                    <pre><code class="language-js">// 计算属性完整写法
+const modifyName = new Vue(&#123;
+    el: '#modifyname',
+    data: &#123;
+        firstName: '刘',
+        lastName: '德华',
+    &#125;,
+    methods: &#123;
+        changeName() &#123;
+            this.fullName = '张学友';
+        &#125;,
+    &#125;,
+    computed: &#123;
+        // 简写--获取
+        // fullName() &#123;
+        //     return this.firstName + this.lastName;
+        // &#125;,
+        // 完整写法--获取+设置
+        fullName: &#123;
+            // 当fullName计算属性，被获取求值时，执行get（有缓存，优先读缓存），会将返回值作为求值的结果
+            get() &#123;
+                return this.firstName + this.lastName;
+            &#125;,
+            // 当fullName计算属性，被修改赋值时，执行set()，修改的值，传递给set方法的形参
+            set(value) &#123;
+                // 对于姓名作修改操作
+                // 用slice来截取
+                // 这里只对单字姓做操作，未考虑复姓
+                this.firstName = value.slice(0, 1);
+                this.lastName = value.slice(1);
+            &#125;,
+        &#125;,
+    &#125;,
+&#125;);</code></pre>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+        <script src="/globalsrc/mynormalize/prism.js"></script>
+        <script>
+            // 案例-礼物清单
+            const gift = new Vue({
+                el: '#gift',
+                data: {
+                    giftList: [
+                        { id: 1, name: '篮球', num: 1 },
+                        { id: 2, name: '乐高', num: 2 },
+                        { id: 3, name: '铅笔', num: 5 },
+                    ],
+                },
+                computed: {
+                    totalCount() {
+                        // 基于现有数据，编写求值逻辑
+                        // 对this.giftList中的num进行求和
+                        let total = this.giftList.reduce((sum, item) => (sum += item.num), 0);
+                        return total;
+                    },
+                },
+            });
+
+            // 计算属性完整写法
+            const modifyName = new Vue({
+                el: '#modifyname',
+                data: {
+                    firstName: '刘',
+                    lastName: '德华',
+                },
+                methods: {
+                    changeName() {
+                        this.fullName = '张学友';
+                    },
+                },
+                computed: {
+                    // 简写--获取
+                    // fullName() {
+                    //     return this.firstName + this.lastName;
+                    // },
+                    // 完整写法--获取+设置
+                    fullName: {
+                        // 当fullName计算属性，被获取求值时，执行get（有缓存，优先读缓存），会将返回值作为求值的结果
+                        get() {
+                            return this.firstName + this.lastName;
+                        },
+                        // 当fullName计算属性，被修改赋值时，执行set()，修改的值，传递给set方法的形参
+                        set(value) {
+                            // 对于姓名作修改操作
+                            // 用slice来截取
+                            // 这里只对单字姓做操作，未考虑复姓
+                            this.firstName = value.slice(0, 1);
+                            this.lastName = value.slice(1);
+                        },
+                    },
+                },
+            });
+        </script>
+    </body>
+</html>
+
+        
+      </div>
+
+         
+    </div>
+    
+     
+  </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left "
+    
+      href="/2023/09/22/self_Vue/008-%E6%A1%88%E4%BE%8B02%E6%88%90%E7%BB%A9%E7%AE%A1%E7%90%86/"
+      title="案例-成绩管理"
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+      
+        案例-成绩管理
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2023/09/21/self_Vue/006v-model%E6%8B%93%E5%B1%95%E5%BA%94%E7%94%A8/"
+      title="v-model拓展应用"
+     >
+
+    <p class="title-text">
+      
+        v-model拓展应用
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+ 
+    </div>
+    <div id="footer-wrapper">
+      <footer id="footer">
+  
+  <div id="footer-info" class="inner">
+    
+    &copy; 2023 changfeng_E<br>
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
+  </div>
+</footer>
+
+    </div>
+    <div class="back-to-top-wrapper">
+    <button id="back-to-top-btn" class="back-to-top-btn hide" onclick="topFunction()">
+        <span class="material-symbols-rounded">keyboard_arrow_up</span>
+    </button>
+</div>
+
+<script>
+    function topFunction() {
+        window.scroll({ top: 0, behavior: 'smooth' });
+    }
+    let btn = document.getElementById('back-to-top-btn');
+    function scrollFunction() {
+        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+            btn.classList.remove('hide')
+        } else {
+            btn.classList.add('hide')
+        }
+    }
+    window.onscroll = function() {
+        scrollFunction();
+    }
+</script>
+
+  </div>
+  <script src="/js/light-dark-switch.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js"></script>
+</body>
+</html>
