@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+
+
+<html theme="dark" showBanner="true" hasBanner="true" > 
+<link href="/fontawesome/css/fontawesome.css" rel="stylesheet">
+<link href="/fontawesome/css/brands.css" rel="stylesheet">
+<link href="/fontawesome/css/solid.css" rel="stylesheet">
+<!-- 2023-9-19 添加统一的prism -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.css" /> 
+<script src="/js/color.global.min.js" ></script>
+<script src="/js/load-settings.js" ></script>
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+
+  
+  <title>Vue生命周期 | cfE_blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/MaterialSymbolsRounded.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+  <meta name="description" content="Vue生命周期                                                 .news {                 display: flex;                 margin: 0 auto;                 padding: 20px 0;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue生命周期">
+<meta property="og:url" content="https://changfenge.github.io/2023/10/05/self_Vue/011Vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/index.html">
+<meta property="og:site_name" content="cfE_blog">
+<meta property="og:description" content="Vue生命周期                                                 .news {                 display: flex;                 margin: 0 auto;                 padding: 20px 0;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://changfenge.github.io/assets/images/self_Vue/011_cut_01Vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png">
+<meta property="og:image" content="https://changfenge.github.io/assets/images/self_Vue/011_cut_02%E9%92%A9%E5%AD%90%E5%87%BD%E6%95%B0.png">
+<meta property="og:image" content="https://changfenge.github.io/assets/images/self_Vue/autumn.jpg">
+<meta property="og:image" content="https://www.itheima.com/images/logo.png">
+<meta property="article:published_time" content="2023-10-05T00:30:00.000Z">
+<meta property="article:modified_time" content="2023-10-19T15:58:27.041Z">
+<meta property="article:author" content="changfeng_E">
+<meta property="article:tag" content="vue">
+<meta property="article:tag" content="vue2">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://changfenge.github.io/assets/images/self_Vue/011_cut_01Vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png">
+  
+  
+    <link rel="shortcut icon" href="/xiaohei.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  
+  
+    
+<div id="banner" class="">
+  <img src="/assets/%E8%8A%B1%E8%8A%B1bg02.jpg" itemprop="image">
+  <div id="banner-dim"></div>
+</div>
+ 
+   
+  <div id="main-grid" class="shadow   ">
+    <div id="nav" class=""  >
+      <navbar id="navbar">
+  <nav id="title-nav">
+    <a href="/">
+      <div id="vivia-logo">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div>cfE_blog </div>
+    </a>
+  </nav>
+  <nav id="main-nav">
+    
+      <a class="main-nav-link" href="/">主页</a>
+    
+      <a class="main-nav-link" href="/archives">轨迹</a>
+    
+      <a class="main-nav-link" href="/about">更多</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    <a id="theme-btn" class="nav-icon">
+      <span class="material-symbols-rounded light-mode-icon">wb_sunny</span>
+      <span class="material-symbols-rounded dark-mode-icon">dark_mode</span>
+    </a>
+    
+    <a id="nav-search-btn" class="nav-icon" title="搜索" style="display: none;">
+      <span class="material-symbols-rounded">search</span>
+    </a>
+    <div id="nav-menu-btn" class="nav-icon">
+      <span class="material-symbols-rounded">menu</span>
+    </div>
+  </nav>
+</navbar>
+<div id="nav-dropdown" class="hidden">
+  <div id="dropdown-link-list">
+    
+      <a class="nav-dropdown-link" href="/">主页</a>
+    
+      <a class="nav-dropdown-link" href="/archives">轨迹</a>
+    
+      <a class="nav-dropdown-link" href="/about">更多</a>
+    
+     
+    </div>
+</div>
+<script>
+  let dropdownBtn = document.getElementById("nav-menu-btn");
+  let dropdownEle = document.getElementById("nav-dropdown");
+  dropdownBtn.onclick = function() {
+    dropdownEle.classList.toggle("hidden");
+  }
+</script>
+    </div>
+    <div id="sidebar-wrapper">
+      <sidebar id="sidebar">
+  
+    <div class="widget-wrap">
+  <div class="info-card">
+    <div class="avatar">
+      
+        <image src=/assets/%E7%BD%97%E5%B0%8F%E9%BB%9102.png></image>
+      
+      <div class="img-dim"></div>
+    </div>
+    <div class="info">
+      <div class="username">changfeng_E </div>
+      <div class="dot"></div>
+      <div class="subtitle">about me </div>
+      <div class="link-list">
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com/changfengE" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://gitee.com/changfengE" title="Gitee"><i class="fa-brands fa-square-git"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/285349009?spm_id_from=333.1007.0.0" title="bilibili"><i class="fa-brands fa-bilibili"></i></a>
+         
+      </div>  
+    </div>
+  </div>
+</div>
+
+  
+  <div class="sticky">
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">最新文章</h3>
+      <ul>
+        
+          <a class="recent-link" href="/2023/10/10/self_Vue/016%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/" title="组件通信" >
+            <div class="recent-link-text">
+              组件通信
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/10/08/self_Vue/015scoped%E6%A0%B7%E5%BC%8F%E5%86%B2%E7%AA%81&data/" title="scoped样式冲突&data" >
+            <div class="recent-link-text">
+              scoped样式冲突&amp;data
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/10/07/self_Vue/014%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91&%E6%A0%B9%E7%BB%84%E4%BB%B6/" title="组件化开发&根组件" >
+            <div class="recent-link-text">
+              组件化开发&amp;根组件
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/10/06/self_Vue/013%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%BC%80%E5%8F%91&%E8%84%9A%E6%89%8B%E6%9E%B6VueCLI/" title="工程化开发&脚手架VueCLI" >
+            <div class="recent-link-text">
+              工程化开发&amp;脚手架VueCLI
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/10/05/self_Vue/012-%E6%A1%88%E4%BE%8B04%E5%B0%8F%E9%BB%91%E8%AE%B0%E8%B4%A6%E6%B8%85%E5%8D%95/" title="案例-小黑记账清单" >
+            <div class="recent-link-text">
+              案例-小黑记账清单
+            </div>
+          </a>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">标签</h3>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/CSS3/" rel="tag">CSS3</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/HTML5/" rel="tag">HTML5</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/axios/" rel="tag">axios</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/hexo-use/" rel="tag">hexo_use</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/normalize/" rel="tag">normalize</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/typora/" rel="tag">typora</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/vue2/" rel="tag">vue2</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" rel="tag">移动端</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+
+
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">分类</h3>
+      <div class="category-box">
+            <a class="category-link" href="/categories/markdown/">
+                markdown
+                <div class="category-count">1</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/markdown/%E4%BD%BF%E7%94%A8/">
+                使用
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/git/">
+                git
+                <div class="category-count">10</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/git/%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81/">
+                提交代码
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/git%E5%AE%89%E8%A3%85%E5%8F%8A%E9%83%A8%E5%88%86%E5%91%BD%E4%BB%A4/">
+                git安装及部分命令
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/ssh%E7%BB%91%E5%AE%9A/">
+                ssh绑定
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/branch/">
+                branch
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/hexo%E5%88%9D%E4%BD%93%E9%AA%8C/">
+                hexo初体验
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/hexo/">
+                hexo
+                <div class="category-count">1</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/hexo/using/">
+                using
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/HTML5-CSS3/">
+                HTML5&CSS3
+                <div class="category-count">15</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/">
+                浏览器
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/">
+                移动端
+                <div class="category-count">16</div>
+            </a>
+        
+            <a class="category-link" href="/categories/mynormalize/">
+                mynormalize
+                <div class="category-count">3</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/mynormalize/1-1-0/">
+                1.1.0
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/mynormalize/1-2-0/">
+                1.2.0
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/mynormalize/wheels/">
+                wheels
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/Ajax/">
+                Ajax
+                <div class="category-count">23</div>
+            </a>
+        
+            <a class="category-link" href="/categories/vue2/">
+                vue2
+                <div class="category-count">16</div>
+            </a>
+        
+            <a class="category-link" href="/categories/nodejs/">
+                nodejs
+                <div class="category-count">25</div>
+            </a>
+        
+            <a class="category-link" href="/categories/jQuery/">
+                jQuery
+                <div class="category-count">13</div>
+            </a>
+        
+            <a class="category-link" href="/categories/js%E5%9F%BA%E7%A1%80/">
+                js基础
+                <div class="category-count">42</div>
+            </a>
+        </div>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">归档</h3>
+      
+      
+        <a class="archive-link" href="/archives/2023/10 ">
+          十月 2023 
+          <div class="archive-count">7 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/09 ">
+          九月 2023 
+          <div class="archive-count">11 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/08 ">
+          八月 2023 
+          <div class="archive-count">54 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/07 ">
+          七月 2023 
+          <div class="archive-count">11 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/05 ">
+          五月 2023 
+          <div class="archive-count">3 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/04 ">
+          四月 2023 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/03 ">
+          三月 2023 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/02 ">
+          二月 2023 
+          <div class="archive-count">6 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/01 ">
+          一月 2023 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/12 ">
+          十二月 2022 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/11 ">
+          十一月 2022 
+          <div class="archive-count">4 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/09 ">
+          九月 2022 
+          <div class="archive-count">6 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/08 ">
+          八月 2022 
+          <div class="archive-count">11 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/07 ">
+          七月 2022 
+          <div class="archive-count">22 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/06 ">
+          六月 2022 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/02 ">
+          二月 2022 
+          <div class="archive-count">6 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/01 ">
+          一月 2022 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/10 ">
+          十月 2021 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/09 ">
+          九月 2021 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/08 ">
+          八月 2021 
+          <div class="archive-count">6 </div>
+        </a>
+      
+    </div>
+  </div>
+
+
+    
+  </div>
+</sidebar>
+    </div>
+    <div id="content-body">
+       
+
+<article id="post-self_Vue/011Vue生命周期" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        Vue生命周期
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-10-05T00:30:00.000Z" itemprop="datePublished">2023-10-05</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/vue2/">vue2</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            1.5k 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue2/" rel="tag">vue2</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vue生命周期</title>
+        <link rel="shortcut icon" href="../xiaohei.ico">
+        <link rel="stylesheet" href="/globalsrc/mynormalize/mynormalize1.2.0.css">
+        <link rel="stylesheet" href="/globalsrc/mynormalize/prism.css">
+        <style>
+            .news {
+                display: flex;
+                margin: 0 auto;
+                padding: 20px 0;
+                cursor: pointer;
+                border-bottom: 1px solid #ccc;
+            }
+            .news .left {
+                flex: 3;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding-right: 10px;
+            }
+            .news .left .title {
+                font-size: 18px;
+                font-weight: bold;
+            }
+            .news .left .info {
+                color: #999999;
+            }
+            .news .left .info span {
+                margin-right: 20px;
+            }
+            .news .right {
+                flex: 1;
+            }
+            .news .right img {
+                width: 100%;
+                object-fit: cover;
+            }
+
+            /* 搜索框获取焦点 */
+            .search-container {
+                text-align: center;
+            }
+            .search-container .search-box {
+                display: flex;
+            }
+            .search-container img {
+                margin-bottom: 20px;
+            }
+            .search-container .search-box input {
+                flex: 3;
+                margin: 0;
+                padding: 0 10px;
+                height: 40px;
+                font-size: 16px;
+                outline: 0;
+                border-radius: 10px 0 0 10px;
+                -webkit-tap-highlight-color: transparent;
+            }
+            .search-container .search-box button {
+                cursor: pointer;
+                flex: 1;
+                margin: 0;
+                height: 40px;
+                background-color: #ad2a27;
+                border-radius: 0 10px 10px 0;
+                font-size: 17px;
+                box-shadow: none;
+                font-weight: 400;
+                border: 0;
+                outline: 0;
+                letter-spacing: normal;
+                color: white;
+            }
+        </style>
+    </head>
+    <body class="line-numbers">
+        <div class="div1">
+            <h2><span id="vue-sheng-ming-zhou-qi">Vue生命周期</span><a href="#vue-sheng-ming-zhou-qi" class="header-anchor">#</a></h2>
+            <p>Vue生命周期和生命周期的四个阶段</p>
+            <p>
+                Vue生命周期：一个Vue实例从
+                <strong>创建</strong>
+                到
+                <strong>销毁</strong>
+                的整个过程
+            </p>
+            <p>生命周期四个阶段：创建、挂载、更新、销毁</p>
+            <ol>
+                <li>
+                    创建阶段：new Vue()响应式数据
+                    <p>发送初始化渲染请求</p>
+                </li>
+                <li>
+                    挂载阶段：渲染模板
+                    <p>操作dom</p>
+                </li>
+                <li>更新阶段：数据修改，更新视图</li>
+                <li>销毁阶段：销毁实例</li>
+            </ol>
+            <img src="/assets/images/self_Vue/011_cut_01Vue生命周期.png" alt>
+            <div class="div2">
+                <h3><span id="vue-sheng-ming-zhou-qi-han-shu-gou-zi-han-shu">Vue生命周期函数（钩子函数）</span><a href="#vue-sheng-ming-zhou-qi-han-shu-gou-zi-han-shu" class="header-anchor">#</a></h3>
+                <p>
+                    Vue生命周期过程中，会
+                    <strong>自动运行一些函数</strong>
+                    ，被称为
+                    <strong>生命周期钩子</strong>
+                </p>
+                <p>与data同级</p>
+                <p>
+                    让开发者可以在
+                    <strong>特定阶段</strong>
+                    运行自己的代码
+                </p>
+                <img src="/assets/images/self_Vue/011_cut_02钩子函数.png" alt>
+                <p>
+                    常用：
+                    <code>created</code>
+                    <code>mounted</code>
+                    <code>befreDestory</code>
+                </p>
+                <p>created:发送初始化渲染请求</p>
+                <p>mounted:操作dom</p>
+                <p>before Destory:释放Vue以外的资源（清除定时器，延时器等）</p>
+                <div class="div3">
+                    <p>以计数器为例</p>
+                    <div id="counter">
+                        <button @click="count--">-</button>
+                        <span>{{count}}</span>
+                        <button @click="count++">+</button>
+                    </div>
+                </div>
+                <div class="div3">
+                    <pre><code class="language-js">const counter = new Vue(&#123;
+    el: '#counter',
+    data: &#123;
+        count: 100,
+    &#125;,
+    // 1.创建阶段（准备数据）
+    beforeCreate() &#123;
+        // 响应式数据准备好之前
+        console.log('beforeCreated count:', this.count);
+    &#125;,
+    created() &#123;
+        // 响应式数据准备好之后
+        console.log('created count:', this.count);
+    &#125;,
+    // 2.挂载阶段（渲染模板）
+    beforeMount() &#123;
+        // 模板渲染之前
+        console.log('beforeMount count:', document.querySelector('#counter span').innerHTML);
+    &#125;,
+    mounted() &#123;
+        // 渲染之后
+        console.log('Mounted count:', document.querySelector('#counter span').innerHTML);
+    &#125;,
+    // 3.更新阶段（修改数据，更新视图）
+    beforeUpdate() &#123;
+        // 数据修改了，视图还未更新
+        console.log('beforeUpdate count:', document.querySelector('#counter span').innerHTML);
+    &#125;,
+    updated() &#123;
+        // 数据修改了，视图已更新
+        console.log('updated count:', document.querySelector('#counter span').innerHTML);
+    &#125;,
+    // 4.卸载阶段
+    beforeDestroy() &#123;
+        // 清除掉一些Vue以外的资源占用，定时器，延时器等
+        // 调试通过浏览器提供的app.$destory()方法销毁
+        console.log('beforeDestory');
+    &#125;,
+    destroyed() &#123;
+        console.log('destoryed');
+    &#125;,
+&#125;);</code></pre>
+                </div>
+            </div>
+            <div class="div2">
+                <h3><span id="created-ying-yong">created应用</span><a href="#created-ying-yong" class="header-anchor">#</a></h3>
+                <p>created:响应式数据准备好了，可以开始发送初始化渲染请求</p>
+                <p>（图片在线地址失效，暂时用本地图片）</p>
+                <div class="div3">
+                    <ul id="news">
+                        <li class="news" v-for="(item, index) in list" :key="item.id">
+                            <div class="left">
+                                <div class="title">{{item.title}}</div>
+                                <div class="info">
+                                    <span>{{item.source}}</span>
+                                    <span>{{item.time}}</span>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <img src="/assets/images/self_Vue/autumn.jpg" alt>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="div3">
+                    <pre><code class="language-js">// 新闻实例
+// 接口：http://hmajax.itheima.net/api/news
+// 请求方式：get
+const news = new Vue(&#123;
+    el: '#news',
+    data: &#123;
+        list: [],
+    &#125;,
+    async created() &#123;
+        // 1.发送请求，获取数据
+        const res = await axios.get('http://hmajax.itheima.net/api/news');
+        // 2.将数据更新给data中的list
+        this.list = res.data.data;
+    &#125;,
+&#125;);</code></pre>
+                </div>
+            </div>
+            <div class="div2">
+                <h1><span id="mounted-ying-yong">mounted应用</span><a href="#mounted-ying-yong" class="header-anchor">#</a></h1>
+                <p>
+                    <code>mounted</code>
+                    :模板渲染完成，可以开始操作dom了
+                </p>
+                <p>实例：页面一加载，搜索框自动获得焦点</p>
+                <p>不用autofocus是因为在vue中应用是模板，根据数据动态渲染</p>
+                <div class="div3">
+                    <div class="container" id="searchFocus">
+                        <div class="search-container">
+                            <img src="https://www.itheima.com/images/logo.png" alt>
+                            <div class="search-box">
+                                <input type="text" v-model="words" id="inp">
+                                <button>搜索一下</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="div3">
+                    <p>核心思路：</p>
+                    <ol>
+                        <li>
+                            等输入框渲染出来，要等渲染完成再做操作，那么要使用
+                            <code>mounted</code>
+                            钩子
+                        </li>
+                        <li>让输入框获取焦点</li>
+                    </ol>
+                    <pre><code class="language-html">&lt;div class="container" id="searchFocus"&gt;
+    &lt;div class="search-container"&gt;
+        &lt;img src="https://www.itheima.com/images/logo.png" alt="" /&gt;
+        &lt;div class="search-box"&gt;
+            &lt;input type="text" v-model="words" id="inp" /&gt;
+            &lt;button&gt;搜索一下&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                    <pre><code class="language-js">// 页面加载完成，搜索框自动获得焦点
+const searchFocus = new Vue(&#123;
+    el: '#searchFocus',
+    data: &#123;
+        words: '',
+    &#125;,
+    mounted() &#123;
+        document.querySelector('#inp').focus();
+    &#125;,
+&#125;);</code></pre>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+        <script src="/globalsrc/mynormalize/prism.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script>
+            const counter = new Vue({
+                el: '#counter',
+                data: {
+                    count: 100,
+                },
+                // 1.创建阶段（准备数据）
+                beforeCreate() {
+                    // 响应式数据准备好之前
+                    console.log('beforeCreated count:', this.count);
+                },
+                created() {
+                    // 响应式数据准备好之后
+                    console.log('created count:', this.count);
+                },
+                // 2.挂载阶段（渲染模板）
+                beforeMount() {
+                    // 模板渲染之前
+                    console.log('beforeMount count:', document.querySelector('#counter span').innerHTML);
+                },
+                mounted() {
+                    // 渲染之后
+                    console.log('Mounted count:', document.querySelector('#counter span').innerHTML);
+                },
+                // 3.更新阶段（修改数据，更新视图）
+                beforeUpdate() {
+                    // 数据修改了，视图还未更新
+                    console.log('beforeUpdate count:', document.querySelector('#counter span').innerHTML);
+                },
+                updated() {
+                    // 数据修改了，视图已更新
+                    console.log('updated count:', document.querySelector('#counter span').innerHTML);
+                },
+                // 4.卸载阶段
+                beforeDestroy() {
+                    // 清除掉一些Vue以外的资源占用，定时器，延时器等
+                    // 调试通过浏览器提供的app.$destory()方法销毁
+                    console.log('beforeDestory');
+                },
+                destroyed() {
+                    console.log('destoryed');
+                },
+            });
+            // 新闻实例
+            // 接口：http://hmajax.itheima.net/api/news
+            // 请求方式：get
+            const news = new Vue({
+                el: '#news',
+                data: {
+                    list: [],
+                },
+                async created() {
+                    // 1.发送请求，获取数据
+                    const res = await axios.get('http://hmajax.itheima.net/api/news');
+                    // 2.将数据更新给data中的list
+                    this.list = res.data.data;
+                },
+            });
+            // 页面加载完成，搜索框自动获得焦点
+            const searchFocus = new Vue({
+                el: '#searchFocus',
+                data: {
+                    words: '',
+                },
+                mounted() {
+                    document.querySelector('#inp').focus();
+                },
+            });
+        </script>
+    </body>
+</html>
+
+        
+      </div>
+
+         
+    </div>
+    
+     
+  </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left "
+    
+      href="/2023/10/05/self_Vue/012-%E6%A1%88%E4%BE%8B04%E5%B0%8F%E9%BB%91%E8%AE%B0%E8%B4%A6%E6%B8%85%E5%8D%95/"
+      title="案例-小黑记账清单"
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+      
+        案例-小黑记账清单
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2023/10/01/self_Vue/010-%E6%A1%88%E4%BE%8B03%E6%B0%B4%E6%9E%9C%E8%B4%AD%E7%89%A9%E8%BD%A6/"
+      title="案例-水果购物车"
+     >
+
+    <p class="title-text">
+      
+        案例-水果购物车
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+ 
+    </div>
+    <div id="footer-wrapper">
+      <footer id="footer">
+  
+  <div id="footer-info" class="inner">
+    
+    &copy; 2023 changfeng_E<br>
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
+  </div>
+</footer>
+
+    </div>
+    <div class="back-to-top-wrapper">
+    <button id="back-to-top-btn" class="back-to-top-btn hide" onclick="topFunction()">
+        <span class="material-symbols-rounded">keyboard_arrow_up</span>
+    </button>
+</div>
+
+<script>
+    function topFunction() {
+        window.scroll({ top: 0, behavior: 'smooth' });
+    }
+    let btn = document.getElementById('back-to-top-btn');
+    function scrollFunction() {
+        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+            btn.classList.remove('hide')
+        } else {
+            btn.classList.add('hide')
+        }
+    }
+    window.onscroll = function() {
+        scrollFunction();
+    }
+</script>
+
+  </div>
+  <script src="/js/light-dark-switch.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js"></script>
+</body>
+</html>

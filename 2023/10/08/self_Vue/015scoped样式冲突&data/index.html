@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+
+
+<html theme="dark" showBanner="true" hasBanner="true" > 
+<link href="/fontawesome/css/fontawesome.css" rel="stylesheet">
+<link href="/fontawesome/css/brands.css" rel="stylesheet">
+<link href="/fontawesome/css/solid.css" rel="stylesheet">
+<!-- 2023-9-19 添加统一的prism -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.css" /> 
+<script src="/js/color.global.min.js" ></script>
+<script src="/js/load-settings.js" ></script>
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+
+  
+  <title>scoped样式冲突&amp;data | cfE_blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/MaterialSymbolsRounded.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+  <meta name="description" content="scoped样式冲突&amp;data                                                           scoped样式冲突&amp;data#                              组件的三大组成部分#                 注意点说明">
+<meta property="og:type" content="article">
+<meta property="og:title" content="scoped样式冲突&amp;data">
+<meta property="og:url" content="https://changfenge.github.io/2023/10/08/self_Vue/015scoped%E6%A0%B7%E5%BC%8F%E5%86%B2%E7%AA%81&data/index.html">
+<meta property="og:site_name" content="cfE_blog">
+<meta property="og:description" content="scoped样式冲突&amp;data                                                           scoped样式冲突&amp;data#                              组件的三大组成部分#                 注意点说明">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://changfenge.github.io/assets/images/self_Vue/015_cut_01%E5%AE%9E%E6%B5%8B%E5%85%A8%E5%B1%80%E6%A0%B7%E5%BC%8F.png">
+<meta property="og:image" content="https://changfenge.github.io/assets/images/self_Vue/015_cut_02scoped%E9%9A%94%E7%A6%BB%E6%A0%B7%E5%BC%8F.png">
+<meta property="og:image" content="https://changfenge.github.io/assets/images/self_Vue/015_cut_03scoped%E5%8E%9F%E7%90%86.png">
+<meta property="og:image" content="https://changfenge.github.io/assets/images/self_Vue/015_cut_04data%E5%87%BD%E6%95%B0.png">
+<meta property="og:image" content="https://changfenge.github.io/assets/images/self_Vue/015_cut_05%E6%95%B0%E6%8D%AE%E7%8B%AC%E7%AB%8B.png">
+<meta property="article:published_time" content="2023-10-08T12:17:00.000Z">
+<meta property="article:modified_time" content="2023-10-19T15:59:23.497Z">
+<meta property="article:author" content="changfeng_E">
+<meta property="article:tag" content="vue">
+<meta property="article:tag" content="vue2">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://changfenge.github.io/assets/images/self_Vue/015_cut_01%E5%AE%9E%E6%B5%8B%E5%85%A8%E5%B1%80%E6%A0%B7%E5%BC%8F.png">
+  
+  
+    <link rel="shortcut icon" href="/xiaohei.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  
+  
+    
+<div id="banner" class="">
+  <img src="/assets/%E8%8A%B1%E8%8A%B1bg02.jpg" itemprop="image">
+  <div id="banner-dim"></div>
+</div>
+ 
+   
+  <div id="main-grid" class="shadow   ">
+    <div id="nav" class=""  >
+      <navbar id="navbar">
+  <nav id="title-nav">
+    <a href="/">
+      <div id="vivia-logo">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div>cfE_blog </div>
+    </a>
+  </nav>
+  <nav id="main-nav">
+    
+      <a class="main-nav-link" href="/">主页</a>
+    
+      <a class="main-nav-link" href="/archives">轨迹</a>
+    
+      <a class="main-nav-link" href="/about">更多</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    <a id="theme-btn" class="nav-icon">
+      <span class="material-symbols-rounded light-mode-icon">wb_sunny</span>
+      <span class="material-symbols-rounded dark-mode-icon">dark_mode</span>
+    </a>
+    
+    <a id="nav-search-btn" class="nav-icon" title="搜索" style="display: none;">
+      <span class="material-symbols-rounded">search</span>
+    </a>
+    <div id="nav-menu-btn" class="nav-icon">
+      <span class="material-symbols-rounded">menu</span>
+    </div>
+  </nav>
+</navbar>
+<div id="nav-dropdown" class="hidden">
+  <div id="dropdown-link-list">
+    
+      <a class="nav-dropdown-link" href="/">主页</a>
+    
+      <a class="nav-dropdown-link" href="/archives">轨迹</a>
+    
+      <a class="nav-dropdown-link" href="/about">更多</a>
+    
+     
+    </div>
+</div>
+<script>
+  let dropdownBtn = document.getElementById("nav-menu-btn");
+  let dropdownEle = document.getElementById("nav-dropdown");
+  dropdownBtn.onclick = function() {
+    dropdownEle.classList.toggle("hidden");
+  }
+</script>
+    </div>
+    <div id="sidebar-wrapper">
+      <sidebar id="sidebar">
+  
+    <div class="widget-wrap">
+  <div class="info-card">
+    <div class="avatar">
+      
+        <image src=/assets/%E7%BD%97%E5%B0%8F%E9%BB%9102.png></image>
+      
+      <div class="img-dim"></div>
+    </div>
+    <div class="info">
+      <div class="username">changfeng_E </div>
+      <div class="dot"></div>
+      <div class="subtitle">about me </div>
+      <div class="link-list">
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com/changfengE" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://gitee.com/changfengE" title="Gitee"><i class="fa-brands fa-square-git"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/285349009?spm_id_from=333.1007.0.0" title="bilibili"><i class="fa-brands fa-bilibili"></i></a>
+         
+      </div>  
+    </div>
+  </div>
+</div>
+
+  
+  <div class="sticky">
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">最新文章</h3>
+      <ul>
+        
+          <a class="recent-link" href="/2023/10/10/self_Vue/016%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/" title="组件通信" >
+            <div class="recent-link-text">
+              组件通信
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/10/08/self_Vue/015scoped%E6%A0%B7%E5%BC%8F%E5%86%B2%E7%AA%81&data/" title="scoped样式冲突&data" >
+            <div class="recent-link-text">
+              scoped样式冲突&amp;data
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/10/07/self_Vue/014%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91&%E6%A0%B9%E7%BB%84%E4%BB%B6/" title="组件化开发&根组件" >
+            <div class="recent-link-text">
+              组件化开发&amp;根组件
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/10/06/self_Vue/013%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%BC%80%E5%8F%91&%E8%84%9A%E6%89%8B%E6%9E%B6VueCLI/" title="工程化开发&脚手架VueCLI" >
+            <div class="recent-link-text">
+              工程化开发&amp;脚手架VueCLI
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/10/05/self_Vue/012-%E6%A1%88%E4%BE%8B04%E5%B0%8F%E9%BB%91%E8%AE%B0%E8%B4%A6%E6%B8%85%E5%8D%95/" title="案例-小黑记账清单" >
+            <div class="recent-link-text">
+              案例-小黑记账清单
+            </div>
+          </a>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">标签</h3>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/CSS3/" rel="tag">CSS3</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/HTML5/" rel="tag">HTML5</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/axios/" rel="tag">axios</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/hexo-use/" rel="tag">hexo_use</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/normalize/" rel="tag">normalize</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/typora/" rel="tag">typora</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/vue2/" rel="tag">vue2</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" rel="tag">移动端</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+
+
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">分类</h3>
+      <div class="category-box">
+            <a class="category-link" href="/categories/markdown/">
+                markdown
+                <div class="category-count">1</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/markdown/%E4%BD%BF%E7%94%A8/">
+                使用
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/git/">
+                git
+                <div class="category-count">10</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/git/%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81/">
+                提交代码
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/git%E5%AE%89%E8%A3%85%E5%8F%8A%E9%83%A8%E5%88%86%E5%91%BD%E4%BB%A4/">
+                git安装及部分命令
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/ssh%E7%BB%91%E5%AE%9A/">
+                ssh绑定
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/branch/">
+                branch
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/hexo%E5%88%9D%E4%BD%93%E9%AA%8C/">
+                hexo初体验
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/hexo/">
+                hexo
+                <div class="category-count">1</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/hexo/using/">
+                using
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/HTML5-CSS3/">
+                HTML5&CSS3
+                <div class="category-count">15</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/">
+                浏览器
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/">
+                移动端
+                <div class="category-count">16</div>
+            </a>
+        
+            <a class="category-link" href="/categories/mynormalize/">
+                mynormalize
+                <div class="category-count">3</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/mynormalize/1-1-0/">
+                1.1.0
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/mynormalize/1-2-0/">
+                1.2.0
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/mynormalize/wheels/">
+                wheels
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/Ajax/">
+                Ajax
+                <div class="category-count">23</div>
+            </a>
+        
+            <a class="category-link" href="/categories/vue2/">
+                vue2
+                <div class="category-count">16</div>
+            </a>
+        
+            <a class="category-link" href="/categories/nodejs/">
+                nodejs
+                <div class="category-count">25</div>
+            </a>
+        
+            <a class="category-link" href="/categories/jQuery/">
+                jQuery
+                <div class="category-count">13</div>
+            </a>
+        
+            <a class="category-link" href="/categories/js%E5%9F%BA%E7%A1%80/">
+                js基础
+                <div class="category-count">42</div>
+            </a>
+        </div>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">归档</h3>
+      
+      
+        <a class="archive-link" href="/archives/2023/10 ">
+          十月 2023 
+          <div class="archive-count">7 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/09 ">
+          九月 2023 
+          <div class="archive-count">11 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/08 ">
+          八月 2023 
+          <div class="archive-count">54 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/07 ">
+          七月 2023 
+          <div class="archive-count">11 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/05 ">
+          五月 2023 
+          <div class="archive-count">3 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/04 ">
+          四月 2023 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/03 ">
+          三月 2023 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/02 ">
+          二月 2023 
+          <div class="archive-count">6 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/01 ">
+          一月 2023 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/12 ">
+          十二月 2022 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/11 ">
+          十一月 2022 
+          <div class="archive-count">4 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/09 ">
+          九月 2022 
+          <div class="archive-count">6 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/08 ">
+          八月 2022 
+          <div class="archive-count">11 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/07 ">
+          七月 2022 
+          <div class="archive-count">22 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/06 ">
+          六月 2022 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/02 ">
+          二月 2022 
+          <div class="archive-count">6 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/01 ">
+          一月 2022 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/10 ">
+          十月 2021 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/09 ">
+          九月 2021 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/08 ">
+          八月 2021 
+          <div class="archive-count">6 </div>
+        </a>
+      
+    </div>
+  </div>
+
+
+    
+  </div>
+</sidebar>
+    </div>
+    <div id="content-body">
+       
+
+<article id="post-self_Vue/015scoped样式冲突&amp;data" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        scoped样式冲突&amp;data
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-10-08T12:17:00.000Z" itemprop="datePublished">2023-10-08</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/vue2/">vue2</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            1.1k 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue2/" rel="tag">vue2</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>scoped样式冲突&data</title>
+        <link rel="shortcut icon" href="../xiaohei.ico">
+        <link rel="stylesheet" href="/globalsrc/mynormalize/mynormalize1.2.0.css">
+        <link rel="stylesheet" href="/globalsrc/mynormalize/prism.css">
+    </head>
+    <body class="line-numbers">
+        <div class="div1">
+            <h2><span id="scoped-yang-shi-chong-tu-data">scoped样式冲突&data</span><a href="#scoped-yang-shi-chong-tu-data" class="header-anchor">#</a></h2>
+            <div class="div2">
+                <h3><span id="zu-jian-de-san-da-zu-cheng-bu-fen">组件的三大组成部分</span><a href="#zu-jian-de-san-da-zu-cheng-bu-fen" class="header-anchor">#</a></h3>
+                <p>注意点说明</p>
+                <ol>
+                    <li>
+                        结构
+                        <code>&lt;template&gt;</code>
+                        <p>只能有一个根元素</p>
+                    </li>
+                    <li>
+                        样式
+                        <code>&lt;style&gt;</code>
+                        <p>全局样式（默认）：影响所有组件</p>
+                        <p>
+                            局部样式：
+                            <code>scoped</code>
+                            下的样式，只作用于当前组件
+                        </p>
+                    </li>
+                    <li>
+                        逻辑/行为
+                        <code>&lt;script&gt;</code>
+                        <p>
+                            <code>el</code>
+                            是根实例独有的，在组件中不用写，而组件中的
+                            <strong>
+                                <code>data</code>
+                                是一个函数
+                            </strong>
+                            ，其他配置项一致
+                        </p>
+                    </li>
+                </ol>
+            </div>
+            <div class="div2">
+                <h3><span id="zu-jian-de-yang-shi-chong-tu">组件的样式冲突</span><a href="#zu-jian-de-yang-shi-chong-tu" class="header-anchor">#</a></h3>
+                <p>默认情况：写在组件中的样式会全局生效，因此很容易造成多个组件之间的样式冲突问题</p>
+                <ol>
+                    <li>全局样式：默认组件中的样式会作用到全局</li>
+                    <li>
+                        局部样式：可以给组件加上
+                        <code>scoped</code>
+                        属性，可以让样式
+                        <strong>只作用于当前组件</strong>
+                    </li>
+                </ol>
+                <div class="div3">
+                    <h4><span id="shi-ce-yang-shi-chong-tu">实测样式冲突</span><a href="#shi-ce-yang-shi-chong-tu" class="header-anchor">#</a></h4>
+                    <p>准备两个组件BaseOne、BaseTwo</p>
+                    <p>
+                        两个组件结构一致，在
+                        <code>BaseOne.vue</code>
+                        中为div设置边框及外边距
+                    </p>
+                    <pre><code class="language-html">&lt;!-- BaseOne.vue --&gt;
+&lt;template&gt;
+    &lt;div&gt;BaseOne&lt;/div&gt;
+&lt;/template&gt;
+&lt;!-- App.vue --&gt;
+&lt;template&gt;
+    &lt;div class="App"&gt;
+        &lt;BaseOne&gt;&lt;/BaseOne&gt;
+        &lt;BaseTwo&gt;&lt;/BaseTwo&gt;
+    &lt;/div&gt;
+&lt;/template&gt;</code></pre>
+                    <pre><code class="language-css">&lt;style lang="less"&gt;
+div &#123;
+    margin: 20px;
+    border: 1px solid blue;
+&#125;
+&lt;/style&gt;</code></pre>
+                    <p>结果：BaseOne.vue中div上的样式作用到了全局的div</p>
+                    <img src="/assets/images/self_Vue/015_cut_01实测全局样式.png" alt>
+                </div>
+                <div class="div3">
+                    <h4><span id="scoped-jie-jue-yang-shi-chong-tu">scoped解决样式冲突</span><a href="#scoped-jie-jue-yang-shi-chong-tu" class="header-anchor">#</a></h4>
+                    <p>
+                        只需为
+                        <code>style</code>
+                        标签添加
+                        <code>scoped</code>
+                        属性
+                    </p>
+                    <pre><code class="language-css">&lt;style lang="less" scoped&gt;
+div &#123;
+    margin: 20px;
+    border: 1px solid blue;
+&#125;
+&lt;/style&gt;</code></pre>
+                    <img src="/assets/images/self_Vue/015_cut_02scoped隔离样式.png" alt>
+                    <p>
+                        通常希望组件都有独立的样式，所以建议加上
+                        <code>scoped</code>
+                    </p>
+                </div>
+                <div class="div3">
+                    <h4><span id="scoped-yuan-li">scoped原理</span><a href="#scoped-yuan-li" class="header-anchor">#</a></h4>
+                    <ol>
+                        <li>
+                            使用
+                            <code>scoped</code>
+                            后会给当前组件模板的
+                            <strong>所有</strong>
+                            元素，都添加上一个自定义属性：
+                            <code>data-v-hash值</code>
+                        </li>
+                        <li>css选择器后面被自动处理，添加上了属性选择器</li>
+                    </ol>
+                    <img src="/assets/images/self_Vue/015_cut_03scoped原理.png" alt>
+                </div>
+            </div>
+            <div class="div2">
+                <h3><span id="data-shi-yi-ge-han-shu">data是一个函数</span><a href="#data-shi-yi-ge-han-shu" class="header-anchor">#</a></h3>
+                <p>
+                    一个组件的
+                    <code>data</code>
+                    选项必须是一个
+                    <strong>函数</strong>
+                    ，以保证每个组件实例，维护独立的一份数据对象
+                </p>
+                <p>
+                    每次创建新的组件实例，都会新执行一次
+                    <code>data</code>
+                    函数，得到一个新对象
+                </p>
+                <img src="/assets/images/self_Vue/015_cut_04data函数.png" alt>
+                <p>若按原来data为对象的写法，多次使用的组件就会使用同一套数据，比如两个商品组件使用同一组数据，这显然不合理</p>
+                <p>而data作为函数将对象作为返回值，每个组件初始化后就可以得到相同结构但数据不相互影响的一个对象</p>
+                <div class="div3">
+                    <h4><span id="shi-ce-shu-ju-du-li">实测数据独立</span><a href="#shi-ce-shu-ju-du-li" class="header-anchor">#</a></h4>
+                    <p>准备一个计数器组件BaseCount.vue</p>
+                    <pre><code class="language-html">&lt;!-- BaseCount.vue --&gt;
+&lt;template&gt;
+    &lt;div class="base-count"&gt;
+        &lt;button @click="count--"&gt;-&lt;/button&gt;
+        &lt;span&gt;{{ count }}&lt;/span&gt;
+        &lt;button @click="count++"&gt;+&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+export default {
+    // data必须是一个函数，保证每个组件实例，维护独立的数据对象
+    data() {
+        return {
+            count: 100,
+        };
+    },
+};
+&lt;/script&gt;
+&lt;style lang="less"&gt;
+.base-count {
+    margin: 20px;
+}
+&lt;/style&gt;</code></pre>
+                    <pre><code class="language-html">&lt;!-- App.vue --&gt;
+&lt;template&gt;
+    &lt;div class="App"&gt;
+        &lt;BaseCount&gt;&lt;/BaseCount&gt;
+        &lt;BaseCount&gt;&lt;/BaseCount&gt;
+        &lt;BaseCount&gt;&lt;/BaseCount&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+import BaseCount from './components/BaseCount.vue';
+export default &#123;
+    components: &#123;
+        BaseCount,
+    &#125;,
+&#125;;
+&lt;/script&gt;</code></pre>
+                    <p>App.vue中初始化了三个计数器组件</p>
+                    <p>从实际使用中可以看见，每个组件所使用的数据都是独立的</p>
+                    <img src="/assets/images/self_Vue/015_cut_05数据独立.png" alt>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+        <script src="/globalsrc/mynormalize/prism.js"></script>
+    </body>
+</html>
+
+        
+      </div>
+
+         
+    </div>
+    
+     
+  </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left "
+    
+      href="/2023/10/10/self_Vue/016%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/"
+      title="组件通信"
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+      
+        组件通信
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2023/10/07/self_Vue/014%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91&%E6%A0%B9%E7%BB%84%E4%BB%B6/"
+      title="组件化开发&根组件"
+     >
+
+    <p class="title-text">
+      
+        组件化开发&amp;根组件
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+ 
+    </div>
+    <div id="footer-wrapper">
+      <footer id="footer">
+  
+  <div id="footer-info" class="inner">
+    
+    &copy; 2023 changfeng_E<br>
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
+  </div>
+</footer>
+
+    </div>
+    <div class="back-to-top-wrapper">
+    <button id="back-to-top-btn" class="back-to-top-btn hide" onclick="topFunction()">
+        <span class="material-symbols-rounded">keyboard_arrow_up</span>
+    </button>
+</div>
+
+<script>
+    function topFunction() {
+        window.scroll({ top: 0, behavior: 'smooth' });
+    }
+    let btn = document.getElementById('back-to-top-btn');
+    function scrollFunction() {
+        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+            btn.classList.remove('hide')
+        } else {
+            btn.classList.add('hide')
+        }
+    }
+    window.onscroll = function() {
+        scrollFunction();
+    }
+</script>
+
+  </div>
+  <script src="/js/light-dark-switch.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js"></script>
+</body>
+</html>

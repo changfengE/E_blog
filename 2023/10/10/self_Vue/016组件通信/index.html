@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+
+
+<html theme="dark" showBanner="true" hasBanner="true" > 
+<link href="/fontawesome/css/fontawesome.css" rel="stylesheet">
+<link href="/fontawesome/css/brands.css" rel="stylesheet">
+<link href="/fontawesome/css/solid.css" rel="stylesheet">
+<!-- 2023-9-19 添加统一的prism -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.css" /> 
+<script src="/js/color.global.min.js" ></script>
+<script src="/js/load-settings.js" ></script>
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+
+  
+  <title>组件通信 | cfE_blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/MaterialSymbolsRounded.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+  <meta name="description" content="组件通信                                                                                               组件通信#             组件通信，就是指组件与组件之间的数据传递">
+<meta property="og:type" content="article">
+<meta property="og:title" content="组件通信">
+<meta property="og:url" content="https://changfenge.github.io/2023/10/10/self_Vue/016%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/index.html">
+<meta property="og:site_name" content="cfE_blog">
+<meta property="og:description" content="组件通信                                                                                               组件通信#             组件通信，就是指组件与组件之间的数据传递">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://changfenge.github.io/assets/images/self_Vue/016_cut_01%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1.png">
+<meta property="og:image" content="https://changfenge.github.io/assets/images/self_Vue/016_cut_02%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1.png">
+<meta property="og:image" content="https://changfenge.github.io/assets/images/self_Vue/016_cut_03%E7%B1%BB%E5%9E%8B%E6%A0%A1%E9%AA%8C.png">
+<meta property="article:published_time" content="2023-10-10T10:03:00.000Z">
+<meta property="article:modified_time" content="2023-10-19T15:59:41.346Z">
+<meta property="article:author" content="changfeng_E">
+<meta property="article:tag" content="vue">
+<meta property="article:tag" content="vue2">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://changfenge.github.io/assets/images/self_Vue/016_cut_01%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1.png">
+  
+  
+    <link rel="shortcut icon" href="/xiaohei.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  
+  
+    
+<div id="banner" class="">
+  <img src="/assets/%E8%8A%B1%E8%8A%B1bg02.jpg" itemprop="image">
+  <div id="banner-dim"></div>
+</div>
+ 
+   
+  <div id="main-grid" class="shadow   ">
+    <div id="nav" class=""  >
+      <navbar id="navbar">
+  <nav id="title-nav">
+    <a href="/">
+      <div id="vivia-logo">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div>cfE_blog </div>
+    </a>
+  </nav>
+  <nav id="main-nav">
+    
+      <a class="main-nav-link" href="/">主页</a>
+    
+      <a class="main-nav-link" href="/archives">轨迹</a>
+    
+      <a class="main-nav-link" href="/about">更多</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    <a id="theme-btn" class="nav-icon">
+      <span class="material-symbols-rounded light-mode-icon">wb_sunny</span>
+      <span class="material-symbols-rounded dark-mode-icon">dark_mode</span>
+    </a>
+    
+    <a id="nav-search-btn" class="nav-icon" title="搜索" style="display: none;">
+      <span class="material-symbols-rounded">search</span>
+    </a>
+    <div id="nav-menu-btn" class="nav-icon">
+      <span class="material-symbols-rounded">menu</span>
+    </div>
+  </nav>
+</navbar>
+<div id="nav-dropdown" class="hidden">
+  <div id="dropdown-link-list">
+    
+      <a class="nav-dropdown-link" href="/">主页</a>
+    
+      <a class="nav-dropdown-link" href="/archives">轨迹</a>
+    
+      <a class="nav-dropdown-link" href="/about">更多</a>
+    
+     
+    </div>
+</div>
+<script>
+  let dropdownBtn = document.getElementById("nav-menu-btn");
+  let dropdownEle = document.getElementById("nav-dropdown");
+  dropdownBtn.onclick = function() {
+    dropdownEle.classList.toggle("hidden");
+  }
+</script>
+    </div>
+    <div id="sidebar-wrapper">
+      <sidebar id="sidebar">
+  
+    <div class="widget-wrap">
+  <div class="info-card">
+    <div class="avatar">
+      
+        <image src=/assets/%E7%BD%97%E5%B0%8F%E9%BB%9102.png></image>
+      
+      <div class="img-dim"></div>
+    </div>
+    <div class="info">
+      <div class="username">changfeng_E </div>
+      <div class="dot"></div>
+      <div class="subtitle">about me </div>
+      <div class="link-list">
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com/changfengE" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://gitee.com/changfengE" title="Gitee"><i class="fa-brands fa-square-git"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/285349009?spm_id_from=333.1007.0.0" title="bilibili"><i class="fa-brands fa-bilibili"></i></a>
+         
+      </div>  
+    </div>
+  </div>
+</div>
+
+  
+  <div class="sticky">
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">最新文章</h3>
+      <ul>
+        
+          <a class="recent-link" href="/2023/10/10/self_Vue/016%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/" title="组件通信" >
+            <div class="recent-link-text">
+              组件通信
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/10/08/self_Vue/015scoped%E6%A0%B7%E5%BC%8F%E5%86%B2%E7%AA%81&data/" title="scoped样式冲突&data" >
+            <div class="recent-link-text">
+              scoped样式冲突&amp;data
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/10/07/self_Vue/014%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91&%E6%A0%B9%E7%BB%84%E4%BB%B6/" title="组件化开发&根组件" >
+            <div class="recent-link-text">
+              组件化开发&amp;根组件
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/10/06/self_Vue/013%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%BC%80%E5%8F%91&%E8%84%9A%E6%89%8B%E6%9E%B6VueCLI/" title="工程化开发&脚手架VueCLI" >
+            <div class="recent-link-text">
+              工程化开发&amp;脚手架VueCLI
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/10/05/self_Vue/012-%E6%A1%88%E4%BE%8B04%E5%B0%8F%E9%BB%91%E8%AE%B0%E8%B4%A6%E6%B8%85%E5%8D%95/" title="案例-小黑记账清单" >
+            <div class="recent-link-text">
+              案例-小黑记账清单
+            </div>
+          </a>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">标签</h3>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/CSS3/" rel="tag">CSS3</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/HTML5/" rel="tag">HTML5</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/axios/" rel="tag">axios</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/hexo-use/" rel="tag">hexo_use</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/normalize/" rel="tag">normalize</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/typora/" rel="tag">typora</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/vue2/" rel="tag">vue2</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" rel="tag">移动端</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+
+
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">分类</h3>
+      <div class="category-box">
+            <a class="category-link" href="/categories/markdown/">
+                markdown
+                <div class="category-count">1</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/markdown/%E4%BD%BF%E7%94%A8/">
+                使用
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/git/">
+                git
+                <div class="category-count">10</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/git/%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81/">
+                提交代码
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/git%E5%AE%89%E8%A3%85%E5%8F%8A%E9%83%A8%E5%88%86%E5%91%BD%E4%BB%A4/">
+                git安装及部分命令
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/ssh%E7%BB%91%E5%AE%9A/">
+                ssh绑定
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/branch/">
+                branch
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/hexo%E5%88%9D%E4%BD%93%E9%AA%8C/">
+                hexo初体验
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/hexo/">
+                hexo
+                <div class="category-count">1</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/hexo/using/">
+                using
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/HTML5-CSS3/">
+                HTML5&CSS3
+                <div class="category-count">15</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/">
+                浏览器
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/">
+                移动端
+                <div class="category-count">16</div>
+            </a>
+        
+            <a class="category-link" href="/categories/mynormalize/">
+                mynormalize
+                <div class="category-count">3</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/mynormalize/1-1-0/">
+                1.1.0
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/mynormalize/1-2-0/">
+                1.2.0
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/mynormalize/wheels/">
+                wheels
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/Ajax/">
+                Ajax
+                <div class="category-count">23</div>
+            </a>
+        
+            <a class="category-link" href="/categories/vue2/">
+                vue2
+                <div class="category-count">16</div>
+            </a>
+        
+            <a class="category-link" href="/categories/nodejs/">
+                nodejs
+                <div class="category-count">25</div>
+            </a>
+        
+            <a class="category-link" href="/categories/jQuery/">
+                jQuery
+                <div class="category-count">13</div>
+            </a>
+        
+            <a class="category-link" href="/categories/js%E5%9F%BA%E7%A1%80/">
+                js基础
+                <div class="category-count">42</div>
+            </a>
+        </div>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">归档</h3>
+      
+      
+        <a class="archive-link" href="/archives/2023/10 ">
+          十月 2023 
+          <div class="archive-count">7 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/09 ">
+          九月 2023 
+          <div class="archive-count">11 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/08 ">
+          八月 2023 
+          <div class="archive-count">54 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/07 ">
+          七月 2023 
+          <div class="archive-count">11 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/05 ">
+          五月 2023 
+          <div class="archive-count">3 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/04 ">
+          四月 2023 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/03 ">
+          三月 2023 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/02 ">
+          二月 2023 
+          <div class="archive-count">6 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/01 ">
+          一月 2023 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/12 ">
+          十二月 2022 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/11 ">
+          十一月 2022 
+          <div class="archive-count">4 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/09 ">
+          九月 2022 
+          <div class="archive-count">6 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/08 ">
+          八月 2022 
+          <div class="archive-count">11 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/07 ">
+          七月 2022 
+          <div class="archive-count">22 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/06 ">
+          六月 2022 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/02 ">
+          二月 2022 
+          <div class="archive-count">6 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/01 ">
+          一月 2022 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/10 ">
+          十月 2021 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/09 ">
+          九月 2021 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/08 ">
+          八月 2021 
+          <div class="archive-count">6 </div>
+        </a>
+      
+    </div>
+  </div>
+
+
+    
+  </div>
+</sidebar>
+    </div>
+    <div id="content-body">
+       
+
+<article id="post-self_Vue/016组件通信" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        组件通信
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-10-10T10:03:00.000Z" itemprop="datePublished">2023-10-10</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/vue2/">vue2</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            2.3k 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue2/" rel="tag">vue2</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>组件通信</title>
+        <link rel="shortcut icon" href="../xiaohei.ico">
+        <link rel="stylesheet" href="/globalsrc/mynormalize/mynormalize1.2.0.css">
+        <link rel="stylesheet" href="/globalsrc/mynormalize/prism.css">
+    </head>
+    <body class="line-numbers">
+        <div class="mask"></div>
+        <div class="sidebar"></div>
+        <div class="godown"></div>
+        <div class="backtop"></div>
+        <div class="div1">
+            <h2><span id="zu-jian-tong-xin">组件通信</span><a href="#zu-jian-tong-xin" class="header-anchor">#</a></h2>
+            <p>组件通信，就是指组件与组件之间的数据传递</p>
+            <ul>
+                <li>组建的数据是独立的，无法直接访问其他组件的数据</li>
+                <li>想使用其他组件的数据就需要组件通信</li>
+            </ul>
+            <div class="div2">
+                <h3><span id="bu-tong-de-zu-jian-guan-xi-he-zu-jian-tong-xin-fang-an-fen-lei">不同的组件关系和组件通信方案分类</span><a href="#bu-tong-de-zu-jian-guan-xi-he-zu-jian-tong-xin-fang-an-fen-lei" class="header-anchor">#</a></h3>
+                <div class="div3">
+                    <h4><span id="zu-jian-guan-xi-fen-lei">组件关系分类：</span><a href="#zu-jian-guan-xi-fen-lei" class="header-anchor">#</a></h4>
+                    <ol>
+                        <li>父子关系</li>
+                        <li>非父子关系</li>
+                    </ol>
+                </div>
+                <div class="div3">
+                    <h4><span id="zu-jian-tong-xin-jie-jue-fang-an">组件通信解决方案</span><a href="#zu-jian-tong-xin-jie-jue-fang-an" class="header-anchor">#</a></h4>
+                    <ol>
+                        <li>
+                            父子关系：
+                            <code>props</code>
+                            和
+                            <code>$emit</code>
+                        </li>
+                        <li>
+                            非父子关系：
+                            <ul>
+                                <li>
+                                    <code>provide</code>
+                                    &
+                                    <code>inject</code>
+                                </li>
+                                <li><code>eventbus</code></li>
+                            </ul>
+                        </li>
+                        <li>
+                            通用解决方案：
+                            <code>Vuex</code>
+                            （适合复杂业务场景）
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="div2">
+                <h3><span id="fu-zi-zu-jian-tong-xin">父子组件通信</span><a href="#fu-zi-zu-jian-tong-xin" class="header-anchor">#</a></h3>
+                <ol>
+                    <li>
+                        父组件通过
+                        <code>props</code>
+                        将数据传递给子组件
+                    </li>
+                    <li>
+                        子组件利用
+                        <code>$emit</code>
+                        通知父组件修改更新
+                    </li>
+                </ol>
+                <img src="/assets/images/self_Vue/016_cut_01父子组件通信.png" alt>
+                <img src="/assets/images/self_Vue/016_cut_02父子组件通信.png" alt>
+                <div class="div3">
+                    <h4><span id="fu-zu-jian-chuan-shu-ju-gei-zi-zu-jian">父组件传数据给子组件</span><a href="#fu-zu-jian-chuan-shu-ju-gei-zi-zu-jian" class="header-anchor">#</a></h4>
+                    <p>准备子组件SonBox.vue</p>
+                    <p>
+                        父组件准备的数据用
+                        <code>v-bind</code>
+                        以属性方式绑定到子组件标签上，当然v-bind可以省略只写冒号
+                    </p>
+                    <pre><code class="language-html">&lt;!-- App.vue --&gt;
+&lt;template&gt;
+    &lt;div class="App"&gt;
+        App组件（父组件）
+        &lt;!-- 1.给组件标签，添加属性的方式传值 --&gt;
+        &lt;SonBox v-bind:title="myTitle" :abc="father"&gt;&lt;/SonBox&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+import SonBox from './components/SonBox.vue';
+export default &#123;
+    data() &#123;
+        return &#123;
+            myTitle: 'a son',
+            father: 'App.vue',
+        &#125;;
+    &#125;,
+    components: &#123;
+        SonBox,
+    &#125;,
+&#125;;
+&lt;/script&gt;</code></pre>
+                    <p>
+                        子组件要使用父组件的数据，就需要使用
+                        <code>props</code>
+                        进行接收数据，
+                        <strong>注意props中列表项的值要与子组件中绑定的属性名一致</strong>
+                    </p>
+                    <p>传值和接收值完成后就可以在子组件中正常使用了</p>
+                    <pre><code class="language-html">&lt;!-- SonBox.vue --&gt;
+&lt;template&gt;
+    &lt;div&gt;
+        &lt;!-- 3.渲染使用 --&gt;
+        子组件{{ title }}
+        &lt;div&gt;父组件是{{ abc }}&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+export default {
+    // 2.通过props进行接收
+    props: ['title', 'abc'],
+};
+&lt;/script&gt;</code></pre>
+                </div>
+                <div class="div3">
+                    <h4><span id="zi-zu-jian-chuan-shu-ju-gei-fu-zu-jian">子组件传数据给父组件</span><a href="#zi-zu-jian-chuan-shu-ju-gei-fu-zu-jian" class="header-anchor">#</a></h4>
+                    <p>
+                        子组件利用
+                        <code>$emit</code>
+                        通知父组件，进行修改更新
+                    </p>
+                    <p>子组件调用父组件传递的回调函数，将数据作为参数传递给该函数</p>
+                    <pre><code class="language-html">&lt;!-- SonBox.vue --&gt;
+&lt;template&gt;
+    &lt;div&gt;
+        &lt;!-- 1.3.渲染使用 --&gt;
+        子组件{{ title }}
+        &lt;div&gt;父组件是{{ abc }}&lt;/div&gt;
+        &lt;button @click="changeFn"&gt;修改title&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+export default {
+    // 1.2.通过props进行接收
+    props: ['title', 'abc'],
+    methods: {
+        changeFn() {
+            // 2.1.通过$emit，向父组件发送消息通知
+            this.$emit('changeTitle', 'andy');
+        },
+    },
+};
+&lt;/script&gt;
+&lt;style lang="less" scoped&gt;
+div {
+    margin: 20px;
+    border: 1px solid red;
+}
+&lt;/style&gt;</code></pre>
+                    <p>在父组件中，通过在子组件的标签上监听相应事件，并在事件处理函数中获取子组件传递的数据</p>
+                    <pre><code class="language-html">&lt;template&gt;
+    &lt;div class="App"&gt;
+        App组件（父组件）
+        &lt;!-- 1.1给组件标签，添加属性的方式传值 --&gt;
+        &lt;!-- 2.2父组件对消息进行监听 --&gt;
+        &lt;SonBox v-bind:title="myTitle" :abc="father" @changeTitle="handleChange"&gt;&lt;/SonBox&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+import SonBox from './components/SonBox.vue';
+export default &#123;
+    data() &#123;
+        return &#123;
+            myTitle: 'a son',
+            father: 'App.vue',
+        &#125;;
+    &#125;,
+    components: &#123;
+        SonBox,
+    &#125;,
+    methods: &#123;
+        // 2.3提供处理函数，提供逻辑
+        handleChange(newTitle) &#123;
+            this.myTitle = newTitle;
+        &#125;,
+    &#125;,
+&#125;;
+&lt;/script&gt;
+&lt;style lang="less"&gt;&lt;/style&gt;</code></pre>
+                </div>
+            </div>
+            <div class="div2">
+                <h3><span id="prop-xiao-yan">prop校验</span><a href="#prop-xiao-yan" class="header-anchor">#</a></h3>
+                <p>有时父组件传递给子组件的数据不是子组件要求的数据类型</p>
+                <p>
+                    比如一个进度条组件的进度数据是一个正整数，而为了避免父组件传递的是字符型数据而无法使用的情况，就需要使用
+                    <code>prop校验</code>
+                </p>
+                <p>
+                    为组件的
+                    <code>prop</code>
+                    指定
+                    <strong>验证要求</strong>
+                    ，不符合要求，控制台就会有
+                    <strong>错误提示</strong>
+                    ，帮助开发者快速发现错误
+                </p>
+                <p>语法：</p>
+                <ol>
+                    <li>类型校验（常用）</li>
+                    <li>非空校验</li>
+                    <li>默认值</li>
+                    <li>自定义校验</li>
+                </ol>
+                <div class="div3">
+                    <h4><span id="lei-xing-xiao-yan">类型校验</span><a href="#lei-xing-xiao-yan" class="header-anchor">#</a></h4>
+                    <pre><code class="language-js">props:&#123;
+    校验的属性名:类型 // Number String Boolean Array Function ...
+&#125;</code></pre>
+                    <p>以进度条为例</p>
+                    <p>
+                        准备进度条组件
+                        <code>BaseProgress.vue</code>
+                        ，对于进度条所需数据
+                        <code>w</code>
+                        指定其类型为
+                        <code>String</code>
+                        ，结果就会发现在控制台打印出了错误信息
+                    </p>
+                    <img src="/assets/images/self_Vue/016_cut_03类型校验.png" alt>
+                </div>
+                <div class="div3">
+                    <h4><span id="qi-ta-xiao-yan">其它校验</span><a href="#qi-ta-xiao-yan" class="header-anchor">#</a></h4>
+                    <p>完整写法，将要校验的属性名的值写成一个对象，在其中写校验规则</p>
+                    <p>使用完整写法，可以进行更多方式的校验，甚至自定义校验规则</p>
+                    <pre><code class="language-js">props: &#123;
+    校验的属性名: &#123;
+        type: 类型, // Number String Boolean ...
+        required: true, // 是否必填
+        default: 默认值,
+        validator(value) &#123;
+            // 自定义校验逻辑
+            return 是否通过校验;
+        &#125;,
+    &#125;,
+&#125;,</code></pre>
+                    <p>完整代码</p>
+                    <p>App.vue</p>
+                    <pre><code class="language-html">&lt;template&gt;
+    &lt;div class="app"&gt;
+        &lt;BaseProgress :w="width"&gt;&lt;/BaseProgress&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import BaseProgress from './components/BaseProgress.vue';
+export default &#123;
+    data() &#123;
+        return &#123;
+            width: 30,
+        &#125;;
+    &#125;,
+    components: &#123;
+        BaseProgress,
+    &#125;,
+&#125;;
+&lt;/script&gt;
+
+&lt;style&gt;&lt;/style&gt;</code></pre>
+                    <p>BaseProgress.vue</p>
+                    <p>如下对数据类型、非空、默认值都做了校验，并且自定义了数据范围的校验规则</p>
+                    <pre><code class="language-html">&lt;template&gt;
+    &lt;div class="base-progress"&gt;
+        &lt;div class="inner" :style="{ width: w + '%' }"&gt;
+            &lt;span&gt;{{ w }}%&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+    // props: ['w'],
+    // 1.基础写法（类型校验）
+    // props: {
+    //     w: String,
+    // },
+    // 2.完整写法（类型、是否必填、默认值、自定义校验）
+    props: {
+        w: {
+            type: Number,
+            required: true,
+            default: 50,
+            validator(value) {
+                if (value &gt;= 0 && value &lt;= 100) {
+                    return true;
+                } else {
+                    console.log('传入的prop w，必须是0-100的数字');
+                    return false;
+                }
+            },
+        },
+    },
+};
+&lt;/script&gt;
+
+&lt;style scoped&gt;
+.base-progress {
+    height: 26px;
+    width: 400px;
+    border-radius: 15px;
+    background-color: #272425;
+    border: 3px solid #272425;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+.inner {
+    position: relative;
+    background: #379bff;
+    border-radius: 15px;
+    height: 25px;
+    box-sizing: border-box;
+    left: -3px;
+    top: -2px;
+}
+.inner span {
+    position: absolute;
+    right: 0;
+    top: 26px;
+}
+&lt;/style&gt;</code></pre>
+                </div>
+            </div>
+            <div class="div2">
+                <h3><span id="prop-data-dan-xiang-shu-ju-liu">prop&data 单向数据流</span><a href="#prop-data-dan-xiang-shu-ju-liu" class="header-anchor">#</a></h3>
+                <p>共同点：都可以给组件提供数据。</p>
+                <p>区别：</p>
+                <ul>
+                    <li>
+                        <code>data</code>
+                        的数据是
+                        <strong>自己的</strong>
+                        ，随便改
+                    </li>
+                    <li>
+                        <code>prop</code>
+                        的数据是
+                        <strong>外部的</strong>
+                        ，不能直接改，要遵循
+                        <strong>单向数据流</strong>
+                        ，谁提供的数据谁修改
+                    </li>
+                </ul>
+                <div class="div3">
+                    <p>以计数器组件为例</p>
+                    <p>若计数器的值为组件本身的数据，那在组件中点击就可以直接修改</p>
+                    <p>然鹅实际开发中，类似计数器的数据一般由外部提供，那就不能直接count++/count--修改了</p>
+                    <p>
+                        而是通过按钮绑定点击事件，用
+                        <code>this.$emit</code>
+                        通知父组件修改数据
+                    </p>
+                    <p>BaseCount.vue</p>
+                    <pre><code class="language-html">&lt;template&gt;
+    &lt;div class="base-count"&gt;
+        &lt;button @click="handleSub"&gt;-&lt;/button&gt;
+        &lt;span&gt;{{ count }}&lt;/span&gt;
+        &lt;button @click="handleAdd"&gt;+&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+    // 1.自己的数据随便修改  （谁的数据 谁负责）
+    // data () {
+    //   return {
+    //     count: 100,
+    //   }
+    // },
+    // 2.prop外部传过来的数据 不能随便修改
+    props: {
+        count: Number,
+    },
+    methods: {
+        // 子组件通知父组件修改数据，然后数据更新视图
+        handleAdd() {
+            // 子传父this.$emit(事件名,参数)
+            this.$emit('changeCount', this.count + 1);
+        },
+        handleSub() {
+            this.$emit('changeCount', this.count - 1);
+        },
+    },
+};
+&lt;/script&gt;
+
+&lt;style&gt;
+.base-count {
+    margin: 20px;
+}
+&lt;/style&gt;</code></pre>
+                    <p>在父组件中子组件标签上绑定事件处理函数，接收参数对数据进行修改</p>
+                    <p>App.vue</p>
+                    <pre><code class="language-html">&lt;template&gt;
+    &lt;div class="app"&gt;
+        &lt;BaseCount :count="count" @changeCount="handleChange"&gt;&lt;/BaseCount&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import BaseCount from './components/BaseCount.vue';
+export default &#123;
+    components: &#123;
+        BaseCount,
+    &#125;,
+    data() &#123;
+        return &#123;
+            count: 100,
+        &#125;;
+    &#125;,
+    methods: &#123;
+        handleChange(newCount) &#123;
+            this.count = newCount;
+        &#125;,
+    &#125;,
+&#125;;
+&lt;/script&gt;
+
+&lt;style&gt;&lt;/style&gt;</code></pre>
+                    <p>
+                        <strong>单向数据流</strong>
+                        ：父组件的prop更新，会单向向下流动，影响到子组件
+                    </p>
+                </div>
+            </div>
+            <div class="div2">
+                <h3><span id="zu-jian-tong-xin-an-li-xiao-hei-ji-shi-ben-zu-jian-ban">组件通信案例-小黑记事本组件版</span><a href="#zu-jian-tong-xin-an-li-xiao-hei-ji-shi-ben-zu-jian-ban" class="header-anchor">#</a></h3>
+                <p>需求说明：</p>
+                <ol>
+                    <li>拆分基础组件</li>
+                    <li>渲染待办任务</li>
+                    <li>添加任务</li>
+                    <li>删除任务</li>
+                    <li>底部合计和清空功能</li>
+                    <li>持久化存储</li>
+                </ol>
+                <div class="div3">
+                    <h4><span id="chai-fen-ji-chu-zu-jian">拆分基础组件</span><a href="#chai-fen-ji-chu-zu-jian" class="header-anchor">#</a></h4>
+                    <p>整个案例拆分为三个基础组件：TodoHeader.vue、TodoMain.vue、TodoFooter.vue</p>
+                    <p>按步骤拆分结构，样式偷个懒不拆分直接main.js导入，之后父组件导入即可，略</p>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+        <script src="../js/trans-animate.js"></script>
+        <script src="../js/mynormalize.js"></script>
+        <script src="/globalsrc/mynormalize/prism.js"></script>
+    </body>
+</html>
+
+        
+      </div>
+
+         
+    </div>
+    
+     
+  </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left  disabled "
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2023/10/08/self_Vue/015scoped%E6%A0%B7%E5%BC%8F%E5%86%B2%E7%AA%81&data/"
+      title="scoped样式冲突&data"
+     >
+
+    <p class="title-text">
+      
+        scoped样式冲突&amp;data
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+ 
+    </div>
+    <div id="footer-wrapper">
+      <footer id="footer">
+  
+  <div id="footer-info" class="inner">
+    
+    &copy; 2023 changfeng_E<br>
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
+  </div>
+</footer>
+
+    </div>
+    <div class="back-to-top-wrapper">
+    <button id="back-to-top-btn" class="back-to-top-btn hide" onclick="topFunction()">
+        <span class="material-symbols-rounded">keyboard_arrow_up</span>
+    </button>
+</div>
+
+<script>
+    function topFunction() {
+        window.scroll({ top: 0, behavior: 'smooth' });
+    }
+    let btn = document.getElementById('back-to-top-btn');
+    function scrollFunction() {
+        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+            btn.classList.remove('hide')
+        } else {
+            btn.classList.add('hide')
+        }
+    }
+    window.onscroll = function() {
+        scrollFunction();
+    }
+</script>
+
+  </div>
+  <script src="/js/light-dark-switch.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js"></script>
+</body>
+</html>

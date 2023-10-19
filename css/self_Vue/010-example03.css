@@ -1,0 +1,184 @@
+.app-container {
+  max-width: 1000px;
+  min-width: 500px;
+  margin: 0 auto;
+}
+.app-container .banner-box {
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.app-container .banner-box img {
+  width: 100%;
+}
+.app-container .nav-box {
+  background: #ddedec;
+  height: 60px;
+  border-radius: 10px;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+}
+.app-container .nav-box .my-nav {
+  display: inline-block;
+  background: #5fca71;
+  border-radius: 5px;
+  width: 90px;
+  height: 35px;
+  color: white;
+  text-align: center;
+  line-height: 35px;
+  margin-right: 10px;
+}
+.app-container .breadcrumb {
+  font-size: 16px;
+  color: gray;
+}
+.app-container .table {
+  width: 100%;
+  text-align: left;
+  border-radius: 2px 2px 0 0;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.app-container .table img {
+  width: 50px;
+}
+.app-container .th {
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 500;
+  text-align: center;
+  background: #fafafa;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background 0.3s ease;
+}
+.app-container .th,
+.app-container .td {
+  position: relative;
+  padding: 10px 0;
+  overflow-wrap: break-word;
+  flex: 1;
+}
+.app-container .th:nth-of-type(1),
+.app-container .td:nth-of-type(1),
+.app-container .th:nth-of-type(3),
+.app-container .td:nth-of-type(3),
+.app-container .th:nth-of-type(5),
+.app-container .td:nth-of-type(5) {
+  flex: 1;
+}
+.app-container .th:nth-of-type(2),
+.app-container .td:nth-of-type(2),
+.app-container .th:nth-of-type(6),
+.app-container .td:nth-of-type(6) {
+  flex: 2;
+}
+.app-container .th:nth-of-type(4),
+.app-container .td:nth-of-type(4) {
+  flex: 3;
+}
+.app-container .pick-td {
+  font-size: 14px;
+}
+.app-container .main,
+.app-container .empty {
+  border: 1px solid #f0f0f0;
+  margin-top: 10px;
+}
+.app-container .tr {
+  display: flex;
+  cursor: pointer;
+  border-bottom: 1px solid #ebeef5;
+}
+.app-container .tr.active {
+  background-color: #f5f7fa;
+}
+.app-container .td {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.app-container button {
+  outline: 0;
+  box-shadow: none;
+  color: #fff;
+  background: #d9363e;
+  border-color: #d9363e;
+  line-height: 1.5715;
+  position: relative;
+  display: inline-block;
+  font-weight: 400;
+  white-space: nowrap;
+  text-align: center;
+  background-image: none;
+  border: 1px solid transparent;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.02);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+  height: 32px;
+  padding: 4px 15px;
+  font-size: 14px;
+  border-radius: 2px;
+}
+.app-container button.pay {
+  background-color: #3f85ed;
+  margin-left: 20px;
+}
+.app-container .bottom {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 20px;
+  border: 1px solid #f0f0f0;
+  border-top: none;
+  padding-left: 20px;
+}
+.app-container .right-box {
+  display: flex;
+  align-items: center;
+}
+.app-container .check-all {
+  cursor: pointer;
+}
+.app-container .price {
+  color: #d9363e;
+  font-size: 30px;
+  font-weight: 700;
+}
+.app-container .price-box {
+  display: flex;
+  align-items: center;
+}
+.app-container .empty {
+  padding: 10px;
+  text-align: center;
+  font-size: 25px;
+  color: #909399;
+}
+.app-container .my-input-number {
+  display: flex;
+  justify-content: center;
+}
+.app-container .my-input-number button {
+  height: 40px;
+  color: #333;
+  border: 1px solid #dcdfe6;
+  background-color: #f5f7fa;
+}
+.app-container .my-input-number button:disabled {
+  cursor: not-allowed !important;
+}
+.app-container .my-input-number .my-input__inner {
+  height: 40px;
+  width: 50px;
+  padding: 0;
+  border: none;
+  border-top: 1px solid #dcdfe6;
+  border-bottom: 1px solid #dcdfe6;
+}

@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+
+
+<html theme="dark" showBanner="true" hasBanner="true" > 
+<link href="/fontawesome/css/fontawesome.css" rel="stylesheet">
+<link href="/fontawesome/css/brands.css" rel="stylesheet">
+<link href="/fontawesome/css/solid.css" rel="stylesheet">
+<!-- 2023-9-19 添加统一的prism -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.css" /> 
+<script src="/js/color.global.min.js" ></script>
+<script src="/js/load-settings.js" ></script>
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+
+  
+  <title>案例-小黑记账清单 | cfE_blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/MaterialSymbolsRounded.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+  <meta name="description" content="案例-小黑记账清单                                                 .account {                 margin: 0 auto;                 max-width: 1000px;                 min-width: 500p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="案例-小黑记账清单">
+<meta property="og:url" content="https://changfenge.github.io/2023/10/05/self_Vue/012-%E6%A1%88%E4%BE%8B04%E5%B0%8F%E9%BB%91%E8%AE%B0%E8%B4%A6%E6%B8%85%E5%8D%95/index.html">
+<meta property="og:site_name" content="cfE_blog">
+<meta property="og:description" content="案例-小黑记账清单                                                 .account {                 margin: 0 auto;                 max-width: 1000px;                 min-width: 500p">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-10-05T13:52:00.000Z">
+<meta property="article:modified_time" content="2023-10-19T15:58:41.858Z">
+<meta property="article:author" content="changfeng_E">
+<meta property="article:tag" content="vue">
+<meta property="article:tag" content="vue2">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="shortcut icon" href="/xiaohei.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  
+  
+    
+<div id="banner" class="">
+  <img src="/assets/%E8%8A%B1%E8%8A%B1bg02.jpg" itemprop="image">
+  <div id="banner-dim"></div>
+</div>
+ 
+   
+  <div id="main-grid" class="shadow   ">
+    <div id="nav" class=""  >
+      <navbar id="navbar">
+  <nav id="title-nav">
+    <a href="/">
+      <div id="vivia-logo">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div>cfE_blog </div>
+    </a>
+  </nav>
+  <nav id="main-nav">
+    
+      <a class="main-nav-link" href="/">主页</a>
+    
+      <a class="main-nav-link" href="/archives">轨迹</a>
+    
+      <a class="main-nav-link" href="/about">更多</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    <a id="theme-btn" class="nav-icon">
+      <span class="material-symbols-rounded light-mode-icon">wb_sunny</span>
+      <span class="material-symbols-rounded dark-mode-icon">dark_mode</span>
+    </a>
+    
+    <a id="nav-search-btn" class="nav-icon" title="搜索" style="display: none;">
+      <span class="material-symbols-rounded">search</span>
+    </a>
+    <div id="nav-menu-btn" class="nav-icon">
+      <span class="material-symbols-rounded">menu</span>
+    </div>
+  </nav>
+</navbar>
+<div id="nav-dropdown" class="hidden">
+  <div id="dropdown-link-list">
+    
+      <a class="nav-dropdown-link" href="/">主页</a>
+    
+      <a class="nav-dropdown-link" href="/archives">轨迹</a>
+    
+      <a class="nav-dropdown-link" href="/about">更多</a>
+    
+     
+    </div>
+</div>
+<script>
+  let dropdownBtn = document.getElementById("nav-menu-btn");
+  let dropdownEle = document.getElementById("nav-dropdown");
+  dropdownBtn.onclick = function() {
+    dropdownEle.classList.toggle("hidden");
+  }
+</script>
+    </div>
+    <div id="sidebar-wrapper">
+      <sidebar id="sidebar">
+  
+    <div class="widget-wrap">
+  <div class="info-card">
+    <div class="avatar">
+      
+        <image src=/assets/%E7%BD%97%E5%B0%8F%E9%BB%9102.png></image>
+      
+      <div class="img-dim"></div>
+    </div>
+    <div class="info">
+      <div class="username">changfeng_E </div>
+      <div class="dot"></div>
+      <div class="subtitle">about me </div>
+      <div class="link-list">
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com/changfengE" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://gitee.com/changfengE" title="Gitee"><i class="fa-brands fa-square-git"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/285349009?spm_id_from=333.1007.0.0" title="bilibili"><i class="fa-brands fa-bilibili"></i></a>
+         
+      </div>  
+    </div>
+  </div>
+</div>
+
+  
+  <div class="sticky">
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">最新文章</h3>
+      <ul>
+        
+          <a class="recent-link" href="/2023/10/10/self_Vue/016%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/" title="组件通信" >
+            <div class="recent-link-text">
+              组件通信
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/10/08/self_Vue/015scoped%E6%A0%B7%E5%BC%8F%E5%86%B2%E7%AA%81&data/" title="scoped样式冲突&data" >
+            <div class="recent-link-text">
+              scoped样式冲突&amp;data
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/10/07/self_Vue/014%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91&%E6%A0%B9%E7%BB%84%E4%BB%B6/" title="组件化开发&根组件" >
+            <div class="recent-link-text">
+              组件化开发&amp;根组件
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/10/06/self_Vue/013%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%BC%80%E5%8F%91&%E8%84%9A%E6%89%8B%E6%9E%B6VueCLI/" title="工程化开发&脚手架VueCLI" >
+            <div class="recent-link-text">
+              工程化开发&amp;脚手架VueCLI
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/10/05/self_Vue/012-%E6%A1%88%E4%BE%8B04%E5%B0%8F%E9%BB%91%E8%AE%B0%E8%B4%A6%E6%B8%85%E5%8D%95/" title="案例-小黑记账清单" >
+            <div class="recent-link-text">
+              案例-小黑记账清单
+            </div>
+          </a>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">标签</h3>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/CSS3/" rel="tag">CSS3</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/HTML5/" rel="tag">HTML5</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/axios/" rel="tag">axios</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/hexo-use/" rel="tag">hexo_use</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/normalize/" rel="tag">normalize</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/typora/" rel="tag">typora</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/vue2/" rel="tag">vue2</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" rel="tag">移动端</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+
+
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">分类</h3>
+      <div class="category-box">
+            <a class="category-link" href="/categories/markdown/">
+                markdown
+                <div class="category-count">1</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/markdown/%E4%BD%BF%E7%94%A8/">
+                使用
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/git/">
+                git
+                <div class="category-count">10</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/git/%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81/">
+                提交代码
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/git%E5%AE%89%E8%A3%85%E5%8F%8A%E9%83%A8%E5%88%86%E5%91%BD%E4%BB%A4/">
+                git安装及部分命令
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/ssh%E7%BB%91%E5%AE%9A/">
+                ssh绑定
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/branch/">
+                branch
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/hexo%E5%88%9D%E4%BD%93%E9%AA%8C/">
+                hexo初体验
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/hexo/">
+                hexo
+                <div class="category-count">1</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/hexo/using/">
+                using
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/HTML5-CSS3/">
+                HTML5&CSS3
+                <div class="category-count">15</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/">
+                浏览器
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/">
+                移动端
+                <div class="category-count">16</div>
+            </a>
+        
+            <a class="category-link" href="/categories/mynormalize/">
+                mynormalize
+                <div class="category-count">3</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/mynormalize/1-1-0/">
+                1.1.0
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/mynormalize/1-2-0/">
+                1.2.0
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/mynormalize/wheels/">
+                wheels
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/Ajax/">
+                Ajax
+                <div class="category-count">23</div>
+            </a>
+        
+            <a class="category-link" href="/categories/vue2/">
+                vue2
+                <div class="category-count">16</div>
+            </a>
+        
+            <a class="category-link" href="/categories/nodejs/">
+                nodejs
+                <div class="category-count">25</div>
+            </a>
+        
+            <a class="category-link" href="/categories/jQuery/">
+                jQuery
+                <div class="category-count">13</div>
+            </a>
+        
+            <a class="category-link" href="/categories/js%E5%9F%BA%E7%A1%80/">
+                js基础
+                <div class="category-count">42</div>
+            </a>
+        </div>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">归档</h3>
+      
+      
+        <a class="archive-link" href="/archives/2023/10 ">
+          十月 2023 
+          <div class="archive-count">7 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/09 ">
+          九月 2023 
+          <div class="archive-count">11 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/08 ">
+          八月 2023 
+          <div class="archive-count">54 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/07 ">
+          七月 2023 
+          <div class="archive-count">11 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/05 ">
+          五月 2023 
+          <div class="archive-count">3 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/04 ">
+          四月 2023 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/03 ">
+          三月 2023 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/02 ">
+          二月 2023 
+          <div class="archive-count">6 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/01 ">
+          一月 2023 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/12 ">
+          十二月 2022 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/11 ">
+          十一月 2022 
+          <div class="archive-count">4 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/09 ">
+          九月 2022 
+          <div class="archive-count">6 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/08 ">
+          八月 2022 
+          <div class="archive-count">11 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/07 ">
+          七月 2022 
+          <div class="archive-count">22 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/06 ">
+          六月 2022 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/02 ">
+          二月 2022 
+          <div class="archive-count">6 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/01 ">
+          一月 2022 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/10 ">
+          十月 2021 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/09 ">
+          九月 2021 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/08 ">
+          八月 2021 
+          <div class="archive-count">6 </div>
+        </a>
+      
+    </div>
+  </div>
+
+
+    
+  </div>
+</sidebar>
+    </div>
+    <div id="content-body">
+       
+
+<article id="post-self_Vue/012-案例04小黑记账清单" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        案例-小黑记账清单
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-10-05T13:52:00.000Z" itemprop="datePublished">2023-10-05</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/vue2/">vue2</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            1.7k 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue2/" rel="tag">vue2</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>案例-小黑记账清单</title>
+        <link rel="shortcut icon" href="../xiaohei.ico">
+        <link rel="stylesheet" href="/globalsrc/mynormalize/mynormalize1.2.0.css">
+        <link rel="stylesheet" href="/globalsrc/mynormalize/prism.css">
+        <style>
+            .account {
+                margin: 0 auto;
+                max-width: 1000px;
+                min-width: 500px;
+            }
+            .red {
+                color: red !important;
+            }
+            .search {
+                width: 300px;
+                margin: 20px 0;
+            }
+            .my-form {
+                display: flex;
+                margin: 20px 0;
+            }
+            .my-form input {
+                margin: 0;
+                margin-right: 5px;
+                width: 40%;
+            }
+            .my-form button {
+                width: 20%;
+            }
+            table.table {
+                margin: 0;
+                width: 100%;
+            }
+            .table > :not(:first-child) {
+                border-top: none;
+            }
+            .contain {
+                display: flex;
+                flex-wrap: wrap;
+                padding: 10px;
+            }
+            .list-box {
+                width: 50%;
+                padding: 0 20px;
+            }
+            .list-box a {
+                text-decoration: none;
+            }
+            .echarts-box {
+                width: 100%;
+                height: 300px;
+                width: 50%;
+                padding: 10px;
+                margin: 0 auto;
+                border: 1px solid #ccc;
+            }
+            tfoot {
+                font-weight: bold;
+            }
+            @media screen and (max-width: 767px) {
+                .contain {
+                    flex-wrap: wrap;
+                }
+                .list-box {
+                    width: 100%;
+                }
+                .echarts-box {
+                    width: 100%;
+                    margin-top: 30px;
+                }
+            }
+        </style>
+    </head>
+    <body class="line-numbers">
+        <div id="app" class="account div1">
+            <div class="contain">
+                <!-- 左侧列表 -->
+                <div class="list-box">
+                    <!-- 添加资产 -->
+                    <form class="my-form">
+                        <input v-model.trim="name" type="text" class="form-control" placeholder="消费名称">
+                        <input v-model.number="price" type="text" class="form-control" placeholder="消费价格">
+                        <button @click="add" type="button" class="btn btn-primary">添加账单</button>
+                    </form>
+
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>编号</th>
+                                <th>消费名称</th>
+                                <th>消费价格</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="(item, index) in list" :key="item.id">
+                                <td>{{index+1}}</td>
+                                <td>{{item.name}}</td>
+                                <td :class="{red:item.price>=500}">{{item.price.toFixed(2)}}</td>
+                                <td><a @click="del(item.id)" href="javascript:;">删除</a></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="4">消费总计： {{totalPrice}}</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+                <!-- 右侧图表 -->
+                <div class="echarts-box" id="main"></div>
+            </div>
+        </div>
+        <div class="div1">
+            <h2><span id="an-li-xiao-hei-ji-zhang-qing-dan">案例-小黑记账清单</span><a href="#an-li-xiao-hei-ji-zhang-qing-dan" class="header-anchor">#</a></h2>
+            <p>功能需求：</p>
+            <ol>
+                <li>基本渲染</li>
+                <li>添加功能</li>
+                <li>删除功能</li>
+                <li>饼图渲染</li>
+            </ol>
+            <div class="div2">
+                <h3><span id="ji-ben-xuan-ran">基本渲染</span><a href="#ji-ben-xuan-ran" class="header-anchor">#</a></h3>
+                <ol>
+                    <li>
+                        立即发送请求获取数据
+                        <code>created</code>
+                    </li>
+                    <li>拿到数据，存入data</li>
+                    <li>
+                        结合数据，进行渲染
+                        <code>v-for</code>
+                    </li>
+                    <li>消费统计：计算属性</li>
+                </ol>
+                <div class="div3">
+                    <pre><code class="language-html">&lt;tbody&gt;
+    &lt;tr v-for="(item, index) in list" :key="item.id"&gt;
+        &lt;td&gt;{{index+1}}&lt;/td&gt;
+        &lt;td&gt;{{item.name}}&lt;/td&gt;
+        &lt;td :class="{red:item.price&gt;=500}"&gt;{{item.price.toFixed(2)}}&lt;/td&gt;
+        &lt;td&gt;&lt;a href="javascript:;"&gt;删除&lt;/a&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;tfoot&gt;
+    &lt;tr&gt;
+        &lt;td colspan="4"&gt;消费总计： {{totalPrice}}&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/tfoot&gt;</code></pre>
+                    <pre><code class="language-js">const app = new Vue(&#123;
+    el: '#app',
+    data: &#123;
+        list: [],
+    &#125;,
+    computed: &#123;
+        totalPrice() &#123;
+            return this.list.reduce((sum, item) => sum + item.price, 0).toFixed(2);
+        &#125;,
+    &#125;,
+    async created() &#123;
+        const res = await axios.get('https://applet-base-api-t.itheima.net/bill', &#123;
+            params: &#123;
+                creator: 'cfe',
+            &#125;,
+        &#125;);
+        console.log(res);
+        this.list = res.data.data;
+    &#125;,
+&#125;);</code></pre>
+                </div>
+            </div>
+            <div class="div2">
+                <h3><span id="tian-jia-gong-neng">添加功能</span><a href="#tian-jia-gong-neng" class="header-anchor">#</a></h3>
+                <ol>
+                    <li>
+                        收集表单数据
+                        <code>v-model</code>
+                    </li>
+                    <li>给添加按钮注册点击事件，发送添加请求</li>
+                    <li>需要重新渲染</li>
+                </ol>
+                <div class="div3">
+                    <p>
+                        <code>v-model</code>
+                        绑定数据
+                    </p>
+                    <p>按钮注册点击事件</p>
+                    <pre><code class="language-html">&lt;input v-model.trim="name" type="text" class="form-control" placeholder="消费名称" /&gt;
+&lt;input v-model.number="price" type="text" class="form-control" placeholder="消费价格" /&gt;
+&lt;button @click="add" type="button" class="btn btn-primary"&gt;添加账单&lt;/button&gt;</code></pre>
+                    <p>渲染功能常用，所以封装起来</p>
+                    <pre><code class="language-js">const app = new Vue(&#123;
+    el: '#app',
+    data: &#123;
+        list: [],
+        name: '',
+        price: '',
+    &#125;,
+    computed: &#123;
+        totalPrice() &#123;
+            return this.list.reduce((sum, item) => sum + item.price, 0).toFixed(2);
+        &#125;,
+    &#125;,
+    created() &#123;
+        this.getList();
+    &#125;,
+    methods: &#123;
+        async getList() &#123;
+            const res = await axios.get('https://applet-base-api-t.itheima.net/bill', &#123;
+                params: &#123;
+                    creator: 'cfe',
+                &#125;,
+            &#125;);
+            console.log(res);
+            this.list = res.data.data;
+        &#125;,
+        async add() &#123;
+            if (!this.name) &#123;
+                alert('请输入消费项');
+                return;
+            &#125;
+            if (typeof this.price !== 'number') &#123;
+                alert('请输入正确的消费价格');
+                return;
+            &#125;
+            // 发送添加请求
+            const res = await axios.post('https://applet-base-api-t.itheima.net/bill', &#123;
+                creator: 'cfe',
+                name: this.name,
+                price: this.price,
+            &#125;);
+            console.log(res);
+            // 重新渲染
+            this.getList();
+            this.name = '';
+            this.price = '';
+        &#125;,
+    &#125;,
+&#125;);</code></pre>
+                </div>
+            </div>
+            <div class="div2">
+                <h3><span id="shan-chu-gong-neng">删除功能</span><a href="#shan-chu-gong-neng" class="header-anchor">#</a></h3>
+                <ol>
+                    <li>注册点击事件，传参id</li>
+                    <li>根据id发送删除请求</li>
+                    <li>需要重新渲染</li>
+                </ol>
+                <div class="div3">
+                    <pre><code class="language-html">&lt;td&gt;&lt;a @click="del(item.id)" href="javascript:;"&gt;删除&lt;/a&gt;&lt;/td&gt;</code></pre>
+                    <pre><code class="language-js">methods: &#123;
+    // ...
+    async del(id) &#123;
+        const res = await axios.delete(`https://applet-base-api-t.itheima.net/bill/$&#123;id&#125;`);
+        this.getList();
+    &#125;,
+&#125;,</code></pre>
+                </div>
+            </div>
+            <div class="div2">
+                <h3><span id="bing-tu-xuan-ran">饼图渲染</span><a href="#bing-tu-xuan-ran" class="header-anchor">#</a></h3>
+                <ol>
+                    <li>
+                        初始化一个饼图
+                        <code>echarts.init(dom)</code>
+                        ，饼图初始化需要等dom加载完成，所以使用mounted钩子实现
+                    </li>
+                    <li>根据数据实时更新饼图</li>
+                    <div class="div3">
+                        <pre><code class="language-html">&lt;!-- 右侧图表 --&gt;
+&lt;div class="echarts-box" id="main"&gt;&lt;/div&gt;</code></pre>
+                        <p>
+                            由于饼图数据需要使用动态的，所以按照echarts官方说法
+                            <a href="https://echarts.apache.org/handbook/zh/how-to/data/dynamic-data/" target="_blank">异步数据的加载与动态更新</a>
+                            ，设置好样式后，异步加载的数据通过
+                            <code>setOption</code>
+                            重新设置即可（只需设置需修改的数据）
+                        </p>
+                        <pre><code class="language-js">mounted() &#123;
+    // getList不能直接访问mounted中的myChart，所以把myChart挂载到实例上，以便于加载异步数据
+    this.myChart = echarts.init(document.querySelector('#main'));
+    let option = &#123;
+        title: &#123;
+            // 大标题
+            text: '消费账单列表',
+            left: 'center',
+            top: '15%',
+        &#125;,
+        tooltip: &#123;
+            // 提示框
+            trigger: 'item',
+        &#125;,
+        legend: &#123;
+            // 图例
+            itemWidth: 15,
+            textStyle: &#123;
+                fontSize: 10,
+            &#125;,
+        &#125;,
+        series: [
+            &#123;
+                name: '消费账单',
+                type: 'pie',
+                radius: '50%',
+                top: '20%',
+                data: [
+                    // 图表数据需要动态数据
+                    // &#123; value: 1048, name: 'Search Engine' &#125;,
+                    // &#123; value: 735, name: 'Direct' &#125;,
+                ],
+                emphasis: &#123;
+                    itemStyle: &#123;
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)',
+                    &#125;,
+                &#125;,
+            &#125;,
+        ],
+    &#125;;
+
+    this.myChart.setOption(option);
+&#125;,
+methods: &#123;
+    async getList() &#123;
+        const res = await axios.get('https://applet-base-api-t.itheima.net/bill', &#123;
+            params: &#123;
+                creator: 'cfe',
+            &#125;,
+        &#125;);
+        console.log(res);
+        this.list = res.data.data;
+
+        // 更新图表，通过setOption重设data
+        this.myChart.setOption(&#123;
+            // 数据项
+            series: [
+                &#123;
+                    // 通过map将list中的图表所需数据转换为渲染所需的格式
+                    data: this.list.map(item => (&#123; value: item.price, name: item.name &#125;)),
+                &#125;,
+            ],
+        &#125;);
+    &#125;,
+&#125;,</code></pre>
+                    </div>
+                </ol>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+        <script src="/globalsrc/mynormalize/prism.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script>
+            /**
+             * 接口文档地址：
+             * https://www.apifox.cn/apidoc/shared-24459455-ebb1-4fdc-8df8-0aff8dc317a8/api-53371058
+             *
+             * 功能需求：
+             * 1. 基本渲染
+             * 2. 添加功能
+             * 3. 删除功能
+             * 4. 饼图渲染
+             */
+            const app = new Vue({
+                el: '#app',
+                data: {
+                    list: [],
+                    name: '',
+                    price: '',
+                },
+                computed: {
+                    totalPrice() {
+                        return this.list.reduce((sum, item) => sum + item.price, 0).toFixed(2);
+                    },
+                },
+                created() {
+                    this.getList();
+                },
+                mounted() {
+                    // getList不能直接访问mounted中的myChart，所以把myChart挂载到实例上，以便于加载异步数据
+                    this.myChart = echarts.init(document.querySelector('#main'));
+                    let option = {
+                        title: {
+                            // 大标题
+                            text: '消费账单列表',
+                            left: 'center',
+                            top: '15%',
+                        },
+                        tooltip: {
+                            // 提示框
+                            trigger: 'item',
+                        },
+                        legend: {
+                            // 图例
+                            itemWidth: 15,
+                            textStyle: {
+                                fontSize: 10,
+                            },
+                        },
+                        series: [
+                            {
+                                name: '消费账单',
+                                type: 'pie',
+                                radius: '50%',
+                                top: '20%',
+                                data: [
+                                    // { value: 1048, name: 'Search Engine' },
+                                    // { value: 735, name: 'Direct' },
+                                ],
+                                emphasis: {
+                                    itemStyle: {
+                                        shadowBlur: 10,
+                                        shadowOffsetX: 0,
+                                        shadowColor: 'rgba(0, 0, 0, 0.5)',
+                                    },
+                                },
+                            },
+                        ],
+                    };
+
+                    this.myChart.setOption(option);
+                },
+                methods: {
+                    async getList() {
+                        const res = await axios.get('https://applet-base-api-t.itheima.net/bill', {
+                            params: {
+                                creator: 'cfe',
+                            },
+                        });
+                        console.log(res);
+                        this.list = res.data.data;
+
+                        // 更新图表，通过setOption重设data
+                        this.myChart.setOption({
+                            // 数据项
+                            series: [
+                                {
+                                    // 通过map将list中的图表所需数据转换为渲染所需的格式
+                                    data: this.list.map(item => ({ value: item.price, name: item.name })),
+                                },
+                            ],
+                        });
+                    },
+                    async add() {
+                        if (!this.name) {
+                            alert('请输入消费项');
+                            return;
+                        }
+                        if (typeof this.price !== 'number') {
+                            alert('请输入正确的消费价格');
+                            return;
+                        }
+                        // 发送添加请求
+                        const res = await axios.post('https://applet-base-api-t.itheima.net/bill', {
+                            creator: 'cfe',
+                            name: this.name,
+                            price: this.price,
+                        });
+                        console.log(res);
+                        // 重新渲染
+                        this.getList();
+                        this.name = '';
+                        this.price = '';
+                    },
+                    async del(id) {
+                        const res = await axios.delete(`https://applet-base-api-t.itheima.net/bill/${id}`);
+                        this.getList();
+                    },
+                },
+            });
+        </script>
+    </body>
+</html>
+
+        
+      </div>
+
+         
+    </div>
+    
+     
+  </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left "
+    
+      href="/2023/10/06/self_Vue/013%E5%B7%A5%E7%A8%8B%E5%8C%96%E5%BC%80%E5%8F%91&%E8%84%9A%E6%89%8B%E6%9E%B6VueCLI/"
+      title="工程化开发&脚手架VueCLI"
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+      
+        工程化开发&amp;脚手架VueCLI
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2023/10/05/self_Vue/011Vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"
+      title="Vue生命周期"
+     >
+
+    <p class="title-text">
+      
+        Vue生命周期
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+ 
+    </div>
+    <div id="footer-wrapper">
+      <footer id="footer">
+  
+  <div id="footer-info" class="inner">
+    
+    &copy; 2023 changfeng_E<br>
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
+  </div>
+</footer>
+
+    </div>
+    <div class="back-to-top-wrapper">
+    <button id="back-to-top-btn" class="back-to-top-btn hide" onclick="topFunction()">
+        <span class="material-symbols-rounded">keyboard_arrow_up</span>
+    </button>
+</div>
+
+<script>
+    function topFunction() {
+        window.scroll({ top: 0, behavior: 'smooth' });
+    }
+    let btn = document.getElementById('back-to-top-btn');
+    function scrollFunction() {
+        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+            btn.classList.remove('hide')
+        } else {
+            btn.classList.add('hide')
+        }
+    }
+    window.onscroll = function() {
+        scrollFunction();
+    }
+</script>
+
+  </div>
+  <script src="/js/light-dark-switch.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js"></script>
+</body>
+</html>

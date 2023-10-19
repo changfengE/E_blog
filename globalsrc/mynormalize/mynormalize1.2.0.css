@@ -582,7 +582,7 @@ div.mask {
   padding: 0.625rem;
   background-color: #424242;
 }
-.div1 code {
+.div1 code:not([class]) {
   padding: 0.3em 0.4em;
   font-size: 0.9em;
   font-weight: bold;
