@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+
+
+<html theme="dark" showBanner="true" hasBanner="true" > 
+<link href="/fontawesome/css/fontawesome.css" rel="stylesheet">
+<link href="/fontawesome/css/brands.css" rel="stylesheet">
+<link href="/fontawesome/css/solid.css" rel="stylesheet">
+<!-- 2023-9-19 添加统一的prism -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.css" /> 
+<script src="/js/color.global.min.js" ></script>
+<script src="/js/load-settings.js" ></script>
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+
+  
+  <title>案例-购物车 | cfE_blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/MaterialSymbolsRounded.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+  <meta name="description" content="综合案例-购物车#目标：功能分析，创建项目，构建分析基本结构  功能模块分析 请求动态渲染购物车，数据存入vuex 数字框控件修改数据 动态计算总价和总数量   脚手架新建项目（注意：勾选vuex）  构建模块#既然明确数据要存到vuex，建议分模块存储，购物车数据存入cart模块，之后若还有其他数据如用户数据存入user模块，文章数据存入article模块等项目复杂度高，分模块存数据更方便管理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="案例-购物车">
+<meta property="og:url" content="https://changfenge.github.io/2023/12/29/self_Vue/037-%E6%A1%88%E4%BE%8B07%E8%B4%AD%E7%89%A9%E8%BD%A6/index.html">
+<meta property="og:site_name" content="cfE_blog">
+<meta property="og:description" content="综合案例-购物车#目标：功能分析，创建项目，构建分析基本结构  功能模块分析 请求动态渲染购物车，数据存入vuex 数字框控件修改数据 动态计算总价和总数量   脚手架新建项目（注意：勾选vuex）  构建模块#既然明确数据要存到vuex，建议分模块存储，购物车数据存入cart模块，之后若还有其他数据如用户数据存入user模块，文章数据存入article模块等项目复杂度高，分模块存数据更方便管理">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-12-29T12:09:00.000Z">
+<meta property="article:modified_time" content="2024-01-02T14:31:58.273Z">
+<meta property="article:author" content="changfeng_E">
+<meta property="article:tag" content="vue">
+<meta property="article:tag" content="vue2">
+<meta property="article:tag" content="vuex">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="shortcut icon" href="/xiaohei.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  
+  
+    
+<div id="banner" class="">
+  <img src="/assets/%E8%8A%B1%E8%8A%B1bg02.jpg" itemprop="image">
+  <div id="banner-dim"></div>
+</div>
+ 
+   
+  <div id="main-grid" class="shadow   ">
+    <div id="nav" class=""  >
+      <navbar id="navbar">
+  <nav id="title-nav">
+    <a href="/">
+      <div id="vivia-logo">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div>cfE_blog </div>
+    </a>
+  </nav>
+  <nav id="main-nav">
+    
+      <a class="main-nav-link" href="/">主页</a>
+    
+      <a class="main-nav-link" href="/archives">轨迹</a>
+    
+      <a class="main-nav-link" href="/about">更多</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    <a id="theme-btn" class="nav-icon">
+      <span class="material-symbols-rounded light-mode-icon">wb_sunny</span>
+      <span class="material-symbols-rounded dark-mode-icon">dark_mode</span>
+    </a>
+    
+    <a id="nav-search-btn" class="nav-icon" title="搜索" style="display: none;">
+      <span class="material-symbols-rounded">search</span>
+    </a>
+    <div id="nav-menu-btn" class="nav-icon">
+      <span class="material-symbols-rounded">menu</span>
+    </div>
+  </nav>
+</navbar>
+<div id="nav-dropdown" class="hidden">
+  <div id="dropdown-link-list">
+    
+      <a class="nav-dropdown-link" href="/">主页</a>
+    
+      <a class="nav-dropdown-link" href="/archives">轨迹</a>
+    
+      <a class="nav-dropdown-link" href="/about">更多</a>
+    
+     
+    </div>
+</div>
+<script>
+  let dropdownBtn = document.getElementById("nav-menu-btn");
+  let dropdownEle = document.getElementById("nav-dropdown");
+  dropdownBtn.onclick = function() {
+    dropdownEle.classList.toggle("hidden");
+  }
+</script>
+    </div>
+    <div id="sidebar-wrapper">
+      <sidebar id="sidebar">
+  
+    <div class="widget-wrap">
+  <div class="info-card">
+    <div class="avatar">
+      
+        <image src=/assets/%E7%BD%97%E5%B0%8F%E9%BB%9102.png></image>
+      
+      <div class="img-dim"></div>
+    </div>
+    <div class="info">
+      <div class="username">changfeng_E </div>
+      <div class="dot"></div>
+      <div class="subtitle">about me </div>
+      <div class="link-list">
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com/changfengE" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://gitee.com/changfengE" title="Gitee"><i class="fa-brands fa-square-git"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/285349009?spm_id_from=333.1007.0.0" title="bilibili"><i class="fa-brands fa-bilibili"></i></a>
+         
+      </div>  
+    </div>
+  </div>
+</div>
+
+  
+  <div class="sticky">
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">最新文章</h3>
+      <ul>
+        
+          <a class="recent-link" href="/2023/12/29/self_Vue/037-%E6%A1%88%E4%BE%8B07%E8%B4%AD%E7%89%A9%E8%BD%A6/" title="案例-购物车" >
+            <div class="recent-link-text">
+              案例-购物车
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/12/21/self_Vue/036%E6%9E%84%E5%BB%BAvuex%E7%8E%AF%E5%A2%83/" title="构建vuex环境" >
+            <div class="recent-link-text">
+              构建vuex环境
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/12/21/self_Vue/035vuex%E6%A6%82%E8%BF%B0/" title="vuex概述" >
+            <div class="recent-link-text">
+              vuex概述
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/12/21/self_Vue/034ESlint%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/" title="ESlint代码规范" >
+            <div class="recent-link-text">
+              ESlint代码规范
+            </div>
+          </a>
+        
+          <a class="recent-link" href="/2023/12/21/self_Vue/033VueCli%E8%87%AA%E5%AE%9A%E4%B9%89%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE/" title="VueCli自定义创建项目" >
+            <div class="recent-link-text">
+              VueCli自定义创建项目
+            </div>
+          </a>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">标签</h3>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Ajax/" rel="tag">Ajax</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/CSS3/" rel="tag">CSS3</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/ESlint/" rel="tag">ESlint</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/HTML5/" rel="tag">HTML5</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/JavaScript/" rel="tag">JavaScript</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/axios/" rel="tag">axios</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/hexo-use/" rel="tag">hexo_use</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/jQuery/" rel="tag">jQuery</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/markdown/" rel="tag">markdown</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/normalize/" rel="tag">normalize</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/typora/" rel="tag">typora</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/vue-router/" rel="tag">vue-router</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/vue2/" rel="tag">vue2</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/vueCli/" rel="tag">vueCli</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/vuex/" rel="tag">vuex</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag">浏览器</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/" rel="tag">移动端</a></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+
+
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">分类</h3>
+      <div class="category-box">
+            <a class="category-link" href="/categories/git/">
+                git
+                <div class="category-count">10</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/git/branch/">
+                branch
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/git%E5%AE%89%E8%A3%85%E5%8F%8A%E9%83%A8%E5%88%86%E5%91%BD%E4%BB%A4/">
+                git安装及部分命令
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81/">
+                提交代码
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/git/ssh%E7%BB%91%E5%AE%9A/">
+                ssh绑定
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/markdown/">
+                markdown
+                <div class="category-count">1</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/markdown/%E4%BD%BF%E7%94%A8/">
+                使用
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/HTML5-CSS3/">
+                HTML5&CSS3
+                <div class="category-count">15</div>
+            </a>
+        
+            <a class="category-link" href="/categories/hexo%E5%88%9D%E4%BD%93%E9%AA%8C/">
+                hexo初体验
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/hexo/">
+                hexo
+                <div class="category-count">1</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/hexo/using/">
+                using
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/%E7%A7%BB%E5%8A%A8%E7%AB%AF/">
+                移动端
+                <div class="category-count">16</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/">
+                浏览器
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/mynormalize/">
+                mynormalize
+                <div class="category-count">3</div>
+            </a>
+        <div class="children"><div class="category-box">
+            <a class="category-link" href="/categories/mynormalize/1-1-0/">
+                1.1.0
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/mynormalize/1-2-0/">
+                1.2.0
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/mynormalize/wheels/">
+                wheels
+                <div class="category-count">1</div>
+            </a>
+        </div></div>
+            <a class="category-link" href="/categories/Ajax/">
+                Ajax
+                <div class="category-count">23</div>
+            </a>
+        
+            <a class="category-link" href="/categories/nodejs/">
+                nodejs
+                <div class="category-count">25</div>
+            </a>
+        
+            <a class="category-link" href="/categories/vue2/">
+                vue2
+                <div class="category-count">37</div>
+            </a>
+        
+            <a class="category-link" href="/categories/jQuery/">
+                jQuery
+                <div class="category-count">13</div>
+            </a>
+        
+            <a class="category-link" href="/categories/js%E5%9F%BA%E7%A1%80/">
+                js基础
+                <div class="category-count">42</div>
+            </a>
+        </div>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">归档</h3>
+      
+      
+        <a class="archive-link" href="/archives/2023/12 ">
+          十二月 2023 
+          <div class="archive-count">11 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/11 ">
+          十一月 2023 
+          <div class="archive-count">7 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/10 ">
+          十月 2023 
+          <div class="archive-count">10 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/09 ">
+          九月 2023 
+          <div class="archive-count">11 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/08 ">
+          八月 2023 
+          <div class="archive-count">54 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/07 ">
+          七月 2023 
+          <div class="archive-count">11 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/05 ">
+          五月 2023 
+          <div class="archive-count">3 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/04 ">
+          四月 2023 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/03 ">
+          三月 2023 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/02 ">
+          二月 2023 
+          <div class="archive-count">6 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2023/01 ">
+          一月 2023 
+          <div class="archive-count">5 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/12 ">
+          十二月 2022 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/11 ">
+          十一月 2022 
+          <div class="archive-count">4 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/09 ">
+          九月 2022 
+          <div class="archive-count">6 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/08 ">
+          八月 2022 
+          <div class="archive-count">11 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/07 ">
+          七月 2022 
+          <div class="archive-count">22 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/06 ">
+          六月 2022 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/02 ">
+          二月 2022 
+          <div class="archive-count">6 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2022/01 ">
+          一月 2022 
+          <div class="archive-count">1 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/10 ">
+          十月 2021 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/09 ">
+          九月 2021 
+          <div class="archive-count">2 </div>
+        </a>
+      
+        <a class="archive-link" href="/archives/2021/08 ">
+          八月 2021 
+          <div class="archive-count">6 </div>
+        </a>
+      
+    </div>
+  </div>
+
+
+    
+  </div>
+</sidebar>
+    </div>
+    <div id="content-body">
+       
+
+<article id="post-self_Vue/037-案例07购物车" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        案例-购物车
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-12-29T12:09:00.000Z" itemprop="datePublished">2023-12-29</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/vue2/">vue2</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            838 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue2/" rel="tag">vue2</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vuex/" rel="tag">vuex</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <h1><span id="zong-he-an-li-gou-wu-che">综合案例-购物车</span><a href="#zong-he-an-li-gou-wu-che" class="header-anchor">#</a></h1><p>目标：功能分析，创建项目，构建分析基本结构</p>
+<ol>
+<li>功能模块分析<ol>
+<li>请求动态渲染购物车，<strong>数据存入<code>vuex</code></strong></li>
+<li>数字框控件<strong>修改数据</strong></li>
+<li><strong>动态计算</strong>总价和总数量</li>
+</ol>
+</li>
+<li>脚手架新建项目（注意：勾选<code>vuex</code>）</li>
+</ol>
+<h2><span id="gou-jian-mo-kuai">构建模块</span><a href="#gou-jian-mo-kuai" class="header-anchor">#</a></h2><p>既然明确数据要存到<code>vuex</code>，建议分模块存储，购物车数据存入<code>cart</code>模块，之后若还有其他数据如用户数据存入<code>user</code>模块，文章数据存入<code>article</code>模块等<br>项目复杂度高，分模块存数据更方便管理</p>
+<h3><span id="cart-gou-wu-che-mo-kuai">cart 购物车模块</span><a href="#cart-gou-wu-che-mo-kuai" class="header-anchor">#</a></h3><ol>
+<li>新建<code>store/modules/cart.js</code></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    <span class="attr">namespaced</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="title function_">state</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            <span class="attr">list</span>: [],</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>挂载到 vuex 仓库上<code>store/index.js</code></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cart <span class="keyword">from</span> <span class="string">&#x27;./modules/cart&#x27;</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> <span class="title class_">Vuex</span>.<span class="title class_">Store</span>(&#123;</span><br><span class="line">    <span class="attr">modules</span>: &#123;</span><br><span class="line">        cart,</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2><span id="hou-duan-jie-kou-huan-jing">后端接口环境</span><a href="#hou-duan-jie-kou-huan-jing" class="header-anchor">#</a></h2><p>基于<code>json-server</code>工具，准备后端接口服务环境<br>实际开发中后端接口还未准备好时，可以先使用这个工具开发功能<br>开发时需要单独开一个窗口启动服务</p>
+<ol>
+<li>安装全局工具<code>json-server</code>（全局工具仅需安装一次）<a target="_blank" rel="noopener" href="https://www.npmjs.com/package/json-server">官网</a></li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm i json-server -g</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">或</span></span><br><span class="line">yarn global add json-server</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>代码根目录新建一个<code>db</code>目录</li>
+<li>将资料<code>index.json</code>移入<code>db</code>目录</li>
+<li>进入<code>db</code>目录，执行命令，启动后端接口服务</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">json-server index.json</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>访问接口测试 <a target="_blank" rel="noopener" href="http://localhost:3000/cart">http://localhost:3000/cart</a></li>
+</ol>
+<h2><span id="qing-qiu-shu-ju-cun-ru-vuex">请求数据存入 vuex</span><a href="#qing-qiu-shu-ju-cun-ru-vuex" class="header-anchor">#</a></h2><ol>
+<li>安装<code>axios</code></li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm add axios</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>准备<code>actions</code>和<code>mutations</code></li>
+<li>调用<code>action</code>获取数据</li>
+</ol>
+<p><code>actions</code>异步获取商品数据，提交<code>mutations</code>修改仓库数据</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mutations</span>: &#123;</span><br><span class="line">  updateList (state, newList) &#123;</span><br><span class="line">    state.<span class="property">list</span> = newList</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br><span class="line"><span class="attr">actions</span>: &#123;</span><br><span class="line">  <span class="comment">// 请求方式：get</span></span><br><span class="line">  <span class="comment">// 请求地址：http://localhost:3000/cart</span></span><br><span class="line">  <span class="keyword">async</span> getList (context) &#123;</span><br><span class="line">    <span class="keyword">const</span> res = <span class="keyword">await</span> axios.<span class="title function_">get</span>(<span class="string">&#x27;http://localhost:3000/cart&#x27;</span>)</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(res)</span><br><span class="line">    context.<span class="title function_">commit</span>(<span class="string">&#x27;updateList&#x27;</span>, res.<span class="property">data</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>动态渲染</li>
+</ol>
+<p>App.vue 导入<code>mapState</code>辅助函数，将商品数据映射到计算属性中</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; mapState &#125; <span class="keyword">from</span> <span class="string">&#x27;vuex&#x27;</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    <span class="attr">computed</span>: &#123;</span><br><span class="line">        ...<span class="title function_">mapState</span>(<span class="string">&#x27;cart&#x27;</span>, [<span class="string">&#x27;list&#x27;</span>]),</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>商品组件<code>v-for</code>遍历生成节点，并传递商品数据项给组件<br>App.vue：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 商品 Item 项组件 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">cart-item</span> <span class="attr">v-for</span>=<span class="string">&quot;(item) in list&quot;</span> <span class="attr">:key</span>=<span class="string">&quot;item.id&quot;</span> <span class="attr">:item</span>=<span class="string">&quot;item&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">cart-item</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>组件<code>cart-item.vue</code>内部通过<code>props</code>接收并用于渲染<br>cart-item.vue：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">props</span>: &#123;</span><br><span class="line">  <span class="attr">item</span>: &#123;</span><br><span class="line">    <span class="attr">type</span>: <span class="title class_">Object</span>,</span><br><span class="line">    <span class="attr">required</span>: <span class="literal">true</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2><span id="gong-neng-xiu-gai-shu-liang">功能-修改数量</span><a href="#gong-neng-xiu-gai-shu-liang" class="header-anchor">#</a></h2><blockquote>
+<p>请求方式：patch<br>请求地址：<a target="_blank" rel="noopener" href="http://localhost:3000/cart/:id">http://localhost:3000/cart/:id</a> 值 后面跟 id 值表示要修改的商品对象<br>请求参数：<br>{<br>name:’新值’,[可选]<br>price:’新值’,[可选]<br>count:’新值’,[可选]<br>thumb:’新值’,[可选]<br>}</p>
+</blockquote>
+<ol>
+<li>点击事件绑定</li>
+</ol>
+<p>cart-item.vue：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-light&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;btnClick(-1)&quot;</span>&gt;</span>-<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;count&quot;</span>&gt;</span>&#123;&#123; item.count &#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-light&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;btnClick(1)&quot;</span>&gt;</span>+<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>页面中<code>dispatch</code></li>
+</ol>
+<p>cart-item.vue：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">methods</span>: &#123;</span><br><span class="line">  btnClick (step) &#123;</span><br><span class="line">    <span class="keyword">const</span> newCount = <span class="variable language_">this</span>.<span class="property">item</span>.<span class="property">count</span> + step</span><br><span class="line">    <span class="keyword">const</span> id = <span class="variable language_">this</span>.<span class="property">item</span>.<span class="property">id</span></span><br><span class="line">    <span class="comment">// 判断newCount若小于1则不能再减少</span></span><br><span class="line">    <span class="keyword">if</span> (newCount &lt; <span class="number">1</span>) <span class="keyword">return</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">$store</span>.<span class="title function_">dispatch</span>(<span class="string">&#x27;cart/updateCountAsync&#x27;</span>, &#123; id, newCount &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>提供<code>action</code>函数</li>
+</ol>
+<p>cart.js：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> updateCountAsync (ctx, obj) &#123;</span><br><span class="line">  <span class="comment">// 将修改更新同步到后台服务器</span></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(obj)</span><br><span class="line">  <span class="keyword">await</span> axios.<span class="title function_">patch</span>(<span class="string">`http://localhost:3000/cart/<span class="subst">$&#123;obj.id&#125;</span>`</span>, &#123;</span><br><span class="line">    <span class="attr">count</span>: obj.<span class="property">newCount</span></span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="comment">// 将修改更新同步到vuex</span></span><br><span class="line">  ctx.<span class="title function_">commit</span>(<span class="string">&#x27;updateCount&#x27;</span>, &#123;</span><br><span class="line">    <span class="attr">id</span>: obj.<span class="property">id</span>,</span><br><span class="line">    <span class="attr">newCount</span>: obj.<span class="property">newCount</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>提供<code>mutation</code>函数</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// obj:&#123;id:xxx,newCount:xxx&#125;</span></span><br><span class="line">updateCount (state, obj) &#123;</span><br><span class="line">  <span class="comment">// 根据id找对象，更新其count</span></span><br><span class="line">  <span class="keyword">const</span> goods = state.<span class="property">list</span>.<span class="title function_">find</span>(<span class="function"><span class="params">item</span> =&gt;</span> item.<span class="property">id</span> === obj.<span class="property">id</span>)</span><br><span class="line">  goods.<span class="property">count</span> = obj.<span class="property">newCount</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2><span id="gong-neng-di-bu-getters-tong-ji">功能-底部 getters 统计</span><a href="#gong-neng-di-bu-getters-tong-ji" class="header-anchor">#</a></h2><ol>
+<li>提供 getters</li>
+</ol>
+<p>cart.js：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">getters</span>: &#123;</span><br><span class="line">  <span class="comment">// 总数，累加count</span></span><br><span class="line">  total (state) &#123;</span><br><span class="line">    <span class="keyword">return</span> state.<span class="property">list</span>.<span class="title function_">reduce</span>(<span class="function">(<span class="params">totalCount, item</span>) =&gt;</span> totalCount + item.<span class="property">count</span>, <span class="number">0</span>)</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 总价，累加count*price</span></span><br><span class="line">  totalPrice (state) &#123;</span><br><span class="line">    <span class="keyword">return</span> state.<span class="property">list</span>.<span class="title function_">reduce</span>(<span class="function">(<span class="params">totalPrice, item</span>) =&gt;</span> totalPrice + item.<span class="property">count</span> * item.<span class="property">price</span>, <span class="number">0</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>使用 getters</li>
+</ol>
+<p>cart-footer.vue：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; mapGetters &#125; <span class="keyword">from</span> <span class="string">&#x27;vuex&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="attr">computed</span>: &#123;</span><br><span class="line">   ...<span class="title function_">mapGetters</span>(<span class="string">&#x27;cart&#x27;</span>, [<span class="string">&#x27;total&#x27;</span>, <span class="string">&#x27;totalPrice&#x27;</span>])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>共 &#123;&#123;total&#125;&#125; 件商品，合计：<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;price&quot;</span>&gt;</span>￥&#123;&#123;totalPrice&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+        
+      </div>
+
+         
+    </div>
+    
+     
+  </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left  disabled "
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2023/12/21/self_Vue/036%E6%9E%84%E5%BB%BAvuex%E7%8E%AF%E5%A2%83/"
+      title="构建vuex环境"
+     >
+
+    <p class="title-text">
+      
+        构建vuex环境
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+ 
+    </div>
+    <div id="footer-wrapper">
+      <footer id="footer">
+  
+  <div id="footer-info" class="inner">
+    
+    &copy; 2024 changfeng_E<br>
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
+  </div>
+</footer>
+
+    </div>
+    <div class="back-to-top-wrapper">
+    <button id="back-to-top-btn" class="back-to-top-btn hide" onclick="topFunction()">
+        <span class="material-symbols-rounded">keyboard_arrow_up</span>
+    </button>
+</div>
+
+<script>
+    function topFunction() {
+        window.scroll({ top: 0, behavior: 'smooth' });
+    }
+    let btn = document.getElementById('back-to-top-btn');
+    function scrollFunction() {
+        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+            btn.classList.remove('hide')
+        } else {
+            btn.classList.add('hide')
+        }
+    }
+    window.onscroll = function() {
+        scrollFunction();
+    }
+</script>
+
+  </div>
+  <script src="/js/light-dark-switch.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js"></script>
+</body>
+</html>
