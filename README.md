@@ -1,1 +1,1 @@
-death note[:fake:]
+death note[fake] 
